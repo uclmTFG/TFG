@@ -7,6 +7,8 @@ package components;
 class UMLDiagram {
 	val Classifier[*] elements; 
 	val Relationship[*] links;
+	val Note[*] notes;
+    val NoteLink[*] noteLinks;
 }
 
 enum Visibility {
@@ -91,3 +93,18 @@ class Aggregation extends Relationship {}
 source.decoration="filledrhomb", style="solid",  
 tool.name="Composition")
 class Composition extends Relationship {}
+
+@gmf.node(label="text", figure="polygon", 
+polygon.x="0 80 100 100 0", polygon.y="0 0 20 100 100",
+color="255,255,200")
+class Note {
+	@gmf.label
+	attr String text = "Escribe tu nota aquí...";
+}
+
+@gmf.link(source="note", target="element", style="dash",
+color="150,150,150", tool.name="Note Link")
+class NoteLink {
+	ref Note[1] note;
+	ref Classifier[1] element;
+}
