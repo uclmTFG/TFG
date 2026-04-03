@@ -9,6 +9,12 @@ class UMLDiagram {
 	val Relationship[*] links;
 }
 
+enum Visibility {
+	public = 0;
+	private = 1;
+	protected = 2;
+}
+
 abstract class Classifier {
 	attr String name;
 }
@@ -37,16 +43,20 @@ class Interface extends Classifier {
 	val Method[*] operations;
 }
 
-@gmf.node(label="signature", figure="rectangle", 
-tool.name="Attribute")
+@gmf.node(label="visibility,name,type", 
+label.view="{0}{1} : {2}", label.edit="{1}:{2}",
+figure="rectangle", tool.name="Attribute")
 class Property {
-	attr String signature = "+ attribute : type";
+	attr Visibility visibility = "public";
+	attr String name = "attribute";
+	attr String type = "String";
 }
 
-@gmf.node(label="signature", figure="rectangle", 
-tool.name="Operation")
+@gmf.node(label="visibility,name", label.view="{0}{1}()",
+figure="rectangle", tool.name="Operation")
 class Method {
-	attr String signature = "+ operation() : void";
+	attr Visibility visibility = "public";
+	attr String name = "operation";
 }
 
 
