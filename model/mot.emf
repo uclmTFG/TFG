@@ -1,69 +1,83 @@
-@gmf
-
 @namespace(
-	uri="mot",
+	uri="mot", 
 	prefix="mot")
-package teat;
+package components;
 
-@gmf.diagram
-class miEjemplo {
-	val Person[*] personas;
-	val Animal[*] animales;
-	val Mascota[*] mascotas;
-	val Casa[*] casas;
-	val Veterinaria[*] centros;
+@gmf.diagram()
+class UMLDiagram {
+	val Classifier[*] elements; 
+	val Relationship[*] links;
 }
 
-abstract class LivingBeing {
+abstract class Classifier {
 	attr String name;
-	attr int age = 0;
 }
 
-@gmf.node(label="name", tool.group="Seres Vivos", figure="rectangle", color="200,255,200", tool.name="Person")
-class Person extends LivingBeing {
-	attr String[1] dni;
+@gmf.node(label="name", figure="rectangle", 
+border.color="0,0,0")
+class Clas extends Classifier {
+	attr String stereotype = "<<class>>";
 	
-	@gmf.link(target.decoration="arrow", label="amigoDe", style="dash", color="0,120,0")
-	ref Person[*] amigos;
-}
+	@gmf.compartment(layout="list", 
+	collapsible="true")
+	val Property[*] attributes;
 	
-enum AnimalType {
-	Dog = 0;
-	Cat = 1;
-	Parrot = 2;
-	Hamster = 3;
-}
-	
-@gmf.node(label="name,age", label.icon="true", label.view="Nombre: {0}, Edad: {1}", figure="ellipse", color="255,230,150", tool.name="Animal")
-class Animal extends LivingBeing{
-	attr String vet_num;
-	attr AnimalType type;
-	
+	@gmf.compartment(layout="list", 
+	collapsible="true")
+	val Method[*] operations;
 }
 
-@gmf.link(source="dueno", target="mascota", target.decoration="filledclosedarrow", label="relacion", tool.name="Vinculo Mascota")
-class Mascota {
-	@gmf.label
-	attr String relacion = "Dueño de";
-	ref Person[1] dueno;
-	ref Animal[1..*] mascota;
+@gmf.node(label="name", figure="rectangle", 
+border.color="0,0,0", color="240,240,240")
+class Interface extends Classifier {
+	attr String stereotype = "<<interface>>";
+	
+	@gmf.compartment(layout="list", 
+	collapsible="true")
+	val Method[*] operations;
 }
 
-@gmf.node(label="direccion", figure="polygon", polygon.x="0 50 100 100 0", polygon.y="50 0 50 100 100")
-class Casa {
-	attr String direccion;
-	
-	@gmf.compartment(layout="list")
-	val Person[*] residentes;
-	
-	@gmf.compartment(layout="list")
-	val Animal[*] animalesDomesticos;
+@gmf.node(label="signature", figure="rectangle", 
+tool.name="Attribute")
+class Property {
+	attr String signature = "+ attribute : type";
 }
 
-@gmf.node(label="nombreComercial", tool.group="Edificios", color="255,255,255", figure="polygon", polygon.x="20 40 40 60 60 40 40 20 20 0 0 20", polygon.y="0 0 20 20 40 40 60 60 40 40 20 20", border.color="255,0,0", border.width="2")
-class Veterinaria {
-	attr String nombreComercial;
-	
-	@gmf.link(label="atiendeA", target.decoration="rhomb", color="255,0,0")
-	ref Animal[*] pacientes;
+@gmf.node(label="signature", figure="rectangle", 
+tool.name="Operation")
+class Method {
+	attr String signature = "+ operation() : void";
 }
+
+
+abstract class Relationship{
+	ref Classifier[1] source;
+	ref Classifier[1] target;
+}
+
+@gmf.link(source="source", target="target", 
+target.decoration="closedarrow", style="solid",
+tool.name="Generatization")
+class Generalization extends Relationship {}
+
+@gmf.link(source="source", target="target", 
+target.decoration="closedarrow", style="dash", 
+tool.name="Interface Realization")
+class Implementation extends Relationship{}
+
+@gmf.link(source="source", target="target", 
+label="role", style="solid",  
+tool.name="Association")
+class Association extends Relationship {
+	attr String role = "uses";
+}
+
+@gmf.link(source="source", target="target", 
+source.decoration="rhomb", style="solid",  
+tool.name="Aggregation")
+class Aggregation extends Relationship {}
+
+@gmf.link(source="source", target="target", 
+source.decoration="filledrhomb", style="solid",  
+tool.name="Composition")
+class Composition extends Relationship {}
