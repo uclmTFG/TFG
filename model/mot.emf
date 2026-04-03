@@ -1,6 +1,6 @@
 @namespace(
-	uri="components", 
-	prefix="components")
+	uri="mot", 
+	prefix="mot")
 package components;
 
 @gmf.diagram()
@@ -54,13 +54,14 @@ class Property {
 	attr String type = "String";
 }
 
-@gmf.node(label="visibility,name", label.view="{0}{1}()",
+@gmf.node(label="visibility,name, returnType", 
+label.view="{0}{1}{2}()",
 figure="rectangle", tool.name="Operation")
 class Method {
 	attr Visibility visibility = "public";
 	attr String name = "operation";
+	attr String returnType = "void";
 }
-
 
 abstract class Relationship{
 	ref Classifier[1] source;
@@ -113,3 +114,4 @@ class NoteLink {
 	ref Note[1] note;
 	ref Classifier[1] element;
 }
+
