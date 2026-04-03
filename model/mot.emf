@@ -1,6 +1,6 @@
 @namespace(
-	uri="mot", 
-	prefix="mot")
+	uri="components", 
+	prefix="components")
 package components;
 
 @gmf.diagram()
@@ -77,11 +77,17 @@ target.decoration="closedarrow", style="dash",
 tool.name="Interface Realization")
 class Implementation extends Relationship{}
 
-@gmf.link(source="source", target="target", 
-label="role", style="solid",  
-tool.name="Association")
+@gmf.link(source="source", target="target", label="role", 
+style="solid", source.label="sourceMultiplicity", 
+target.label="targetMultiplicity", tool.name="Association")
 class Association extends Relationship {
 	attr String role = "uses";
+	
+	@gmf.label(placement="external")
+	attr String sourceMultiplicity = "1";
+	
+	@gmf.label(placement="external")
+	attr String targetMultiplicity = "*";
 }
 
 @gmf.link(source="source", target="target", 
@@ -95,11 +101,10 @@ tool.name="Composition")
 class Composition extends Relationship {}
 
 @gmf.node(label="text", figure="polygon", 
-polygon.x="0 80 100 100 0", polygon.y="0 0 20 100 100",
+polygon.x="0 80 100 100 0", polygon.y="0 0 20 100 100", 
 color="255,255,200")
 class Note {
-	@gmf.label
-	attr String text = "Escribe tu nota aquí...";
+	attr String text = "Contenido de tu nota...";
 }
 
 @gmf.link(source="note", target="element", style="dash",
