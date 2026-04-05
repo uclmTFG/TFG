@@ -1,6 +1,6 @@
 @namespace(
-	uri="mot", 
-	prefix="mot")
+	uri="components", 
+	prefix="components")
 package components;
 
 @gmf.diagram()
@@ -19,6 +19,7 @@ enum Visibility {
 
 abstract class Classifier {
 	attr String name;
+	attr boolean isAbstract;
 }
 
 @gmf.node(label="name", figure="rectangle", 
@@ -52,6 +53,7 @@ class Property {
 	attr Visibility visibility = "public";
 	attr String name = "attribute";
 	attr String type = "String";
+	attr boolean isStatic;
 }
 
 @gmf.node(label="visibility,name, returnType", 
@@ -61,6 +63,16 @@ class Method {
 	attr Visibility visibility = "public";
 	attr String name = "operation";
 	attr String returnType = "void";
+	
+	@gmf.compartment(layout="list")
+	val Parameter[*] parameter;
+}
+
+@gmf.node(label="name,type", label.view="{0} : {1}", 
+tool.name="Parameter")
+class Parameter {
+	attr String name;
+	attr String type;
 }
 
 abstract class Relationship{
@@ -114,4 +126,3 @@ class NoteLink {
 	ref Note[1] note;
 	ref Classifier[1] element;
 }
-
