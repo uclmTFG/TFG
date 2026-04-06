@@ -46,6 +46,20 @@ class Interface extends Classifier {
 	val Method[*] operations;
 }
 
+@gmf.node(label="name", figure="rectangle", 
+color="200,255,200")
+class Enumeration extends Classifier {
+	attr String stereotype ="<<enumeration>>";
+	
+	@gmf.compartment(layout="list")
+	val EnumLiteral[*] literals;
+}
+
+@gmf.node(label="name")
+class EnumLiteral {
+	attr String name;
+}
+
 @gmf.node(label="visibility,name,type", 
 label.view="{0}{1} : {2}", label.edit="{1}:{2}",
 figure="rectangle", tool.name="Attribute")
