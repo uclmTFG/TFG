@@ -127,6 +127,13 @@ source.decoration="filledrhomb", style="solid",
 tool.name="Composition")
 class Composition extends Relationship {}
 
+@gmf.link(source="source", target="target",
+target.decoration="arrow", style="dash", 
+tool.name="Dependency")
+class Dependency extends Relationship{
+	attr String stereotype ="<<use>>";
+}
+
 @gmf.node(label="text", figure="polygon", 
 polygon.x="0 80 100 100 0", polygon.y="0 0 20 100 100", 
 color="255,255,200")
