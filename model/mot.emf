@@ -147,3 +147,4 @@ class NoteLink {
 	ref Note[1] note;
 	ref Classifier[1] element;
 }
+
