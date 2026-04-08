@@ -22,7 +22,11 @@ public class PropertyItemSemanticEditPolicy extends ComponentsBaseItemSemanticEd
 	* @generated
 	*/
 	public PropertyItemSemanticEditPolicy() {
+<<<<<<< HEAD
 		super(ComponentsElementTypes.Property_3003);
+=======
+		super(ComponentsElementTypes.Property_3001);
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	}
 
 	/**

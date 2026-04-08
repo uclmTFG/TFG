@@ -7,7 +7,11 @@
 <plugin>
 
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+<<<<<<< HEAD
       <!-- @generated mof -->
+=======
+      <!-- @generated mot -->
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
       <factory
             uri="components"
             class="components.provider.ComponentsItemProviderAdapterFactory"

@@ -22,7 +22,11 @@ public class ParameterItemSemanticEditPolicy extends ComponentsBaseItemSemanticE
 	* @generated
 	*/
 	public ParameterItemSemanticEditPolicy() {
+<<<<<<< HEAD
 		super(ComponentsElementTypes.Parameter_3005);
+=======
+		super(ComponentsElementTypes.Parameter_3003);
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	}
 
 	/**

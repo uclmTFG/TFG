@@ -63,6 +63,7 @@ public class MethodMethodParameterCompartmentCanonicalEditPolicy extends Canonic
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<ComponentsNodeDescriptor> childDescriptors = ComponentsDiagramUpdater
+<<<<<<< HEAD
 				.getMethodMethodParameterCompartment_7005SemanticChildren(viewObject);
 		for (ComponentsNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
@@ -94,6 +95,39 @@ public class MethodMethodParameterCompartmentCanonicalEditPolicy extends Canonic
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<ComponentsNodeDescriptor> childDescriptors = ComponentsDiagramUpdater
 				.getMethodMethodParameterCompartment_7005SemanticChildren((View) getHost().getModel());
+=======
+				.getMethodMethodParameterCompartment_7003SemanticChildren(viewObject);
+		for (ComponentsNodeDescriptor d : childDescriptors) {
+			result.add(d.getModelElement());
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
+		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
+	}
+
+	/**
+	* @generated
+	*/
+	private boolean isMyDiagramElement(View view) {
+		return ParameterEditPart.VISUAL_ID == ComponentsVisualIDRegistry.getVisualID(view);
+	}
+
+	/**
+	* @generated
+	*/
+	protected void refreshSemantic() {
+		if (resolveSemanticElement() == null) {
+			return;
+		}
+		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
+		List<ComponentsNodeDescriptor> childDescriptors = ComponentsDiagramUpdater
+				.getMethodMethodParameterCompartment_7003SemanticChildren((View) getHost().getModel());
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

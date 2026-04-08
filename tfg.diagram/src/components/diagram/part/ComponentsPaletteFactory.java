@@ -44,6 +44,7 @@ public class ComponentsPaletteFactory {
 		paletteContainer.add(createInterface5CreationTool());
 		paletteContainer.add(createNote6CreationTool());
 		paletteContainer.add(createOperation7CreationTool());
+<<<<<<< HEAD
 		paletteContainer.add(createPackage8CreationTool());
 		paletteContainer.add(createParameter9CreationTool());
 		return paletteContainer;
@@ -186,6 +187,126 @@ public class ComponentsPaletteFactory {
 				Messages.Parameter9CreationTool_desc, Collections.singletonList(ComponentsElementTypes.Parameter_3005));
 		entry.setId("createParameter9CreationTool"); //$NON-NLS-1$
 		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Parameter_3005));
+=======
+		paletteContainer.add(createParameter8CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* Creates "Connections" palette tool group
+	* @generated
+	*/
+	private PaletteContainer createConnections2Group() {
+		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Connections2Group_title);
+		paletteContainer.setId("createConnections2Group"); //$NON-NLS-1$
+		paletteContainer.add(createAggregation1CreationTool());
+		paletteContainer.add(createAssociation2CreationTool());
+		paletteContainer.add(createComposition3CreationTool());
+		paletteContainer.add(createDependency4CreationTool());
+		paletteContainer.add(createGeneratization5CreationTool());
+		paletteContainer.add(createInterfaceRealization6CreationTool());
+		paletteContainer.add(createNoteLink7CreationTool());
+		return paletteContainer;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createAttribute1CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Attribute1CreationTool_title,
+				Messages.Attribute1CreationTool_desc, Collections.singletonList(ComponentsElementTypes.Property_3001));
+		entry.setId("createAttribute1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Property_3001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createClas2CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Clas2CreationTool_title,
+				Messages.Clas2CreationTool_desc, Collections.singletonList(ComponentsElementTypes.Clas_2001));
+		entry.setId("createClas2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Clas_2001));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createEnumLiteral3CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.EnumLiteral3CreationTool_title,
+				Messages.EnumLiteral3CreationTool_desc,
+				Collections.singletonList(ComponentsElementTypes.EnumLiteral_3005));
+		entry.setId("createEnumLiteral3CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.EnumLiteral_3005));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createEnumeration4CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Enumeration4CreationTool_title,
+				Messages.Enumeration4CreationTool_desc,
+				Collections.singletonList(ComponentsElementTypes.Enumeration_2003));
+		entry.setId("createEnumeration4CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Enumeration_2003));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createInterface5CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Interface5CreationTool_title,
+				Messages.Interface5CreationTool_desc, Collections.singletonList(ComponentsElementTypes.Interface_2002));
+		entry.setId("createInterface5CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Interface_2002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createNote6CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Note6CreationTool_title,
+				Messages.Note6CreationTool_desc, Collections.singletonList(ComponentsElementTypes.Note_2004));
+		entry.setId("createNote6CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Note_2004));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createOperation7CreationTool() {
+		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
+		types.add(ComponentsElementTypes.Method_3002);
+		types.add(ComponentsElementTypes.Method_3004);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Operation7CreationTool_title,
+				Messages.Operation7CreationTool_desc, types);
+		entry.setId("createOperation7CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Method_3002));
+		entry.setLargeIcon(entry.getSmallIcon());
+		return entry;
+	}
+
+	/**
+	* @generated
+	*/
+	private ToolEntry createParameter8CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Parameter8CreationTool_title,
+				Messages.Parameter8CreationTool_desc, Collections.singletonList(ComponentsElementTypes.Parameter_3003));
+		entry.setId("createParameter8CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(ComponentsElementTypes.getImageDescriptor(ComponentsElementTypes.Parameter_3003));
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

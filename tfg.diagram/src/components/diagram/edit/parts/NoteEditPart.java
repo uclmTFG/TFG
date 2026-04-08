@@ -39,7 +39,11 @@ public class NoteEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+<<<<<<< HEAD
 	public static final int VISUAL_ID = 2005;
+=======
+	public static final int VISUAL_ID = 2004;
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 
 	/**
 	* @generated

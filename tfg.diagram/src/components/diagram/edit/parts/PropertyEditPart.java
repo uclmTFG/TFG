@@ -36,7 +36,11 @@ public class PropertyEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+<<<<<<< HEAD
 	public static final int VISUAL_ID = 3003;
+=======
+	public static final int VISUAL_ID = 3001;
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 
 	/**
 	* @generated

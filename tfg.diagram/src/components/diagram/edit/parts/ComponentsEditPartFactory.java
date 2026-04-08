@@ -28,6 +28,7 @@ public class ComponentsEditPartFactory implements EditPartFactory {
 			case UMLDiagramEditPart.VISUAL_ID:
 				return new UMLDiagramEditPart(view);
 
+<<<<<<< HEAD
 			case PackageEditPart.VISUAL_ID:
 				return new PackageEditPart(view);
 
@@ -147,6 +148,79 @@ public class ComponentsEditPartFactory implements EditPartFactory {
 
 			case EnumerationEnumerationLiteralsCompartment2EditPart.VISUAL_ID:
 				return new EnumerationEnumerationLiteralsCompartment2EditPart(view);
+=======
+			case ClasEditPart.VISUAL_ID:
+				return new ClasEditPart(view);
+
+			case ClasNameEditPart.VISUAL_ID:
+				return new ClasNameEditPart(view);
+
+			case InterfaceEditPart.VISUAL_ID:
+				return new InterfaceEditPart(view);
+
+			case InterfaceNameEditPart.VISUAL_ID:
+				return new InterfaceNameEditPart(view);
+
+			case EnumerationEditPart.VISUAL_ID:
+				return new EnumerationEditPart(view);
+
+			case EnumerationNameEditPart.VISUAL_ID:
+				return new EnumerationNameEditPart(view);
+
+			case NoteEditPart.VISUAL_ID:
+				return new NoteEditPart(view);
+
+			case NoteTextEditPart.VISUAL_ID:
+				return new NoteTextEditPart(view);
+
+			case PropertyEditPart.VISUAL_ID:
+				return new PropertyEditPart(view);
+
+			case PropertyVisibilityNameTypeEditPart.VISUAL_ID:
+				return new PropertyVisibilityNameTypeEditPart(view);
+
+			case MethodEditPart.VISUAL_ID:
+				return new MethodEditPart(view);
+
+			case MethodVisibilityNameReturnTypEditPart.VISUAL_ID:
+				return new MethodVisibilityNameReturnTypEditPart(view);
+
+			case ParameterEditPart.VISUAL_ID:
+				return new ParameterEditPart(view);
+
+			case ParameterNameTypeEditPart.VISUAL_ID:
+				return new ParameterNameTypeEditPart(view);
+
+			case Method2EditPart.VISUAL_ID:
+				return new Method2EditPart(view);
+
+			case MethodVisibilityNameReturnTyp2EditPart.VISUAL_ID:
+				return new MethodVisibilityNameReturnTyp2EditPart(view);
+
+			case EnumLiteralEditPart.VISUAL_ID:
+				return new EnumLiteralEditPart(view);
+
+			case EnumLiteralNameEditPart.VISUAL_ID:
+				return new EnumLiteralNameEditPart(view);
+
+			case ClasClasAttributesCompartmentEditPart.VISUAL_ID:
+				return new ClasClasAttributesCompartmentEditPart(view);
+
+			case ClasClasOperationsCompartmentEditPart.VISUAL_ID:
+				return new ClasClasOperationsCompartmentEditPart(view);
+
+			case MethodMethodParameterCompartmentEditPart.VISUAL_ID:
+				return new MethodMethodParameterCompartmentEditPart(view);
+
+			case InterfaceInterfaceOperationsCompartmentEditPart.VISUAL_ID:
+				return new InterfaceInterfaceOperationsCompartmentEditPart(view);
+
+			case MethodMethodParameterCompartment2EditPart.VISUAL_ID:
+				return new MethodMethodParameterCompartment2EditPart(view);
+
+			case EnumerationEnumerationLiteralsCompartmentEditPart.VISUAL_ID:
+				return new EnumerationEnumerationLiteralsCompartmentEditPart(view);
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 
 			case GeneralizationEditPart.VISUAL_ID:
 				return new GeneralizationEditPart(view);

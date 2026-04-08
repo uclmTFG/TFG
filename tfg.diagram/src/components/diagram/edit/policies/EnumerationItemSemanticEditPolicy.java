@@ -37,6 +37,7 @@ import components.diagram.edit.parts.AssociationEditPart;
 import components.diagram.edit.parts.CompositionEditPart;
 import components.diagram.edit.parts.DependencyEditPart;
 import components.diagram.edit.parts.EnumLiteralEditPart;
+<<<<<<< HEAD
 import components.diagram.edit.parts.EnumerationEnumerationLiteralsCompartment2EditPart;
 import components.diagram.edit.parts.GeneralizationEditPart;
 import components.diagram.edit.parts.ImplementationEditPart;
@@ -169,6 +170,140 @@ public class EnumerationItemSemanticEditPolicy extends ComponentsBaseItemSemanti
 			Node node = (Node) nit.next();
 			switch (ComponentsVisualIDRegistry.getVisualID(node)) {
 			case EnumerationEnumerationLiteralsCompartment2EditPart.VISUAL_ID:
+=======
+import components.diagram.edit.parts.EnumerationEnumerationLiteralsCompartmentEditPart;
+import components.diagram.edit.parts.GeneralizationEditPart;
+import components.diagram.edit.parts.ImplementationEditPart;
+import components.diagram.edit.parts.NoteLinkEditPart;
+import components.diagram.part.ComponentsVisualIDRegistry;
+import components.diagram.providers.ComponentsElementTypes;
+
+/**
+ * @generated
+ */
+public class EnumerationItemSemanticEditPolicy extends ComponentsBaseItemSemanticEditPolicy {
+
+	/**
+	* @generated
+	*/
+	public EnumerationItemSemanticEditPolicy() {
+		super(ComponentsElementTypes.Enumeration_2003);
+	}
+
+	/**
+	* @generated
+	*/
+	protected Command getDestroyElementCommand(DestroyElementRequest req) {
+		View view = (View) getHost().getModel();
+		CompositeTransactionalCommand cmd = new CompositeTransactionalCommand(getEditingDomain(), null);
+		cmd.setTransactionNestingEnabled(false);
+		for (Iterator<?> it = view.getTargetEdges().iterator(); it.hasNext();) {
+			Edge incomingLink = (Edge) it.next();
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == GeneralizationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == ImplementationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == AssociationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == AggregationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == CompositionEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == DependencyEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(incomingLink) == NoteLinkEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(incomingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), incomingLink));
+				continue;
+			}
+		}
+		for (Iterator<?> it = view.getSourceEdges().iterator(); it.hasNext();) {
+			Edge outgoingLink = (Edge) it.next();
+			if (ComponentsVisualIDRegistry.getVisualID(outgoingLink) == GeneralizationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(outgoingLink) == ImplementationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(outgoingLink) == AssociationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(outgoingLink) == AggregationEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(outgoingLink) == CompositionEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+			if (ComponentsVisualIDRegistry.getVisualID(outgoingLink) == DependencyEditPart.VISUAL_ID) {
+				DestroyElementRequest r = new DestroyElementRequest(outgoingLink.getElement(), false);
+				cmd.add(new DestroyElementCommand(r));
+				cmd.add(new DeleteCommand(getEditingDomain(), outgoingLink));
+				continue;
+			}
+		}
+		EAnnotation annotation = view.getEAnnotation("Shortcut"); //$NON-NLS-1$
+		if (annotation == null) {
+			// there are indirectly referenced children, need extra commands: false
+			addDestroyChildNodesCommand(cmd);
+			addDestroyShortcutsCommand(cmd, view);
+			// delete host element
+			cmd.add(new DestroyElementCommand(req));
+		} else {
+			cmd.add(new DeleteCommand(getEditingDomain(), view));
+		}
+		return getGEFWrapper(cmd.reduce());
+	}
+
+	/**
+	* @generated
+	*/
+	private void addDestroyChildNodesCommand(ICompositeCommand cmd) {
+		View view = (View) getHost().getModel();
+		for (Iterator<?> nit = view.getChildren().iterator(); nit.hasNext();) {
+			Node node = (Node) nit.next();
+			switch (ComponentsVisualIDRegistry.getVisualID(node)) {
+			case EnumerationEnumerationLiteralsCompartmentEditPart.VISUAL_ID:
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 				for (Iterator<?> cit = node.getChildren().iterator(); cit.hasNext();) {
 					Node cnode = (Node) cit.next();
 					switch (ComponentsVisualIDRegistry.getVisualID(cnode)) {

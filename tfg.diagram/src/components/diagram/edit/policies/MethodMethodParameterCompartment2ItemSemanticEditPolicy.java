@@ -18,6 +18,7 @@ public class MethodMethodParameterCompartment2ItemSemanticEditPolicy extends Com
 	* @generated
 	*/
 	public MethodMethodParameterCompartment2ItemSemanticEditPolicy() {
+<<<<<<< HEAD
 		super(ComponentsElementTypes.Method_3007);
 	}
 
@@ -26,6 +27,16 @@ public class MethodMethodParameterCompartment2ItemSemanticEditPolicy extends Com
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (ComponentsElementTypes.Parameter_3005 == req.getElementType()) {
+=======
+		super(ComponentsElementTypes.Method_3004);
+	}
+
+	/**
+	* @generated
+	*/
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (ComponentsElementTypes.Parameter_3003 == req.getElementType()) {
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 			return getGEFWrapper(new ParameterCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

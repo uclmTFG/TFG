@@ -22,7 +22,11 @@ public class EnumLiteralItemSemanticEditPolicy extends ComponentsBaseItemSemanti
 	* @generated
 	*/
 	public EnumLiteralItemSemanticEditPolicy() {
+<<<<<<< HEAD
 		super(ComponentsElementTypes.EnumLiteral_3009);
+=======
+		super(ComponentsElementTypes.EnumLiteral_3005);
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	}
 
 	/**

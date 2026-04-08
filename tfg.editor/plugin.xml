@@ -7,6 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.ui.newWizards">
+<<<<<<< HEAD
       <!-- @generated mof -->
       <category
             id="org.eclipse.emf.ecore.Wizard.category.ID"
@@ -24,6 +25,25 @@
 
    <extension point="org.eclipse.ui.editors">
       <!-- @generated mof -->
+=======
+      <!-- @generated mot -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="components.presentation.ComponentsModelWizardID"
+            name="%_UI_ComponentsModelWizard_label"
+            class="components.presentation.ComponentsModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/ComponentsModelFile.gif">
+         <description>%_UI_ComponentsModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mot -->
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
       <editor
             id="components.presentation.ComponentsEditorID"
             name="%_UI_ComponentsEditor_label"

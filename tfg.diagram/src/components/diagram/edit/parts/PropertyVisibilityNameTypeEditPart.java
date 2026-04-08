@@ -295,7 +295,11 @@ public class PropertyVisibilityNameTypeEditPart extends CompartmentEditPart impl
 	*/
 	public IParser getParser() {
 		if (parser == null) {
+<<<<<<< HEAD
 			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.Property_3003, getParserElement(),
+=======
+			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.Property_3001, getParserElement(),
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 					ComponentsVisualIDRegistry
 							.getType(components.diagram.edit.parts.PropertyVisibilityNameTypeEditPart.VISUAL_ID));
 		}

@@ -37,7 +37,11 @@ public class EnumLiteralEditPart extends ShapeNodeEditPart {
 	/**
 	* @generated
 	*/
+<<<<<<< HEAD
 	public static final int VISUAL_ID = 3009;
+=======
+	public static final int VISUAL_ID = 3005;
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 
 	/**
 	* @generated

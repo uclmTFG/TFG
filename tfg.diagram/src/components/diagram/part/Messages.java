@@ -326,6 +326,7 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+<<<<<<< HEAD
 	public static String Package8CreationTool_title;
 
 	/**
@@ -567,6 +568,159 @@ public class Messages extends NLS {
 	* @generated
 	*/
 	public static String NavigatorGroupName_Enumeration_3008_outgoinglinks;
+=======
+	public static String Parameter8CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Parameter8CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Aggregation1CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Aggregation1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Association2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Association2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Composition3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Composition3CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Dependency4CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Dependency4CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Generatization5CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Generatization5CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String InterfaceRealization6CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String InterfaceRealization6CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String NoteLink7CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String NoteLink7CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String ClasClasAttributesCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String ClasClasOperationsCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String MethodMethodParameterCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String InterfaceInterfaceOperationsCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String MethodMethodParameterCompartment2EditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String EnumerationEnumerationLiteralsCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String CommandName_OpenDiagram;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_UMLDiagram_1000_links;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clas_2001_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Clas_2001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Interface_2002_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Interface_2002_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Enumeration_2003_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Enumeration_2003_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Note_2004_outgoinglinks;
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 
 	/**
 	* @generated

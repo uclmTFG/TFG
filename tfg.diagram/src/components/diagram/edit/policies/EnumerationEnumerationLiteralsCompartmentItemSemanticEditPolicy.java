@@ -19,6 +19,7 @@ public class EnumerationEnumerationLiteralsCompartmentItemSemanticEditPolicy
 	* @generated
 	*/
 	public EnumerationEnumerationLiteralsCompartmentItemSemanticEditPolicy() {
+<<<<<<< HEAD
 		super(ComponentsElementTypes.Enumeration_3008);
 	}
 
@@ -27,6 +28,16 @@ public class EnumerationEnumerationLiteralsCompartmentItemSemanticEditPolicy
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (ComponentsElementTypes.EnumLiteral_3009 == req.getElementType()) {
+=======
+		super(ComponentsElementTypes.Enumeration_2003);
+	}
+
+	/**
+	* @generated
+	*/
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (ComponentsElementTypes.EnumLiteral_3005 == req.getElementType()) {
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 			return getGEFWrapper(new EnumLiteralCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

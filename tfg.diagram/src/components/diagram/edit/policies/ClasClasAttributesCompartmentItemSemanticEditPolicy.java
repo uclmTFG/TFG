@@ -18,6 +18,7 @@ public class ClasClasAttributesCompartmentItemSemanticEditPolicy extends Compone
 	* @generated
 	*/
 	public ClasClasAttributesCompartmentItemSemanticEditPolicy() {
+<<<<<<< HEAD
 		super(ComponentsElementTypes.Clas_3002);
 	}
 
@@ -26,6 +27,16 @@ public class ClasClasAttributesCompartmentItemSemanticEditPolicy extends Compone
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
 		if (ComponentsElementTypes.Property_3003 == req.getElementType()) {
+=======
+		super(ComponentsElementTypes.Clas_2001);
+	}
+
+	/**
+	* @generated
+	*/
+	protected Command getCreateCommand(CreateElementRequest req) {
+		if (ComponentsElementTypes.Property_3001 == req.getElementType()) {
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 			return getGEFWrapper(new PropertyCreateCommand(req));
 		}
 		return super.getCreateCommand(req);

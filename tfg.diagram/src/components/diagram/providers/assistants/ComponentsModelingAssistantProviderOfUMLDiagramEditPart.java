@@ -23,12 +23,20 @@ public class ComponentsModelingAssistantProviderOfUMLDiagramEditPart extends Com
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
+<<<<<<< HEAD
 		List<IElementType> types = new ArrayList<IElementType>(5);
 		types.add(ComponentsElementTypes.Package_2001);
 		types.add(ComponentsElementTypes.Clas_2002);
 		types.add(ComponentsElementTypes.Interface_2003);
 		types.add(ComponentsElementTypes.Enumeration_2004);
 		types.add(ComponentsElementTypes.Note_2005);
+=======
+		List<IElementType> types = new ArrayList<IElementType>(4);
+		types.add(ComponentsElementTypes.Clas_2001);
+		types.add(ComponentsElementTypes.Interface_2002);
+		types.add(ComponentsElementTypes.Enumeration_2003);
+		types.add(ComponentsElementTypes.Note_2004);
+>>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 		return types;
 	}
 
