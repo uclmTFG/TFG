@@ -29,11 +29,7 @@ public class Method2ItemSemanticEditPolicy extends ComponentsBaseItemSemanticEdi
 	* @generated
 	*/
 	public Method2ItemSemanticEditPolicy() {
-<<<<<<< HEAD
 		super(ComponentsElementTypes.Method_3007);
-=======
-		super(ComponentsElementTypes.Method_3004);
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	}
 
 	/**

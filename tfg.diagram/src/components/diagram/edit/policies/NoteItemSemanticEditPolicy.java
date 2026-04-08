@@ -31,11 +31,7 @@ public class NoteItemSemanticEditPolicy extends ComponentsBaseItemSemanticEditPo
 	* @generated
 	*/
 	public NoteItemSemanticEditPolicy() {
-<<<<<<< HEAD
 		super(ComponentsElementTypes.Note_2005);
-=======
-		super(ComponentsElementTypes.Note_2004);
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	}
 
 	/**

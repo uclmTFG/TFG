@@ -24,11 +24,7 @@ public class ComponentsModelingAssistantProviderOfMethodEditPart extends Compone
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-<<<<<<< HEAD
 		types.add(ComponentsElementTypes.Parameter_3005);
-=======
-		types.add(ComponentsElementTypes.Parameter_3003);
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 		return types;
 	}
 

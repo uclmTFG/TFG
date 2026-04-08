@@ -157,14 +157,11 @@ public class UMLDiagramItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentsPackage.Literals.UML_DIAGRAM__ELEMENTS,
-<<<<<<< HEAD
 				 ComponentsFactory.eINSTANCE.createPackage()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(ComponentsPackage.Literals.UML_DIAGRAM__ELEMENTS,
-=======
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 				 ComponentsFactory.eINSTANCE.createClas()));
 
 		newChildDescriptors.add

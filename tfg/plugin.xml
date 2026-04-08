@@ -7,11 +7,7 @@
 <plugin>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
-<<<<<<< HEAD
       <!-- @generated mof -->
-=======
-      <!-- @generated mot -->
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
       <package
             uri="components"
             class="components.ComponentsPackage"/>

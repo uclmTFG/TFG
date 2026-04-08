@@ -35,7 +35,6 @@ public class ClasClasOperationsCompartmentEditPart extends ListCompartmentEditPa
 	/**
 	* @generated
 	*/
-<<<<<<< HEAD
 	public static final int VISUAL_ID = 7004;
 
 	/**
@@ -99,71 +98,6 @@ public class ClasClasOperationsCompartmentEditPart extends ListCompartmentEditPa
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
 			if (type == ComponentsElementTypes.Method_3004) {
-=======
-	public static final int VISUAL_ID = 7002;
-
-	/**
-	* @generated
-	*/
-	public ClasClasOperationsCompartmentEditPart(View view) {
-		super(view);
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean hasModelChildrenChanged(Notification evt) {
-		return false;
-	}
-
-	/**
-	* @generated
-	*/
-	public String getCompartmentName() {
-		return Messages.ClasClasOperationsCompartmentEditPart_title;
-	}
-
-	/**
-	* @generated
-	*/
-	public IFigure createFigure() {
-		ResizableCompartmentFigure result = (ResizableCompartmentFigure) super.createFigure();
-		result.setTitleVisibility(false);
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	protected void createDefaultEditPolicies() {
-		super.createDefaultEditPolicies();
-		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new ClasClasOperationsCompartmentItemSemanticEditPolicy());
-		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
-				new CreationEditPolicyWithCustomReparent(ComponentsVisualIDRegistry.TYPED_INSTANCE));
-		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new ClasClasOperationsCompartmentCanonicalEditPolicy());
-	}
-
-	/**
-	* @generated
-	*/
-	protected void setRatio(Double ratio) {
-		if (getFigure().getParent().getLayoutManager() instanceof ConstrainedToolbarLayout) {
-			super.setRatio(ratio);
-		}
-	}
-
-	/**
-	* @generated
-	*/
-	public EditPart getTargetEditPart(Request request) {
-		if (request instanceof CreateViewAndElementRequest) {
-			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
-					.getCreateElementRequestAdapter();
-			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == ComponentsElementTypes.Method_3002) {
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

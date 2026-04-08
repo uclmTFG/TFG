@@ -295,11 +295,7 @@ public class MethodVisibilityNameReturnTyp2EditPart extends CompartmentEditPart 
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-<<<<<<< HEAD
 			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.Method_3007, getParserElement(),
-=======
-			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.Method_3004, getParserElement(),
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 					ComponentsVisualIDRegistry
 							.getType(components.diagram.edit.parts.MethodVisibilityNameReturnTyp2EditPart.VISUAL_ID));
 		}

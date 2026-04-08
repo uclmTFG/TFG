@@ -295,11 +295,7 @@ public class ParameterNameTypeEditPart extends CompartmentEditPart implements IT
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-<<<<<<< HEAD
 			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.Parameter_3005, getParserElement(),
-=======
-			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.Parameter_3003, getParserElement(),
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 					ComponentsVisualIDRegistry
 							.getType(components.diagram.edit.parts.ParameterNameTypeEditPart.VISUAL_ID));
 		}

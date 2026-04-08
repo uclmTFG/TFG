@@ -63,7 +63,6 @@ public class EnumerationEnumerationLiteralsCompartmentCanonicalEditPolicy extend
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<ComponentsNodeDescriptor> childDescriptors = ComponentsDiagramUpdater
-<<<<<<< HEAD
 				.getEnumerationEnumerationLiteralsCompartment_7008SemanticChildren(viewObject);
 		for (ComponentsNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
@@ -95,39 +94,6 @@ public class EnumerationEnumerationLiteralsCompartmentCanonicalEditPolicy extend
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<ComponentsNodeDescriptor> childDescriptors = ComponentsDiagramUpdater
 				.getEnumerationEnumerationLiteralsCompartment_7008SemanticChildren((View) getHost().getModel());
-=======
-				.getEnumerationEnumerationLiteralsCompartment_7006SemanticChildren(viewObject);
-		for (ComponentsNodeDescriptor d : childDescriptors) {
-			result.add(d.getModelElement());
-		}
-		return result;
-	}
-
-	/**
-	* @generated
-	*/
-	protected boolean isOrphaned(Collection<EObject> semanticChildren, final View view) {
-		return isMyDiagramElement(view) && !semanticChildren.contains(view.getElement());
-	}
-
-	/**
-	* @generated
-	*/
-	private boolean isMyDiagramElement(View view) {
-		return EnumLiteralEditPart.VISUAL_ID == ComponentsVisualIDRegistry.getVisualID(view);
-	}
-
-	/**
-	* @generated
-	*/
-	protected void refreshSemantic() {
-		if (resolveSemanticElement() == null) {
-			return;
-		}
-		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
-		List<ComponentsNodeDescriptor> childDescriptors = ComponentsDiagramUpdater
-				.getEnumerationEnumerationLiteralsCompartment_7006SemanticChildren((View) getHost().getModel());
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

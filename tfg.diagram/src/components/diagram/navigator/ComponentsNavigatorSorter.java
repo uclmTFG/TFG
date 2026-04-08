@@ -15,21 +15,12 @@ public class ComponentsNavigatorSorter extends ViewerSorter {
 	/**
 	* @generated
 	*/
-<<<<<<< HEAD
 	private static final int GROUP_CATEGORY = 7014;
 
 	/**
 	* @generated
 	*/
 	private static final int SHORTCUTS_CATEGORY = 7013;
-=======
-	private static final int GROUP_CATEGORY = 7008;
-
-	/**
-	* @generated
-	*/
-	private static final int SHORTCUTS_CATEGORY = 7007;
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 
 	/**
 	* @generated

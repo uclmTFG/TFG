@@ -31,7 +31,6 @@ public interface ComponentsFactory extends EFactory {
 	UMLDiagram createUMLDiagram();
 
 	/**
-<<<<<<< HEAD
 	 * Returns a new object of class '<em>Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -41,8 +40,6 @@ public interface ComponentsFactory extends EFactory {
 	Package createPackage();
 
 	/**
-=======
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	 * Returns a new object of class '<em>Clas</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -295,11 +295,7 @@ public class EnumLiteralNameEditPart extends CompartmentEditPart implements ITex
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-<<<<<<< HEAD
 			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.EnumLiteral_3009, getParserElement(),
-=======
-			parser = ComponentsParserProvider.getParser(ComponentsElementTypes.EnumLiteral_3005, getParserElement(),
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 					ComponentsVisualIDRegistry
 							.getType(components.diagram.edit.parts.EnumLiteralNameEditPart.VISUAL_ID));
 		}

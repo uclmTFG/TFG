@@ -2,7 +2,6 @@
  */
 package components.impl;
 
-<<<<<<< HEAD
 import components.Aggregation;
 import components.Association;
 import components.Clas;
@@ -148,123 +147,6 @@ public class ComponentsFactoryImpl extends EFactoryImpl implements ComponentsFac
 	public components.Package createPackage() {
 		PackageImpl package_ = new PackageImpl();
 		return package_;
-=======
-import components.*;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.EPackage;
-
-import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
-import org.eclipse.emf.ecore.plugin.EcorePlugin;
-
-/**
- * <!-- begin-user-doc -->
- * An implementation of the model <b>Factory</b>.
- * <!-- end-user-doc -->
- * @generated
- */
-public class ComponentsFactoryImpl extends EFactoryImpl implements ComponentsFactory {
-	/**
-	 * Creates the default factory implementation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static ComponentsFactory init() {
-		try {
-			ComponentsFactory theComponentsFactory = (ComponentsFactory)EPackage.Registry.INSTANCE.getEFactory(ComponentsPackage.eNS_URI);
-			if (theComponentsFactory != null) {
-				return theComponentsFactory;
-			}
-		}
-		catch (Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new ComponentsFactoryImpl();
-	}
-
-	/**
-	 * Creates an instance of the factory.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComponentsFactoryImpl() {
-		super();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EObject create(EClass eClass) {
-		switch (eClass.getClassifierID()) {
-			case ComponentsPackage.UML_DIAGRAM: return createUMLDiagram();
-			case ComponentsPackage.CLAS: return createClas();
-			case ComponentsPackage.INTERFACE: return createInterface();
-			case ComponentsPackage.ENUMERATION: return createEnumeration();
-			case ComponentsPackage.ENUM_LITERAL: return createEnumLiteral();
-			case ComponentsPackage.PROPERTY: return createProperty();
-			case ComponentsPackage.METHOD: return createMethod();
-			case ComponentsPackage.PARAMETER: return createParameter();
-			case ComponentsPackage.GENERALIZATION: return createGeneralization();
-			case ComponentsPackage.IMPLEMENTATION: return createImplementation();
-			case ComponentsPackage.ASSOCIATION: return createAssociation();
-			case ComponentsPackage.AGGREGATION: return createAggregation();
-			case ComponentsPackage.COMPOSITION: return createComposition();
-			case ComponentsPackage.DEPENDENCY: return createDependency();
-			case ComponentsPackage.NOTE: return createNote();
-			case ComponentsPackage.NOTE_LINK: return createNoteLink();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
-		switch (eDataType.getClassifierID()) {
-			case ComponentsPackage.VISIBILITY:
-				return createVisibilityFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
-		switch (eDataType.getClassifierID()) {
-			case ComponentsPackage.VISIBILITY:
-				return convertVisibilityToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public UMLDiagram createUMLDiagram() {
-		UMLDiagramImpl umlDiagram = new UMLDiagramImpl();
-		return umlDiagram;
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
 	}
 
 	/**
