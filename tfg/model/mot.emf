@@ -1,7 +1,7 @@
 @namespace(
-	uri="mof", 
-	prefix="mof")
-package mof;
+	uri="components", 
+	prefix="components")
+package components;
 
 @gmf.diagram()
 class UMLDiagram {
@@ -20,12 +20,6 @@ enum Visibility {
 abstract class Classifier {
 	attr String name;
 	attr boolean isAbstract;
-}
-
-@gmf.node(label="name", figure="rectangle")
-class Package extends Classifier {
-	@gmf.compartment
-	val Classifier[*] elements;
 }
 
 @gmf.node(label="name", figure="rectangle", 
@@ -153,7 +147,4 @@ class NoteLink {
 	ref Note[1] note;
 	ref Classifier[1] element;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> branch 'master' of https://github.com/uclmTFG/TFG.git
