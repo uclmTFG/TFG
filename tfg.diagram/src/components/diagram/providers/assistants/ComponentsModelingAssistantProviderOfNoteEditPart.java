@@ -1,0 +1,96 @@
+/*
+ * 
+ */
+package components.diagram.providers.assistants;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+import org.eclipse.core.runtime.IAdaptable;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
+import org.eclipse.gmf.runtime.emf.type.core.IElementType;
+
+import components.diagram.edit.parts.ClasEditPart;
+import components.diagram.edit.parts.EnumerationEditPart;
+import components.diagram.edit.parts.InterfaceEditPart;
+import components.diagram.edit.parts.NoteEditPart;
+import components.diagram.providers.ComponentsElementTypes;
+import components.diagram.providers.ComponentsModelingAssistantProvider;
+
+/**
+ * @generated
+ */
+public class ComponentsModelingAssistantProviderOfNoteEditPart extends ComponentsModelingAssistantProvider {
+
+	/**
+	* @generated
+	*/
+	@Override
+
+	public List<IElementType> getRelTypesOnSource(IAdaptable source) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSource((NoteEditPart) sourceEditPart);
+	}
+
+	/**
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSource(NoteEditPart source) {
+		List<IElementType> types = new ArrayList<IElementType>(1);
+		types.add(ComponentsElementTypes.NoteLink_4007);
+		return types;
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+
+	public List<IElementType> getRelTypesOnSourceAndTarget(IAdaptable source, IAdaptable target) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		IGraphicalEditPart targetEditPart = (IGraphicalEditPart) target.getAdapter(IGraphicalEditPart.class);
+		return doGetRelTypesOnSourceAndTarget((NoteEditPart) sourceEditPart, targetEditPart);
+	}
+
+	/**
+	* @generated
+	*/
+	public List<IElementType> doGetRelTypesOnSourceAndTarget(NoteEditPart source, IGraphicalEditPart targetEditPart) {
+		List<IElementType> types = new LinkedList<IElementType>();
+		if (targetEditPart instanceof ClasEditPart) {
+			types.add(ComponentsElementTypes.NoteLink_4007);
+		}
+		if (targetEditPart instanceof InterfaceEditPart) {
+			types.add(ComponentsElementTypes.NoteLink_4007);
+		}
+		if (targetEditPart instanceof EnumerationEditPart) {
+			types.add(ComponentsElementTypes.NoteLink_4007);
+		}
+		return types;
+	}
+
+	/**
+	* @generated
+	*/
+	@Override
+
+	public List<IElementType> getTypesForTarget(IAdaptable source, IElementType relationshipType) {
+		IGraphicalEditPart sourceEditPart = (IGraphicalEditPart) source.getAdapter(IGraphicalEditPart.class);
+		return doGetTypesForTarget((NoteEditPart) sourceEditPart, relationshipType);
+	}
+
+	/**
+	* @generated
+	*/
+	public List<IElementType> doGetTypesForTarget(NoteEditPart source, IElementType relationshipType) {
+		List<IElementType> types = new ArrayList<IElementType>();
+		if (relationshipType == ComponentsElementTypes.NoteLink_4007) {
+			types.add(ComponentsElementTypes.Clas_2001);
+			types.add(ComponentsElementTypes.Interface_2002);
+			types.add(ComponentsElementTypes.Enumeration_2003);
+		}
+		return types;
+	}
+
+}
