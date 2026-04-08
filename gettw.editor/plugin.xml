@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated mof -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="mof.presentation.MofModelWizardID"
+            name="%_UI_MofModelWizard_label"
+            class="mof.presentation.MofModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/MofModelFile.gif">
+         <description>%_UI_MofModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated mof -->
+      <editor
+            id="mof.presentation.MofEditorID"
+            name="%_UI_MofEditor_label"
+            icon="icons/full/obj16/MofModelFile.gif"
+            extensions="mof"
+            class="mof.presentation.MofEditor"
+            contributorClass="mof.presentation.MofActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
