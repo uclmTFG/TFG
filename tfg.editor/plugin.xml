@@ -12,12 +12,12 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="components.presentation.ComponentsModelWizardID"
-            name="%_UI_ComponentsModelWizard_label"
-            class="components.presentation.ComponentsModelWizard"
+            id="mof.presentation.MofModelWizardID"
+            name="%_UI_MofModelWizard_label"
+            class="mof.presentation.MofModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/ComponentsModelFile.gif">
-         <description>%_UI_ComponentsModelWizard_description</description>
+            icon="icons/full/obj16/MofModelFile.gif">
+         <description>%_UI_MofModelWizard_description</description>
          <selection class="org.eclipse.core.resources.IResource"/>
       </wizard>
    </extension>
@@ -25,12 +25,12 @@
    <extension point="org.eclipse.ui.editors">
       <!-- @generated mof -->
       <editor
-            id="components.presentation.ComponentsEditorID"
-            name="%_UI_ComponentsEditor_label"
-            icon="icons/full/obj16/ComponentsModelFile.gif"
-            extensions="components"
-            class="components.presentation.ComponentsEditor"
-            contributorClass="components.presentation.ComponentsActionBarContributor">
+            id="mof.presentation.MofEditorID"
+            name="%_UI_MofEditor_label"
+            icon="icons/full/obj16/MofModelFile.gif"
+            extensions="mof"
+            class="mof.presentation.MofEditor"
+            contributorClass="mof.presentation.MofActionBarContributor">
       </editor>
    </extension>
 

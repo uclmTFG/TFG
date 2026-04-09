@@ -4,12 +4,12 @@ Bundle-Name: %pluginName
 Bundle-SymbolicName: tfg.diagram; singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: components.diagram.part.ComponentsDiagramEditorPlugin
+Bundle-Activator: mof.diagram.part.MofDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: components.diagram.edit.parts, 
- components.diagram.part,
- components.diagram.providers
+Export-Package: mof.diagram.edit.parts, 
+ mof.diagram.part,
+ mof.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources,
  org.eclipse.core.expressions,

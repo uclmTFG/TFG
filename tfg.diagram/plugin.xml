@@ -7,13 +7,13 @@
 
    <extension point="org.eclipse.team.core.fileTypes" id="repo-ftype">
       <?gmfgen generated="true"?>
-      <fileTypes type="text" extension="components_diagram"/>
+      <fileTypes type="text" extension="mof_diagram"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.extension_parser" id="resource-factory">
       <?gmfgen generated="true"?>
       <parser
-         type="components_diagram"
+         type="mof_diagram"
          class="org.eclipse.gmf.runtime.emf.core.resources.GMFResourceFactory">
       </parser>
    </extension>
@@ -21,14 +21,14 @@
    <extension point="org.eclipse.ui.editors" id="gmf-editor">
       <?gmfgen generated="true"?>
       <editor
-         id="components.diagram.part.ComponentsDiagramEditorID"
+         id="mof.diagram.part.MofDiagramEditorID"
          name="%editorName"
-         icon="icons/obj16/ComponentsDiagramFile.gif"
-         extensions="components_diagram"
+         icon="icons/obj16/MofDiagramFile.gif"
+         extensions="mof_diagram"
          default="true"
-         class="components.diagram.part.ComponentsDiagramEditor"
-         matchingStrategy="components.diagram.part.ComponentsMatchingStrategy"
-         contributorClass="components.diagram.part.ComponentsDiagramActionBarContributor">
+         class="mof.diagram.part.MofDiagramEditor"
+         matchingStrategy="mof.diagram.part.MofMatchingStrategy"
+         contributorClass="mof.diagram.part.MofDiagramActionBarContributor">
       </editor>
    </extension>
    
@@ -36,7 +36,7 @@
       <?gmfgen generated="true"?>
       <context
          description="%context.description"
-         id="components.diagram.ui.diagramContext"
+         id="mof.diagram.ui.diagramContext"
          name="%context.name"
          parentId="org.eclipse.gmf.runtime.diagram.ui.diagramContext">
       </context>
@@ -46,10 +46,10 @@
       <?gmfgen generated="true"?>
   	  <wizard
   	     name="%newWizardName"
-  	     icon="icons/obj16/ComponentsDiagramFile.gif"
+  	     icon="icons/obj16/MofDiagramFile.gif"
   	     category="org.eclipse.ui.Examples"
-  	     class="components.diagram.part.ComponentsCreationWizard"
-  	     id="components.diagram.part.ComponentsCreationWizardID">
+  	     class="mof.diagram.part.MofCreationWizard"
+  	     id="mof.diagram.part.MofCreationWizardID">
   	  	 <description>%newWizardDesc</description>  
       </wizard>
    </extension>
@@ -58,11 +58,11 @@
       <?gmfgen generated="true"?>
       <objectContribution
             id="tfg.diagram.InitDiagram"
-            nameFilter="*.components"
+            nameFilter="*.mof"
             objectClass="org.eclipse.core.resources.IFile">
          <action
                label="%initDiagramActionLabel"
-               class="components.diagram.part.ComponentsInitDiagramFileAction"
+               class="mof.diagram.part.MofInitDiagramFileAction"
                menubarPath="additions"
                enablesFor="1"
                id="tfg.diagram.InitDiagramAction">
@@ -74,9 +74,9 @@
       <?gmfgen generated="true"?>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.DiagramGlobalActionHandlerProvider"
-         id="ComponentsPresentation">
+         id="MofPresentation">
          <Priority name="Lowest"/>
-         <ViewId id="components.diagram.part.ComponentsDiagramEditorID">
+         <ViewId id="mof.diagram.part.MofDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="delete"/>
             </ElementType>
@@ -91,9 +91,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.printing.render.providers.DiagramWithPrintGlobalActionHandlerProvider"
-         id="ComponentsPresentationPrint">
+         id="MofPresentationPrint">
          <Priority name="Lowest"/>
-         <ViewId id="components.diagram.part.ComponentsDiagramEditorID">
+         <ViewId id="mof.diagram.part.MofDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="print"/>
             </ElementType>
@@ -101,9 +101,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
          class="org.eclipse.gmf.runtime.diagram.ui.providers.ide.providers.DiagramIDEGlobalActionHandlerProvider"
-         id="ComponentsPresentationIDE">
+         id="MofPresentationIDE">
          <Priority name="Lowest"/>
-         <ViewId id="components.diagram.part.ComponentsDiagramEditorID">
+         <ViewId id="mof.diagram.part.MofDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="bookmark"/>
             </ElementType>
@@ -111,9 +111,9 @@
       </GlobalActionHandlerProvider>
       <GlobalActionHandlerProvider
             class="org.eclipse.gmf.runtime.diagram.ui.render.providers.DiagramUIRenderGlobalActionHandlerProvider"
-            id="ComponentsRender">
+            id="MofRender">
          <Priority name="Lowest"/>
-         <ViewId id="components.diagram.part.ComponentsDiagramEditorID">
+         <ViewId id="mof.diagram.part.MofDiagramEditorID">
             <ElementType class="org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart">
                <GlobalActionId actionId="cut"/>
                <GlobalActionId actionId="copy"/>
@@ -126,13 +126,13 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.markerNavigationProviders" id="markers-navigation">
       <?gmfgen generated="true"?>
-      <MarkerNavigationProvider class="components.diagram.providers.ComponentsMarkerNavigationProvider">
+      <MarkerNavigationProvider class="mof.diagram.providers.MofMarkerNavigationProvider">
          <MarkerType name="tfg.diagram.diagnostic"/>
          <Priority name="Lowest"/>
       </MarkerNavigationProvider>
    </extension>
 
-   <extension id="diagnostic" name="Components Plugin problems" point="org.eclipse.core.resources.markers">
+   <extension id="diagnostic" name="Mof Plugin problems" point="org.eclipse.core.resources.markers">
       <?gmfgen generated="true"?>
       <super type="org.eclipse.core.resources.problemmarker"/>
       <super type="org.eclipse.gmf.runtime.common.ui.services.marker"/>
@@ -141,7 +141,7 @@
 
    <extension id="validationDecoratorProvider" name="ValidationDecorations" point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="components.diagram.providers.ComponentsValidationDecoratorProvider">
+      <decoratorProvider class="mof.diagram.providers.MofValidationDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.diagram.ui.editparts.IPrimaryEditPart(org.eclipse.gmf.runtime.diagram.ui)" id="PRIMARY_VIEW"/>
          <context decoratorTargets="PRIMARY_VIEW"/>
@@ -150,7 +150,7 @@
 
    <extension point="org.eclipse.core.runtime.preferences" id="prefs">
       <?gmfgen generated="true"?>
-      <initializer class="components.diagram.preferences.DiagramPreferenceInitializer"/>
+      <initializer class="mof.diagram.preferences.DiagramPreferenceInitializer"/>
    </extension>
 
    <extension point="org.eclipse.ui.preferencePages" id="prefpages">
@@ -158,31 +158,31 @@
       <page
             id="tfg.diagram.general"
             name="%prefpage.tfg.diagram.general"
-            class="components.diagram.preferences.DiagramGeneralPreferencePage">
+            class="mof.diagram.preferences.DiagramGeneralPreferencePage">
       </page>
       <page
             id="tfg.diagram.appearance"
             name="%prefpage.tfg.diagram.appearance"
             category="tfg.diagram.general"
-            class="components.diagram.preferences.DiagramAppearancePreferencePage">
+            class="mof.diagram.preferences.DiagramAppearancePreferencePage">
       </page>
       <page
             id="tfg.diagram.connections"
             name="%prefpage.tfg.diagram.connections"
             category="tfg.diagram.general"
-            class="components.diagram.preferences.DiagramConnectionsPreferencePage">
+            class="mof.diagram.preferences.DiagramConnectionsPreferencePage">
       </page>
       <page
             id="tfg.diagram.printing"
             name="%prefpage.tfg.diagram.printing"
             category="tfg.diagram.general"
-            class="components.diagram.preferences.DiagramPrintingPreferencePage">
+            class="mof.diagram.preferences.DiagramPrintingPreferencePage">
       </page>
       <page
             id="tfg.diagram.rulersAndGrid"
             name="%prefpage.tfg.diagram.rulersAndGrid"
             category="tfg.diagram.general"
-            class="components.diagram.preferences.DiagramRulersAndGridPreferencePage">
+            class="mof.diagram.preferences.DiagramRulersAndGridPreferencePage">
       </page>
    </extension>
 
@@ -190,7 +190,7 @@
       <?gmfgen generated="true"?>
       <propertyContributor
             contributorId="tfg.diagram"
-            labelProvider="components.diagram.sheet.ComponentsSheetLabelProvider">
+            labelProvider="mof.diagram.sheet.MofSheetLabelProvider">
          <propertyCategory category="domain"/>
          <propertyCategory category="visual"/>
          <propertyCategory category="extra"/>
@@ -241,46 +241,46 @@
          <propertySection
             id="property.section.domain" 
             tab="property.tab.domain"
-            class="components.diagram.sheet.ComponentsPropertySection">
+            class="mof.diagram.sheet.MofPropertySection">
             <input type="org.eclipse.gmf.runtime.notation.View"/>
             <input type="org.eclipse.gef.EditPart"/>
-            <input type="components.diagram.navigator.ComponentsAbstractNavigatorItem"/>
+            <input type="mof.diagram.navigator.MofAbstractNavigatorItem"/>
          </propertySection>
       </propertySections>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.core.viewProviders" id="view-provider">
       <?gmfgen generated="true"?>
-      <viewProvider class="components.diagram.providers.ComponentsViewProvider">
+      <viewProvider class="mof.diagram.providers.MofViewProvider">
          <Priority name="Lowest"/>
          <object id="referencing-diagrams" class="org.eclipse.gmf.runtime.notation.Diagram">
-            <method name="getType()" value="components"/>
+            <method name="getType()" value="mof"/>
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Components"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,2005,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001,4002,4003,4004,4005,4006,4007"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mof"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.editpartProviders" id="ep-provider">
       <?gmfgen generated="true"?>
-      <editpartProvider class="components.diagram.providers.ComponentsEditPartProvider">
+      <editpartProvider class="mof.diagram.providers.MofEditPartProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Diagram" id="generated-diagram">
-            <method name="getType()" value="Components"/>
+            <method name="getType()" value="Mof"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005,3001,3002,3003,3004,3005,3006,3007,3008,3009"/>
+            <method name="getType()" value="2001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
-            <method name="getType()" value="4001,4002,4003,4004,4005,4006,4007"/>
+            <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5010,5011,5012,5013,5014,5009,5004,5001,5003,5002,5006,5005,5008,5007"/>
+            <method name="getType()" value="5001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value="7001,7002,7003,7004,7005,7006,7007,7008,7009,7010,7011,7012"/>
+            <method name="getType()" value=""/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -289,80 +289,15 @@
    
    <extension point="org.eclipse.gmf.runtime.emf.ui.modelingAssistantProviders" id="modelassist-provider">
       <?gmfgen generated="true"?>
-      <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfUMLDiagramEditPart">
+      <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfUMLDiagramEditPart">
          <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.UMLDiagramEditPart" id="UMLDiagram_1000"/>
+         <object class="mof.diagram.edit.parts.UMLDiagramEditPart" id="UMLDiagram_1000"/>
          <context elements="UMLDiagram_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfPackageEditPart">
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfClasEditPart">
          <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.PackageEditPart" id="Package_2001"/>
-         <context elements="Package_2001"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfClasEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.ClasEditPart" id="Clas_2002"/>
-         <context elements="Clas_2002"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfInterfaceEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.InterfaceEditPart" id="Interface_2003"/>
-         <context elements="Interface_2003"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfEnumerationEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.EnumerationEditPart" id="Enumeration_2004"/>
-         <context elements="Enumeration_2004"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfNoteEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.NoteEditPart" id="Note_2005"/>
-         <context elements="Note_2005"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfPackage2EditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.Package2EditPart" id="Package_3001"/>
-         <context elements="Package_3001"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfClas2EditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.Clas2EditPart" id="Clas_3002"/>
-         <context elements="Clas_3002"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfPropertyEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.PropertyEditPart" id="Property_3003"/>
-         <context elements="Property_3003"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfMethodEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.MethodEditPart" id="Method_3004"/>
-         <context elements="Method_3004"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfParameterEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.ParameterEditPart" id="Parameter_3005"/>
-         <context elements="Parameter_3005"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfInterface2EditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.Interface2EditPart" id="Interface_3006"/>
-         <context elements="Interface_3006"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfMethod2EditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.Method2EditPart" id="Method_3007"/>
-         <context elements="Method_3007"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfEnumeration2EditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.Enumeration2EditPart" id="Enumeration_3008"/>
-         <context elements="Enumeration_3008"/>
-      </modelingAssistantProvider>
-            <modelingAssistantProvider class="components.diagram.providers.assistants.ComponentsModelingAssistantProviderOfEnumLiteralEditPart">
-         <Priority name="Lowest"/>
-         <object class="components.diagram.edit.parts.EnumLiteralEditPart" id="EnumLiteral_3009"/>
-         <context elements="EnumLiteral_3009"/>
+         <object class="mof.diagram.edit.parts.ClasEditPart" id="Clas_2001"/>
+         <context elements="Clas_2001"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -370,24 +305,24 @@
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.iconProviders" id="icon-provider">
       <?gmfgen generated="true"?>
-      <IconProvider class="components.diagram.providers.ComponentsIconProvider">
+      <IconProvider class="mof.diagram.providers.MofIconProvider">
          <Priority name="Low"/>
       </IconProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.common.ui.services.parserProviders" id="parser-provider">
       <?gmfgen generated="true"?>
-      <ParserProvider class="components.diagram.providers.ComponentsParserProvider">
+      <ParserProvider class="mof.diagram.providers.MofParserProvider">
          <Priority name="Lowest"/>
       </ParserProvider>
    </extension>
 
    <extension point="org.eclipse.gmf.runtime.diagram.ui.decoratorProviders" id="decorator-provider">
       <?gmfgen generated="true"?>
-      <decoratorProvider class="components.diagram.providers.ComponentsShortcutsDecoratorProvider">
+      <decoratorProvider class="mof.diagram.providers.MofShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001,2002,2003,2004,2005"/>
+            <method name="getType()" value="2001"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -395,219 +330,34 @@
 
    <extension point="org.eclipse.gmf.runtime.emf.type.core.elementTypes" id="element-types">
       <?gmfgen generated="true"?>
-      <metamodel nsURI="components">
+      <metamodel nsURI="mof">
          <metamodelType
                id="tfg.diagram.UMLDiagram_1000"
                name="%metatype.name.UMLDiagram_1000"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="UMLDiagram"
-               edithelper="components.diagram.edit.helpers.UMLDiagramEditHelper">
+               edithelper="mof.diagram.edit.helpers.UMLDiagramEditHelper">
             <param name="semanticHint" value="1000"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="components">
+      <metamodel nsURI="mof">
          <metamodelType
-               id="tfg.diagram.Package_2001"
-               name="%metatype.name.Package_2001"
+               id="tfg.diagram.Clas_2001"
+               name="%metatype.name.Clas_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Package"
-               edithelper="components.diagram.edit.helpers.PackageEditHelper">
+               eclass="Clas"
+               edithelper="mof.diagram.edit.helpers.ClasEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
-      <metamodel nsURI="components">
-         <specializationType
-               id="tfg.diagram.Clas_2002"
-               name="%metatype.name.Clas_2002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="tfg.diagram.Clas_3002"/>
-            <param name="semanticHint" value="2002"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <specializationType
-               id="tfg.diagram.Interface_2003"
-               name="%metatype.name.Interface_2003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="tfg.diagram.Interface_3006"/>
-            <param name="semanticHint" value="2003"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <specializationType
-               id="tfg.diagram.Enumeration_2004"
-               name="%metatype.name.Enumeration_2004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="tfg.diagram.Enumeration_3008"/>
-            <param name="semanticHint" value="2004"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Note_2005"
-               name="%metatype.name.Note_2005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Note"
-               edithelper="components.diagram.edit.helpers.NoteEditHelper">
-            <param name="semanticHint" value="2005"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <specializationType
-               id="tfg.diagram.Package_3001"
-               name="%metatype.name.Package_3001"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="tfg.diagram.Package_2001"/>
-            <param name="semanticHint" value="3001"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Clas_3002"
-               name="%metatype.name.Clas_3002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Clas"
-               edithelper="components.diagram.edit.helpers.ClasEditHelper">
-            <param name="semanticHint" value="3002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Property_3003"
-               name="%metatype.name.Property_3003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Property"
-               edithelper="components.diagram.edit.helpers.PropertyEditHelper">
-            <param name="semanticHint" value="3003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Method_3004"
-               name="%metatype.name.Method_3004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Method"
-               edithelper="components.diagram.edit.helpers.MethodEditHelper">
-            <param name="semanticHint" value="3004"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Parameter_3005"
-               name="%metatype.name.Parameter_3005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Parameter"
-               edithelper="components.diagram.edit.helpers.ParameterEditHelper">
-            <param name="semanticHint" value="3005"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Interface_3006"
-               name="%metatype.name.Interface_3006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Interface"
-               edithelper="components.diagram.edit.helpers.InterfaceEditHelper">
-            <param name="semanticHint" value="3006"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <specializationType
-               id="tfg.diagram.Method_3007"
-               name="%metatype.name.Method_3007"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
-            <specializes id="tfg.diagram.Method_3004"/>
-            <param name="semanticHint" value="3007"/>
-         </specializationType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Enumeration_3008"
-               name="%metatype.name.Enumeration_3008"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Enumeration"
-               edithelper="components.diagram.edit.helpers.EnumerationEditHelper">
-            <param name="semanticHint" value="3008"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.EnumLiteral_3009"
-               name="%metatype.name.EnumLiteral_3009"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="EnumLiteral"
-               edithelper="components.diagram.edit.helpers.EnumLiteralEditHelper">
-            <param name="semanticHint" value="3009"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
+      <metamodel nsURI="mof">
          <metamodelType
                id="tfg.diagram.Generalization_4001"
                name="%metatype.name.Generalization_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
                eclass="Generalization"
-               edithelper="components.diagram.edit.helpers.GeneralizationEditHelper">
+               edithelper="mof.diagram.edit.helpers.GeneralizationEditHelper">
             <param name="semanticHint" value="4001"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Implementation_4002"
-               name="%metatype.name.Implementation_4002"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Implementation"
-               edithelper="components.diagram.edit.helpers.ImplementationEditHelper">
-            <param name="semanticHint" value="4002"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Association_4003"
-               name="%metatype.name.Association_4003"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Association"
-               edithelper="components.diagram.edit.helpers.AssociationEditHelper">
-            <param name="semanticHint" value="4003"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Aggregation_4004"
-               name="%metatype.name.Aggregation_4004"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Aggregation"
-               edithelper="components.diagram.edit.helpers.AggregationEditHelper">
-            <param name="semanticHint" value="4004"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Composition_4005"
-               name="%metatype.name.Composition_4005"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Composition"
-               edithelper="components.diagram.edit.helpers.CompositionEditHelper">
-            <param name="semanticHint" value="4005"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.Dependency_4006"
-               name="%metatype.name.Dependency_4006"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Dependency"
-               edithelper="components.diagram.edit.helpers.DependencyEditHelper">
-            <param name="semanticHint" value="4006"/>
-         </metamodelType>
-      </metamodel>
-      <metamodel nsURI="components">
-         <metamodelType
-               id="tfg.diagram.NoteLink_4007"
-               name="%metatype.name.NoteLink_4007"
-               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="NoteLink"
-               edithelper="components.diagram.edit.helpers.NoteLinkEditHelper">
-            <param name="semanticHint" value="4007"/>
          </metamodelType>
       </metamodel>
    </extension>
@@ -623,27 +373,8 @@
       </clientContext> 
       <binding context="tfg.diagram.TypeContext">
          <elementType ref="tfg.diagram.UMLDiagram_1000"/>
-         <elementType ref="tfg.diagram.Package_2001"/>
-         <elementType ref="tfg.diagram.Clas_2002"/>
-         <elementType ref="tfg.diagram.Interface_2003"/>
-         <elementType ref="tfg.diagram.Enumeration_2004"/>
-         <elementType ref="tfg.diagram.Note_2005"/>
-         <elementType ref="tfg.diagram.Package_3001"/>
-         <elementType ref="tfg.diagram.Clas_3002"/>
-         <elementType ref="tfg.diagram.Property_3003"/>
-         <elementType ref="tfg.diagram.Method_3004"/>
-         <elementType ref="tfg.diagram.Parameter_3005"/>
-         <elementType ref="tfg.diagram.Interface_3006"/>
-         <elementType ref="tfg.diagram.Method_3007"/>
-         <elementType ref="tfg.diagram.Enumeration_3008"/>
-         <elementType ref="tfg.diagram.EnumLiteral_3009"/>
+         <elementType ref="tfg.diagram.Clas_2001"/>
          <elementType ref="tfg.diagram.Generalization_4001"/>
-         <elementType ref="tfg.diagram.Implementation_4002"/>
-         <elementType ref="tfg.diagram.Association_4003"/>
-         <elementType ref="tfg.diagram.Aggregation_4004"/>
-         <elementType ref="tfg.diagram.Composition_4005"/>
-         <elementType ref="tfg.diagram.Dependency_4006"/>
-         <elementType ref="tfg.diagram.NoteLink_4007"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>
@@ -654,7 +385,7 @@
            type="org.eclipse.emf.common.ui.URIEditorInput"
            namespace="tfg.diagram"
            properties="isURIEditorInput"
-           class="components.diagram.part.ComponentsUriEditorInputTester">
+           class="mof.diagram.part.MofUriEditorInputTester">
        </propertyTester>
    </extension>
 
@@ -665,7 +396,7 @@
            type="org.eclipse.gmf.runtime.notation.View"
            namespace="tfg.diagram"
            properties="isShortcut"
-           class="components.diagram.part.ComponentsShortcutPropertyTester">
+           class="mof.diagram.part.MofShortcutPropertyTester">
        </propertyTester>
    </extension>
 
@@ -691,17 +422,17 @@
             id="tfg.diagram.resourceContent" 
             name="%navigatorContentName" 
             priority="normal" 
-            contentProvider="components.diagram.navigator.ComponentsNavigatorContentProvider" 
-            labelProvider="components.diagram.navigator.ComponentsNavigatorLabelProvider"
-            icon="icons/obj16/ComponentsDiagramFile.gif"
+            contentProvider="mof.diagram.navigator.MofNavigatorContentProvider" 
+            labelProvider="mof.diagram.navigator.MofNavigatorLabelProvider"
+            icon="icons/obj16/MofDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="components_diagram"/>
+        	      <test property="org.eclipse.core.resources.extension" value="mof_diagram"/>
                </and>
-               <instanceof value="components.diagram.navigator.ComponentsAbstractNavigatorItem"/>
+               <instanceof value="mof.diagram.navigator.MofAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
            	      <test property="tfg.diagram.isShortcut"/>
            	   </adapt>
@@ -709,7 +440,7 @@
          </triggerPoints>
          <possibleChildren>
             <or>
-         	   <instanceof value="components.diagram.navigator.ComponentsAbstractNavigatorItem"/>
+         	   <instanceof value="mof.diagram.navigator.MofAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
            	      <test property="tfg.diagram.isShortcut"/>
            	   </adapt>
@@ -717,14 +448,14 @@
          </possibleChildren>
          <commonSorter 
                id="tfg.diagram.navigatorSorter" 
-               class="components.diagram.navigator.ComponentsNavigatorSorter">
+               class="mof.diagram.navigator.MofNavigatorSorter">
             <parentExpression>
                <or>
 	              <and>
     	             <instanceof value="org.eclipse.core.resources.IFile"/>
-        	         <test property="org.eclipse.core.resources.extension" value="components_diagram"/>
+        	         <test property="org.eclipse.core.resources.extension" value="mof_diagram"/>
                   </and>
-                  <instanceof value="components.diagram.navigator.ComponentsAbstractNavigatorItem"/>
+                  <instanceof value="mof.diagram.navigator.MofAbstractNavigatorItem"/>
                </or>
             </parentExpression>
          </commonSorter>
@@ -733,29 +464,29 @@
             id="tfg.diagram.domainResourceContent" 
             name="%domainNavigatorContentName" 
             priority="normal" 
-            contentProvider="components.diagram.navigator.ComponentsDomainNavigatorContentProvider" 
-            labelProvider="components.diagram.navigator.ComponentsDomainNavigatorLabelProvider"
-            icon="icons/obj16/ComponentsDiagramFile.gif"
+            contentProvider="mof.diagram.navigator.MofDomainNavigatorContentProvider" 
+            labelProvider="mof.diagram.navigator.MofDomainNavigatorLabelProvider"
+            icon="icons/obj16/MofDiagramFile.gif"
             activeByDefault="true">
          <triggerPoints>
             <or>
 	           <and>
     	          <instanceof value="org.eclipse.core.resources.IFile"/>
-        	      <test property="org.eclipse.core.resources.extension" value="components"/>
+        	      <test property="org.eclipse.core.resources.extension" value="mof"/>
                </and>
-               <instanceof value="components.diagram.navigator.ComponentsDomainNavigatorItem"/>
+               <instanceof value="mof.diagram.navigator.MofDomainNavigatorItem"/>
             </or>
          </triggerPoints>
          <possibleChildren>
-            <instanceof value="components.diagram.navigator.ComponentsDomainNavigatorItem"/>
+            <instanceof value="mof.diagram.navigator.MofDomainNavigatorItem"/>
          </possibleChildren>
       </navigatorContent>
       <actionProvider
             id="tfg.diagram.navigatorActionProvider"
-            class="components.diagram.navigator.ComponentsNavigatorActionProvider">
+            class="mof.diagram.navigator.MofNavigatorActionProvider">
          <enablement>
             <or>
-               <instanceof value="components.diagram.navigator.ComponentsAbstractNavigatorItem"/>
+               <instanceof value="mof.diagram.navigator.MofAbstractNavigatorItem"/>
            	   <adapt type="org.eclipse.gmf.runtime.notation.View">
            	      <test property="tfg.diagram.isShortcut"/>
            	   </adapt>
@@ -768,7 +499,7 @@
       <?gmfgen generated="true"?>
       <linkHelper
             id="tfg.diagram.navigatorLinkHelper"
-            class="components.diagram.navigator.ComponentsNavigatorLinkHelper">
+            class="mof.diagram.navigator.MofNavigatorLinkHelper">
          <editorInputEnablement>
             <and>
                <instanceof value="org.eclipse.emf.common.ui.URIEditorInput"/>
@@ -776,7 +507,7 @@
             </and>
          </editorInputEnablement>
          <selectionEnablement>
-            <instanceof value="components.diagram.navigator.ComponentsAbstractNavigatorItem"/>
+            <instanceof value="mof.diagram.navigator.MofAbstractNavigatorItem"/>
          </selectionEnablement>
       </linkHelper>
    </extension>
@@ -784,17 +515,17 @@
       <?gmfgen generated="true"?>
       <command
          categoryId="org.eclipse.ui.category.edit"
-         defaultHandler="components.diagram.part.ComponentsDiagramUpdateCommand"
+         defaultHandler="mof.diagram.part.MofDiagramUpdateCommand"
          description="%update.diagram.description"
-         id="components.diagram.updateDiagram"
+         id="mof.diagram.updateDiagram"
          name="%update.diagram.name"/>
    </extension>
    
    <extension point="org.eclipse.ui.bindings" id="update-cmd-binding">
       <?gmfgen generated="true"?>
       <key 
-         commandId="components.diagram.updateDiagram"
-         contextId="components.diagram.ui.diagramContext"
+         commandId="mof.diagram.updateDiagram"
+         contextId="mof.diagram.ui.diagramContext"
          schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
          sequence="F5"/>
    </extension>
@@ -809,9 +540,9 @@
          <command commandId="tfg.diagram.LoadResourceAction">
             <visibleWhen>
                <and>
-                  <with variable="activePartId"><equals value="components.diagram.part.ComponentsDiagramEditorID"/></with>
+                  <with variable="activePartId"><equals value="mof.diagram.part.MofDiagramEditorID"/></with>
                   <with variable="selection"><iterate ifEmpty="false"> 
-                     <instanceof value="components.diagram.edit.parts.UMLDiagramEditPart"/>
+                     <instanceof value="mof.diagram.edit.parts.UMLDiagramEditPart"/>
                   </iterate></with>
                </and>
             </visibleWhen>
@@ -821,11 +552,11 @@
 
    <extension point="org.eclipse.ui.commands" id="menu-commands">
       <?gmfgen generated="true"?>
-      <category id="components.diagram.part.ComponentsDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
+      <category id="mof.diagram.part.MofDiagramEditorID" name="%cmdcategory.name" description="%cmdcategory.desc"/>
       <command id="tfg.diagram.LoadResourceAction"
          name="Load Resource"
-         categoryId="components.diagram.part.ComponentsDiagramEditorID"
-         defaultHandler="components.diagram.part.LoadResourceAction"/>
+         categoryId="mof.diagram.part.MofDiagramEditorID"
+         defaultHandler="mof.diagram.part.LoadResourceAction"/>
    </extension>
 
    <extension point="org.eclipse.ui.handlers" id="menu-handlers">

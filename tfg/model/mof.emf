@@ -1,156 +1,42 @@
 @namespace(
-	uri="components", 
-	prefix="components")
-package components;
+	uri="mof", 
+	prefix="mof")
+package mof;
 
 @gmf.diagram()
 class UMLDiagram {
-	val Classifier[*] elements; 
+	val Nodeone[*] elements;
 	val Relationship[*] links;
-	val Note[*] notes;
-    val NoteLink[*] noteLinks;
 }
 
-enum Visibility {
-	public = 0;
-	private = 1;
-	protected = 2;
+enum Color {
+	Blanco;
+	Negro;
+	Azul;
+	Amarillo;
+	Naranja;
+	Rojo;
+	Verde;
+	Rosa;
+	Lila;
 }
 
-abstract class Classifier {
+abstract class Nodeone {
 	attr String name;
-	attr boolean isAbstract;
-}
-
-@gmf.node(label="name", figure="rectangle")
-class Package extends Classifier {
-	@gmf.compartment
-	val Classifier[*] elements;
-}
-
-@gmf.node(label="name", figure="rectangle", 
-border.color="0,0,0")
-class Clas extends Classifier {
-	attr String stereotype = "<<class>>";
-	
-	@gmf.compartment(layout="list", 
-	collapsible="true")
-	val Property[*] attributes;
-	
-	@gmf.compartment(layout="list", 
-	collapsible="true")
-	val Method[*] operations;
-}
-
-@gmf.node(label="name", figure="rectangle", 
-border.color="0,0,0", color="240,240,240")
-class Interface extends Classifier {
-	attr String stereotype = "<<interface>>";
-	
-	@gmf.compartment(layout="list", 
-	collapsible="true")
-	val Method[*] operations;
-}
-
-@gmf.node(label="name", figure="rectangle", 
-color="200,255,200")
-class Enumeration extends Classifier {
-	attr String stereotype ="<<enumeration>>";
-	
-	@gmf.compartment(layout="list")
-	val EnumLiteral[*] literals;
 }
 
 @gmf.node(label="name")
-class EnumLiteral {
-	attr String name;
-}
-
-@gmf.node(label="visibility,name,type", 
-label.view="{0}{1} : {2}", label.edit="{1}:{2}",
-figure="rectangle", tool.name="Attribute")
-class Property {
-	attr Visibility visibility = "public";
-	attr String name = "attribute";
-	attr String type = "String";
-	attr boolean isStatic;
-}
-
-@gmf.node(label="visibility,name, returnType", 
-label.view="{0}{1}{2}()",
-figure="rectangle", tool.name="Operation")
-class Method {
-	attr Visibility visibility = "public";
-	attr String name = "operation";
-	attr String returnType = "void";
-	
-	@gmf.compartment(layout="list")
-	val Parameter[*] parameter;
-}
-
-@gmf.node(label="name,type", label.view="{0} : {1}", 
-tool.name="Parameter")
-class Parameter {
-	attr String name;
-	attr String type;
+class Clas extends Nodeone {
+	attr Color color = "Blanco";
+	attr Color colorborde = "Blanco";
 }
 
 abstract class Relationship{
-	ref Classifier[1] source;
-	ref Classifier[1] target;
+	ref Nodeone[1] source;
+	ref Nodeone[1] target;
 }
 
 @gmf.link(source="source", target="target", 
 target.decoration="closedarrow", style="solid",
 tool.name="Generatization")
 class Generalization extends Relationship {}
-
-@gmf.link(source="source", target="target", 
-target.decoration="closedarrow", style="dash", 
-tool.name="Interface Realization")
-class Implementation extends Relationship{}
-
-@gmf.link(source="source", target="target", label="role", 
-style="solid", source.label="sourceMultiplicity", 
-target.label="targetMultiplicity", tool.name="Association")
-class Association extends Relationship {
-	attr String role = "uses";
-	
-	@gmf.label(placement="external")
-	attr String sourceMultiplicity = "1";
-	
-	@gmf.label(placement="external")
-	attr String targetMultiplicity = "*";
-}
-
-@gmf.link(source="source", target="target", 
-source.decoration="rhomb", style="solid",  
-tool.name="Aggregation")
-class Aggregation extends Relationship {}
-
-@gmf.link(source="source", target="target", 
-source.decoration="filledrhomb", style="solid",  
-tool.name="Composition")
-class Composition extends Relationship {}
-
-@gmf.link(source="source", target="target",
-target.decoration="arrow", style="dash", 
-tool.name="Dependency")
-class Dependency extends Relationship{
-	attr String stereotype ="<<use>>";
-}
-
-@gmf.node(label="text", figure="polygon", 
-polygon.x="0 80 100 100 0", polygon.y="0 0 20 100 100", 
-color="255,255,200")
-class Note {
-	attr String text = "Contenido de tu nota...";
-}
-
-@gmf.link(source="note", target="element", style="dash",
-color="150,150,150", tool.name="Note Link")
-class NoteLink {
-	ref Note[1] note;
-	ref Classifier[1] element;
-}
-

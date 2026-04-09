@@ -5,11 +5,11 @@ Bundle-SymbolicName: tfg.editor;singleton:=true
 Automatic-Module-Name: tfg.editor
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: components.presentation.ComponentsEditorPlugin$Implementation
+Bundle-Activator: mof.presentation.MofEditorPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: components.presentation
+Export-Package: mof.presentation
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.resources;visibility:=reexport,
  tfg.edit;visibility:=reexport,

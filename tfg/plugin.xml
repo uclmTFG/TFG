@@ -9,8 +9,8 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated mof -->
       <package
-            uri="components"
-            class="components.ComponentsPackage"/>
+            uri="mof"
+            class="mof.MofPackage"/>
    </extension>
 
 </plugin>
