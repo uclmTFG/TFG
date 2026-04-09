@@ -44,9 +44,9 @@ import org.eclipse.jface.preference.PreferenceConverter;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.FontData;
 
-import mof.diagram.edit.parts.ClasEditPart;
-import mof.diagram.edit.parts.ClasNameEditPart;
-import mof.diagram.edit.parts.GeneralizationEditPart;
+import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.NodoEditPart;
+import mof.diagram.edit.parts.NodoNombreEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofVisualIDRegistry;
 
@@ -131,7 +131,7 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 					return false; // foreign diagram
 				}
 				switch (visualID) {
-				case ClasEditPart.VISUAL_ID:
+				case NodoEditPart.VISUAL_ID:
 					if (domainElement == null
 							|| visualID != MofVisualIDRegistry.getNodeVisualID(op.getContainerView(), domainElement)) {
 						return false; // visual id in semantic hint should match visual id for domain element
@@ -142,7 +142,7 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 				}
 			}
 		}
-		return ClasEditPart.VISUAL_ID == visualID;
+		return NodoEditPart.VISUAL_ID == visualID;
 	}
 
 	/**
@@ -191,8 +191,8 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 			visualID = MofVisualIDRegistry.getVisualID(semanticHint);
 		}
 		switch (visualID) {
-		case ClasEditPart.VISUAL_ID:
-			return createClas_2001(domainElement, containerView, index, persisted, preferencesHint);
+		case NodoEditPart.VISUAL_ID:
+			return createNodo_2001(domainElement, containerView, index, persisted, preferencesHint);
 		}
 		// can't happen, provided #provides(CreateNodeViewOperation) is correct
 		return null;
@@ -206,8 +206,8 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 		IElementType elementType = getSemanticElementType(semanticAdapter);
 		String elementTypeHint = ((IHintedType) elementType).getSemanticHint();
 		switch (MofVisualIDRegistry.getVisualID(elementTypeHint)) {
-		case GeneralizationEditPart.VISUAL_ID:
-			return createGeneralization_4001(getSemanticElement(semanticAdapter), containerView, index, persisted,
+		case EnlaceEditPart.VISUAL_ID:
+			return createEnlace_4001(getSemanticElement(semanticAdapter), containerView, index, persisted,
 					preferencesHint);
 		}
 		// can never happen, provided #provides(CreateEdgeViewOperation) is correct
@@ -217,11 +217,11 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 	/**
 	* @generated
 	*/
-	public Node createClas_2001(EObject domainElement, View containerView, int index, boolean persisted,
+	public Node createNodo_2001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Shape node = NotationFactory.eINSTANCE.createShape();
 		node.setLayoutConstraint(NotationFactory.eINSTANCE.createBounds());
-		node.setType(MofVisualIDRegistry.getType(ClasEditPart.VISUAL_ID));
+		node.setType(MofVisualIDRegistry.getType(NodoEditPart.VISUAL_ID));
 		ViewUtil.insertChildView(containerView, node, index, persisted);
 		node.setElement(domainElement);
 		stampShortcut(containerView, node);
@@ -247,14 +247,14 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 				IPreferenceConstants.PREF_FILL_COLOR);
 		ViewUtil.setStructuralFeatureValue(node, NotationPackage.eINSTANCE.getFillStyle_FillColor(),
 				FigureUtilities.RGBToInteger(fillRGB));
-		Node label5001 = createLabel(node, MofVisualIDRegistry.getType(ClasNameEditPart.VISUAL_ID));
+		Node label5001 = createLabel(node, MofVisualIDRegistry.getType(NodoNombreEditPart.VISUAL_ID));
 		return node;
 	}
 
 	/**
 	* @generated
 	*/
-	public Edge createGeneralization_4001(EObject domainElement, View containerView, int index, boolean persisted,
+	public Edge createEnlace_4001(EObject domainElement, View containerView, int index, boolean persisted,
 			PreferencesHint preferencesHint) {
 		Connector edge = NotationFactory.eINSTANCE.createConnector();
 		edge.getStyles().add(NotationFactory.eINSTANCE.createFontStyle());
@@ -265,7 +265,7 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 		bendpoints.setPoints(points);
 		edge.setBendpoints(bendpoints);
 		ViewUtil.insertChildView(containerView, edge, index, persisted);
-		edge.setType(MofVisualIDRegistry.getType(GeneralizationEditPart.VISUAL_ID));
+		edge.setType(MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
 		edge.setElement(domainElement);
 		// initializePreferences
 		final IPreferenceStore prefStore = (IPreferenceStore) preferencesHint.getPreferenceStore();

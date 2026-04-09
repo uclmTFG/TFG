@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.emf.ui.services.parser.ParserHintAdapter;
 import org.eclipse.gmf.runtime.notation.View;
 
 import mof.MofPackage;
-import mof.diagram.edit.parts.ClasNameEditPart;
+import mof.diagram.edit.parts.NodoNombreEditPart;
 import mof.diagram.parsers.MessageFormatParser;
 import mof.diagram.part.MofVisualIDRegistry;
 
@@ -29,18 +29,18 @@ public class MofParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	* @generated
 	*/
-	private IParser clasName_5001Parser;
+	private IParser nodoNombre_5001Parser;
 
 	/**
 	* @generated
 	*/
-	private IParser getClasName_5001Parser() {
-		if (clasName_5001Parser == null) {
-			EAttribute[] features = new EAttribute[] { MofPackage.eINSTANCE.getNodeone_Name() };
+	private IParser getNodoNombre_5001Parser() {
+		if (nodoNombre_5001Parser == null) {
+			EAttribute[] features = new EAttribute[] { MofPackage.eINSTANCE.getNodo_Nombre() };
 			MessageFormatParser parser = new MessageFormatParser(features);
-			clasName_5001Parser = parser;
+			nodoNombre_5001Parser = parser;
 		}
-		return clasName_5001Parser;
+		return nodoNombre_5001Parser;
 	}
 
 	/**
@@ -48,8 +48,8 @@ public class MofParserProvider extends AbstractProvider implements IParserProvid
 	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
-		case ClasNameEditPart.VISUAL_ID:
-			return getClasName_5001Parser();
+		case NodoNombreEditPart.VISUAL_ID:
+			return getNodoNombre_5001Parser();
 		}
 		return null;
 	}

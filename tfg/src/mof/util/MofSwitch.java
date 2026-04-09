@@ -72,29 +72,15 @@ public class MofSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MofPackage.NODEONE: {
-				Nodeone nodeone = (Nodeone)theEObject;
-				T result = caseNodeone(nodeone);
+			case MofPackage.NODO: {
+				Nodo nodo = (Nodo)theEObject;
+				T result = caseNodo(nodo);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MofPackage.CLAS: {
-				Clas clas = (Clas)theEObject;
-				T result = caseClas(clas);
-				if (result == null) result = caseNodeone(clas);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MofPackage.RELATIONSHIP: {
-				Relationship relationship = (Relationship)theEObject;
-				T result = caseRelationship(relationship);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MofPackage.GENERALIZATION: {
-				Generalization generalization = (Generalization)theEObject;
-				T result = caseGeneralization(generalization);
-				if (result == null) result = caseRelationship(generalization);
+			case MofPackage.ENLACE: {
+				Enlace enlace = (Enlace)theEObject;
+				T result = caseEnlace(enlace);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -118,62 +104,32 @@ public class MofSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Nodeone</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Nodo</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Nodeone</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Nodo</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNodeone(Nodeone object) {
+	public T caseNodo(Nodo object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Clas</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Enlace</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Clas</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Enlace</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseClas(Clas object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Relationship</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Relationship</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseRelationship(Relationship object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Generalization</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Generalization</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseGeneralization(Generalization object) {
+	public T caseEnlace(Enlace object) {
 		return null;
 	}
 

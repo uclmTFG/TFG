@@ -1,27 +1,21 @@
 <?xml version="1.0" encoding="ASCII"?>
 <gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="mof">
   <figures name="Default">
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <descriptors name="ClasFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ClasFigure">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="EnlaceFigureTargetDecoration"/>
+    <descriptors name="NodoFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="NodoFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ClasLabelFigure" text="Clas"/>
+        <children xsi:type="gmfgraph:Label" name="NodoLabelFigure" text="Nodo"/>
       </actualFigure>
-      <accessors accessor="getFigureClasLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getFigureNodoLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="GeneralizationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="GeneralizationFigure" targetDecoration="//@figures.0/@figures.0"/>
+    <descriptors name="EnlaceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EnlaceFigure" targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
   </figures>
-  <nodes name="Clas" figure="ClasFigure"/>
-  <connections name="Generalization" figure="GeneralizationFigure"/>
-  <labels name="ClasLabel" figure="ClasFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <nodes name="Nodo" figure="NodoFigure"/>
+  <connections name="Enlace" figure="EnlaceFigure"/>
+  <labels name="NodoLabel" figure="NodoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
 </gmfgraph:Canvas>

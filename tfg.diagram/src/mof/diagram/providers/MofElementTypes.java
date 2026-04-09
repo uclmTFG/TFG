@@ -18,8 +18,8 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import mof.MofPackage;
-import mof.diagram.edit.parts.ClasEditPart;
-import mof.diagram.edit.parts.GeneralizationEditPart;
+import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.NodoEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofDiagramEditorPlugin;
 
@@ -57,11 +57,11 @@ public class MofElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType Clas_2001 = getElementType("tfg.diagram.Clas_2001"); //$NON-NLS-1$
+	public static final IElementType Nodo_2001 = getElementType("tfg.diagram.Nodo_2001"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType Generalization_4001 = getElementType("tfg.diagram.Generalization_4001"); //$NON-NLS-1$
+	public static final IElementType Enlace_4001 = getElementType("tfg.diagram.Enlace_4001"); //$NON-NLS-1$
 
 	/**
 	* @generated
@@ -103,9 +103,9 @@ public class MofElementTypes {
 
 			elements.put(UMLDiagram_1000, MofPackage.eINSTANCE.getUMLDiagram());
 
-			elements.put(Clas_2001, MofPackage.eINSTANCE.getClas());
+			elements.put(Nodo_2001, MofPackage.eINSTANCE.getNodo());
 
-			elements.put(Generalization_4001, MofPackage.eINSTANCE.getGeneralization());
+			elements.put(Enlace_4001, MofPackage.eINSTANCE.getEnlace());
 		}
 		return (ENamedElement) elements.get(type);
 	}
@@ -124,8 +124,8 @@ public class MofElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(UMLDiagram_1000);
-			KNOWN_ELEMENT_TYPES.add(Clas_2001);
-			KNOWN_ELEMENT_TYPES.add(Generalization_4001);
+			KNOWN_ELEMENT_TYPES.add(Nodo_2001);
+			KNOWN_ELEMENT_TYPES.add(Enlace_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
 	}
@@ -137,10 +137,10 @@ public class MofElementTypes {
 		switch (visualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return UMLDiagram_1000;
-		case ClasEditPart.VISUAL_ID:
-			return Clas_2001;
-		case GeneralizationEditPart.VISUAL_ID:
-			return Generalization_4001;
+		case NodoEditPart.VISUAL_ID:
+			return Nodo_2001;
+		case EnlaceEditPart.VISUAL_ID:
+			return Enlace_4001;
 		}
 		return null;
 	}

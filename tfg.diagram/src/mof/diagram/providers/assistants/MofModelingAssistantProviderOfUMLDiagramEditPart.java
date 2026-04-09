@@ -24,7 +24,7 @@ public class MofModelingAssistantProviderOfUMLDiagramEditPart extends MofModelin
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
 		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MofElementTypes.Clas_2001);
+		types.add(MofElementTypes.Nodo_2001);
 		return types;
 	}
 

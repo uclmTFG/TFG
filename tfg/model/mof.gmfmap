@@ -8,40 +8,40 @@
     xmlns:gmftool="http://www.eclipse.org/gmf/2005/ToolDefinition">
   <nodes>
     <containmentFeature
-        href="mof.ecore#//UMLDiagram/elements"/>
+        href="mof.ecore#//UMLDiagram/nodos"/>
     <ownedChild>
       <domainMetaElement
-          href="mof.ecore#//Clas"/>
+          href="mof.ecore#//Nodo"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="mof.gmfgraph#ClasLabel"/>
+            href="mof.gmfgraph#NodoLabel"/>
         <features
-            href="mof.ecore#//Nodeone/name"/>
+            href="mof.ecore#//Nodo/nombre"/>
       </labelMappings>
       <tool
           xsi:type="gmftool:CreationTool"
           href="mof.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="mof.gmfgraph#Clas"/>
+          href="mof.gmfgraph#Nodo"/>
     </ownedChild>
   </nodes>
   <links>
     <domainMetaElement
-        href="mof.ecore#//Generalization"/>
+        href="mof.ecore#//Enlace"/>
     <containmentFeature
-        href="mof.ecore#//UMLDiagram/links"/>
+        href="mof.ecore#//UMLDiagram/enlaces"/>
     <tool
         xsi:type="gmftool:CreationTool"
         href="mof.gmftool#//@palette/@tools.1/@tools.0"/>
     <diagramLink
-        href="mof.gmfgraph#Generalization"/>
+        href="mof.gmfgraph#Enlace"/>
     <sourceMetaFeature
         xsi:type="ecore:EReference"
-        href="mof.ecore#//Relationship/source"/>
+        href="mof.ecore#//Enlace/origen"/>
     <linkMetaFeature
         xsi:type="ecore:EReference"
-        href="mof.ecore#//Relationship/target"/>
+        href="mof.ecore#//Enlace/destino"/>
   </links>
   <diagram>
     <diagramCanvas

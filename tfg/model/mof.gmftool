@@ -12,8 +12,8 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Clas"
-          description="Create new Clas">
+          title="Nodo"
+          description="Create new Nodo">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon
@@ -26,8 +26,8 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Generatization"
-          description="Create new Generatization">
+          title="Enlace"
+          description="Create new Enlace">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

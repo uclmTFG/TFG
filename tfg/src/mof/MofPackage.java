@@ -67,22 +67,22 @@ public interface MofPackage extends EPackage {
 	int UML_DIAGRAM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Elements</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Nodos</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM__ELEMENTS = 0;
+	int UML_DIAGRAM__NODOS = 0;
 
 	/**
-	 * The feature id for the '<em><b>Links</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Enlaces</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UML_DIAGRAM__LINKS = 1;
+	int UML_DIAGRAM__ENLACES = 1;
 
 	/**
 	 * The number of structural features of the '<em>UML Diagram</em>' class.
@@ -94,51 +94,23 @@ public interface MofPackage extends EPackage {
 	int UML_DIAGRAM_FEATURE_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link mof.impl.NodeoneImpl <em>Nodeone</em>}' class.
+	 * The meta object id for the '{@link mof.impl.NodoImpl <em>Nodo</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see mof.impl.NodeoneImpl
-	 * @see mof.impl.MofPackageImpl#getNodeone()
+	 * @see mof.impl.NodoImpl
+	 * @see mof.impl.MofPackageImpl#getNodo()
 	 * @generated
 	 */
-	int NODEONE = 1;
+	int NODO = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Nombre</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODEONE__NAME = 0;
-
-	/**
-	 * The number of structural features of the '<em>Nodeone</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NODEONE_FEATURE_COUNT = 1;
-
-	/**
-	 * The meta object id for the '{@link mof.impl.ClasImpl <em>Clas</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mof.impl.ClasImpl
-	 * @see mof.impl.MofPackageImpl#getClas()
-	 * @generated
-	 */
-	int CLAS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CLAS__NAME = NODEONE__NAME;
+	int NODO__NOMBRE = 0;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
@@ -147,99 +119,62 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CLAS__COLOR = NODEONE_FEATURE_COUNT + 0;
+	int NODO__COLOR = 1;
 
 	/**
-	 * The feature id for the '<em><b>Colorborde</b></em>' attribute.
+	 * The feature id for the '<em><b>Descripcion</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAS__COLORBORDE = NODEONE_FEATURE_COUNT + 1;
+	int NODO__DESCRIPCION = 2;
 
 	/**
-	 * The number of structural features of the '<em>Clas</em>' class.
+	 * The number of structural features of the '<em>Nodo</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CLAS_FEATURE_COUNT = NODEONE_FEATURE_COUNT + 2;
+	int NODO_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '{@link mof.impl.RelationshipImpl <em>Relationship</em>}' class.
+	 * The meta object id for the '{@link mof.impl.EnlaceImpl <em>Enlace</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see mof.impl.RelationshipImpl
-	 * @see mof.impl.MofPackageImpl#getRelationship()
+	 * @see mof.impl.EnlaceImpl
+	 * @see mof.impl.MofPackageImpl#getEnlace()
 	 * @generated
 	 */
-	int RELATIONSHIP = 3;
+	int ENLACE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int RELATIONSHIP__SOURCE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * The feature id for the '<em><b>Origen</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP__TARGET = 1;
+	int ENLACE__ORIGEN = 0;
 
 	/**
-	 * The number of structural features of the '<em>Relationship</em>' class.
+	 * The feature id for the '<em><b>Destino</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int RELATIONSHIP_FEATURE_COUNT = 2;
+	int ENLACE__DESTINO = 1;
 
 	/**
-	 * The meta object id for the '{@link mof.impl.GeneralizationImpl <em>Generalization</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mof.impl.GeneralizationImpl
-	 * @see mof.impl.MofPackageImpl#getGeneralization()
-	 * @generated
-	 */
-	int GENERALIZATION = 4;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * The number of structural features of the '<em>Enlace</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int GENERALIZATION__SOURCE = RELATIONSHIP__SOURCE;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZATION__TARGET = RELATIONSHIP__TARGET;
-
-	/**
-	 * The number of structural features of the '<em>Generalization</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GENERALIZATION_FEATURE_COUNT = RELATIONSHIP_FEATURE_COUNT + 0;
+	int ENLACE_FEATURE_COUNT = 2;
 
 	/**
 	 * The meta object id for the '{@link mof.Color <em>Color</em>}' enum.
@@ -249,7 +184,7 @@ public interface MofPackage extends EPackage {
 	 * @see mof.impl.MofPackageImpl#getColor()
 	 * @generated
 	 */
-	int COLOR = 5;
+	int COLOR = 3;
 
 
 	/**
@@ -263,121 +198,101 @@ public interface MofPackage extends EPackage {
 	EClass getUMLDiagram();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link mof.UMLDiagram#getElements <em>Elements</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mof.UMLDiagram#getNodos <em>Nodos</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Elements</em>'.
-	 * @see mof.UMLDiagram#getElements()
+	 * @return the meta object for the containment reference list '<em>Nodos</em>'.
+	 * @see mof.UMLDiagram#getNodos()
 	 * @see #getUMLDiagram()
 	 * @generated
 	 */
-	EReference getUMLDiagram_Elements();
+	EReference getUMLDiagram_Nodos();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link mof.UMLDiagram#getLinks <em>Links</em>}'.
+	 * Returns the meta object for the containment reference list '{@link mof.UMLDiagram#getEnlaces <em>Enlaces</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Links</em>'.
-	 * @see mof.UMLDiagram#getLinks()
+	 * @return the meta object for the containment reference list '<em>Enlaces</em>'.
+	 * @see mof.UMLDiagram#getEnlaces()
 	 * @see #getUMLDiagram()
 	 * @generated
 	 */
-	EReference getUMLDiagram_Links();
+	EReference getUMLDiagram_Enlaces();
 
 	/**
-	 * Returns the meta object for class '{@link mof.Nodeone <em>Nodeone</em>}'.
+	 * Returns the meta object for class '{@link mof.Nodo <em>Nodo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Nodeone</em>'.
-	 * @see mof.Nodeone
+	 * @return the meta object for class '<em>Nodo</em>'.
+	 * @see mof.Nodo
 	 * @generated
 	 */
-	EClass getNodeone();
+	EClass getNodo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mof.Nodeone#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link mof.Nodo#getNombre <em>Nombre</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see mof.Nodeone#getName()
-	 * @see #getNodeone()
+	 * @return the meta object for the attribute '<em>Nombre</em>'.
+	 * @see mof.Nodo#getNombre()
+	 * @see #getNodo()
 	 * @generated
 	 */
-	EAttribute getNodeone_Name();
+	EAttribute getNodo_Nombre();
 
 	/**
-	 * Returns the meta object for class '{@link mof.Clas <em>Clas</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Clas</em>'.
-	 * @see mof.Clas
-	 * @generated
-	 */
-	EClass getClas();
-
-	/**
-	 * Returns the meta object for the attribute '{@link mof.Clas#getColor <em>Color</em>}'.
+	 * Returns the meta object for the attribute '{@link mof.Nodo#getColor <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Color</em>'.
-	 * @see mof.Clas#getColor()
-	 * @see #getClas()
+	 * @see mof.Nodo#getColor()
+	 * @see #getNodo()
 	 * @generated
 	 */
-	EAttribute getClas_Color();
+	EAttribute getNodo_Color();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mof.Clas#getColorborde <em>Colorborde</em>}'.
+	 * Returns the meta object for the attribute '{@link mof.Nodo#getDescripcion <em>Descripcion</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Colorborde</em>'.
-	 * @see mof.Clas#getColorborde()
-	 * @see #getClas()
+	 * @return the meta object for the attribute '<em>Descripcion</em>'.
+	 * @see mof.Nodo#getDescripcion()
+	 * @see #getNodo()
 	 * @generated
 	 */
-	EAttribute getClas_Colorborde();
+	EAttribute getNodo_Descripcion();
 
 	/**
-	 * Returns the meta object for class '{@link mof.Relationship <em>Relationship</em>}'.
+	 * Returns the meta object for class '{@link mof.Enlace <em>Enlace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Relationship</em>'.
-	 * @see mof.Relationship
+	 * @return the meta object for class '<em>Enlace</em>'.
+	 * @see mof.Enlace
 	 * @generated
 	 */
-	EClass getRelationship();
+	EClass getEnlace();
 
 	/**
-	 * Returns the meta object for the reference '{@link mof.Relationship#getSource <em>Source</em>}'.
+	 * Returns the meta object for the reference '{@link mof.Enlace#getOrigen <em>Origen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see mof.Relationship#getSource()
-	 * @see #getRelationship()
+	 * @return the meta object for the reference '<em>Origen</em>'.
+	 * @see mof.Enlace#getOrigen()
+	 * @see #getEnlace()
 	 * @generated
 	 */
-	EReference getRelationship_Source();
+	EReference getEnlace_Origen();
 
 	/**
-	 * Returns the meta object for the reference '{@link mof.Relationship#getTarget <em>Target</em>}'.
+	 * Returns the meta object for the reference '{@link mof.Enlace#getDestino <em>Destino</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see mof.Relationship#getTarget()
-	 * @see #getRelationship()
+	 * @return the meta object for the reference '<em>Destino</em>'.
+	 * @see mof.Enlace#getDestino()
+	 * @see #getEnlace()
 	 * @generated
 	 */
-	EReference getRelationship_Target();
-
-	/**
-	 * Returns the meta object for class '{@link mof.Generalization <em>Generalization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Generalization</em>'.
-	 * @see mof.Generalization
-	 * @generated
-	 */
-	EClass getGeneralization();
+	EReference getEnlace_Destino();
 
 	/**
 	 * Returns the meta object for enum '{@link mof.Color <em>Color</em>}'.
@@ -422,48 +337,38 @@ public interface MofPackage extends EPackage {
 		EClass UML_DIAGRAM = eINSTANCE.getUMLDiagram();
 
 		/**
-		 * The meta object literal for the '<em><b>Elements</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Nodos</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UML_DIAGRAM__ELEMENTS = eINSTANCE.getUMLDiagram_Elements();
+		EReference UML_DIAGRAM__NODOS = eINSTANCE.getUMLDiagram_Nodos();
 
 		/**
-		 * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Enlaces</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference UML_DIAGRAM__LINKS = eINSTANCE.getUMLDiagram_Links();
+		EReference UML_DIAGRAM__ENLACES = eINSTANCE.getUMLDiagram_Enlaces();
 
 		/**
-		 * The meta object literal for the '{@link mof.impl.NodeoneImpl <em>Nodeone</em>}' class.
+		 * The meta object literal for the '{@link mof.impl.NodoImpl <em>Nodo</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see mof.impl.NodeoneImpl
-		 * @see mof.impl.MofPackageImpl#getNodeone()
+		 * @see mof.impl.NodoImpl
+		 * @see mof.impl.MofPackageImpl#getNodo()
 		 * @generated
 		 */
-		EClass NODEONE = eINSTANCE.getNodeone();
+		EClass NODO = eINSTANCE.getNodo();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Nombre</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODEONE__NAME = eINSTANCE.getNodeone_Name();
-
-		/**
-		 * The meta object literal for the '{@link mof.impl.ClasImpl <em>Clas</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mof.impl.ClasImpl
-		 * @see mof.impl.MofPackageImpl#getClas()
-		 * @generated
-		 */
-		EClass CLAS = eINSTANCE.getClas();
+		EAttribute NODO__NOMBRE = eINSTANCE.getNodo_Nombre();
 
 		/**
 		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
@@ -471,51 +376,41 @@ public interface MofPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CLAS__COLOR = eINSTANCE.getClas_Color();
+		EAttribute NODO__COLOR = eINSTANCE.getNodo_Color();
 
 		/**
-		 * The meta object literal for the '<em><b>Colorborde</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Descripcion</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute CLAS__COLORBORDE = eINSTANCE.getClas_Colorborde();
+		EAttribute NODO__DESCRIPCION = eINSTANCE.getNodo_Descripcion();
 
 		/**
-		 * The meta object literal for the '{@link mof.impl.RelationshipImpl <em>Relationship</em>}' class.
+		 * The meta object literal for the '{@link mof.impl.EnlaceImpl <em>Enlace</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see mof.impl.RelationshipImpl
-		 * @see mof.impl.MofPackageImpl#getRelationship()
+		 * @see mof.impl.EnlaceImpl
+		 * @see mof.impl.MofPackageImpl#getEnlace()
 		 * @generated
 		 */
-		EClass RELATIONSHIP = eINSTANCE.getRelationship();
+		EClass ENLACE = eINSTANCE.getEnlace();
 
 		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference RELATIONSHIP__SOURCE = eINSTANCE.getRelationship_Source();
-
-		/**
-		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Origen</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference RELATIONSHIP__TARGET = eINSTANCE.getRelationship_Target();
+		EReference ENLACE__ORIGEN = eINSTANCE.getEnlace_Origen();
 
 		/**
-		 * The meta object literal for the '{@link mof.impl.GeneralizationImpl <em>Generalization</em>}' class.
+		 * The meta object literal for the '<em><b>Destino</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see mof.impl.GeneralizationImpl
-		 * @see mof.impl.MofPackageImpl#getGeneralization()
 		 * @generated
 		 */
-		EClass GENERALIZATION = eINSTANCE.getGeneralization();
+		EReference ENLACE__DESTINO = eINSTANCE.getEnlace_Destino();
 
 		/**
 		 * The meta object literal for the '{@link mof.Color <em>Color</em>}' enum.

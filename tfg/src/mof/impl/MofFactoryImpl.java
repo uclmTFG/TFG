@@ -58,8 +58,8 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case MofPackage.UML_DIAGRAM: return createUMLDiagram();
-			case MofPackage.CLAS: return createClas();
-			case MofPackage.GENERALIZATION: return createGeneralization();
+			case MofPackage.NODO: return createNodo();
+			case MofPackage.ENLACE: return createEnlace();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -112,9 +112,9 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	@Override
-	public Clas createClas() {
-		ClasImpl clas = new ClasImpl();
-		return clas;
+	public Nodo createNodo() {
+		NodoImpl nodo = new NodoImpl();
+		return nodo;
 	}
 
 	/**
@@ -123,9 +123,9 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	@Override
-	public Generalization createGeneralization() {
-		GeneralizationImpl generalization = new GeneralizationImpl();
-		return generalization;
+	public Enlace createEnlace() {
+		EnlaceImpl enlace = new EnlaceImpl();
+		return enlace;
 	}
 
 	/**

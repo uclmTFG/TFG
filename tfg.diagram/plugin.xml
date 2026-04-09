@@ -294,10 +294,10 @@
          <object class="mof.diagram.edit.parts.UMLDiagramEditPart" id="UMLDiagram_1000"/>
          <context elements="UMLDiagram_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfClasEditPart">
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfNodoEditPart">
          <Priority name="Lowest"/>
-         <object class="mof.diagram.edit.parts.ClasEditPart" id="Clas_2001"/>
-         <context elements="Clas_2001"/>
+         <object class="mof.diagram.edit.parts.NodoEditPart" id="Nodo_2001"/>
+         <context elements="Nodo_2001"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -342,21 +342,21 @@
       </metamodel>
       <metamodel nsURI="mof">
          <metamodelType
-               id="tfg.diagram.Clas_2001"
-               name="%metatype.name.Clas_2001"
+               id="tfg.diagram.Nodo_2001"
+               name="%metatype.name.Nodo_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Clas"
-               edithelper="mof.diagram.edit.helpers.ClasEditHelper">
+               eclass="Nodo"
+               edithelper="mof.diagram.edit.helpers.NodoEditHelper">
             <param name="semanticHint" value="2001"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mof">
          <metamodelType
-               id="tfg.diagram.Generalization_4001"
-               name="%metatype.name.Generalization_4001"
+               id="tfg.diagram.Enlace_4001"
+               name="%metatype.name.Enlace_4001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Generalization"
-               edithelper="mof.diagram.edit.helpers.GeneralizationEditHelper">
+               eclass="Enlace"
+               edithelper="mof.diagram.edit.helpers.EnlaceEditHelper">
             <param name="semanticHint" value="4001"/>
          </metamodelType>
       </metamodel>
@@ -373,8 +373,8 @@
       </clientContext> 
       <binding context="tfg.diagram.TypeContext">
          <elementType ref="tfg.diagram.UMLDiagram_1000"/>
-         <elementType ref="tfg.diagram.Clas_2001"/>
-         <elementType ref="tfg.diagram.Generalization_4001"/>
+         <elementType ref="tfg.diagram.Nodo_2001"/>
+         <elementType ref="tfg.diagram.Enlace_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>
    </extension>

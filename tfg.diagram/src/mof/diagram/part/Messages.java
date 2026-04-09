@@ -256,22 +256,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Clas1CreationTool_title;
+	public static String Nodo1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Clas1CreationTool_desc;
+	public static String Nodo1CreationTool_desc;
 
 	/**
 	* @generated
 	*/
-	public static String Generatization1CreationTool_title;
+	public static String Enlace1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Generatization1CreationTool_desc;
+	public static String Enlace1CreationTool_desc;
 
 	/**
 	* @generated
@@ -286,22 +286,22 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Clas_2001_incominglinks;
+	public static String NavigatorGroupName_Nodo_2001_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Clas_2001_outgoinglinks;
+	public static String NavigatorGroupName_Nodo_2001_outgoinglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Generalization_4001_target;
+	public static String NavigatorGroupName_Enlace_4001_target;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Generalization_4001_source;
+	public static String NavigatorGroupName_Enlace_4001_source;
 
 	/**
 	* @generated

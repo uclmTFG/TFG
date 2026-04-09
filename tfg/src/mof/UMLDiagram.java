@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link mof.UMLDiagram#getElements <em>Elements</em>}</li>
- *   <li>{@link mof.UMLDiagram#getLinks <em>Links</em>}</li>
+ *   <li>{@link mof.UMLDiagram#getNodos <em>Nodos</em>}</li>
+ *   <li>{@link mof.UMLDiagram#getEnlaces <em>Enlaces</em>}</li>
  * </ul>
  *
  * @see mof.MofPackage#getUMLDiagram()
@@ -25,27 +25,27 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface UMLDiagram extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-	 * The list contents are of type {@link mof.Nodeone}.
+	 * Returns the value of the '<em><b>Nodos</b></em>' containment reference list.
+	 * The list contents are of type {@link mof.Nodo}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Elements</em>' containment reference list.
-	 * @see mof.MofPackage#getUMLDiagram_Elements()
+	 * @return the value of the '<em>Nodos</em>' containment reference list.
+	 * @see mof.MofPackage#getUMLDiagram_Nodos()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Nodeone> getElements();
+	EList<Nodo> getNodos();
 
 	/**
-	 * Returns the value of the '<em><b>Links</b></em>' containment reference list.
-	 * The list contents are of type {@link mof.Relationship}.
+	 * Returns the value of the '<em><b>Enlaces</b></em>' containment reference list.
+	 * The list contents are of type {@link mof.Enlace}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Links</em>' containment reference list.
-	 * @see mof.MofPackage#getUMLDiagram_Links()
+	 * @return the value of the '<em>Enlaces</em>' containment reference list.
+	 * @see mof.MofPackage#getUMLDiagram_Enlaces()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Relationship> getLinks();
+	EList<Enlace> getEnlaces();
 
 } // UMLDiagram

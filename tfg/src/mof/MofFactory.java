@@ -31,22 +31,22 @@ public interface MofFactory extends EFactory {
 	UMLDiagram createUMLDiagram();
 
 	/**
-	 * Returns a new object of class '<em>Clas</em>'.
+	 * Returns a new object of class '<em>Nodo</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Clas</em>'.
+	 * @return a new object of class '<em>Nodo</em>'.
 	 * @generated
 	 */
-	Clas createClas();
+	Nodo createNodo();
 
 	/**
-	 * Returns a new object of class '<em>Generalization</em>'.
+	 * Returns a new object of class '<em>Enlace</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Generalization</em>'.
+	 * @return a new object of class '<em>Enlace</em>'.
 	 * @generated
 	 */
-	Generalization createGeneralization();
+	Enlace createEnlace();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -7,41 +7,41 @@
     <containsShortcutsTo>mof</containsShortcutsTo>
     <shortcutsProvidedFor>mof</shortcutsProvidedFor>
     <domainDiagramElement href="mof.genmodel#//mof/UMLDiagram"/>
-    <topLevelNodes visualID="2001" editPartClassName="ClasEditPart" itemSemanticEditPolicyClassName="ClasItemSemanticEditPolicy" canonicalEditPolicyClassName="ClasCanonicalEditPolicy" graphicalNodeEditPolicyClassName="ClasGraphicalNodeEditPolicy" createCommandClassName="ClasCreateCommand">
+    <topLevelNodes visualID="2001" editPartClassName="NodoEditPart" itemSemanticEditPolicyClassName="NodoItemSemanticEditPolicy" canonicalEditPolicyClassName="NodoCanonicalEditPolicy" graphicalNodeEditPolicyClassName="NodoGraphicalNodeEditPolicy" createCommandClassName="NodoCreateCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="ClasEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="ClasFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class ClasFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureClasLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public ClasFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureClasLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureClasLabelFigure.setText(&quot;Clas&quot;);&#xA;&#xA;this.add(fFigureClasLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureClasLabelFigure() {&#xA;&#x9;&#x9;return fFigureClasLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="NodoEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="NodoFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class NodoFigure extends org.eclipse.draw2d.RoundedRectangle {&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel fFigureNodoLabelFigure; &#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public NodoFigure() {&#xA;&#x9;&#x9;&#x9;&#x9;this.setCornerDimensions(new org.eclipse.draw2d.geometry.Dimension(getMapMode().DPtoLP(8)&#xA;, getMapMode().DPtoLP(8)&#xA;));&#xA;this.setBorder(new org.eclipse.draw2d.MarginBorder(getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;, getMapMode().DPtoLP(5)&#xA;));&#xA;&#x9;&#x9;createContents();&#xA;&#x9;}&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private void createContents(){&#xA;&#xA;&#xA;fFigureNodoLabelFigure = new org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel();&#xA;&#xA;fFigureNodoLabelFigure.setText(&quot;Nodo&quot;);&#xA;&#xA;this.add(fFigureNodoLabelFigure);&#xA;&#xA;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel getFigureNodoLabelFigure() {&#xA;&#x9;&#x9;return fFigureNodoLabelFigure;&#xA;&#x9;}&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet>
-        <metaClass href="mof.genmodel#//mof/Clas"/>
-        <containmentMetaFeature href="mof.genmodel#//mof/UMLDiagram/elements"/>
-        <childMetaFeature href="mof.genmodel#//mof/UMLDiagram/elements"/>
+        <metaClass href="mof.genmodel#//mof/Nodo"/>
+        <containmentMetaFeature href="mof.genmodel#//mof/UMLDiagram/nodos"/>
+        <childMetaFeature href="mof.genmodel#//mof/UMLDiagram/nodos"/>
       </modelFacet>
-      <labels visualID="5001" editPartClassName="ClasNameEditPart" itemSemanticEditPolicyClassName="ClasNameItemSemanticEditPolicy" elementIcon="true">
+      <labels visualID="5001" editPartClassName="NodoNombreEditPart" itemSemanticEditPolicyClassName="NodoNombreItemSemanticEditPolicy" elementIcon="true">
         <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Node"/>
-        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureClasLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
+        <viewmap xsi:type="gmfgen:ParentAssignedViewmap" getterName="getFigureNodoLabelFigure" figureQualifiedClassName="org.eclipse.gmf.runtime.draw2d.ui.figures.WrappingLabel"/>
         <modelFacet xsi:type="gmfgen:FeatureLabelModelFacet" parser="//@labelParsers/@implementations.0">
-          <metaFeatures href="mof.genmodel#//mof/Nodeone/name"/>
+          <metaFeatures href="mof.genmodel#//mof/Nodo/nombre"/>
         </modelFacet>
       </labels>
     </topLevelNodes>
-    <links visualID="4001" editPartClassName="GeneralizationEditPart" itemSemanticEditPolicyClassName="GeneralizationItemSemanticEditPolicy" createCommandClassName="GeneralizationCreateCommand" reorientCommandClassName="GeneralizationReorientCommand">
+    <links visualID="4001" editPartClassName="EnlaceEditPart" itemSemanticEditPolicyClassName="EnlaceItemSemanticEditPolicy" createCommandClassName="EnlaceCreateCommand" reorientCommandClassName="EnlaceReorientCommand">
       <diagramRunTimeClass href="platform:/plugin/org.eclipse.gmf.runtime.notation/model/notation.genmodel#//notation/Edge"/>
-      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="GeneralizationEditHelper"/>
-      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="GeneralizationFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class GeneralizationFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public GeneralizationFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolygonDecoration df = new org.eclipse.draw2d.PolygonDecoration();&#xA;df.setFill(true);&#xA;&#x9;df.setBackgroundColor(org.eclipse.draw2d.ColorConstants.white);&#xA;org.eclipse.draw2d.geometry.PointList pl = new org.eclipse.draw2d.geometry.PointList();&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(-2)&#xA;, getMapMode().DPtoLP(-2)&#xA;);&#xA;pl.addPoint(getMapMode().DPtoLP(0)&#xA;, getMapMode().DPtoLP(0)&#xA;);&#xA;df.setTemplate(pl);&#xA;df.setScale(getMapMode().DPtoLP(7)&#xA;, getMapMode().DPtoLP(3)&#xA;);&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
+      <elementType xsi:type="gmfgen:MetamodelType" editHelperClassName="EnlaceEditHelper"/>
+      <viewmap xsi:type="gmfgen:InnerClassViewmap" className="EnlaceFigure" classBody="&#xA;/**&#xA; * @generated&#xA; */&#xA;public class EnlaceFigure extends org.eclipse.gmf.runtime.draw2d.ui.figures.PolylineConnectionEx {&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;public EnlaceFigure() {&#xA;&#x9;&#x9;&#xA;&#x9;&#x9;setTargetDecoration(createTargetDecoration());&#xA;&#x9;}&#xA;&#xA;&#x9;/**&#xA;&#x9; * @generated&#xA;&#x9; */&#xA;&#x9;private org.eclipse.draw2d.RotatableDecoration createTargetDecoration() {&#xA;&#x9;&#x9;org.eclipse.draw2d.PolylineDecoration df = new org.eclipse.draw2d.PolylineDecoration();&#xA;&#x9;&#x9;return df;&#xA;&#x9;}&#xA;&#xA;&#xA;&#xA;&#xA;}&#xA;&#xA;"/>
       <modelFacet xsi:type="gmfgen:TypeLinkModelFacet">
-        <metaClass href="mof.genmodel#//mof/Generalization"/>
-        <containmentMetaFeature href="mof.genmodel#//mof/UMLDiagram/links"/>
-        <childMetaFeature href="mof.genmodel#//mof/UMLDiagram/links"/>
-        <sourceMetaFeature href="mof.genmodel#//mof/Relationship/source"/>
-        <targetMetaFeature href="mof.genmodel#//mof/Relationship/target"/>
+        <metaClass href="mof.genmodel#//mof/Enlace"/>
+        <containmentMetaFeature href="mof.genmodel#//mof/UMLDiagram/enlaces"/>
+        <childMetaFeature href="mof.genmodel#//mof/UMLDiagram/enlaces"/>
+        <sourceMetaFeature href="mof.genmodel#//mof/Enlace/origen"/>
+        <targetMetaFeature href="mof.genmodel#//mof/Enlace/destino"/>
       </modelFacet>
     </links>
     <palette>
       <groups title="Objects" collapse="true">
-        <entries xsi:type="gmfgen:ToolEntry" title="Clas" description="Create new Clas" genNodes="//@diagram/@topLevelNodes.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Nodo" description="Create new Nodo" genNodes="//@diagram/@topLevelNodes.0"/>
       </groups>
       <groups title="Connections" collapse="true">
-        <entries xsi:type="gmfgen:ToolEntry" title="Generatization" description="Create new Generatization" genLinks="//@diagram/@links.0"/>
+        <entries xsi:type="gmfgen:ToolEntry" title="Enlace" description="Create new Enlace" genLinks="//@diagram/@links.0"/>
       </groups>
     </palette>
     <preferencePages xsi:type="gmfgen:GenStandardPreferencePage" iD="tfg.diagram.general" name="Mof Diagram">

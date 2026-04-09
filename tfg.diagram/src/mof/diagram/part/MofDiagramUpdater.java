@@ -16,13 +16,12 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
-import mof.Clas;
-import mof.Generalization;
+import mof.Enlace;
 import mof.MofPackage;
-import mof.Nodeone;
+import mof.Nodo;
 import mof.UMLDiagram;
-import mof.diagram.edit.parts.ClasEditPart;
-import mof.diagram.edit.parts.GeneralizationEditPart;
+import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.NodoEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.providers.MofElementTypes;
 
@@ -58,10 +57,10 @@ public class MofDiagramUpdater {
 		}
 		UMLDiagram modelElement = (UMLDiagram) view.getElement();
 		LinkedList<MofNodeDescriptor> result = new LinkedList<MofNodeDescriptor>();
-		for (Iterator<?> it = modelElement.getElements().iterator(); it.hasNext();) {
-			Nodeone childElement = (Nodeone) it.next();
+		for (Iterator<?> it = modelElement.getNodos().iterator(); it.hasNext();) {
+			Nodo childElement = (Nodo) it.next();
 			int visualID = MofVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == ClasEditPart.VISUAL_ID) {
+			if (visualID == NodoEditPart.VISUAL_ID) {
 				result.add(new MofNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -76,10 +75,10 @@ public class MofDiagramUpdater {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getUMLDiagram_1000ContainedLinks(view);
-		case ClasEditPart.VISUAL_ID:
-			return getClas_2001ContainedLinks(view);
-		case GeneralizationEditPart.VISUAL_ID:
-			return getGeneralization_4001ContainedLinks(view);
+		case NodoEditPart.VISUAL_ID:
+			return getNodo_2001ContainedLinks(view);
+		case EnlaceEditPart.VISUAL_ID:
+			return getEnlace_4001ContainedLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -89,10 +88,10 @@ public class MofDiagramUpdater {
 	*/
 	public static List<MofLinkDescriptor> getIncomingLinks(View view) {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
-		case ClasEditPart.VISUAL_ID:
-			return getClas_2001IncomingLinks(view);
-		case GeneralizationEditPart.VISUAL_ID:
-			return getGeneralization_4001IncomingLinks(view);
+		case NodoEditPart.VISUAL_ID:
+			return getNodo_2001IncomingLinks(view);
+		case EnlaceEditPart.VISUAL_ID:
+			return getEnlace_4001IncomingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -102,10 +101,10 @@ public class MofDiagramUpdater {
 	*/
 	public static List<MofLinkDescriptor> getOutgoingLinks(View view) {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
-		case ClasEditPart.VISUAL_ID:
-			return getClas_2001OutgoingLinks(view);
-		case GeneralizationEditPart.VISUAL_ID:
-			return getGeneralization_4001OutgoingLinks(view);
+		case NodoEditPart.VISUAL_ID:
+			return getNodo_2001OutgoingLinks(view);
+		case EnlaceEditPart.VISUAL_ID:
+			return getEnlace_4001OutgoingLinks(view);
 		}
 		return Collections.emptyList();
 	}
@@ -116,79 +115,77 @@ public class MofDiagramUpdater {
 	public static List<MofLinkDescriptor> getUMLDiagram_1000ContainedLinks(View view) {
 		UMLDiagram modelElement = (UMLDiagram) view.getElement();
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
-		result.addAll(getContainedTypeModelFacetLinks_Generalization_4001(modelElement));
+		result.addAll(getContainedTypeModelFacetLinks_Enlace_4001(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getClas_2001ContainedLinks(View view) {
+	public static List<MofLinkDescriptor> getNodo_2001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getGeneralization_4001ContainedLinks(View view) {
+	public static List<MofLinkDescriptor> getEnlace_4001ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getClas_2001IncomingLinks(View view) {
-		Clas modelElement = (Clas) view.getElement();
+	public static List<MofLinkDescriptor> getNodo_2001IncomingLinks(View view) {
+		Nodo modelElement = (Nodo) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
-		result.addAll(getIncomingTypeModelFacetLinks_Generalization_4001(modelElement, crossReferences));
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getGeneralization_4001IncomingLinks(View view) {
+	public static List<MofLinkDescriptor> getEnlace_4001IncomingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getClas_2001OutgoingLinks(View view) {
-		Clas modelElement = (Clas) view.getElement();
+	public static List<MofLinkDescriptor> getNodo_2001OutgoingLinks(View view) {
+		Nodo modelElement = (Nodo) view.getElement();
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
-		result.addAll(getOutgoingTypeModelFacetLinks_Generalization_4001(modelElement));
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
 		return result;
 	}
 
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getGeneralization_4001OutgoingLinks(View view) {
+	public static List<MofLinkDescriptor> getEnlace_4001OutgoingLinks(View view) {
 		return Collections.emptyList();
 	}
 
 	/**
 	* @generated
 	*/
-	private static Collection<MofLinkDescriptor> getContainedTypeModelFacetLinks_Generalization_4001(
-			UMLDiagram container) {
+	private static Collection<MofLinkDescriptor> getContainedTypeModelFacetLinks_Enlace_4001(UMLDiagram container) {
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
-		for (Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getEnlaces().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof Generalization) {
+			if (false == linkObject instanceof Enlace) {
 				continue;
 			}
-			Generalization link = (Generalization) linkObject;
-			if (GeneralizationEditPart.VISUAL_ID != MofVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			Enlace link = (Enlace) linkObject;
+			if (EnlaceEditPart.VISUAL_ID != MofVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			Nodeone dst = link.getTarget();
-			Nodeone src = link.getSource();
-			result.add(new MofLinkDescriptor(src, dst, link, MofElementTypes.Generalization_4001,
-					GeneralizationEditPart.VISUAL_ID));
+			Nodo dst = link.getDestino();
+			Nodo src = link.getOrigen();
+			result.add(new MofLinkDescriptor(src, dst, link, MofElementTypes.Enlace_4001, EnlaceEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -196,22 +193,21 @@ public class MofDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	private static Collection<MofLinkDescriptor> getIncomingTypeModelFacetLinks_Generalization_4001(Nodeone target,
+	private static Collection<MofLinkDescriptor> getIncomingTypeModelFacetLinks_Enlace_4001(Nodo target,
 			Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences) {
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
 		Collection<EStructuralFeature.Setting> settings = crossReferences.get(target);
 		for (EStructuralFeature.Setting setting : settings) {
-			if (setting.getEStructuralFeature() != MofPackage.eINSTANCE.getRelationship_Target()
-					|| false == setting.getEObject() instanceof Generalization) {
+			if (setting.getEStructuralFeature() != MofPackage.eINSTANCE.getEnlace_Destino()
+					|| false == setting.getEObject() instanceof Enlace) {
 				continue;
 			}
-			Generalization link = (Generalization) setting.getEObject();
-			if (GeneralizationEditPart.VISUAL_ID != MofVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			Enlace link = (Enlace) setting.getEObject();
+			if (EnlaceEditPart.VISUAL_ID != MofVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			Nodeone src = link.getSource();
-			result.add(new MofLinkDescriptor(src, target, link, MofElementTypes.Generalization_4001,
-					GeneralizationEditPart.VISUAL_ID));
+			Nodo src = link.getOrigen();
+			result.add(new MofLinkDescriptor(src, target, link, MofElementTypes.Enlace_4001, EnlaceEditPart.VISUAL_ID));
 		}
 		return result;
 	}
@@ -219,7 +215,7 @@ public class MofDiagramUpdater {
 	/**
 	* @generated
 	*/
-	private static Collection<MofLinkDescriptor> getOutgoingTypeModelFacetLinks_Generalization_4001(Nodeone source) {
+	private static Collection<MofLinkDescriptor> getOutgoingTypeModelFacetLinks_Enlace_4001(Nodo source) {
 		UMLDiagram container = null;
 		// Find container element for the link.
 		// Climb up by containment hierarchy starting from the source
@@ -233,22 +229,21 @@ public class MofDiagramUpdater {
 			return Collections.emptyList();
 		}
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
-		for (Iterator<?> links = container.getLinks().iterator(); links.hasNext();) {
+		for (Iterator<?> links = container.getEnlaces().iterator(); links.hasNext();) {
 			EObject linkObject = (EObject) links.next();
-			if (false == linkObject instanceof Generalization) {
+			if (false == linkObject instanceof Enlace) {
 				continue;
 			}
-			Generalization link = (Generalization) linkObject;
-			if (GeneralizationEditPart.VISUAL_ID != MofVisualIDRegistry.getLinkWithClassVisualID(link)) {
+			Enlace link = (Enlace) linkObject;
+			if (EnlaceEditPart.VISUAL_ID != MofVisualIDRegistry.getLinkWithClassVisualID(link)) {
 				continue;
 			}
-			Nodeone dst = link.getTarget();
-			Nodeone src = link.getSource();
+			Nodo dst = link.getDestino();
+			Nodo src = link.getOrigen();
 			if (src != source) {
 				continue;
 			}
-			result.add(new MofLinkDescriptor(src, dst, link, MofElementTypes.Generalization_4001,
-					GeneralizationEditPart.VISUAL_ID));
+			result.add(new MofLinkDescriptor(src, dst, link, MofElementTypes.Enlace_4001, EnlaceEditPart.VISUAL_ID));
 		}
 		return result;
 	}

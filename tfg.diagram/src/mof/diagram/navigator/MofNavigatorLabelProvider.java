@@ -20,9 +20,9 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
-import mof.diagram.edit.parts.ClasEditPart;
-import mof.diagram.edit.parts.ClasNameEditPart;
-import mof.diagram.edit.parts.GeneralizationEditPart;
+import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.NodoEditPart;
+import mof.diagram.edit.parts.NodoNombreEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofDiagramEditorPlugin;
 import mof.diagram.part.MofVisualIDRegistry;
@@ -91,10 +91,10 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?mof?UMLDiagram", MofElementTypes.UMLDiagram_1000); //$NON-NLS-1$
-		case ClasEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?mof?Clas", MofElementTypes.Clas_2001); //$NON-NLS-1$
-		case GeneralizationEditPart.VISUAL_ID:
-			return getImage("Navigator?Link?mof?Generalization", MofElementTypes.Generalization_4001); //$NON-NLS-1$
+		case NodoEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?mof?Nodo", MofElementTypes.Nodo_2001); //$NON-NLS-1$
+		case EnlaceEditPart.VISUAL_ID:
+			return getImage("Navigator?Link?mof?Enlace", MofElementTypes.Enlace_4001); //$NON-NLS-1$
 		}
 		return getImage("Navigator?UnknownElement", null); //$NON-NLS-1$
 	}
@@ -155,10 +155,10 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getUMLDiagram_1000Text(view);
-		case ClasEditPart.VISUAL_ID:
-			return getClas_2001Text(view);
-		case GeneralizationEditPart.VISUAL_ID:
-			return getGeneralization_4001Text(view);
+		case NodoEditPart.VISUAL_ID:
+			return getNodo_2001Text(view);
+		case EnlaceEditPart.VISUAL_ID:
+			return getEnlace_4001Text(view);
 		}
 		return getUnknownElementText(view);
 	}
@@ -173,10 +173,10 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	* @generated
 	*/
-	private String getClas_2001Text(View view) {
-		IParser parser = MofParserProvider.getParser(MofElementTypes.Clas_2001,
+	private String getNodo_2001Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.Nodo_2001,
 				view.getElement() != null ? view.getElement() : view,
-				MofVisualIDRegistry.getType(ClasNameEditPart.VISUAL_ID));
+				MofVisualIDRegistry.getType(NodoNombreEditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
@@ -189,7 +189,7 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	* @generated
 	*/
-	private String getGeneralization_4001Text(View view) {
+	private String getEnlace_4001Text(View view) {
 		return ""; //$NON-NLS-1$
 	}
 

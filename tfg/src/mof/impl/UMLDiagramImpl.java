@@ -4,9 +4,9 @@ package mof.impl;
 
 import java.util.Collection;
 
+import mof.Enlace;
 import mof.MofPackage;
-import mof.Nodeone;
-import mof.Relationship;
+import mof.Nodo;
 import mof.UMLDiagram;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -29,32 +29,32 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link mof.impl.UMLDiagramImpl#getElements <em>Elements</em>}</li>
- *   <li>{@link mof.impl.UMLDiagramImpl#getLinks <em>Links</em>}</li>
+ *   <li>{@link mof.impl.UMLDiagramImpl#getNodos <em>Nodos</em>}</li>
+ *   <li>{@link mof.impl.UMLDiagramImpl#getEnlaces <em>Enlaces</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	/**
-	 * The cached value of the '{@link #getElements() <em>Elements</em>}' containment reference list.
+	 * The cached value of the '{@link #getNodos() <em>Nodos</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getElements()
+	 * @see #getNodos()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Nodeone> elements;
+	protected EList<Nodo> nodos;
 
 	/**
-	 * The cached value of the '{@link #getLinks() <em>Links</em>}' containment reference list.
+	 * The cached value of the '{@link #getEnlaces() <em>Enlaces</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getLinks()
+	 * @see #getEnlaces()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Relationship> links;
+	protected EList<Enlace> enlaces;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,11 +81,11 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	 * @generated
 	 */
 	@Override
-	public EList<Nodeone> getElements() {
-		if (elements == null) {
-			elements = new EObjectContainmentEList<Nodeone>(Nodeone.class, this, MofPackage.UML_DIAGRAM__ELEMENTS);
+	public EList<Nodo> getNodos() {
+		if (nodos == null) {
+			nodos = new EObjectContainmentEList<Nodo>(Nodo.class, this, MofPackage.UML_DIAGRAM__NODOS);
 		}
-		return elements;
+		return nodos;
 	}
 
 	/**
@@ -94,11 +94,11 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	 * @generated
 	 */
 	@Override
-	public EList<Relationship> getLinks() {
-		if (links == null) {
-			links = new EObjectContainmentEList<Relationship>(Relationship.class, this, MofPackage.UML_DIAGRAM__LINKS);
+	public EList<Enlace> getEnlaces() {
+		if (enlaces == null) {
+			enlaces = new EObjectContainmentEList<Enlace>(Enlace.class, this, MofPackage.UML_DIAGRAM__ENLACES);
 		}
-		return links;
+		return enlaces;
 	}
 
 	/**
@@ -109,10 +109,10 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MofPackage.UML_DIAGRAM__ELEMENTS:
-				return ((InternalEList<?>)getElements()).basicRemove(otherEnd, msgs);
-			case MofPackage.UML_DIAGRAM__LINKS:
-				return ((InternalEList<?>)getLinks()).basicRemove(otherEnd, msgs);
+			case MofPackage.UML_DIAGRAM__NODOS:
+				return ((InternalEList<?>)getNodos()).basicRemove(otherEnd, msgs);
+			case MofPackage.UML_DIAGRAM__ENLACES:
+				return ((InternalEList<?>)getEnlaces()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -125,10 +125,10 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MofPackage.UML_DIAGRAM__ELEMENTS:
-				return getElements();
-			case MofPackage.UML_DIAGRAM__LINKS:
-				return getLinks();
+			case MofPackage.UML_DIAGRAM__NODOS:
+				return getNodos();
+			case MofPackage.UML_DIAGRAM__ENLACES:
+				return getEnlaces();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -142,13 +142,13 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MofPackage.UML_DIAGRAM__ELEMENTS:
-				getElements().clear();
-				getElements().addAll((Collection<? extends Nodeone>)newValue);
+			case MofPackage.UML_DIAGRAM__NODOS:
+				getNodos().clear();
+				getNodos().addAll((Collection<? extends Nodo>)newValue);
 				return;
-			case MofPackage.UML_DIAGRAM__LINKS:
-				getLinks().clear();
-				getLinks().addAll((Collection<? extends Relationship>)newValue);
+			case MofPackage.UML_DIAGRAM__ENLACES:
+				getEnlaces().clear();
+				getEnlaces().addAll((Collection<? extends Enlace>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -162,11 +162,11 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MofPackage.UML_DIAGRAM__ELEMENTS:
-				getElements().clear();
+			case MofPackage.UML_DIAGRAM__NODOS:
+				getNodos().clear();
 				return;
-			case MofPackage.UML_DIAGRAM__LINKS:
-				getLinks().clear();
+			case MofPackage.UML_DIAGRAM__ENLACES:
+				getEnlaces().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -180,10 +180,10 @@ public class UMLDiagramImpl extends EObjectImpl implements UMLDiagram {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MofPackage.UML_DIAGRAM__ELEMENTS:
-				return elements != null && !elements.isEmpty();
-			case MofPackage.UML_DIAGRAM__LINKS:
-				return links != null && !links.isEmpty();
+			case MofPackage.UML_DIAGRAM__NODOS:
+				return nodos != null && !nodos.isEmpty();
+			case MofPackage.UML_DIAGRAM__ENLACES:
+				return enlaces != null && !enlaces.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

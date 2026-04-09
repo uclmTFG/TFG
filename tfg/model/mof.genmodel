@@ -8,29 +8,26 @@
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Color">
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Blanco"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Negro"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Azul"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Amarillo"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Naranja"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Rojo"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Verde"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Amarillo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Azul"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Rosa"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Lila"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Naranja"/>
     </genEnums>
     <genClasses ecoreClass="mof.ecore#//UMLDiagram">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/elements"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/links"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/nodos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/enlaces"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="mof.ecore#//Nodeone">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodeone/name"/>
+    <genClasses ecoreClass="mof.ecore#//Nodo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/descripcion"/>
     </genClasses>
-    <genClasses ecoreClass="mof.ecore#//Clas">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Clas/color"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Clas/colorborde"/>
+    <genClasses ecoreClass="mof.ecore#//Enlace">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/destino"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="mof.ecore#//Relationship">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Relationship/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Relationship/target"/>
-    </genClasses>
-    <genClasses ecoreClass="mof.ecore#//Generalization"/>
   </genPackages>
 </genmodel:GenModel>

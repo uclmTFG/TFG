@@ -95,49 +95,49 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mof.Clas} instances.
+	 * This keeps track of the one adapter used for all {@link mof.Nodo} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ClasItemProvider clasItemProvider;
+	protected NodoItemProvider nodoItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mof.Clas}.
+	 * This creates an adapter for a {@link mof.Nodo}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createClasAdapter() {
-		if (clasItemProvider == null) {
-			clasItemProvider = new ClasItemProvider(this);
+	public Adapter createNodoAdapter() {
+		if (nodoItemProvider == null) {
+			nodoItemProvider = new NodoItemProvider(this);
 		}
 
-		return clasItemProvider;
+		return nodoItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mof.Generalization} instances.
+	 * This keeps track of the one adapter used for all {@link mof.Enlace} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected GeneralizationItemProvider generalizationItemProvider;
+	protected EnlaceItemProvider enlaceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mof.Generalization}.
+	 * This creates an adapter for a {@link mof.Enlace}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createGeneralizationAdapter() {
-		if (generalizationItemProvider == null) {
-			generalizationItemProvider = new GeneralizationItemProvider(this);
+	public Adapter createEnlaceAdapter() {
+		if (enlaceItemProvider == null) {
+			enlaceItemProvider = new EnlaceItemProvider(this);
 		}
 
-		return generalizationItemProvider;
+		return enlaceItemProvider;
 	}
 
 	/**
@@ -246,8 +246,8 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 	@Override
 	public void dispose() {
 		if (umlDiagramItemProvider != null) umlDiagramItemProvider.dispose();
-		if (clasItemProvider != null) clasItemProvider.dispose();
-		if (generalizationItemProvider != null) generalizationItemProvider.dispose();
+		if (nodoItemProvider != null) nodoItemProvider.dispose();
+		if (enlaceItemProvider != null) enlaceItemProvider.dispose();
 	}
 
 }

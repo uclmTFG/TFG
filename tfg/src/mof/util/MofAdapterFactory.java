@@ -72,20 +72,12 @@ public class MofAdapterFactory extends AdapterFactoryImpl {
 				return createUMLDiagramAdapter();
 			}
 			@Override
-			public Adapter caseNodeone(Nodeone object) {
-				return createNodeoneAdapter();
+			public Adapter caseNodo(Nodo object) {
+				return createNodoAdapter();
 			}
 			@Override
-			public Adapter caseClas(Clas object) {
-				return createClasAdapter();
-			}
-			@Override
-			public Adapter caseRelationship(Relationship object) {
-				return createRelationshipAdapter();
-			}
-			@Override
-			public Adapter caseGeneralization(Generalization object) {
-				return createGeneralizationAdapter();
+			public Adapter caseEnlace(Enlace object) {
+				return createEnlaceAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -122,58 +114,30 @@ public class MofAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mof.Nodeone <em>Nodeone</em>}'.
+	 * Creates a new adapter for an object of class '{@link mof.Nodo <em>Nodo</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mof.Nodeone
+	 * @see mof.Nodo
 	 * @generated
 	 */
-	public Adapter createNodeoneAdapter() {
+	public Adapter createNodoAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mof.Clas <em>Clas</em>}'.
+	 * Creates a new adapter for an object of class '{@link mof.Enlace <em>Enlace</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see mof.Clas
+	 * @see mof.Enlace
 	 * @generated
 	 */
-	public Adapter createClasAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mof.Relationship <em>Relationship</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mof.Relationship
-	 * @generated
-	 */
-	public Adapter createRelationshipAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mof.Generalization <em>Generalization</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mof.Generalization
-	 * @generated
-	 */
-	public Adapter createGeneralizationAdapter() {
+	public Adapter createEnlaceAdapter() {
 		return null;
 	}
 

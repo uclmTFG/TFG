@@ -2,13 +2,11 @@
  */
 package mof.impl;
 
-import mof.Clas;
 import mof.Color;
-import mof.Generalization;
+import mof.Enlace;
 import mof.MofFactory;
 import mof.MofPackage;
-import mof.Nodeone;
-import mof.Relationship;
+import mof.Nodo;
 import mof.UMLDiagram;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -38,28 +36,14 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass nodeoneEClass = null;
+	private EClass nodoEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass clasEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass relationshipEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass generalizationEClass = null;
+	private EClass enlaceEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -145,7 +129,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getUMLDiagram_Elements() {
+	public EReference getUMLDiagram_Nodos() {
 		return (EReference)umlDiagramEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -155,7 +139,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getUMLDiagram_Links() {
+	public EReference getUMLDiagram_Enlaces() {
 		return (EReference)umlDiagramEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -165,8 +149,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getNodeone() {
-		return nodeoneEClass;
+	public EClass getNodo() {
+		return nodoEClass;
 	}
 
 	/**
@@ -175,8 +159,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNodeone_Name() {
-		return (EAttribute)nodeoneEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNodo_Nombre() {
+		return (EAttribute)nodoEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -185,8 +169,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getClas() {
-		return clasEClass;
+	public EAttribute getNodo_Color() {
+		return (EAttribute)nodoEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -195,8 +179,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getClas_Color() {
-		return (EAttribute)clasEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNodo_Descripcion() {
+		return (EAttribute)nodoEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -205,8 +189,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getClas_Colorborde() {
-		return (EAttribute)clasEClass.getEStructuralFeatures().get(1);
+	public EClass getEnlace() {
+		return enlaceEClass;
 	}
 
 	/**
@@ -215,8 +199,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getRelationship() {
-		return relationshipEClass;
+	public EReference getEnlace_Origen() {
+		return (EReference)enlaceEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -225,28 +209,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getRelationship_Source() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getRelationship_Target() {
-		return (EReference)relationshipEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EClass getGeneralization() {
-		return generalizationEClass;
+	public EReference getEnlace_Destino() {
+		return (EReference)enlaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -289,21 +253,17 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 
 		// Create classes and their features
 		umlDiagramEClass = createEClass(UML_DIAGRAM);
-		createEReference(umlDiagramEClass, UML_DIAGRAM__ELEMENTS);
-		createEReference(umlDiagramEClass, UML_DIAGRAM__LINKS);
+		createEReference(umlDiagramEClass, UML_DIAGRAM__NODOS);
+		createEReference(umlDiagramEClass, UML_DIAGRAM__ENLACES);
 
-		nodeoneEClass = createEClass(NODEONE);
-		createEAttribute(nodeoneEClass, NODEONE__NAME);
+		nodoEClass = createEClass(NODO);
+		createEAttribute(nodoEClass, NODO__NOMBRE);
+		createEAttribute(nodoEClass, NODO__COLOR);
+		createEAttribute(nodoEClass, NODO__DESCRIPCION);
 
-		clasEClass = createEClass(CLAS);
-		createEAttribute(clasEClass, CLAS__COLOR);
-		createEAttribute(clasEClass, CLAS__COLORBORDE);
-
-		relationshipEClass = createEClass(RELATIONSHIP);
-		createEReference(relationshipEClass, RELATIONSHIP__SOURCE);
-		createEReference(relationshipEClass, RELATIONSHIP__TARGET);
-
-		generalizationEClass = createEClass(GENERALIZATION);
+		enlaceEClass = createEClass(ENLACE);
+		createEReference(enlaceEClass, ENLACE__ORIGEN);
+		createEReference(enlaceEClass, ENLACE__DESTINO);
 
 		// Create enums
 		colorEEnum = createEEnum(COLOR);
@@ -337,38 +297,32 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		clasEClass.getESuperTypes().add(this.getNodeone());
-		generalizationEClass.getESuperTypes().add(this.getRelationship());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(umlDiagramEClass, UMLDiagram.class, "UMLDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUMLDiagram_Elements(), this.getNodeone(), null, "elements", null, 0, -1, UMLDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUMLDiagram_Links(), this.getRelationship(), null, "links", null, 0, -1, UMLDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUMLDiagram_Nodos(), this.getNodo(), null, "nodos", null, 0, -1, UMLDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUMLDiagram_Enlaces(), this.getEnlace(), null, "enlaces", null, 0, -1, UMLDiagram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nodeoneEClass, Nodeone.class, "Nodeone", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNodeone_Name(), ecorePackage.getEString(), "name", null, 0, 1, Nodeone.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(nodoEClass, Nodo.class, "Nodo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNodo_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodo_Color(), this.getColor(), "color", "Blanco", 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodo_Descripcion(), ecorePackage.getEString(), "descripcion", null, 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(clasEClass, Clas.class, "Clas", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getClas_Color(), this.getColor(), "color", "Blanco", 0, 1, Clas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getClas_Colorborde(), this.getColor(), "colorborde", "Blanco", 0, 1, Clas.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(relationshipEClass, Relationship.class, "Relationship", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getRelationship_Source(), this.getNodeone(), null, "source", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRelationship_Target(), this.getNodeone(), null, "target", null, 1, 1, Relationship.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(generalizationEClass, Generalization.class, "Generalization", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(enlaceEClass, Enlace.class, "Enlace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getEnlace_Origen(), this.getNodo(), null, "origen", null, 1, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEnlace_Destino(), this.getNodo(), null, "destino", null, 1, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(colorEEnum, Color.class, "Color");
 		addEEnumLiteral(colorEEnum, Color.BLANCO);
 		addEEnumLiteral(colorEEnum, Color.NEGRO);
-		addEEnumLiteral(colorEEnum, Color.AZUL);
-		addEEnumLiteral(colorEEnum, Color.AMARILLO);
-		addEEnumLiteral(colorEEnum, Color.NARANJA);
 		addEEnumLiteral(colorEEnum, Color.ROJO);
 		addEEnumLiteral(colorEEnum, Color.VERDE);
+		addEEnumLiteral(colorEEnum, Color.AMARILLO);
+		addEEnumLiteral(colorEEnum, Color.AZUL);
 		addEEnumLiteral(colorEEnum, Color.ROSA);
 		addEEnumLiteral(colorEEnum, Color.LILA);
+		addEEnumLiteral(colorEEnum, Color.NARANJA);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -406,10 +360,10 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	protected void createGmf_1Annotations() {
 		String source = "gmf.node";
 		addAnnotation
-		  (clasEClass,
+		  (nodoEClass,
 		   source,
 		   new String[] {
-			   "label", "name"
+			   "label", "nombre"
 		   });
 	}
 
@@ -422,14 +376,13 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	protected void createGmf_2Annotations() {
 		String source = "gmf.link";
 		addAnnotation
-		  (generalizationEClass,
+		  (enlaceEClass,
 		   source,
 		   new String[] {
-			   "source", "source",
-			   "target", "target",
-			   "target.decoration", "closedarrow",
+			   "source", "origen",
+			   "target", "destino",
 			   "style", "solid",
-			   "tool.name", "Generatization"
+			   "target.decoration", "arrow"
 		   });
 	}
 

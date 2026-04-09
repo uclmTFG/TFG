@@ -35,8 +35,8 @@ import org.eclipse.gmf.runtime.emf.type.core.requests.SetRequest;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.helpers.GeneratedEditHelperBase;
 
-import mof.Generalization;
-import mof.Nodeone;
+import mof.Enlace;
+import mof.Nodo;
 import mof.UMLDiagram;
 import mof.diagram.part.MofDiagramEditorPlugin;
 import mof.diagram.part.MofVisualIDRegistry;
@@ -312,15 +312,14 @@ public class MofBaseItemSemanticEditPolicy extends SemanticEditPolicy {
 		/**
 		 * @generated
 		 */
-		public boolean canCreateGeneralization_4001(UMLDiagram container, Nodeone source, Nodeone target) {
-			return canExistGeneralization_4001(container, null, source, target);
+		public boolean canCreateEnlace_4001(UMLDiagram container, Nodo source, Nodo target) {
+			return canExistEnlace_4001(container, null, source, target);
 		}
 
 		/**
 		* @generated
 		*/
-		public boolean canExistGeneralization_4001(UMLDiagram container, Generalization linkInstance, Nodeone source,
-				Nodeone target) {
+		public boolean canExistEnlace_4001(UMLDiagram container, Enlace linkInstance, Nodo source, Nodo target) {
 			return true;
 		}
 	}

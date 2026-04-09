@@ -5,38 +5,31 @@ package mof;
 
 @gmf.diagram()
 class UMLDiagram {
-	val Nodeone[*] elements;
-	val Relationship[*] links;
+	val Nodo[*] nodos;
+	val Enlace[*] enlaces;
 }
 
 enum Color {
 	Blanco;
 	Negro;
-	Azul;
-	Amarillo;
-	Naranja;
 	Rojo;
 	Verde;
+	Amarillo;
+	Azul;
 	Rosa;
 	Lila;
+	Naranja;
 }
 
-abstract class Nodeone {
-	attr String name;
+@gmf.node(label="nombre")
+class Nodo {
+    attr String nombre;
+    attr Color color = "Blanco";
+    attr String descripcion;
 }
 
-@gmf.node(label="name")
-class Clas extends Nodeone {
-	attr Color color = "Blanco";
-	attr Color colorborde = "Blanco";
+@gmf.link(source="origen", target="destino", style="solid", target.decoration="arrow")
+class Enlace {
+    ref Nodo[1] origen;
+    ref Nodo[1] destino;
 }
-
-abstract class Relationship{
-	ref Nodeone[1] source;
-	ref Nodeone[1] target;
-}
-
-@gmf.link(source="source", target="target", 
-target.decoration="closedarrow", style="solid",
-tool.name="Generatization")
-class Generalization extends Relationship {}

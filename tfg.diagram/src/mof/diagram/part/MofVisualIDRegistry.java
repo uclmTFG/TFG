@@ -12,9 +12,9 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import mof.MofPackage;
 import mof.UMLDiagram;
-import mof.diagram.edit.parts.ClasEditPart;
-import mof.diagram.edit.parts.ClasNameEditPart;
-import mof.diagram.edit.parts.GeneralizationEditPart;
+import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.NodoEditPart;
+import mof.diagram.edit.parts.NodoNombreEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 
 /**
@@ -119,8 +119,8 @@ public class MofVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
-			if (MofPackage.eINSTANCE.getClas().isSuperTypeOf(domainElement.eClass())) {
-				return ClasEditPart.VISUAL_ID;
+			if (MofPackage.eINSTANCE.getNodo().isSuperTypeOf(domainElement.eClass())) {
+				return NodoEditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -147,12 +147,12 @@ public class MofVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
-			if (ClasEditPart.VISUAL_ID == nodeVisualID) {
+			if (NodoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case ClasEditPart.VISUAL_ID:
-			if (ClasNameEditPart.VISUAL_ID == nodeVisualID) {
+		case NodoEditPart.VISUAL_ID:
+			if (NodoNombreEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -167,8 +167,8 @@ public class MofVisualIDRegistry {
 		if (domainElement == null) {
 			return -1;
 		}
-		if (MofPackage.eINSTANCE.getGeneralization().isSuperTypeOf(domainElement.eClass())) {
-			return GeneralizationEditPart.VISUAL_ID;
+		if (MofPackage.eINSTANCE.getEnlace().isSuperTypeOf(domainElement.eClass())) {
+			return EnlaceEditPart.VISUAL_ID;
 		}
 		return -1;
 	}
@@ -209,7 +209,7 @@ public class MofVisualIDRegistry {
 		switch (visualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return false;
-		case ClasEditPart.VISUAL_ID:
+		case NodoEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

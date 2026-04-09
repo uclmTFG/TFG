@@ -28,14 +28,14 @@ public class MofEditPartFactory implements EditPartFactory {
 			case UMLDiagramEditPart.VISUAL_ID:
 				return new UMLDiagramEditPart(view);
 
-			case ClasEditPart.VISUAL_ID:
-				return new ClasEditPart(view);
+			case NodoEditPart.VISUAL_ID:
+				return new NodoEditPart(view);
 
-			case ClasNameEditPart.VISUAL_ID:
-				return new ClasNameEditPart(view);
+			case NodoNombreEditPart.VISUAL_ID:
+				return new NodoNombreEditPart(view);
 
-			case GeneralizationEditPart.VISUAL_ID:
-				return new GeneralizationEditPart(view);
+			case EnlaceEditPart.VISUAL_ID:
+				return new EnlaceEditPart(view);
 
 			}
 		}

@@ -33,8 +33,8 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import mof.MofPackage;
-import mof.diagram.edit.parts.ClasEditPart;
-import mof.diagram.edit.parts.GeneralizationEditPart;
+import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.NodoEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofDiagramUpdater;
 import mof.diagram.part.MofLinkDescriptor;
@@ -62,7 +62,7 @@ public class UMLDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	* @generated
 	*/
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return MofPackage.eINSTANCE.getUMLDiagram_Elements();
+		return MofPackage.eINSTANCE.getUMLDiagram_Nodos();
 	}
 
 	/**
@@ -94,7 +94,7 @@ public class UMLDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	* @generated
 	*/
 	private boolean isMyDiagramElement(View view) {
-		return ClasEditPart.VISUAL_ID == MofVisualIDRegistry.getVisualID(view);
+		return NodoEditPart.VISUAL_ID == MofVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -251,16 +251,16 @@ public class UMLDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case ClasEditPart.VISUAL_ID: {
+		case NodoEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getClas_2001ContainedLinks(view));
+				result.addAll(MofDiagramUpdater.getNodo_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case GeneralizationEditPart.VISUAL_ID: {
+		case EnlaceEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getGeneralization_4001ContainedLinks(view));
+				result.addAll(MofDiagramUpdater.getEnlace_4001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

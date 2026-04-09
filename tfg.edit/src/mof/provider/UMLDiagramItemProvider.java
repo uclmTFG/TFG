@@ -77,8 +77,8 @@ public class UMLDiagramItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MofPackage.Literals.UML_DIAGRAM__ELEMENTS);
-			childrenFeatures.add(MofPackage.Literals.UML_DIAGRAM__LINKS);
+			childrenFeatures.add(MofPackage.Literals.UML_DIAGRAM__NODOS);
+			childrenFeatures.add(MofPackage.Literals.UML_DIAGRAM__ENLACES);
 		}
 		return childrenFeatures;
 	}
@@ -131,8 +131,8 @@ public class UMLDiagramItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(UMLDiagram.class)) {
-			case MofPackage.UML_DIAGRAM__ELEMENTS:
-			case MofPackage.UML_DIAGRAM__LINKS:
+			case MofPackage.UML_DIAGRAM__NODOS:
+			case MofPackage.UML_DIAGRAM__ENLACES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -152,13 +152,13 @@ public class UMLDiagramItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MofPackage.Literals.UML_DIAGRAM__ELEMENTS,
-				 MofFactory.eINSTANCE.createClas()));
+				(MofPackage.Literals.UML_DIAGRAM__NODOS,
+				 MofFactory.eINSTANCE.createNodo()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MofPackage.Literals.UML_DIAGRAM__LINKS,
-				 MofFactory.eINSTANCE.createGeneralization()));
+				(MofPackage.Literals.UML_DIAGRAM__ENLACES,
+				 MofFactory.eINSTANCE.createEnlace()));
 	}
 
 	/**

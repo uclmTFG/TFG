@@ -3,47 +3,41 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mof" nsURI="mof" nsPrefix="mof">
   <eClassifiers xsi:type="ecore:EClass" name="UMLDiagram">
     <eAnnotations source="gmf.diagram"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Nodeone" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Relationship" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodos" upperBound="-1"
+        eType="#//Nodo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enlaces" upperBound="-1"
+        eType="#//Enlace" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Color">
     <eLiterals name="Blanco"/>
     <eLiterals name="Negro" value="1"/>
-    <eLiterals name="Azul" value="2"/>
-    <eLiterals name="Amarillo" value="3"/>
-    <eLiterals name="Naranja" value="4"/>
-    <eLiterals name="Rojo" value="5"/>
-    <eLiterals name="Verde" value="6"/>
-    <eLiterals name="Rosa" value="7"/>
-    <eLiterals name="Lila" value="8"/>
+    <eLiterals name="Rojo" value="2"/>
+    <eLiterals name="Verde" value="3"/>
+    <eLiterals name="Amarillo" value="4"/>
+    <eLiterals name="Azul" value="5"/>
+    <eLiterals name="Rosa" value="6"/>
+    <eLiterals name="Lila" value="7"/>
+    <eLiterals name="Naranja" value="8"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Nodeone" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Clas" eSuperTypes="#//Nodeone">
+  <eClassifiers xsi:type="ecore:EClass" name="Nodo">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="label" value="nombre"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
         defaultValueLiteral="Blanco"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorborde" eType="#//Color"
-        defaultValueLiteral="Blanco"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Nodeone"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="#//Nodeone"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//Relationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Enlace">
     <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
-      <details key="target.decoration" value="closedarrow"/>
+      <details key="source" value="origen"/>
+      <details key="target" value="destino"/>
       <details key="style" value="solid"/>
-      <details key="tool.name" value="Generatization"/>
+      <details key="target.decoration" value="arrow"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Nodo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Nodo"/>
   </eClassifiers>
 </ecore:EPackage>

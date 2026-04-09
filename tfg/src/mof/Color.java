@@ -39,36 +39,6 @@ public enum Color implements Enumerator {
 	NEGRO(1, "Negro", "Negro"),
 
 	/**
-	 * The '<em><b>Azul</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AZUL_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	AZUL(2, "Azul", "Azul"),
-
-	/**
-	 * The '<em><b>Amarillo</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AMARILLO_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	AMARILLO(3, "Amarillo", "Amarillo"),
-
-	/**
-	 * The '<em><b>Naranja</b></em>' literal object.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NARANJA_VALUE
-	 * @generated
-	 * @ordered
-	 */
-	NARANJA(4, "Naranja", "Naranja"),
-
-	/**
 	 * The '<em><b>Rojo</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -76,7 +46,7 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ROJO(5, "Rojo", "Rojo"),
+	ROJO(2, "Rojo", "Rojo"),
 
 	/**
 	 * The '<em><b>Verde</b></em>' literal object.
@@ -86,7 +56,27 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	VERDE(6, "Verde", "Verde"),
+	VERDE(3, "Verde", "Verde"),
+
+	/**
+	 * The '<em><b>Amarillo</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AMARILLO_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AMARILLO(4, "Amarillo", "Amarillo"),
+
+	/**
+	 * The '<em><b>Azul</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AZUL_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	AZUL(5, "Azul", "Azul"),
 
 	/**
 	 * The '<em><b>Rosa</b></em>' literal object.
@@ -96,7 +86,7 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	ROSA(7, "Rosa", "Rosa"),
+	ROSA(6, "Rosa", "Rosa"),
 
 	/**
 	 * The '<em><b>Lila</b></em>' literal object.
@@ -106,7 +96,17 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	LILA(8, "Lila", "Lila");
+	LILA(7, "Lila", "Lila"),
+
+	/**
+	 * The '<em><b>Naranja</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NARANJA_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	NARANJA(8, "Naranja", "Naranja");
 
 	/**
 	 * The '<em><b>Blanco</b></em>' literal value.
@@ -131,39 +131,6 @@ public enum Color implements Enumerator {
 	public static final int NEGRO_VALUE = 1;
 
 	/**
-	 * The '<em><b>Azul</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AZUL
-	 * @model name="Azul"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int AZUL_VALUE = 2;
-
-	/**
-	 * The '<em><b>Amarillo</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #AMARILLO
-	 * @model name="Amarillo"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int AMARILLO_VALUE = 3;
-
-	/**
-	 * The '<em><b>Naranja</b></em>' literal value.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #NARANJA
-	 * @model name="Naranja"
-	 * @generated
-	 * @ordered
-	 */
-	public static final int NARANJA_VALUE = 4;
-
-	/**
 	 * The '<em><b>Rojo</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,7 +139,7 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROJO_VALUE = 5;
+	public static final int ROJO_VALUE = 2;
 
 	/**
 	 * The '<em><b>Verde</b></em>' literal value.
@@ -183,7 +150,29 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int VERDE_VALUE = 6;
+	public static final int VERDE_VALUE = 3;
+
+	/**
+	 * The '<em><b>Amarillo</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AMARILLO
+	 * @model name="Amarillo"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AMARILLO_VALUE = 4;
+
+	/**
+	 * The '<em><b>Azul</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #AZUL
+	 * @model name="Azul"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int AZUL_VALUE = 5;
 
 	/**
 	 * The '<em><b>Rosa</b></em>' literal value.
@@ -194,7 +183,7 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int ROSA_VALUE = 7;
+	public static final int ROSA_VALUE = 6;
 
 	/**
 	 * The '<em><b>Lila</b></em>' literal value.
@@ -205,7 +194,18 @@ public enum Color implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int LILA_VALUE = 8;
+	public static final int LILA_VALUE = 7;
+
+	/**
+	 * The '<em><b>Naranja</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #NARANJA
+	 * @model name="Naranja"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int NARANJA_VALUE = 8;
 
 	/**
 	 * An array of all the '<em><b>Color</b></em>' enumerators.
@@ -217,13 +217,13 @@ public enum Color implements Enumerator {
 		new Color[] {
 			BLANCO,
 			NEGRO,
-			AZUL,
-			AMARILLO,
-			NARANJA,
 			ROJO,
 			VERDE,
+			AMARILLO,
+			AZUL,
 			ROSA,
 			LILA,
+			NARANJA,
 		};
 
 	/**
@@ -282,13 +282,13 @@ public enum Color implements Enumerator {
 		switch (value) {
 			case BLANCO_VALUE: return BLANCO;
 			case NEGRO_VALUE: return NEGRO;
-			case AZUL_VALUE: return AZUL;
-			case AMARILLO_VALUE: return AMARILLO;
-			case NARANJA_VALUE: return NARANJA;
 			case ROJO_VALUE: return ROJO;
 			case VERDE_VALUE: return VERDE;
+			case AMARILLO_VALUE: return AMARILLO;
+			case AZUL_VALUE: return AZUL;
 			case ROSA_VALUE: return ROSA;
 			case LILA_VALUE: return LILA;
+			case NARANJA_VALUE: return NARANJA;
 		}
 		return null;
 	}
