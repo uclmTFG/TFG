@@ -17,6 +17,7 @@ import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombre2EditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombreEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.EnlaceTextoEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
 import mof.diagram.edit.parts.NodoDosNombre2EditPart;
@@ -284,6 +285,11 @@ public class MofVisualIDRegistry {
 				return true;
 			}
 			if (AtributosMetodos2EditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			break;
+		case EnlaceEditPart.VISUAL_ID:
+			if (EnlaceTextoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;

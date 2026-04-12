@@ -19,6 +19,7 @@ import org.eclipse.gmf.runtime.notation.View;
 import mof.MofPackage;
 import mof.diagram.edit.parts.AtributosMetodosNombre2EditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombreEditPart;
+import mof.diagram.edit.parts.EnlaceTextoEditPart;
 import mof.diagram.edit.parts.NodoDosNombre2EditPart;
 import mof.diagram.edit.parts.NodoDosNombreEditPart;
 import mof.diagram.edit.parts.NodoUnoNombre2EditPart;
@@ -172,6 +173,23 @@ public class MofParserProvider extends AbstractProvider implements IParserProvid
 	/**
 	* @generated
 	*/
+	private IParser enlaceTexto_6001Parser;
+
+	/**
+	* @generated
+	*/
+	private IParser getEnlaceTexto_6001Parser() {
+		if (enlaceTexto_6001Parser == null) {
+			EAttribute[] features = new EAttribute[] { MofPackage.eINSTANCE.getEnlace_Texto() };
+			MessageFormatParser parser = new MessageFormatParser(features);
+			enlaceTexto_6001Parser = parser;
+		}
+		return enlaceTexto_6001Parser;
+	}
+
+	/**
+	* @generated
+	*/
 	protected IParser getParser(int visualID) {
 		switch (visualID) {
 		case PackageNombreEditPart.VISUAL_ID:
@@ -190,6 +208,8 @@ public class MofParserProvider extends AbstractProvider implements IParserProvid
 			return getNodoDosNombre_5002Parser();
 		case AtributosMetodosNombre2EditPart.VISUAL_ID:
 			return getAtributosMetodosNombre_5003Parser();
+		case EnlaceTextoEditPart.VISUAL_ID:
+			return getEnlaceTexto_6001Parser();
 		}
 		return null;
 	}

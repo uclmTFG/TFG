@@ -91,9 +91,17 @@ class AtributosMetodos extends Nodo {
 }
 
 
-@gmf.link(source="origen", target="destino", style="solid", target.decoration="arrow")
+@gmf.link(source="origen", target="destino", style="solid", 
+target.decoration="arrow", label="texto")
 class Enlace {
+	attr String texto;
     ref Nodo[1] origen;
     ref Nodo[1] destino;
+    attr Linea linea = "Continua";
+    attr String textoExtremoOrigen;
+    attr String textoExtremoDestino;
+    attr FormaExtremoOrigen formaExtremoOrigen = "Ninguna";
+    attr FormaExtremoDestino formaExtremoDestino = "Ninguna";
+    attr Color color= "Blanco";
+    
 }
-

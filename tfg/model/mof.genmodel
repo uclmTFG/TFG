@@ -73,8 +73,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//AtributosMetodos/visibilidad"/>
     </genClasses>
     <genClasses ecoreClass="mof.ecore#//Enlace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/texto"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/origen"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/destino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/linea"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/textoExtremoOrigen"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/textoExtremoDestino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/formaExtremoOrigen"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/formaExtremoDestino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/color"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

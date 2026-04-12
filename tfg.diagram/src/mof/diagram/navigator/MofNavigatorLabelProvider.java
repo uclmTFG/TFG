@@ -25,6 +25,7 @@ import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombre2EditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombreEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.EnlaceTextoEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
 import mof.diagram.edit.parts.NodoDosNombre2EditPart;
@@ -344,7 +345,16 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 	* @generated
 	*/
 	private String getEnlace_4001Text(View view) {
-		return ""; //$NON-NLS-1$
+		IParser parser = MofParserProvider.getParser(MofElementTypes.Enlace_4001,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(EnlaceTextoEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 6001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
 	}
 
 	/**

@@ -30,6 +30,7 @@ import org.eclipse.gmf.runtime.notation.DecorationNode;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.gmf.runtime.notation.Edge;
 import org.eclipse.gmf.runtime.notation.FontStyle;
+import org.eclipse.gmf.runtime.notation.Location;
 import org.eclipse.gmf.runtime.notation.MeasurementUnit;
 import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.NotationFactory;
@@ -50,6 +51,7 @@ import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombre2EditPart;
 import mof.diagram.edit.parts.AtributosMetodosNombreEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
+import mof.diagram.edit.parts.EnlaceTextoEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
 import mof.diagram.edit.parts.NodoDosNombre2EditPart;
@@ -591,6 +593,11 @@ public class MofViewProvider extends AbstractProvider implements IViewProvider {
 		if (routing != null) {
 			ViewUtil.setStructuralFeatureValue(edge, NotationPackage.eINSTANCE.getRoutingStyle_Routing(), routing);
 		}
+		Node label6001 = createLabel(edge, MofVisualIDRegistry.getType(EnlaceTextoEditPart.VISUAL_ID));
+		label6001.setLayoutConstraint(NotationFactory.eINSTANCE.createLocation());
+		Location location6001 = (Location) label6001.getLayoutConstraint();
+		location6001.setX(0);
+		location6001.setY(40);
 		return edge;
 	}
 

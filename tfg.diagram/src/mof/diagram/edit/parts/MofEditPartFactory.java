@@ -85,6 +85,9 @@ public class MofEditPartFactory implements EditPartFactory {
 			case EnlaceEditPart.VISUAL_ID:
 				return new EnlaceEditPart(view);
 
+			case EnlaceTextoEditPart.VISUAL_ID:
+				return new EnlaceTextoEditPart(view);
+
 			}
 		}
 		return createUnrecognizedEditPart(context, model);

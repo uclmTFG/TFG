@@ -343,13 +343,22 @@ public interface MofPackage extends EPackage {
 	int ENLACE = 6;
 
 	/**
+	 * The feature id for the '<em><b>Texto</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__TEXTO = 0;
+
+	/**
 	 * The feature id for the '<em><b>Origen</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ENLACE__ORIGEN = 0;
+	int ENLACE__ORIGEN = 1;
 
 	/**
 	 * The feature id for the '<em><b>Destino</b></em>' reference.
@@ -358,7 +367,61 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENLACE__DESTINO = 1;
+	int ENLACE__DESTINO = 2;
+
+	/**
+	 * The feature id for the '<em><b>Linea</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__LINEA = 3;
+
+	/**
+	 * The feature id for the '<em><b>Texto Extremo Origen</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__TEXTO_EXTREMO_ORIGEN = 4;
+
+	/**
+	 * The feature id for the '<em><b>Texto Extremo Destino</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__TEXTO_EXTREMO_DESTINO = 5;
+
+	/**
+	 * The feature id for the '<em><b>Forma Extremo Origen</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__FORMA_EXTREMO_ORIGEN = 6;
+
+	/**
+	 * The feature id for the '<em><b>Forma Extremo Destino</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__FORMA_EXTREMO_DESTINO = 7;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ENLACE__COLOR = 8;
 
 	/**
 	 * The number of structural features of the '<em>Enlace</em>' class.
@@ -367,7 +430,7 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ENLACE_FEATURE_COUNT = 2;
+	int ENLACE_FEATURE_COUNT = 9;
 
 	/**
 	 * The meta object id for the '{@link mof.Color <em>Color</em>}' enum.
@@ -621,6 +684,17 @@ public interface MofPackage extends EPackage {
 	EClass getEnlace();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getTexto <em>Texto</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Texto</em>'.
+	 * @see mof.Enlace#getTexto()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_Texto();
+
+	/**
 	 * Returns the meta object for the reference '{@link mof.Enlace#getOrigen <em>Origen</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -641,6 +715,72 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getEnlace_Destino();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getLinea <em>Linea</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Linea</em>'.
+	 * @see mof.Enlace#getLinea()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_Linea();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getTextoExtremoOrigen <em>Texto Extremo Origen</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Texto Extremo Origen</em>'.
+	 * @see mof.Enlace#getTextoExtremoOrigen()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_TextoExtremoOrigen();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getTextoExtremoDestino <em>Texto Extremo Destino</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Texto Extremo Destino</em>'.
+	 * @see mof.Enlace#getTextoExtremoDestino()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_TextoExtremoDestino();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getFormaExtremoOrigen <em>Forma Extremo Origen</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Forma Extremo Origen</em>'.
+	 * @see mof.Enlace#getFormaExtremoOrigen()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_FormaExtremoOrigen();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getFormaExtremoDestino <em>Forma Extremo Destino</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Forma Extremo Destino</em>'.
+	 * @see mof.Enlace#getFormaExtremoDestino()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_FormaExtremoDestino();
+
+	/**
+	 * Returns the meta object for the attribute '{@link mof.Enlace#getColor <em>Color</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see mof.Enlace#getColor()
+	 * @see #getEnlace()
+	 * @generated
+	 */
+	EAttribute getEnlace_Color();
 
 	/**
 	 * Returns the meta object for enum '{@link mof.Color <em>Color</em>}'.
@@ -885,6 +1025,14 @@ public interface MofPackage extends EPackage {
 		EClass ENLACE = eINSTANCE.getEnlace();
 
 		/**
+		 * The meta object literal for the '<em><b>Texto</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__TEXTO = eINSTANCE.getEnlace_Texto();
+
+		/**
 		 * The meta object literal for the '<em><b>Origen</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -899,6 +1047,54 @@ public interface MofPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ENLACE__DESTINO = eINSTANCE.getEnlace_Destino();
+
+		/**
+		 * The meta object literal for the '<em><b>Linea</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__LINEA = eINSTANCE.getEnlace_Linea();
+
+		/**
+		 * The meta object literal for the '<em><b>Texto Extremo Origen</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__TEXTO_EXTREMO_ORIGEN = eINSTANCE.getEnlace_TextoExtremoOrigen();
+
+		/**
+		 * The meta object literal for the '<em><b>Texto Extremo Destino</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__TEXTO_EXTREMO_DESTINO = eINSTANCE.getEnlace_TextoExtremoDestino();
+
+		/**
+		 * The meta object literal for the '<em><b>Forma Extremo Origen</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__FORMA_EXTREMO_ORIGEN = eINSTANCE.getEnlace_FormaExtremoOrigen();
+
+		/**
+		 * The meta object literal for the '<em><b>Forma Extremo Destino</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__FORMA_EXTREMO_DESTINO = eINSTANCE.getEnlace_FormaExtremoDestino();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ENLACE__COLOR = eINSTANCE.getEnlace_Color();
 
 		/**
 		 * The meta object literal for the '{@link mof.Color <em>Color</em>}' enum.

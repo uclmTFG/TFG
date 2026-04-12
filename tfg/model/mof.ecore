@@ -103,10 +103,22 @@
       <details key="target" value="destino"/>
       <details key="style" value="solid"/>
       <details key="target.decoration" value="arrow"/>
+      <details key="label" value="texto"/>
     </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
         eType="#//Nodo"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
         eType="#//Nodo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
+        defaultValueLiteral="Continua"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textoExtremoOrigen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textoExtremoDestino" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formaExtremoOrigen" eType="#//FormaExtremoOrigen"
+        defaultValueLiteral="Ninguna"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formaExtremoDestino" eType="#//FormaExtremoDestino"
+        defaultValueLiteral="Ninguna"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
   </eClassifiers>
 </ecore:EPackage>

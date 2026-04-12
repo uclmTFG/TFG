@@ -45,6 +45,9 @@
     <descriptors name="EnlaceFigure">
       <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EnlaceFigure" targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
+    <descriptors name="EnlaceLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="EnlaceLabelLabel" text="Enlace"/>
+    </descriptors>
   </figures>
   <nodes name="Package" figure="PackageFigure"/>
   <nodes name="NodoUno" figure="NodoUnoFigure"/>
@@ -56,4 +59,5 @@
   <labels name="NodoUnoLabel" figure="NodoUnoFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
   <labels name="NodoDosLabel" figure="NodoDosFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
   <labels name="AtributosMetodosLabel" figure="AtributosMetodosFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
+  <labels name="EnlaceLabel" figure="EnlaceLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>

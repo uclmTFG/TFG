@@ -368,8 +368,18 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
+	public EAttribute getEnlace_Texto() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public EReference getEnlace_Origen() {
-		return (EReference)enlaceEClass.getEStructuralFeatures().get(0);
+		return (EReference)enlaceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -379,7 +389,67 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 */
 	@Override
 	public EReference getEnlace_Destino() {
-		return (EReference)enlaceEClass.getEStructuralFeatures().get(1);
+		return (EReference)enlaceEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnlace_Linea() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnlace_TextoExtremoOrigen() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnlace_TextoExtremoDestino() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnlace_FormaExtremoOrigen() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnlace_FormaExtremoDestino() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getEnlace_Color() {
+		return (EAttribute)enlaceEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -504,8 +574,15 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		createEAttribute(atributosMetodosEClass, ATRIBUTOS_METODOS__VISIBILIDAD);
 
 		enlaceEClass = createEClass(ENLACE);
+		createEAttribute(enlaceEClass, ENLACE__TEXTO);
 		createEReference(enlaceEClass, ENLACE__ORIGEN);
 		createEReference(enlaceEClass, ENLACE__DESTINO);
+		createEAttribute(enlaceEClass, ENLACE__LINEA);
+		createEAttribute(enlaceEClass, ENLACE__TEXTO_EXTREMO_ORIGEN);
+		createEAttribute(enlaceEClass, ENLACE__TEXTO_EXTREMO_DESTINO);
+		createEAttribute(enlaceEClass, ENLACE__FORMA_EXTREMO_ORIGEN);
+		createEAttribute(enlaceEClass, ENLACE__FORMA_EXTREMO_DESTINO);
+		createEAttribute(enlaceEClass, ENLACE__COLOR);
 
 		// Create enums
 		colorEEnum = createEEnum(COLOR);
@@ -574,8 +651,15 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		initEAttribute(getAtributosMetodos_Visibilidad(), this.getVisibilidad(), "visibilidad", "Publico", 0, 1, AtributosMetodos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enlaceEClass, Enlace.class, "Enlace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEnlace_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnlace_Origen(), this.getNodo(), null, "origen", null, 1, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEnlace_Destino(), this.getNodo(), null, "destino", null, 1, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnlace_Linea(), this.getLinea(), "linea", "Continua", 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnlace_TextoExtremoOrigen(), ecorePackage.getEString(), "textoExtremoOrigen", null, 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnlace_TextoExtremoDestino(), ecorePackage.getEString(), "textoExtremoDestino", null, 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnlace_FormaExtremoOrigen(), this.getFormaExtremoOrigen(), "formaExtremoOrigen", "Ninguna", 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnlace_FormaExtremoDestino(), this.getFormaExtremoDestino(), "formaExtremoDestino", "Ninguna", 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEnlace_Color(), this.getColor(), "color", "Blanco", 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(colorEEnum, Color.class, "Color");
@@ -736,7 +820,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 			   "source", "origen",
 			   "target", "destino",
 			   "style", "solid",
-			   "target.decoration", "arrow"
+			   "target.decoration", "arrow",
+			   "label", "texto"
 		   });
 	}
 

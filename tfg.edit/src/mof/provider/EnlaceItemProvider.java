@@ -6,6 +6,7 @@ package mof.provider;
 import java.util.Collection;
 import java.util.List;
 
+import mof.Enlace;
 import mof.MofPackage;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
@@ -20,7 +21,9 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link mof.Enlace} object.
@@ -57,10 +60,39 @@ public class EnlaceItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addTextoPropertyDescriptor(object);
 			addOrigenPropertyDescriptor(object);
 			addDestinoPropertyDescriptor(object);
+			addLineaPropertyDescriptor(object);
+			addTextoExtremoOrigenPropertyDescriptor(object);
+			addTextoExtremoDestinoPropertyDescriptor(object);
+			addFormaExtremoOrigenPropertyDescriptor(object);
+			addFormaExtremoDestinoPropertyDescriptor(object);
+			addColorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Texto feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_texto_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_texto_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__TEXTO,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -108,6 +140,138 @@ public class EnlaceItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Linea feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLineaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_linea_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_linea_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__LINEA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Texto Extremo Origen feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextoExtremoOrigenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_textoExtremoOrigen_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_textoExtremoOrigen_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__TEXTO_EXTREMO_ORIGEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Texto Extremo Destino feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextoExtremoDestinoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_textoExtremoDestino_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_textoExtremoDestino_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__TEXTO_EXTREMO_DESTINO,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Forma Extremo Origen feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormaExtremoOrigenPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_formaExtremoOrigen_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_formaExtremoOrigen_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__FORMA_EXTREMO_ORIGEN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Forma Extremo Destino feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormaExtremoDestinoPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_formaExtremoDestino_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_formaExtremoDestino_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__FORMA_EXTREMO_DESTINO,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Color feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addColorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Enlace_color_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Enlace_color_feature", "_UI_Enlace_type"),
+				 MofPackage.Literals.ENLACE__COLOR,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Enlace.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -126,7 +290,10 @@ public class EnlaceItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_Enlace_type");
+		String label = ((Enlace)object).getTexto();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Enlace_type") :
+			getString("_UI_Enlace_type") + " " + label;
 	}
 
 
@@ -140,6 +307,18 @@ public class EnlaceItemProvider
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
+
+		switch (notification.getFeatureID(Enlace.class)) {
+			case MofPackage.ENLACE__TEXTO:
+			case MofPackage.ENLACE__LINEA:
+			case MofPackage.ENLACE__TEXTO_EXTREMO_ORIGEN:
+			case MofPackage.ENLACE__TEXTO_EXTREMO_DESTINO:
+			case MofPackage.ENLACE__FORMA_EXTREMO_ORIGEN:
+			case MofPackage.ENLACE__FORMA_EXTREMO_DESTINO:
+			case MofPackage.ENLACE__COLOR:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+		}
 		super.notifyChanged(notification);
 	}
 

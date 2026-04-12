@@ -119,6 +119,13 @@
   <links>
     <domainMetaElement
         href="mof.ecore#//Enlace"/>
+    <labelMappings
+        xsi:type="gmfmap:FeatureLabelMapping">
+      <diagramLabel
+          href="mof.gmfgraph#EnlaceLabel"/>
+      <features
+          href="mof.ecore#//Enlace/texto"/>
+    </labelMappings>
     <containmentFeature
         href="mof.ecore#//UMLDiagram/enlaces"/>
     <tool
