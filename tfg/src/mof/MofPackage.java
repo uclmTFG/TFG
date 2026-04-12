@@ -113,22 +113,31 @@ public interface MofPackage extends EPackage {
 	int NODO__NOMBRE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Forma</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NODO__FORMA = 1;
+
+	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODO__COLOR = 1;
+	int NODO__COLOR = 2;
 
 	/**
-	 * The feature id for the '<em><b>Descripcion</b></em>' attribute.
+	 * The feature id for the '<em><b>Color Borde</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NODO__DESCRIPCION = 2;
+	int NODO__COLOR_BORDE = 3;
 
 	/**
 	 * The number of structural features of the '<em>Nodo</em>' class.
@@ -137,7 +146,7 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int NODO_FEATURE_COUNT = 3;
+	int NODO_FEATURE_COUNT = 4;
 
 	/**
 	 * The meta object id for the '{@link mof.impl.EnlaceImpl <em>Enlace</em>}' class.
@@ -185,6 +194,16 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 */
 	int COLOR = 3;
+
+	/**
+	 * The meta object id for the '{@link mof.Forma <em>Forma</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mof.Forma
+	 * @see mof.impl.MofPackageImpl#getForma()
+	 * @generated
+	 */
+	int FORMA = 4;
 
 
 	/**
@@ -241,6 +260,17 @@ public interface MofPackage extends EPackage {
 	EAttribute getNodo_Nombre();
 
 	/**
+	 * Returns the meta object for the attribute '{@link mof.Nodo#getForma <em>Forma</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Forma</em>'.
+	 * @see mof.Nodo#getForma()
+	 * @see #getNodo()
+	 * @generated
+	 */
+	EAttribute getNodo_Forma();
+
+	/**
 	 * Returns the meta object for the attribute '{@link mof.Nodo#getColor <em>Color</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -252,15 +282,15 @@ public interface MofPackage extends EPackage {
 	EAttribute getNodo_Color();
 
 	/**
-	 * Returns the meta object for the attribute '{@link mof.Nodo#getDescripcion <em>Descripcion</em>}'.
+	 * Returns the meta object for the attribute '{@link mof.Nodo#getColorBorde <em>Color Borde</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Descripcion</em>'.
-	 * @see mof.Nodo#getDescripcion()
+	 * @return the meta object for the attribute '<em>Color Borde</em>'.
+	 * @see mof.Nodo#getColorBorde()
 	 * @see #getNodo()
 	 * @generated
 	 */
-	EAttribute getNodo_Descripcion();
+	EAttribute getNodo_ColorBorde();
 
 	/**
 	 * Returns the meta object for class '{@link mof.Enlace <em>Enlace</em>}'.
@@ -303,6 +333,16 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getColor();
+
+	/**
+	 * Returns the meta object for enum '{@link mof.Forma <em>Forma</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Forma</em>'.
+	 * @see mof.Forma
+	 * @generated
+	 */
+	EEnum getForma();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -371,6 +411,14 @@ public interface MofPackage extends EPackage {
 		EAttribute NODO__NOMBRE = eINSTANCE.getNodo_Nombre();
 
 		/**
+		 * The meta object literal for the '<em><b>Forma</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NODO__FORMA = eINSTANCE.getNodo_Forma();
+
+		/**
 		 * The meta object literal for the '<em><b>Color</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -379,12 +427,12 @@ public interface MofPackage extends EPackage {
 		EAttribute NODO__COLOR = eINSTANCE.getNodo_Color();
 
 		/**
-		 * The meta object literal for the '<em><b>Descripcion</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Color Borde</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute NODO__DESCRIPCION = eINSTANCE.getNodo_Descripcion();
+		EAttribute NODO__COLOR_BORDE = eINSTANCE.getNodo_ColorBorde();
 
 		/**
 		 * The meta object literal for the '{@link mof.impl.EnlaceImpl <em>Enlace</em>}' class.
@@ -421,6 +469,16 @@ public interface MofPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COLOR = eINSTANCE.getColor();
+
+		/**
+		 * The meta object literal for the '{@link mof.Forma <em>Forma</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mof.Forma
+		 * @see mof.impl.MofPackageImpl#getForma()
+		 * @generated
+		 */
+		EEnum FORMA = eINSTANCE.getForma();
 
 	}
 

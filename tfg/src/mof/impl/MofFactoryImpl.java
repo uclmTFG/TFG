@@ -75,6 +75,8 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 		switch (eDataType.getClassifierID()) {
 			case MofPackage.COLOR:
 				return createColorFromString(eDataType, initialValue);
+			case MofPackage.FORMA:
+				return createFormaFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -90,6 +92,8 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 		switch (eDataType.getClassifierID()) {
 			case MofPackage.COLOR:
 				return convertColorToString(eDataType, instanceValue);
+			case MofPackage.FORMA:
+				return convertFormaToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -145,6 +149,26 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	public String convertColorToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Forma createFormaFromString(EDataType eDataType, String initialValue) {
+		Forma result = Forma.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFormaToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

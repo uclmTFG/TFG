@@ -19,14 +19,26 @@
     <eLiterals name="Lila" value="7"/>
     <eLiterals name="Naranja" value="8"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Forma">
+    <eLiterals name="Rectángulo"/>
+    <eLiterals name="RectánguloRedondeado" value="1"/>
+    <eLiterals name="Círculo" value="2"/>
+    <eLiterals name="CírculoDoble" value="3"/>
+    <eLiterals name="Barra" value="4"/>
+    <eLiterals name="Rombo" value="5"/>
+    <eLiterals name="Actor" value="6"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Nodo">
     <eAnnotations source="gmf.node">
       <details key="label" value="nombre"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
+        defaultValueLiteral="Rectángulo"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
         defaultValueLiteral="Blanco"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="descripcion" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorBorde" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enlace">
     <eAnnotations source="gmf.link">

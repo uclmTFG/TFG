@@ -4,6 +4,7 @@ package mof.impl;
 
 import mof.Color;
 import mof.Enlace;
+import mof.Forma;
 import mof.MofFactory;
 import mof.MofPackage;
 import mof.Nodo;
@@ -51,6 +52,13 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	private EEnum colorEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum formaEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -169,7 +177,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNodo_Color() {
+	public EAttribute getNodo_Forma() {
 		return (EAttribute)nodoEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -179,8 +187,18 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNodo_Descripcion() {
+	public EAttribute getNodo_Color() {
 		return (EAttribute)nodoEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EAttribute getNodo_ColorBorde() {
+		return (EAttribute)nodoEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -229,6 +247,16 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getForma() {
+		return formaEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MofFactory getMofFactory() {
 		return (MofFactory)getEFactoryInstance();
 	}
@@ -258,8 +286,9 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 
 		nodoEClass = createEClass(NODO);
 		createEAttribute(nodoEClass, NODO__NOMBRE);
+		createEAttribute(nodoEClass, NODO__FORMA);
 		createEAttribute(nodoEClass, NODO__COLOR);
-		createEAttribute(nodoEClass, NODO__DESCRIPCION);
+		createEAttribute(nodoEClass, NODO__COLOR_BORDE);
 
 		enlaceEClass = createEClass(ENLACE);
 		createEReference(enlaceEClass, ENLACE__ORIGEN);
@@ -267,6 +296,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 
 		// Create enums
 		colorEEnum = createEEnum(COLOR);
+		formaEEnum = createEEnum(FORMA);
 	}
 
 	/**
@@ -305,8 +335,9 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 
 		initEClass(nodoEClass, Nodo.class, "Nodo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNodo_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodo_Forma(), this.getForma(), "forma", "Rect\u00e1ngulo", 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNodo_Color(), this.getColor(), "color", "Blanco", 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNodo_Descripcion(), ecorePackage.getEString(), "descripcion", null, 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodo_ColorBorde(), this.getColor(), "colorBorde", "Blanco", 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enlaceEClass, Enlace.class, "Enlace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getEnlace_Origen(), this.getNodo(), null, "origen", null, 1, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -323,6 +354,15 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		addEEnumLiteral(colorEEnum, Color.ROSA);
 		addEEnumLiteral(colorEEnum, Color.LILA);
 		addEEnumLiteral(colorEEnum, Color.NARANJA);
+
+		initEEnum(formaEEnum, Forma.class, "Forma");
+		addEEnumLiteral(formaEEnum, Forma.RECTÁNGULO);
+		addEEnumLiteral(formaEEnum, Forma.RECTÁNGULO_REDONDEADO);
+		addEEnumLiteral(formaEEnum, Forma.CÍRCULO);
+		addEEnumLiteral(formaEEnum, Forma.CÍRCULO_DOBLE);
+		addEEnumLiteral(formaEEnum, Forma.BARRA);
+		addEEnumLiteral(formaEEnum, Forma.ROMBO);
+		addEEnumLiteral(formaEEnum, Forma.ACTOR);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -3,6 +3,7 @@
 package mof.impl;
 
 import mof.Color;
+import mof.Forma;
 import mof.MofPackage;
 import mof.Nodo;
 
@@ -22,8 +23,9 @@ import org.eclipse.emf.ecore.impl.EObjectImpl;
  * </p>
  * <ul>
  *   <li>{@link mof.impl.NodoImpl#getNombre <em>Nombre</em>}</li>
+ *   <li>{@link mof.impl.NodoImpl#getForma <em>Forma</em>}</li>
  *   <li>{@link mof.impl.NodoImpl#getColor <em>Color</em>}</li>
- *   <li>{@link mof.impl.NodoImpl#getDescripcion <em>Descripcion</em>}</li>
+ *   <li>{@link mof.impl.NodoImpl#getColorBorde <em>Color Borde</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +52,26 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 	protected String nombre = NOMBRE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getForma() <em>Forma</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getForma()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Forma FORMA_EDEFAULT = Forma.RECTÁNGULO;
+
+	/**
+	 * The cached value of the '{@link #getForma() <em>Forma</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getForma()
+	 * @generated
+	 * @ordered
+	 */
+	protected Forma forma = FORMA_EDEFAULT;
+
+	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,24 +92,24 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 	protected Color color = COLOR_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getDescripcion() <em>Descripcion</em>}' attribute.
+	 * The default value of the '{@link #getColorBorde() <em>Color Borde</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDescripcion()
+	 * @see #getColorBorde()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String DESCRIPCION_EDEFAULT = null;
+	protected static final Color COLOR_BORDE_EDEFAULT = Color.BLANCO;
 
 	/**
-	 * The cached value of the '{@link #getDescripcion() <em>Descripcion</em>}' attribute.
+	 * The cached value of the '{@link #getColorBorde() <em>Color Borde</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDescripcion()
+	 * @see #getColorBorde()
 	 * @generated
 	 * @ordered
 	 */
-	protected String descripcion = DESCRIPCION_EDEFAULT;
+	protected Color colorBorde = COLOR_BORDE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -137,6 +159,29 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 	 * @generated
 	 */
 	@Override
+	public Forma getForma() {
+		return forma;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void setForma(Forma newForma) {
+		Forma oldForma = forma;
+		forma = newForma == null ? FORMA_EDEFAULT : newForma;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MofPackage.NODO__FORMA, oldForma, forma));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public Color getColor() {
 		return color;
 	}
@@ -160,8 +205,8 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 	 * @generated
 	 */
 	@Override
-	public String getDescripcion() {
-		return descripcion;
+	public Color getColorBorde() {
+		return colorBorde;
 	}
 
 	/**
@@ -170,11 +215,11 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 	 * @generated
 	 */
 	@Override
-	public void setDescripcion(String newDescripcion) {
-		String oldDescripcion = descripcion;
-		descripcion = newDescripcion;
+	public void setColorBorde(Color newColorBorde) {
+		Color oldColorBorde = colorBorde;
+		colorBorde = newColorBorde == null ? COLOR_BORDE_EDEFAULT : newColorBorde;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MofPackage.NODO__DESCRIPCION, oldDescripcion, descripcion));
+			eNotify(new ENotificationImpl(this, Notification.SET, MofPackage.NODO__COLOR_BORDE, oldColorBorde, colorBorde));
 	}
 
 	/**
@@ -187,10 +232,12 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 		switch (featureID) {
 			case MofPackage.NODO__NOMBRE:
 				return getNombre();
+			case MofPackage.NODO__FORMA:
+				return getForma();
 			case MofPackage.NODO__COLOR:
 				return getColor();
-			case MofPackage.NODO__DESCRIPCION:
-				return getDescripcion();
+			case MofPackage.NODO__COLOR_BORDE:
+				return getColorBorde();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,11 +253,14 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 			case MofPackage.NODO__NOMBRE:
 				setNombre((String)newValue);
 				return;
+			case MofPackage.NODO__FORMA:
+				setForma((Forma)newValue);
+				return;
 			case MofPackage.NODO__COLOR:
 				setColor((Color)newValue);
 				return;
-			case MofPackage.NODO__DESCRIPCION:
-				setDescripcion((String)newValue);
+			case MofPackage.NODO__COLOR_BORDE:
+				setColorBorde((Color)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,11 +277,14 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 			case MofPackage.NODO__NOMBRE:
 				setNombre(NOMBRE_EDEFAULT);
 				return;
+			case MofPackage.NODO__FORMA:
+				setForma(FORMA_EDEFAULT);
+				return;
 			case MofPackage.NODO__COLOR:
 				setColor(COLOR_EDEFAULT);
 				return;
-			case MofPackage.NODO__DESCRIPCION:
-				setDescripcion(DESCRIPCION_EDEFAULT);
+			case MofPackage.NODO__COLOR_BORDE:
+				setColorBorde(COLOR_BORDE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -247,10 +300,12 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 		switch (featureID) {
 			case MofPackage.NODO__NOMBRE:
 				return NOMBRE_EDEFAULT == null ? nombre != null : !NOMBRE_EDEFAULT.equals(nombre);
+			case MofPackage.NODO__FORMA:
+				return forma != FORMA_EDEFAULT;
 			case MofPackage.NODO__COLOR:
 				return color != COLOR_EDEFAULT;
-			case MofPackage.NODO__DESCRIPCION:
-				return DESCRIPCION_EDEFAULT == null ? descripcion != null : !DESCRIPCION_EDEFAULT.equals(descripcion);
+			case MofPackage.NODO__COLOR_BORDE:
+				return colorBorde != COLOR_BORDE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,10 +322,12 @@ public class NodoImpl extends EObjectImpl implements Nodo {
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (nombre: ");
 		result.append(nombre);
+		result.append(", forma: ");
+		result.append(forma);
 		result.append(", color: ");
 		result.append(color);
-		result.append(", descripcion: ");
-		result.append(descripcion);
+		result.append(", colorBorde: ");
+		result.append(colorBorde);
 		result.append(')');
 		return result.toString();
 	}

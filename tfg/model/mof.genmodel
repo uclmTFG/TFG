@@ -16,14 +16,24 @@
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Lila"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Naranja"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Forma">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Rectángulo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/RectánguloRedondeado"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Círculo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/CírculoDoble"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Barra"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Rombo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Actor"/>
+    </genEnums>
     <genClasses ecoreClass="mof.ecore#//UMLDiagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/nodos"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/enlaces"/>
     </genClasses>
     <genClasses ecoreClass="mof.ecore#//Nodo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/forma"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/color"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/descripcion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/colorBorde"/>
     </genClasses>
     <genClasses ecoreClass="mof.ecore#//Enlace">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/origen"/>

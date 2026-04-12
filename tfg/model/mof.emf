@@ -21,11 +21,22 @@ enum Color {
 	Naranja;
 }
 
+enum Forma {
+	Rectángulo;
+	RectánguloRedondeado;
+	Círculo;
+	CírculoDoble;
+	Barra;
+	Rombo;
+	Actor;
+}
+
 @gmf.node(label="nombre")
 class Nodo {
     attr String nombre;
+    attr Forma forma ="Rectángulo";
     attr Color color = "Blanco";
-    attr String descripcion;
+    attr Color colorBorde = "Blanco";
 }
 
 @gmf.link(source="origen", target="destino", style="solid", target.decoration="arrow")

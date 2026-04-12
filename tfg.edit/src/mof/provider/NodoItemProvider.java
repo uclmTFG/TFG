@@ -61,8 +61,9 @@ public class NodoItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNombrePropertyDescriptor(object);
+			addFormaPropertyDescriptor(object);
 			addColorPropertyDescriptor(object);
-			addDescripcionPropertyDescriptor(object);
+			addColorBordePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -81,6 +82,28 @@ public class NodoItemProvider
 				 getString("_UI_Nodo_nombre_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_nombre_feature", "_UI_Nodo_type"),
 				 MofPackage.Literals.NODO__NOMBRE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Forma feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addFormaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Nodo_forma_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_forma_feature", "_UI_Nodo_type"),
+				 MofPackage.Literals.NODO__FORMA,
 				 true,
 				 false,
 				 false,
@@ -112,19 +135,19 @@ public class NodoItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Descripcion feature.
+	 * This adds a property descriptor for the Color Borde feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addDescripcionPropertyDescriptor(Object object) {
+	protected void addColorBordePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Nodo_descripcion_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_descripcion_feature", "_UI_Nodo_type"),
-				 MofPackage.Literals.NODO__DESCRIPCION,
+				 getString("_UI_Nodo_colorBorde_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_colorBorde_feature", "_UI_Nodo_type"),
+				 MofPackage.Literals.NODO__COLOR_BORDE,
 				 true,
 				 false,
 				 false,
@@ -172,8 +195,9 @@ public class NodoItemProvider
 
 		switch (notification.getFeatureID(Nodo.class)) {
 			case MofPackage.NODO__NOMBRE:
+			case MofPackage.NODO__FORMA:
 			case MofPackage.NODO__COLOR:
-			case MofPackage.NODO__DESCRIPCION:
+			case MofPackage.NODO__COLOR_BORDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
