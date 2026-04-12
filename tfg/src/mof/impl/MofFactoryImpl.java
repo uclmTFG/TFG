@@ -77,6 +77,16 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 				return createColorFromString(eDataType, initialValue);
 			case MofPackage.FORMA:
 				return createFormaFromString(eDataType, initialValue);
+			case MofPackage.LINEA:
+				return createLineaFromString(eDataType, initialValue);
+			case MofPackage.TIPO:
+				return createTipoFromString(eDataType, initialValue);
+			case MofPackage.VISIBILIDAD:
+				return createVisibilidadFromString(eDataType, initialValue);
+			case MofPackage.FORMA_EXTREMO_ORIGEN:
+				return createFormaExtremoOrigenFromString(eDataType, initialValue);
+			case MofPackage.FORMA_EXTREMO_DESTINO:
+				return createFormaExtremoDestinoFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -94,6 +104,16 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 				return convertColorToString(eDataType, instanceValue);
 			case MofPackage.FORMA:
 				return convertFormaToString(eDataType, instanceValue);
+			case MofPackage.LINEA:
+				return convertLineaToString(eDataType, instanceValue);
+			case MofPackage.TIPO:
+				return convertTipoToString(eDataType, instanceValue);
+			case MofPackage.VISIBILIDAD:
+				return convertVisibilidadToString(eDataType, instanceValue);
+			case MofPackage.FORMA_EXTREMO_ORIGEN:
+				return convertFormaExtremoOrigenToString(eDataType, instanceValue);
+			case MofPackage.FORMA_EXTREMO_DESTINO:
+				return convertFormaExtremoDestinoToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -169,6 +189,106 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	public String convertFormaToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Linea createLineaFromString(EDataType eDataType, String initialValue) {
+		Linea result = Linea.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertLineaToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Tipo createTipoFromString(EDataType eDataType, String initialValue) {
+		Tipo result = Tipo.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertTipoToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Visibilidad createVisibilidadFromString(EDataType eDataType, String initialValue) {
+		Visibilidad result = Visibilidad.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertVisibilidadToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormaExtremoOrigen createFormaExtremoOrigenFromString(EDataType eDataType, String initialValue) {
+		FormaExtremoOrigen result = FormaExtremoOrigen.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFormaExtremoOrigenToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormaExtremoDestino createFormaExtremoDestinoFromString(EDataType eDataType, String initialValue) {
+		FormaExtremoDestino result = FormaExtremoDestino.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFormaExtremoDestinoToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

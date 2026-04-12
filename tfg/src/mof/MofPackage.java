@@ -205,6 +205,56 @@ public interface MofPackage extends EPackage {
 	 */
 	int FORMA = 4;
 
+	/**
+	 * The meta object id for the '{@link mof.Linea <em>Linea</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mof.Linea
+	 * @see mof.impl.MofPackageImpl#getLinea()
+	 * @generated
+	 */
+	int LINEA = 5;
+
+	/**
+	 * The meta object id for the '{@link mof.Tipo <em>Tipo</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mof.Tipo
+	 * @see mof.impl.MofPackageImpl#getTipo()
+	 * @generated
+	 */
+	int TIPO = 6;
+
+	/**
+	 * The meta object id for the '{@link mof.Visibilidad <em>Visibilidad</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mof.Visibilidad
+	 * @see mof.impl.MofPackageImpl#getVisibilidad()
+	 * @generated
+	 */
+	int VISIBILIDAD = 7;
+
+	/**
+	 * The meta object id for the '{@link mof.FormaExtremoOrigen <em>Forma Extremo Origen</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mof.FormaExtremoOrigen
+	 * @see mof.impl.MofPackageImpl#getFormaExtremoOrigen()
+	 * @generated
+	 */
+	int FORMA_EXTREMO_ORIGEN = 8;
+
+	/**
+	 * The meta object id for the '{@link mof.FormaExtremoDestino <em>Forma Extremo Destino</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see mof.FormaExtremoDestino
+	 * @see mof.impl.MofPackageImpl#getFormaExtremoDestino()
+	 * @generated
+	 */
+	int FORMA_EXTREMO_DESTINO = 9;
+
 
 	/**
 	 * Returns the meta object for class '{@link mof.UMLDiagram <em>UML Diagram</em>}'.
@@ -345,6 +395,56 @@ public interface MofPackage extends EPackage {
 	EEnum getForma();
 
 	/**
+	 * Returns the meta object for enum '{@link mof.Linea <em>Linea</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Linea</em>'.
+	 * @see mof.Linea
+	 * @generated
+	 */
+	EEnum getLinea();
+
+	/**
+	 * Returns the meta object for enum '{@link mof.Tipo <em>Tipo</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Tipo</em>'.
+	 * @see mof.Tipo
+	 * @generated
+	 */
+	EEnum getTipo();
+
+	/**
+	 * Returns the meta object for enum '{@link mof.Visibilidad <em>Visibilidad</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Visibilidad</em>'.
+	 * @see mof.Visibilidad
+	 * @generated
+	 */
+	EEnum getVisibilidad();
+
+	/**
+	 * Returns the meta object for enum '{@link mof.FormaExtremoOrigen <em>Forma Extremo Origen</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Forma Extremo Origen</em>'.
+	 * @see mof.FormaExtremoOrigen
+	 * @generated
+	 */
+	EEnum getFormaExtremoOrigen();
+
+	/**
+	 * Returns the meta object for enum '{@link mof.FormaExtremoDestino <em>Forma Extremo Destino</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Forma Extremo Destino</em>'.
+	 * @see mof.FormaExtremoDestino
+	 * @generated
+	 */
+	EEnum getFormaExtremoDestino();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -479,6 +579,56 @@ public interface MofPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum FORMA = eINSTANCE.getForma();
+
+		/**
+		 * The meta object literal for the '{@link mof.Linea <em>Linea</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mof.Linea
+		 * @see mof.impl.MofPackageImpl#getLinea()
+		 * @generated
+		 */
+		EEnum LINEA = eINSTANCE.getLinea();
+
+		/**
+		 * The meta object literal for the '{@link mof.Tipo <em>Tipo</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mof.Tipo
+		 * @see mof.impl.MofPackageImpl#getTipo()
+		 * @generated
+		 */
+		EEnum TIPO = eINSTANCE.getTipo();
+
+		/**
+		 * The meta object literal for the '{@link mof.Visibilidad <em>Visibilidad</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mof.Visibilidad
+		 * @see mof.impl.MofPackageImpl#getVisibilidad()
+		 * @generated
+		 */
+		EEnum VISIBILIDAD = eINSTANCE.getVisibilidad();
+
+		/**
+		 * The meta object literal for the '{@link mof.FormaExtremoOrigen <em>Forma Extremo Origen</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mof.FormaExtremoOrigen
+		 * @see mof.impl.MofPackageImpl#getFormaExtremoOrigen()
+		 * @generated
+		 */
+		EEnum FORMA_EXTREMO_ORIGEN = eINSTANCE.getFormaExtremoOrigen();
+
+		/**
+		 * The meta object literal for the '{@link mof.FormaExtremoDestino <em>Forma Extremo Destino</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see mof.FormaExtremoDestino
+		 * @see mof.impl.MofPackageImpl#getFormaExtremoDestino()
+		 * @generated
+		 */
+		EEnum FORMA_EXTREMO_DESTINO = eINSTANCE.getFormaExtremoDestino();
 
 	}
 

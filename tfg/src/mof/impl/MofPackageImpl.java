@@ -5,10 +5,15 @@ package mof.impl;
 import mof.Color;
 import mof.Enlace;
 import mof.Forma;
+import mof.FormaExtremoDestino;
+import mof.FormaExtremoOrigen;
+import mof.Linea;
 import mof.MofFactory;
 import mof.MofPackage;
 import mof.Nodo;
+import mof.Tipo;
 import mof.UMLDiagram;
+import mof.Visibilidad;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -59,6 +64,41 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	private EEnum formaEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum lineaEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum tipoEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum visibilidadEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum formaExtremoOrigenEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum formaExtremoDestinoEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -257,6 +297,56 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
+	public EEnum getLinea() {
+		return lineaEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getTipo() {
+		return tipoEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getVisibilidad() {
+		return visibilidadEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getFormaExtremoOrigen() {
+		return formaExtremoOrigenEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public EEnum getFormaExtremoDestino() {
+		return formaExtremoDestinoEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
 	public MofFactory getMofFactory() {
 		return (MofFactory)getEFactoryInstance();
 	}
@@ -297,6 +387,11 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		// Create enums
 		colorEEnum = createEEnum(COLOR);
 		formaEEnum = createEEnum(FORMA);
+		lineaEEnum = createEEnum(LINEA);
+		tipoEEnum = createEEnum(TIPO);
+		visibilidadEEnum = createEEnum(VISIBILIDAD);
+		formaExtremoOrigenEEnum = createEEnum(FORMA_EXTREMO_ORIGEN);
+		formaExtremoDestinoEEnum = createEEnum(FORMA_EXTREMO_DESTINO);
 	}
 
 	/**
@@ -363,6 +458,31 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		addEEnumLiteral(formaEEnum, Forma.BARRA);
 		addEEnumLiteral(formaEEnum, Forma.ROMBO);
 		addEEnumLiteral(formaEEnum, Forma.ACTOR);
+
+		initEEnum(lineaEEnum, Linea.class, "Linea");
+		addEEnumLiteral(lineaEEnum, Linea.CONTINUA);
+		addEEnumLiteral(lineaEEnum, Linea.DISCONTINUA);
+
+		initEEnum(tipoEEnum, Tipo.class, "Tipo");
+		addEEnumLiteral(tipoEEnum, Tipo.ATRIBUTO);
+		addEEnumLiteral(tipoEEnum, Tipo.MÉTODO);
+
+		initEEnum(visibilidadEEnum, Visibilidad.class, "Visibilidad");
+		addEEnumLiteral(visibilidadEEnum, Visibilidad.PRIVADO);
+		addEEnumLiteral(visibilidadEEnum, Visibilidad.PÚBLICO);
+		addEEnumLiteral(visibilidadEEnum, Visibilidad.PROTEGIDO);
+		addEEnumLiteral(visibilidadEEnum, Visibilidad.PAQUETE);
+		addEEnumLiteral(visibilidadEEnum, Visibilidad.ESTÁTICO);
+
+		initEEnum(formaExtremoOrigenEEnum, FormaExtremoOrigen.class, "FormaExtremoOrigen");
+		addEEnumLiteral(formaExtremoOrigenEEnum, FormaExtremoOrigen.NINGUNA);
+		addEEnumLiteral(formaExtremoOrigenEEnum, FormaExtremoOrigen.FLECHA_ABIERTA);
+		addEEnumLiteral(formaExtremoOrigenEEnum, FormaExtremoOrigen.FLECHA_CERRADA);
+
+		initEEnum(formaExtremoDestinoEEnum, FormaExtremoDestino.class, "FormaExtremoDestino");
+		addEEnumLiteral(formaExtremoDestinoEEnum, FormaExtremoDestino.NINGUNA);
+		addEEnumLiteral(formaExtremoDestinoEEnum, FormaExtremoDestino.ROMBO_SIN_RELLENO);
+		addEEnumLiteral(formaExtremoDestinoEEnum, FormaExtremoDestino.ROMBO_RELLENO);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -31,6 +31,37 @@ enum Forma {
 	Actor;
 }
 
+enum Linea {
+	Continua;
+	Discontinua;
+}
+
+enum Tipo {
+	Atributo;
+	Método;
+}
+
+enum Visibilidad {
+	Privado;
+	Público;
+	Protegido;
+	Paquete;
+	Estático;
+}
+
+enum FormaExtremoOrigen {
+	Ninguna;
+	FlechaAbierta;
+	FlechaCerrada;
+}
+
+enum FormaExtremoDestino{
+	Ninguna;
+	RomboSinRelleno;
+	RomboRelleno;
+}
+
+
 @gmf.node(label="nombre")
 class Nodo {
     attr String nombre;
@@ -44,3 +75,4 @@ class Enlace {
     ref Nodo[1] origen;
     ref Nodo[1] destino;
 }
+

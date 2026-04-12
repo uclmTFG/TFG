@@ -28,6 +28,31 @@
     <eLiterals name="Rombo" value="5"/>
     <eLiterals name="Actor" value="6"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Linea">
+    <eLiterals name="Continua"/>
+    <eLiterals name="Discontinua" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Tipo">
+    <eLiterals name="Atributo"/>
+    <eLiterals name="Método" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibilidad">
+    <eLiterals name="Privado"/>
+    <eLiterals name="Público" value="1"/>
+    <eLiterals name="Protegido" value="2"/>
+    <eLiterals name="Paquete" value="3"/>
+    <eLiterals name="Estático" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoOrigen">
+    <eLiterals name="Ninguna"/>
+    <eLiterals name="FlechaAbierta" value="1"/>
+    <eLiterals name="FlechaCerrada" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoDestino">
+    <eLiterals name="Ninguna"/>
+    <eLiterals name="RomboSinRelleno" value="1"/>
+    <eLiterals name="RomboRelleno" value="2"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Nodo">
     <eAnnotations source="gmf.node">
       <details key="label" value="nombre"/>
