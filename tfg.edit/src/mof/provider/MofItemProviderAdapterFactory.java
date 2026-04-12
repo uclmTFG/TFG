@@ -95,26 +95,95 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mof.Nodo} instances.
+	 * This keeps track of the one adapter used for all {@link mof.Package} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected NodoItemProvider nodoItemProvider;
+	protected PackageItemProvider packageItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link mof.Nodo}.
+	 * This creates an adapter for a {@link mof.Package}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createNodoAdapter() {
-		if (nodoItemProvider == null) {
-			nodoItemProvider = new NodoItemProvider(this);
+	public Adapter createPackageAdapter() {
+		if (packageItemProvider == null) {
+			packageItemProvider = new PackageItemProvider(this);
 		}
 
-		return nodoItemProvider;
+		return packageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mof.NodoUno} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NodoUnoItemProvider nodoUnoItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mof.NodoUno}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNodoUnoAdapter() {
+		if (nodoUnoItemProvider == null) {
+			nodoUnoItemProvider = new NodoUnoItemProvider(this);
+		}
+
+		return nodoUnoItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mof.NodoDos} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NodoDosItemProvider nodoDosItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mof.NodoDos}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNodoDosAdapter() {
+		if (nodoDosItemProvider == null) {
+			nodoDosItemProvider = new NodoDosItemProvider(this);
+		}
+
+		return nodoDosItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link mof.AtributosMetodos} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AtributosMetodosItemProvider atributosMetodosItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link mof.AtributosMetodos}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAtributosMetodosAdapter() {
+		if (atributosMetodosItemProvider == null) {
+			atributosMetodosItemProvider = new AtributosMetodosItemProvider(this);
+		}
+
+		return atributosMetodosItemProvider;
 	}
 
 	/**
@@ -246,7 +315,10 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 	@Override
 	public void dispose() {
 		if (umlDiagramItemProvider != null) umlDiagramItemProvider.dispose();
-		if (nodoItemProvider != null) nodoItemProvider.dispose();
+		if (packageItemProvider != null) packageItemProvider.dispose();
+		if (nodoUnoItemProvider != null) nodoUnoItemProvider.dispose();
+		if (nodoDosItemProvider != null) nodoDosItemProvider.dispose();
+		if (atributosMetodosItemProvider != null) atributosMetodosItemProvider.dispose();
 		if (enlaceItemProvider != null) enlaceItemProvider.dispose();
 	}
 

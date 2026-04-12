@@ -20,10 +20,10 @@
     <eLiterals name="Naranja" value="8"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Forma">
-    <eLiterals name="Rectángulo"/>
-    <eLiterals name="RectánguloRedondeado" value="1"/>
-    <eLiterals name="Círculo" value="2"/>
-    <eLiterals name="CírculoDoble" value="3"/>
+    <eLiterals name="Rectangulo"/>
+    <eLiterals name="RectanguloRedondeado" value="1"/>
+    <eLiterals name="Circulo" value="2"/>
+    <eLiterals name="CirculoDoble" value="3"/>
     <eLiterals name="Barra" value="4"/>
     <eLiterals name="Rombo" value="5"/>
     <eLiterals name="Actor" value="6"/>
@@ -38,7 +38,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Visibilidad">
     <eLiterals name="Privado"/>
-    <eLiterals name="Público" value="1"/>
+    <eLiterals name="Publico" value="1"/>
     <eLiterals name="Protegido" value="2"/>
     <eLiterals name="Paquete" value="3"/>
     <eLiterals name="Estático" value="4"/>
@@ -53,17 +53,49 @@
     <eLiterals name="RomboSinRelleno" value="1"/>
     <eLiterals name="RomboRelleno" value="2"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Nodo">
+  <eClassifiers xsi:type="ecore:EClass" name="Nodo" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Nodo">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nombre"/>
+      <details key="figure" value="rectangle"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodos" upperBound="-1"
+        eType="#//Nodo" containment="true">
+      <eAnnotations source="gmf.compartment"/>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodoUno" eSuperTypes="#//Nodo">
     <eAnnotations source="gmf.node">
       <details key="label" value="nombre"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
-        defaultValueLiteral="Rectángulo"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
-        defaultValueLiteral="Blanco"/>
+        defaultValueLiteral="Rectangulo"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorBorde" eType="#//Color"
         defaultValueLiteral="Blanco"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodoDos" eSuperTypes="#//Nodo">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="atributometodo" upperBound="-1"
+        eType="#//AtributosMetodos" containment="true">
+      <eAnnotations source="gmf.compartiment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AtributosMetodos" eSuperTypes="#//Nodo">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//Tipo" defaultValueLiteral="Atributo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibilidad" eType="#//Visibilidad"
+        defaultValueLiteral="Publico"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enlace">
     <eAnnotations source="gmf.link">

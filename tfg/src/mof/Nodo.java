@@ -14,13 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link mof.Nodo#getNombre <em>Nombre</em>}</li>
- *   <li>{@link mof.Nodo#getForma <em>Forma</em>}</li>
  *   <li>{@link mof.Nodo#getColor <em>Color</em>}</li>
- *   <li>{@link mof.Nodo#getColorBorde <em>Color Borde</em>}</li>
  * </ul>
  *
  * @see mof.MofPackage#getNodo()
- * @model annotation="gmf.node label='nombre'"
+ * @model abstract="true"
  * @generated
  */
 public interface Nodo extends EObject {
@@ -47,32 +45,6 @@ public interface Nodo extends EObject {
 	void setNombre(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Forma</b></em>' attribute.
-	 * The default value is <code>"Rect\u00e1ngulo"</code>.
-	 * The literals are from the enumeration {@link mof.Forma}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Forma</em>' attribute.
-	 * @see mof.Forma
-	 * @see #setForma(Forma)
-	 * @see mof.MofPackage#getNodo_Forma()
-	 * @model default="Rect\u00e1ngulo"
-	 * @generated
-	 */
-	Forma getForma();
-
-	/**
-	 * Sets the value of the '{@link mof.Nodo#getForma <em>Forma</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Forma</em>' attribute.
-	 * @see mof.Forma
-	 * @see #getForma()
-	 * @generated
-	 */
-	void setForma(Forma value);
-
-	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute.
 	 * The default value is <code>"Blanco"</code>.
 	 * The literals are from the enumeration {@link mof.Color}.
@@ -97,31 +69,5 @@ public interface Nodo extends EObject {
 	 * @generated
 	 */
 	void setColor(Color value);
-
-	/**
-	 * Returns the value of the '<em><b>Color Borde</b></em>' attribute.
-	 * The default value is <code>"Blanco"</code>.
-	 * The literals are from the enumeration {@link mof.Color}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Color Borde</em>' attribute.
-	 * @see mof.Color
-	 * @see #setColorBorde(Color)
-	 * @see mof.MofPackage#getNodo_ColorBorde()
-	 * @model default="Blanco"
-	 * @generated
-	 */
-	Color getColorBorde();
-
-	/**
-	 * Sets the value of the '{@link mof.Nodo#getColorBorde <em>Color Borde</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Color Borde</em>' attribute.
-	 * @see mof.Color
-	 * @see #getColorBorde()
-	 * @generated
-	 */
-	void setColorBorde(Color value);
 
 } // Nodo

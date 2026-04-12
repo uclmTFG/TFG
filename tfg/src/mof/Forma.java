@@ -19,44 +19,44 @@ import org.eclipse.emf.common.util.Enumerator;
  */
 public enum Forma implements Enumerator {
 	/**
-	 * The '<em><b>Rectángulo</b></em>' literal object.
+	 * The '<em><b>Rectangulo</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RECTÁNGULO_VALUE
+	 * @see #RECTANGULO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RECTÁNGULO(0, "Rectángulo", "Rect\u00e1ngulo"),
+	RECTANGULO(0, "Rectangulo", "Rectangulo"),
 
 	/**
-	 * The '<em><b>Rectángulo Redondeado</b></em>' literal object.
+	 * The '<em><b>Rectangulo Redondeado</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RECTÁNGULO_REDONDEADO_VALUE
+	 * @see #RECTANGULO_REDONDEADO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	RECTÁNGULO_REDONDEADO(1, "RectánguloRedondeado", "Rect\u00e1nguloRedondeado"),
+	RECTANGULO_REDONDEADO(1, "RectanguloRedondeado", "RectanguloRedondeado"),
 
 	/**
-	 * The '<em><b>Círculo</b></em>' literal object.
+	 * The '<em><b>Circulo</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CÍRCULO_VALUE
+	 * @see #CIRCULO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CÍRCULO(2, "Círculo", "C\u00edrculo"),
+	CIRCULO(2, "Circulo", "Circulo"),
 
 	/**
-	 * The '<em><b>Círculo Doble</b></em>' literal object.
+	 * The '<em><b>Circulo Doble</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CÍRCULO_DOBLE_VALUE
+	 * @see #CIRCULO_DOBLE_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	CÍRCULO_DOBLE(3, "CírculoDoble", "C\u00edrculoDoble"),
+	CIRCULO_DOBLE(3, "CirculoDoble", "CirculoDoble"),
 
 	/**
 	 * The '<em><b>Barra</b></em>' literal object.
@@ -89,48 +89,48 @@ public enum Forma implements Enumerator {
 	ACTOR(6, "Actor", "Actor");
 
 	/**
-	 * The '<em><b>Rectángulo</b></em>' literal value.
+	 * The '<em><b>Rectangulo</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RECTÁNGULO
-	 * @model name="Rectángulo"
+	 * @see #RECTANGULO
+	 * @model name="Rectangulo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RECTÁNGULO_VALUE = 0;
+	public static final int RECTANGULO_VALUE = 0;
 
 	/**
-	 * The '<em><b>Rectángulo Redondeado</b></em>' literal value.
+	 * The '<em><b>Rectangulo Redondeado</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #RECTÁNGULO_REDONDEADO
-	 * @model name="RectánguloRedondeado"
+	 * @see #RECTANGULO_REDONDEADO
+	 * @model name="RectanguloRedondeado"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int RECTÁNGULO_REDONDEADO_VALUE = 1;
+	public static final int RECTANGULO_REDONDEADO_VALUE = 1;
 
 	/**
-	 * The '<em><b>Círculo</b></em>' literal value.
+	 * The '<em><b>Circulo</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CÍRCULO
-	 * @model name="Círculo"
+	 * @see #CIRCULO
+	 * @model name="Circulo"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CÍRCULO_VALUE = 2;
+	public static final int CIRCULO_VALUE = 2;
 
 	/**
-	 * The '<em><b>Círculo Doble</b></em>' literal value.
+	 * The '<em><b>Circulo Doble</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #CÍRCULO_DOBLE
-	 * @model name="CírculoDoble"
+	 * @see #CIRCULO_DOBLE
+	 * @model name="CirculoDoble"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int CÍRCULO_DOBLE_VALUE = 3;
+	public static final int CIRCULO_DOBLE_VALUE = 3;
 
 	/**
 	 * The '<em><b>Barra</b></em>' literal value.
@@ -173,10 +173,10 @@ public enum Forma implements Enumerator {
 	 */
 	private static final Forma[] VALUES_ARRAY =
 		new Forma[] {
-			RECTÁNGULO,
-			RECTÁNGULO_REDONDEADO,
-			CÍRCULO,
-			CÍRCULO_DOBLE,
+			RECTANGULO,
+			RECTANGULO_REDONDEADO,
+			CIRCULO,
+			CIRCULO_DOBLE,
 			BARRA,
 			ROMBO,
 			ACTOR,
@@ -236,10 +236,10 @@ public enum Forma implements Enumerator {
 	 */
 	public static Forma get(int value) {
 		switch (value) {
-			case RECTÁNGULO_VALUE: return RECTÁNGULO;
-			case RECTÁNGULO_REDONDEADO_VALUE: return RECTÁNGULO_REDONDEADO;
-			case CÍRCULO_VALUE: return CÍRCULO;
-			case CÍRCULO_DOBLE_VALUE: return CÍRCULO_DOBLE;
+			case RECTANGULO_VALUE: return RECTANGULO;
+			case RECTANGULO_REDONDEADO_VALUE: return RECTANGULO_REDONDEADO;
+			case CIRCULO_VALUE: return CIRCULO;
+			case CIRCULO_DOBLE_VALUE: return CIRCULO_DOBLE;
 			case BARRA_VALUE: return BARRA;
 			case ROMBO_VALUE: return ROMBO;
 			case ACTOR_VALUE: return ACTOR;

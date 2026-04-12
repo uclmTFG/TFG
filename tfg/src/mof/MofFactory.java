@@ -31,13 +31,40 @@ public interface MofFactory extends EFactory {
 	UMLDiagram createUMLDiagram();
 
 	/**
-	 * Returns a new object of class '<em>Nodo</em>'.
+	 * Returns a new object of class '<em>Package</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Nodo</em>'.
+	 * @return a new object of class '<em>Package</em>'.
 	 * @generated
 	 */
-	Nodo createNodo();
+	Package createPackage();
+
+	/**
+	 * Returns a new object of class '<em>Nodo Uno</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nodo Uno</em>'.
+	 * @generated
+	 */
+	NodoUno createNodoUno();
+
+	/**
+	 * Returns a new object of class '<em>Nodo Dos</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Nodo Dos</em>'.
+	 * @generated
+	 */
+	NodoDos createNodoDos();
+
+	/**
+	 * Returns a new object of class '<em>Atributos Metodos</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Atributos Metodos</em>'.
+	 * @generated
+	 */
+	AtributosMetodos createAtributosMetodos();
 
 	/**
 	 * Returns a new object of class '<em>Enlace</em>'.

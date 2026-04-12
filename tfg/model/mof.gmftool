@@ -12,8 +12,35 @@
         collapsible="true">
       <tools
           xsi:type="gmftool:CreationTool"
-          title="Nodo"
-          description="Create new Nodo">
+          title="AtributosMetodos"
+          description="Create new AtributosMetodos">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NodoDos"
+          description="Create new NodoDos">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="NodoUno"
+          description="Create new NodoUno">
+        <smallIcon
+            xsi:type="gmftool:DefaultImage"/>
+        <largeIcon
+            xsi:type="gmftool:DefaultImage"/>
+      </tools>
+      <tools
+          xsi:type="gmftool:CreationTool"
+          title="Package"
+          description="Create new Package">
         <smallIcon
             xsi:type="gmftool:DefaultImage"/>
         <largeIcon

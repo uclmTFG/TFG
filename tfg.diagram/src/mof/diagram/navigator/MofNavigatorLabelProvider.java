@@ -20,9 +20,23 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonLabelProvider;
 
+import mof.diagram.edit.parts.AtributosMetodos2EditPart;
+import mof.diagram.edit.parts.AtributosMetodosEditPart;
+import mof.diagram.edit.parts.AtributosMetodosNombre2EditPart;
+import mof.diagram.edit.parts.AtributosMetodosNombreEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
-import mof.diagram.edit.parts.NodoEditPart;
-import mof.diagram.edit.parts.NodoNombreEditPart;
+import mof.diagram.edit.parts.NodoDos2EditPart;
+import mof.diagram.edit.parts.NodoDosEditPart;
+import mof.diagram.edit.parts.NodoDosNombre2EditPart;
+import mof.diagram.edit.parts.NodoDosNombreEditPart;
+import mof.diagram.edit.parts.NodoUno2EditPart;
+import mof.diagram.edit.parts.NodoUnoEditPart;
+import mof.diagram.edit.parts.NodoUnoNombre2EditPart;
+import mof.diagram.edit.parts.NodoUnoNombreEditPart;
+import mof.diagram.edit.parts.Package2EditPart;
+import mof.diagram.edit.parts.PackageEditPart;
+import mof.diagram.edit.parts.PackageNombre2EditPart;
+import mof.diagram.edit.parts.PackageNombreEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofDiagramEditorPlugin;
 import mof.diagram.part.MofVisualIDRegistry;
@@ -91,8 +105,22 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getImage("Navigator?Diagram?mof?UMLDiagram", MofElementTypes.UMLDiagram_1000); //$NON-NLS-1$
-		case NodoEditPart.VISUAL_ID:
-			return getImage("Navigator?TopLevelNode?mof?Nodo", MofElementTypes.Nodo_2001); //$NON-NLS-1$
+		case PackageEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?mof?Package", MofElementTypes.Package_2001); //$NON-NLS-1$
+		case NodoUnoEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?mof?NodoUno", MofElementTypes.NodoUno_2002); //$NON-NLS-1$
+		case NodoDosEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?mof?NodoDos", MofElementTypes.NodoDos_2003); //$NON-NLS-1$
+		case AtributosMetodosEditPart.VISUAL_ID:
+			return getImage("Navigator?TopLevelNode?mof?AtributosMetodos", MofElementTypes.AtributosMetodos_2004); //$NON-NLS-1$
+		case Package2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?mof?Package", MofElementTypes.Package_3001); //$NON-NLS-1$
+		case NodoUno2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?mof?NodoUno", MofElementTypes.NodoUno_3002); //$NON-NLS-1$
+		case NodoDos2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?mof?NodoDos", MofElementTypes.NodoDos_3003); //$NON-NLS-1$
+		case AtributosMetodos2EditPart.VISUAL_ID:
+			return getImage("Navigator?Node?mof?AtributosMetodos", MofElementTypes.AtributosMetodos_3004); //$NON-NLS-1$
 		case EnlaceEditPart.VISUAL_ID:
 			return getImage("Navigator?Link?mof?Enlace", MofElementTypes.Enlace_4001); //$NON-NLS-1$
 		}
@@ -155,8 +183,22 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getUMLDiagram_1000Text(view);
-		case NodoEditPart.VISUAL_ID:
-			return getNodo_2001Text(view);
+		case PackageEditPart.VISUAL_ID:
+			return getPackage_2001Text(view);
+		case NodoUnoEditPart.VISUAL_ID:
+			return getNodoUno_2002Text(view);
+		case NodoDosEditPart.VISUAL_ID:
+			return getNodoDos_2003Text(view);
+		case AtributosMetodosEditPart.VISUAL_ID:
+			return getAtributosMetodos_2004Text(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_3001Text(view);
+		case NodoUno2EditPart.VISUAL_ID:
+			return getNodoUno_3002Text(view);
+		case NodoDos2EditPart.VISUAL_ID:
+			return getNodoDos_3003Text(view);
+		case AtributosMetodos2EditPart.VISUAL_ID:
+			return getAtributosMetodos_3004Text(view);
 		case EnlaceEditPart.VISUAL_ID:
 			return getEnlace_4001Text(view);
 		}
@@ -173,15 +215,127 @@ public class MofNavigatorLabelProvider extends LabelProvider implements ICommonL
 	/**
 	* @generated
 	*/
-	private String getNodo_2001Text(View view) {
-		IParser parser = MofParserProvider.getParser(MofElementTypes.Nodo_2001,
+	private String getPackage_2001Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.Package_2001,
 				view.getElement() != null ? view.getElement() : view,
-				MofVisualIDRegistry.getType(NodoNombreEditPart.VISUAL_ID));
+				MofVisualIDRegistry.getType(PackageNombreEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5005); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getNodoUno_2002Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.NodoUno_2002,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(NodoUnoNombreEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5006); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getNodoDos_2003Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.NodoDos_2003,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(NodoDosNombreEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5007); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAtributosMetodos_2004Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.AtributosMetodos_2004,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(AtributosMetodosNombreEditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5008); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getPackage_3001Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.Package_3001,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(PackageNombre2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5004); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getNodoUno_3002Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.NodoUno_3002,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(NodoUnoNombre2EditPart.VISUAL_ID));
 		if (parser != null) {
 			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
 					ParserOptions.NONE.intValue());
 		} else {
 			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5001); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getNodoDos_3003Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.NodoDos_3003,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(NodoDosNombre2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5002); //$NON-NLS-1$
+			return ""; //$NON-NLS-1$
+		}
+	}
+
+	/**
+	* @generated
+	*/
+	private String getAtributosMetodos_3004Text(View view) {
+		IParser parser = MofParserProvider.getParser(MofElementTypes.AtributosMetodos_3004,
+				view.getElement() != null ? view.getElement() : view,
+				MofVisualIDRegistry.getType(AtributosMetodosNombre2EditPart.VISUAL_ID));
+		if (parser != null) {
+			return parser.getPrintString(new EObjectAdapter(view.getElement() != null ? view.getElement() : view),
+					ParserOptions.NONE.intValue());
+		} else {
+			MofDiagramEditorPlugin.getInstance().logError("Parser was not found for label " + 5003); //$NON-NLS-1$
 			return ""; //$NON-NLS-1$
 		}
 	}

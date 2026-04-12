@@ -258,7 +258,7 @@
          </object>
          <context viewClass="org.eclipse.gmf.runtime.notation.Node" containerViews="referencing-diagrams"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Diagram" semanticHints="Mof"/>
-         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001"/>
+         <context viewClass="org.eclipse.gmf.runtime.notation.Node" semanticHints="2001,2002,2003,2004,3001,3002,3003,3004"/>
          <context viewClass="org.eclipse.gmf.runtime.notation.Edge" semanticHints="4001"/>
       </viewProvider>
    </extension>
@@ -271,16 +271,16 @@
             <method name="getType()" value="Mof"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-nodes">
-            <method name="getType()" value="2001"/>
+            <method name="getType()" value="2001,2002,2003,2004,3001,3002,3003,3004"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Edge" id="generated-links">
             <method name="getType()" value="4001"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-labels">
-            <method name="getType()" value="5001"/>
+            <method name="getType()" value="5005,5006,5007,5008,5004,5001,5002,5003"/>
          </object>
          <object class="org.eclipse.gmf.runtime.notation.Node" id="generated-compartments">
-            <method name="getType()" value=""/>
+            <method name="getType()" value="7001,7002"/>
          </object>
          <context views="generated-diagram,generated-nodes,generated-links,generated-labels,generated-compartments"/>
       </editpartProvider>
@@ -294,10 +294,45 @@
          <object class="mof.diagram.edit.parts.UMLDiagramEditPart" id="UMLDiagram_1000"/>
          <context elements="UMLDiagram_1000"/>
       </modelingAssistantProvider>
-            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfNodoEditPart">
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfPackageEditPart">
          <Priority name="Lowest"/>
-         <object class="mof.diagram.edit.parts.NodoEditPart" id="Nodo_2001"/>
-         <context elements="Nodo_2001"/>
+         <object class="mof.diagram.edit.parts.PackageEditPart" id="Package_2001"/>
+         <context elements="Package_2001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfNodoUnoEditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.NodoUnoEditPart" id="NodoUno_2002"/>
+         <context elements="NodoUno_2002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfNodoDosEditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.NodoDosEditPart" id="NodoDos_2003"/>
+         <context elements="NodoDos_2003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfAtributosMetodosEditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.AtributosMetodosEditPart" id="AtributosMetodos_2004"/>
+         <context elements="AtributosMetodos_2004"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfPackage2EditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.Package2EditPart" id="Package_3001"/>
+         <context elements="Package_3001"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfNodoUno2EditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.NodoUno2EditPart" id="NodoUno_3002"/>
+         <context elements="NodoUno_3002"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfNodoDos2EditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.NodoDos2EditPart" id="NodoDos_3003"/>
+         <context elements="NodoDos_3003"/>
+      </modelingAssistantProvider>
+            <modelingAssistantProvider class="mof.diagram.providers.assistants.MofModelingAssistantProviderOfAtributosMetodos2EditPart">
+         <Priority name="Lowest"/>
+         <object class="mof.diagram.edit.parts.AtributosMetodos2EditPart" id="AtributosMetodos_3004"/>
+         <context elements="AtributosMetodos_3004"/>
       </modelingAssistantProvider>
       
    </extension>
@@ -322,7 +357,7 @@
       <decoratorProvider class="mof.diagram.providers.MofShortcutsDecoratorProvider">
          <Priority name="Lowest"/>
          <object class="org.eclipse.gmf.runtime.notation.Node(org.eclipse.gmf.runtime.notation)" id="generated-top-nodes">
-            <method name="getType()" value="2001"/>
+            <method name="getType()" value="2001,2002,2003,2004"/>
          </object>
          <context decoratorTargets="generated-top-nodes"/>
       </decoratorProvider>
@@ -342,12 +377,78 @@
       </metamodel>
       <metamodel nsURI="mof">
          <metamodelType
-               id="tfg.diagram.Nodo_2001"
-               name="%metatype.name.Nodo_2001"
+               id="tfg.diagram.Package_2001"
+               name="%metatype.name.Package_2001"
                kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
-               eclass="Nodo"
-               edithelper="mof.diagram.edit.helpers.NodoEditHelper">
+               eclass="Package"
+               edithelper="mof.diagram.edit.helpers.PackageEditHelper">
             <param name="semanticHint" value="2001"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <specializationType
+               id="tfg.diagram.NodoUno_2002"
+               name="%metatype.name.NodoUno_2002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="tfg.diagram.NodoUno_3002"/>
+            <param name="semanticHint" value="2002"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <specializationType
+               id="tfg.diagram.NodoDos_2003"
+               name="%metatype.name.NodoDos_2003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="tfg.diagram.NodoDos_3003"/>
+            <param name="semanticHint" value="2003"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <specializationType
+               id="tfg.diagram.AtributosMetodos_2004"
+               name="%metatype.name.AtributosMetodos_2004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="tfg.diagram.AtributosMetodos_3004"/>
+            <param name="semanticHint" value="2004"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <specializationType
+               id="tfg.diagram.Package_3001"
+               name="%metatype.name.Package_3001"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType">
+            <specializes id="tfg.diagram.Package_2001"/>
+            <param name="semanticHint" value="3001"/>
+         </specializationType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <metamodelType
+               id="tfg.diagram.NodoUno_3002"
+               name="%metatype.name.NodoUno_3002"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="NodoUno"
+               edithelper="mof.diagram.edit.helpers.NodoUnoEditHelper">
+            <param name="semanticHint" value="3002"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <metamodelType
+               id="tfg.diagram.NodoDos_3003"
+               name="%metatype.name.NodoDos_3003"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="NodoDos"
+               edithelper="mof.diagram.edit.helpers.NodoDosEditHelper">
+            <param name="semanticHint" value="3003"/>
+         </metamodelType>
+      </metamodel>
+      <metamodel nsURI="mof">
+         <metamodelType
+               id="tfg.diagram.AtributosMetodos_3004"
+               name="%metatype.name.AtributosMetodos_3004"
+               kind="org.eclipse.gmf.runtime.emf.type.core.IHintedType"
+               eclass="AtributosMetodos"
+               edithelper="mof.diagram.edit.helpers.AtributosMetodosEditHelper">
+            <param name="semanticHint" value="3004"/>
          </metamodelType>
       </metamodel>
       <metamodel nsURI="mof">
@@ -373,7 +474,14 @@
       </clientContext> 
       <binding context="tfg.diagram.TypeContext">
          <elementType ref="tfg.diagram.UMLDiagram_1000"/>
-         <elementType ref="tfg.diagram.Nodo_2001"/>
+         <elementType ref="tfg.diagram.Package_2001"/>
+         <elementType ref="tfg.diagram.NodoUno_2002"/>
+         <elementType ref="tfg.diagram.NodoDos_2003"/>
+         <elementType ref="tfg.diagram.AtributosMetodos_2004"/>
+         <elementType ref="tfg.diagram.Package_3001"/>
+         <elementType ref="tfg.diagram.NodoUno_3002"/>
+         <elementType ref="tfg.diagram.NodoDos_3003"/>
+         <elementType ref="tfg.diagram.AtributosMetodos_3004"/>
          <elementType ref="tfg.diagram.Enlace_4001"/>
          <advice ref="org.eclipse.gmf.runtime.diagram.core.advice.notationDepdendents"/>
       </binding>

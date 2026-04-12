@@ -61,9 +61,7 @@ public class NodoItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNombrePropertyDescriptor(object);
-			addFormaPropertyDescriptor(object);
 			addColorPropertyDescriptor(object);
-			addColorBordePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,28 +80,6 @@ public class NodoItemProvider
 				 getString("_UI_Nodo_nombre_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_nombre_feature", "_UI_Nodo_type"),
 				 MofPackage.Literals.NODO__NOMBRE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Forma feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addFormaPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Nodo_forma_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_forma_feature", "_UI_Nodo_type"),
-				 MofPackage.Literals.NODO__FORMA,
 				 true,
 				 false,
 				 false,
@@ -135,39 +111,6 @@ public class NodoItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Color Borde feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addColorBordePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Nodo_colorBorde_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_colorBorde_feature", "_UI_Nodo_type"),
-				 MofPackage.Literals.NODO__COLOR_BORDE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Nodo.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Nodo"));
-	}
-
-	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -195,9 +138,7 @@ public class NodoItemProvider
 
 		switch (notification.getFeatureID(Nodo.class)) {
 			case MofPackage.NODO__NOMBRE:
-			case MofPackage.NODO__FORMA:
 			case MofPackage.NODO__COLOR:
-			case MofPackage.NODO__COLOR_BORDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

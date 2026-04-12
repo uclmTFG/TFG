@@ -22,10 +22,10 @@ enum Color {
 }
 
 enum Forma {
-	Rectángulo;
-	RectánguloRedondeado;
-	Círculo;
-	CírculoDoble;
+	Rectangulo;
+	RectanguloRedondeado;
+	Circulo;
+	CirculoDoble;
 	Barra;
 	Rombo;
 	Actor;
@@ -43,7 +43,7 @@ enum Tipo {
 
 enum Visibilidad {
 	Privado;
-	Público;
+	Publico;
 	Protegido;
 	Paquete;
 	Estático;
@@ -61,14 +61,35 @@ enum FormaExtremoDestino{
 	RomboRelleno;
 }
 
+abstract class Nodo {
+	attr String nombre;
+	attr Color color = "Blanco";
+}
+
+@gmf.node(label="nombre", figure="rectangle")
+class Package extends Nodo {
+	@gmf.compartment
+	val Nodo[*] nodos;
+}
 
 @gmf.node(label="nombre")
-class Nodo {
-    attr String nombre;
-    attr Forma forma ="Rectángulo";
-    attr Color color = "Blanco";
+class NodoUno extends Nodo {
+    attr Forma forma ="Rectangulo";
     attr Color colorBorde = "Blanco";
 }
+
+@gmf.node(label="nombre")
+class NodoDos extends Nodo {
+    @gmf.compartiment(layout="list", collapsible="true")
+    val AtributosMetodos[*] atributometodo;
+}
+
+@gmf.node(label="nombre")
+class AtributosMetodos extends Nodo {
+    attr Tipo tipo ="Atributo";
+    attr Visibilidad visibilidad ="Publico";
+}
+
 
 @gmf.link(source="origen", target="destino", style="solid", target.decoration="arrow")
 class Enlace {

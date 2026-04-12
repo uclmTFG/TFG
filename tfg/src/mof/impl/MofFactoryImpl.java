@@ -2,7 +2,20 @@
  */
 package mof.impl;
 
-import mof.*;
+import mof.AtributosMetodos;
+import mof.Color;
+import mof.Enlace;
+import mof.Forma;
+import mof.FormaExtremoDestino;
+import mof.FormaExtremoOrigen;
+import mof.Linea;
+import mof.MofFactory;
+import mof.MofPackage;
+import mof.NodoDos;
+import mof.NodoUno;
+import mof.Tipo;
+import mof.UMLDiagram;
+import mof.Visibilidad;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -58,7 +71,10 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case MofPackage.UML_DIAGRAM: return createUMLDiagram();
-			case MofPackage.NODO: return createNodo();
+			case MofPackage.PACKAGE: return createPackage();
+			case MofPackage.NODO_UNO: return createNodoUno();
+			case MofPackage.NODO_DOS: return createNodoDos();
+			case MofPackage.ATRIBUTOS_METODOS: return createAtributosMetodos();
 			case MofPackage.ENLACE: return createEnlace();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -136,9 +152,42 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	@Override
-	public Nodo createNodo() {
-		NodoImpl nodo = new NodoImpl();
-		return nodo;
+	public mof.Package createPackage() {
+		PackageImpl package_ = new PackageImpl();
+		return package_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NodoUno createNodoUno() {
+		NodoUnoImpl nodoUno = new NodoUnoImpl();
+		return nodoUno;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NodoDos createNodoDos() {
+		NodoDosImpl nodoDos = new NodoDosImpl();
+		return nodoDos;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public AtributosMetodos createAtributosMetodos() {
+		AtributosMetodosImpl atributosMetodos = new AtributosMetodosImpl();
+		return atributosMetodos;
 	}
 
 	/**

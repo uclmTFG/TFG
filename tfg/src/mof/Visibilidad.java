@@ -29,14 +29,14 @@ public enum Visibilidad implements Enumerator {
 	PRIVADO(0, "Privado", "Privado"),
 
 	/**
-	 * The '<em><b>Público</b></em>' literal object.
+	 * The '<em><b>Publico</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PÚBLICO_VALUE
+	 * @see #PUBLICO_VALUE
 	 * @generated
 	 * @ordered
 	 */
-	PÚBLICO(1, "Público", "P\u00fablico"),
+	PUBLICO(1, "Publico", "Publico"),
 
 	/**
 	 * The '<em><b>Protegido</b></em>' literal object.
@@ -80,15 +80,15 @@ public enum Visibilidad implements Enumerator {
 	public static final int PRIVADO_VALUE = 0;
 
 	/**
-	 * The '<em><b>Público</b></em>' literal value.
+	 * The '<em><b>Publico</b></em>' literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #PÚBLICO
-	 * @model name="Público"
+	 * @see #PUBLICO
+	 * @model name="Publico"
 	 * @generated
 	 * @ordered
 	 */
-	public static final int PÚBLICO_VALUE = 1;
+	public static final int PUBLICO_VALUE = 1;
 
 	/**
 	 * The '<em><b>Protegido</b></em>' literal value.
@@ -132,7 +132,7 @@ public enum Visibilidad implements Enumerator {
 	private static final Visibilidad[] VALUES_ARRAY =
 		new Visibilidad[] {
 			PRIVADO,
-			PÚBLICO,
+			PUBLICO,
 			PROTEGIDO,
 			PAQUETE,
 			ESTÁTICO,
@@ -193,7 +193,7 @@ public enum Visibilidad implements Enumerator {
 	public static Visibilidad get(int value) {
 		switch (value) {
 			case PRIVADO_VALUE: return PRIVADO;
-			case PÚBLICO_VALUE: return PÚBLICO;
+			case PUBLICO_VALUE: return PUBLICO;
 			case PROTEGIDO_VALUE: return PROTEGIDO;
 			case PAQUETE_VALUE: return PAQUETE;
 			case ESTÁTICO_VALUE: return ESTÁTICO;

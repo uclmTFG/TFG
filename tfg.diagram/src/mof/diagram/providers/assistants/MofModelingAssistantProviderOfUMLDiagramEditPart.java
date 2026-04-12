@@ -23,8 +23,11 @@ public class MofModelingAssistantProviderOfUMLDiagramEditPart extends MofModelin
 	@Override
 
 	public List<IElementType> getTypesForPopupBar(IAdaptable host) {
-		List<IElementType> types = new ArrayList<IElementType>(1);
-		types.add(MofElementTypes.Nodo_2001);
+		List<IElementType> types = new ArrayList<IElementType>(4);
+		types.add(MofElementTypes.Package_2001);
+		types.add(MofElementTypes.NodoUno_2002);
+		types.add(MofElementTypes.NodoDos_2003);
+		types.add(MofElementTypes.AtributosMetodos_2004);
 		return types;
 	}
 

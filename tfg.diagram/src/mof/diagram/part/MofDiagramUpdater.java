@@ -16,12 +16,25 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.DiagramUpdater;
 
+import mof.AtributosMetodos;
 import mof.Enlace;
 import mof.MofPackage;
 import mof.Nodo;
+import mof.NodoDos;
+import mof.NodoUno;
+import mof.Package;
 import mof.UMLDiagram;
+import mof.diagram.edit.parts.AtributosMetodos2EditPart;
+import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
-import mof.diagram.edit.parts.NodoEditPart;
+import mof.diagram.edit.parts.NodoDos2EditPart;
+import mof.diagram.edit.parts.NodoDosEditPart;
+import mof.diagram.edit.parts.NodoUno2EditPart;
+import mof.diagram.edit.parts.NodoUnoEditPart;
+import mof.diagram.edit.parts.Package2EditPart;
+import mof.diagram.edit.parts.PackageEditPart;
+import mof.diagram.edit.parts.PackagePackageNodosCompartment2EditPart;
+import mof.diagram.edit.parts.PackagePackageNodosCompartmentEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.providers.MofElementTypes;
 
@@ -44,6 +57,10 @@ public class MofDiagramUpdater {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getUMLDiagram_1000SemanticChildren(view);
+		case PackagePackageNodosCompartmentEditPart.VISUAL_ID:
+			return getPackagePackageNodosCompartment_7001SemanticChildren(view);
+		case PackagePackageNodosCompartment2EditPart.VISUAL_ID:
+			return getPackagePackageNodosCompartment_7002SemanticChildren(view);
 		}
 		return Collections.emptyList();
 	}
@@ -60,7 +77,91 @@ public class MofDiagramUpdater {
 		for (Iterator<?> it = modelElement.getNodos().iterator(); it.hasNext();) {
 			Nodo childElement = (Nodo) it.next();
 			int visualID = MofVisualIDRegistry.getNodeVisualID(view, childElement);
-			if (visualID == NodoEditPart.VISUAL_ID) {
+			if (visualID == PackageEditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NodoUnoEditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NodoDosEditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == AtributosMetodosEditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<MofNodeDescriptor> getPackagePackageNodosCompartment_7001SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Package modelElement = (Package) containerView.getElement();
+		LinkedList<MofNodeDescriptor> result = new LinkedList<MofNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNodos().iterator(); it.hasNext();) {
+			Nodo childElement = (Nodo) it.next();
+			int visualID = MofVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Package2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NodoUno2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NodoDos2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == AtributosMetodos2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+		}
+		return result;
+	}
+
+	/**
+	* @generated
+	*/
+	public static List<MofNodeDescriptor> getPackagePackageNodosCompartment_7002SemanticChildren(View view) {
+		if (false == view.eContainer() instanceof View) {
+			return Collections.emptyList();
+		}
+		View containerView = (View) view.eContainer();
+		if (!containerView.isSetElement()) {
+			return Collections.emptyList();
+		}
+		Package modelElement = (Package) containerView.getElement();
+		LinkedList<MofNodeDescriptor> result = new LinkedList<MofNodeDescriptor>();
+		for (Iterator<?> it = modelElement.getNodos().iterator(); it.hasNext();) {
+			Nodo childElement = (Nodo) it.next();
+			int visualID = MofVisualIDRegistry.getNodeVisualID(view, childElement);
+			if (visualID == Package2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NodoUno2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == NodoDos2EditPart.VISUAL_ID) {
+				result.add(new MofNodeDescriptor(childElement, visualID));
+				continue;
+			}
+			if (visualID == AtributosMetodos2EditPart.VISUAL_ID) {
 				result.add(new MofNodeDescriptor(childElement, visualID));
 				continue;
 			}
@@ -75,8 +176,22 @@ public class MofDiagramUpdater {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return getUMLDiagram_1000ContainedLinks(view);
-		case NodoEditPart.VISUAL_ID:
-			return getNodo_2001ContainedLinks(view);
+		case PackageEditPart.VISUAL_ID:
+			return getPackage_2001ContainedLinks(view);
+		case NodoUnoEditPart.VISUAL_ID:
+			return getNodoUno_2002ContainedLinks(view);
+		case NodoDosEditPart.VISUAL_ID:
+			return getNodoDos_2003ContainedLinks(view);
+		case AtributosMetodosEditPart.VISUAL_ID:
+			return getAtributosMetodos_2004ContainedLinks(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_3001ContainedLinks(view);
+		case NodoUno2EditPart.VISUAL_ID:
+			return getNodoUno_3002ContainedLinks(view);
+		case NodoDos2EditPart.VISUAL_ID:
+			return getNodoDos_3003ContainedLinks(view);
+		case AtributosMetodos2EditPart.VISUAL_ID:
+			return getAtributosMetodos_3004ContainedLinks(view);
 		case EnlaceEditPart.VISUAL_ID:
 			return getEnlace_4001ContainedLinks(view);
 		}
@@ -88,8 +203,22 @@ public class MofDiagramUpdater {
 	*/
 	public static List<MofLinkDescriptor> getIncomingLinks(View view) {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
-		case NodoEditPart.VISUAL_ID:
-			return getNodo_2001IncomingLinks(view);
+		case PackageEditPart.VISUAL_ID:
+			return getPackage_2001IncomingLinks(view);
+		case NodoUnoEditPart.VISUAL_ID:
+			return getNodoUno_2002IncomingLinks(view);
+		case NodoDosEditPart.VISUAL_ID:
+			return getNodoDos_2003IncomingLinks(view);
+		case AtributosMetodosEditPart.VISUAL_ID:
+			return getAtributosMetodos_2004IncomingLinks(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_3001IncomingLinks(view);
+		case NodoUno2EditPart.VISUAL_ID:
+			return getNodoUno_3002IncomingLinks(view);
+		case NodoDos2EditPart.VISUAL_ID:
+			return getNodoDos_3003IncomingLinks(view);
+		case AtributosMetodos2EditPart.VISUAL_ID:
+			return getAtributosMetodos_3004IncomingLinks(view);
 		case EnlaceEditPart.VISUAL_ID:
 			return getEnlace_4001IncomingLinks(view);
 		}
@@ -101,8 +230,22 @@ public class MofDiagramUpdater {
 	*/
 	public static List<MofLinkDescriptor> getOutgoingLinks(View view) {
 		switch (MofVisualIDRegistry.getVisualID(view)) {
-		case NodoEditPart.VISUAL_ID:
-			return getNodo_2001OutgoingLinks(view);
+		case PackageEditPart.VISUAL_ID:
+			return getPackage_2001OutgoingLinks(view);
+		case NodoUnoEditPart.VISUAL_ID:
+			return getNodoUno_2002OutgoingLinks(view);
+		case NodoDosEditPart.VISUAL_ID:
+			return getNodoDos_2003OutgoingLinks(view);
+		case AtributosMetodosEditPart.VISUAL_ID:
+			return getAtributosMetodos_2004OutgoingLinks(view);
+		case Package2EditPart.VISUAL_ID:
+			return getPackage_3001OutgoingLinks(view);
+		case NodoUno2EditPart.VISUAL_ID:
+			return getNodoUno_3002OutgoingLinks(view);
+		case NodoDos2EditPart.VISUAL_ID:
+			return getNodoDos_3003OutgoingLinks(view);
+		case AtributosMetodos2EditPart.VISUAL_ID:
+			return getAtributosMetodos_3004OutgoingLinks(view);
 		case EnlaceEditPart.VISUAL_ID:
 			return getEnlace_4001OutgoingLinks(view);
 		}
@@ -122,7 +265,56 @@ public class MofDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getNodo_2001ContainedLinks(View view) {
+	public static List<MofLinkDescriptor> getPackage_2001ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoUno_2002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoDos_2003ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getAtributosMetodos_2004ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getPackage_3001ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoUno_3002ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoDos_3003ContainedLinks(View view) {
+		return Collections.emptyList();
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getAtributosMetodos_3004ContainedLinks(View view) {
 		return Collections.emptyList();
 	}
 
@@ -136,8 +328,92 @@ public class MofDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getNodo_2001IncomingLinks(View view) {
-		Nodo modelElement = (Nodo) view.getElement();
+	public static List<MofLinkDescriptor> getPackage_2001IncomingLinks(View view) {
+		Package modelElement = (Package) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoUno_2002IncomingLinks(View view) {
+		NodoUno modelElement = (NodoUno) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoDos_2003IncomingLinks(View view) {
+		NodoDos modelElement = (NodoDos) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getAtributosMetodos_2004IncomingLinks(View view) {
+		AtributosMetodos modelElement = (AtributosMetodos) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getPackage_3001IncomingLinks(View view) {
+		Package modelElement = (Package) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoUno_3002IncomingLinks(View view) {
+		NodoUno modelElement = (NodoUno) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoDos_3003IncomingLinks(View view) {
+		NodoDos modelElement = (NodoDos) view.getElement();
+		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
+				.find(view.eResource().getResourceSet().getResources());
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getIncomingTypeModelFacetLinks_Enlace_4001(modelElement, crossReferences));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getAtributosMetodos_3004IncomingLinks(View view) {
+		AtributosMetodos modelElement = (AtributosMetodos) view.getElement();
 		Map<EObject, Collection<EStructuralFeature.Setting>> crossReferences = EcoreUtil.CrossReferencer
 				.find(view.eResource().getResourceSet().getResources());
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
@@ -155,8 +431,78 @@ public class MofDiagramUpdater {
 	/**
 	 * @generated
 	 */
-	public static List<MofLinkDescriptor> getNodo_2001OutgoingLinks(View view) {
-		Nodo modelElement = (Nodo) view.getElement();
+	public static List<MofLinkDescriptor> getPackage_2001OutgoingLinks(View view) {
+		Package modelElement = (Package) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoUno_2002OutgoingLinks(View view) {
+		NodoUno modelElement = (NodoUno) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoDos_2003OutgoingLinks(View view) {
+		NodoDos modelElement = (NodoDos) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getAtributosMetodos_2004OutgoingLinks(View view) {
+		AtributosMetodos modelElement = (AtributosMetodos) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getPackage_3001OutgoingLinks(View view) {
+		Package modelElement = (Package) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoUno_3002OutgoingLinks(View view) {
+		NodoUno modelElement = (NodoUno) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getNodoDos_3003OutgoingLinks(View view) {
+		NodoDos modelElement = (NodoDos) view.getElement();
+		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
+		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
+		return result;
+	}
+
+	/**
+	 * @generated
+	 */
+	public static List<MofLinkDescriptor> getAtributosMetodos_3004OutgoingLinks(View view) {
+		AtributosMetodos modelElement = (AtributosMetodos) view.getElement();
 		LinkedList<MofLinkDescriptor> result = new LinkedList<MofLinkDescriptor>();
 		result.addAll(getOutgoingTypeModelFacetLinks_Enlace_4001(modelElement));
 		return result;

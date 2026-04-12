@@ -256,12 +256,42 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String Nodo1CreationTool_title;
+	public static String AtributosMetodos1CreationTool_title;
 
 	/**
 	* @generated
 	*/
-	public static String Nodo1CreationTool_desc;
+	public static String AtributosMetodos1CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String NodoDos2CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String NodoDos2CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String NodoUno3CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String NodoUno3CreationTool_desc;
+
+	/**
+	* @generated
+	*/
+	public static String Package4CreationTool_title;
+
+	/**
+	* @generated
+	*/
+	public static String Package4CreationTool_desc;
 
 	/**
 	* @generated
@@ -276,6 +306,16 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
+	public static String PackagePackageNodosCompartmentEditPart_title;
+
+	/**
+	* @generated
+	*/
+	public static String PackagePackageNodosCompartment2EditPart_title;
+
+	/**
+	* @generated
+	*/
 	public static String CommandName_OpenDiagram;
 
 	/**
@@ -286,12 +326,82 @@ public class Messages extends NLS {
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Nodo_2001_incominglinks;
+	public static String NavigatorGroupName_Package_2001_incominglinks;
 
 	/**
 	* @generated
 	*/
-	public static String NavigatorGroupName_Nodo_2001_outgoinglinks;
+	public static String NavigatorGroupName_Package_2001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoUno_2002_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoUno_2002_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoDos_2003_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoDos_2003_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_AtributosMetodos_2004_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_AtributosMetodos_2004_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Package_3001_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_Package_3001_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoUno_3002_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoUno_3002_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoDos_3003_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_NodoDos_3003_outgoinglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_AtributosMetodos_3004_incominglinks;
+
+	/**
+	* @generated
+	*/
+	public static String NavigatorGroupName_AtributosMetodos_3004_outgoinglinks;
 
 	/**
 	* @generated

@@ -9,13 +9,103 @@
   <nodes>
     <containmentFeature
         href="mof.ecore#//UMLDiagram/nodos"/>
-    <ownedChild>
+    <ownedChild
+        relatedDiagrams="//@diagram">
       <domainMetaElement
-          href="mof.ecore#//Nodo"/>
+          href="mof.ecore#//Package"/>
       <labelMappings
           xsi:type="gmfmap:FeatureLabelMapping">
         <diagramLabel
-            href="mof.gmfgraph#NodoLabel"/>
+            href="mof.gmfgraph#PackageLabel"/>
+        <features
+            href="mof.ecore#//Nodo/nombre"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="mof.gmftool#//@palette/@tools.0/@tools.3"/>
+      <diagramNode
+          href="mof.gmfgraph#Package"/>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.0/@ownedChild">
+        <containmentFeature
+            href="mof.ecore#//Package/nodos"/>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.1/@ownedChild">
+        <containmentFeature
+            href="mof.ecore#//Package/nodos"/>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.2/@ownedChild">
+        <containmentFeature
+            href="mof.ecore#//Package/nodos"/>
+      </children>
+      <children
+          compartment="//@nodes.0/@ownedChild/@compartments.0"
+          referencedChild="//@nodes.3/@ownedChild">
+        <containmentFeature
+            href="mof.ecore#//Package/nodos"/>
+      </children>
+      <compartments
+          children="//@nodes.0/@ownedChild/@children.0 //@nodes.0/@ownedChild/@children.1 //@nodes.0/@ownedChild/@children.2 //@nodes.0/@ownedChild/@children.3">
+        <compartment
+            href="mof.gmfgraph#PackageNodosCompartment"/>
+      </compartments>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="mof.ecore#//UMLDiagram/nodos"/>
+    <ownedChild>
+      <domainMetaElement
+          href="mof.ecore#//NodoUno"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="mof.gmfgraph#NodoUnoLabel"/>
+        <features
+            href="mof.ecore#//Nodo/nombre"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="mof.gmftool#//@palette/@tools.0/@tools.2"/>
+      <diagramNode
+          href="mof.gmfgraph#NodoUno"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="mof.ecore#//UMLDiagram/nodos"/>
+    <ownedChild>
+      <domainMetaElement
+          href="mof.ecore#//NodoDos"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="mof.gmfgraph#NodoDosLabel"/>
+        <features
+            href="mof.ecore#//Nodo/nombre"/>
+      </labelMappings>
+      <tool
+          xsi:type="gmftool:CreationTool"
+          href="mof.gmftool#//@palette/@tools.0/@tools.1"/>
+      <diagramNode
+          href="mof.gmfgraph#NodoDos"/>
+    </ownedChild>
+  </nodes>
+  <nodes>
+    <containmentFeature
+        href="mof.ecore#//UMLDiagram/nodos"/>
+    <ownedChild>
+      <domainMetaElement
+          href="mof.ecore#//AtributosMetodos"/>
+      <labelMappings
+          xsi:type="gmfmap:FeatureLabelMapping">
+        <diagramLabel
+            href="mof.gmfgraph#AtributosMetodosLabel"/>
         <features
             href="mof.ecore#//Nodo/nombre"/>
       </labelMappings>
@@ -23,7 +113,7 @@
           xsi:type="gmftool:CreationTool"
           href="mof.gmftool#//@palette/@tools.0/@tools.0"/>
       <diagramNode
-          href="mof.gmfgraph#Nodo"/>
+          href="mof.gmfgraph#AtributosMetodos"/>
     </ownedChild>
   </nodes>
   <links>
