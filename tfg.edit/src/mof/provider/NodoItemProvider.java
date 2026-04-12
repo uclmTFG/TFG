@@ -62,6 +62,7 @@ public class NodoItemProvider
 
 			addNombrePropertyDescriptor(object);
 			addColorPropertyDescriptor(object);
+			addColorBordePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class NodoItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Color Borde feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addColorBordePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Nodo_colorBorde_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Nodo_colorBorde_feature", "_UI_Nodo_type"),
+				 MofPackage.Literals.NODO__COLOR_BORDE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -139,6 +162,7 @@ public class NodoItemProvider
 		switch (notification.getFeatureID(Nodo.class)) {
 			case MofPackage.NODO__NOMBRE:
 			case MofPackage.NODO__COLOR:
+			case MofPackage.NODO__COLOR_BORDE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -37,10 +37,8 @@ public class MofPaletteFactory {
 	private PaletteContainer createObjects1Group() {
 		PaletteDrawer paletteContainer = new PaletteDrawer(Messages.Objects1Group_title);
 		paletteContainer.setId("createObjects1Group"); //$NON-NLS-1$
-		paletteContainer.add(createAtributosMetodos1CreationTool());
-		paletteContainer.add(createNodoDos2CreationTool());
-		paletteContainer.add(createNodoUno3CreationTool());
-		paletteContainer.add(createPackage4CreationTool());
+		paletteContainer.add(createNodoDos1CreationTool());
+		paletteContainer.add(createNodoUno2CreationTool());
 		return paletteContainer;
 	}
 
@@ -58,14 +56,14 @@ public class MofPaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createAtributosMetodos1CreationTool() {
+	private ToolEntry createNodoDos1CreationTool() {
 		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MofElementTypes.AtributosMetodos_3004);
-		types.add(MofElementTypes.AtributosMetodos_2004);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.AtributosMetodos1CreationTool_title,
-				Messages.AtributosMetodos1CreationTool_desc, types);
-		entry.setId("createAtributosMetodos1CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(MofElementTypes.getImageDescriptor(MofElementTypes.AtributosMetodos_3004));
+		types.add(MofElementTypes.NodoDos_3001);
+		types.add(MofElementTypes.NodoDos_2002);
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.NodoDos1CreationTool_title,
+				Messages.NodoDos1CreationTool_desc, types);
+		entry.setId("createNodoDos1CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MofElementTypes.getImageDescriptor(MofElementTypes.NodoDos_3001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}
@@ -73,44 +71,11 @@ public class MofPaletteFactory {
 	/**
 	* @generated
 	*/
-	private ToolEntry createNodoDos2CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MofElementTypes.NodoDos_3003);
-		types.add(MofElementTypes.NodoDos_2003);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.NodoDos2CreationTool_title,
-				Messages.NodoDos2CreationTool_desc, types);
-		entry.setId("createNodoDos2CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(MofElementTypes.getImageDescriptor(MofElementTypes.NodoDos_3003));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	* @generated
-	*/
-	private ToolEntry createNodoUno3CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MofElementTypes.NodoUno_3002);
-		types.add(MofElementTypes.NodoUno_2002);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.NodoUno3CreationTool_title,
-				Messages.NodoUno3CreationTool_desc, types);
-		entry.setId("createNodoUno3CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(MofElementTypes.getImageDescriptor(MofElementTypes.NodoUno_3002));
-		entry.setLargeIcon(entry.getSmallIcon());
-		return entry;
-	}
-
-	/**
-	* @generated
-	*/
-	private ToolEntry createPackage4CreationTool() {
-		ArrayList<IElementType> types = new ArrayList<IElementType>(2);
-		types.add(MofElementTypes.Package_2001);
-		types.add(MofElementTypes.Package_3001);
-		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.Package4CreationTool_title,
-				Messages.Package4CreationTool_desc, types);
-		entry.setId("createPackage4CreationTool"); //$NON-NLS-1$
-		entry.setSmallIcon(MofElementTypes.getImageDescriptor(MofElementTypes.Package_2001));
+	private ToolEntry createNodoUno2CreationTool() {
+		DefaultNodeToolEntry entry = new DefaultNodeToolEntry(Messages.NodoUno2CreationTool_title,
+				Messages.NodoUno2CreationTool_desc, Collections.singletonList(MofElementTypes.NodoUno_2001));
+		entry.setId("createNodoUno2CreationTool"); //$NON-NLS-1$
+		entry.setSmallIcon(MofElementTypes.getImageDescriptor(MofElementTypes.NodoUno_2001));
 		entry.setLargeIcon(entry.getSmallIcon());
 		return entry;
 	}

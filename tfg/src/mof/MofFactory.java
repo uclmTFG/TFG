@@ -31,15 +31,6 @@ public interface MofFactory extends EFactory {
 	UMLDiagram createUMLDiagram();
 
 	/**
-	 * Returns a new object of class '<em>Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Package</em>'.
-	 * @generated
-	 */
-	Package createPackage();
-
-	/**
 	 * Returns a new object of class '<em>Nodo Uno</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -56,15 +47,6 @@ public interface MofFactory extends EFactory {
 	 * @generated
 	 */
 	NodoDos createNodoDos();
-
-	/**
-	 * Returns a new object of class '<em>Atributos Metodos</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Atributos Metodos</em>'.
-	 * @generated
-	 */
-	AtributosMetodos createAtributosMetodos();
 
 	/**
 	 * Returns a new object of class '<em>Enlace</em>'.

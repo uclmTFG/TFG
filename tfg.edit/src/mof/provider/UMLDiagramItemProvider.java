@@ -153,22 +153,12 @@ public class UMLDiagramItemProvider
 		newChildDescriptors.add
 			(createChildParameter
 				(MofPackage.Literals.UML_DIAGRAM__NODOS,
-				 MofFactory.eINSTANCE.createPackage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MofPackage.Literals.UML_DIAGRAM__NODOS,
 				 MofFactory.eINSTANCE.createNodoUno()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(MofPackage.Literals.UML_DIAGRAM__NODOS,
 				 MofFactory.eINSTANCE.createNodoDos()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MofPackage.Literals.UML_DIAGRAM__NODOS,
-				 MofFactory.eINSTANCE.createAtributosMetodos()));
 
 		newChildDescriptors.add
 			(createChildParameter

@@ -17,7 +17,7 @@ import org.eclipse.gmf.runtime.notation.View;
 
 import mof.MofFactory;
 import mof.NodoDos;
-import mof.Package;
+import mof.NodoUno;
 
 /**
  * @generated
@@ -57,8 +57,8 @@ public class NodoDos2CreateCommand extends EditElementCommand {
 	protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
 		NodoDos newElement = MofFactory.eINSTANCE.createNodoDos();
 
-		Package owner = (Package) getElementToEdit();
-		owner.getNodos().add(newElement);
+		NodoUno owner = (NodoUno) getElementToEdit();
+		owner.getNodosDos().add(newElement);
 
 		doConfigure(newElement, monitor, info);
 

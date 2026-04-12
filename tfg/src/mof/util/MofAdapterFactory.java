@@ -2,13 +2,7 @@
  */
 package mof.util;
 
-import mof.AtributosMetodos;
-import mof.Enlace;
-import mof.MofPackage;
-import mof.Nodo;
-import mof.NodoDos;
-import mof.NodoUno;
-import mof.UMLDiagram;
+import mof.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -82,20 +76,12 @@ public class MofAdapterFactory extends AdapterFactoryImpl {
 				return createNodoAdapter();
 			}
 			@Override
-			public Adapter casePackage(mof.Package object) {
-				return createPackageAdapter();
-			}
-			@Override
 			public Adapter caseNodoUno(NodoUno object) {
 				return createNodoUnoAdapter();
 			}
 			@Override
 			public Adapter caseNodoDos(NodoDos object) {
 				return createNodoDosAdapter();
-			}
-			@Override
-			public Adapter caseAtributosMetodos(AtributosMetodos object) {
-				return createAtributosMetodosAdapter();
 			}
 			@Override
 			public Adapter caseEnlace(Enlace object) {
@@ -150,20 +136,6 @@ public class MofAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link mof.Package <em>Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mof.Package
-	 * @generated
-	 */
-	public Adapter createPackageAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link mof.NodoUno <em>Nodo Uno</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -188,20 +160,6 @@ public class MofAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createNodoDosAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link mof.AtributosMetodos <em>Atributos Metodos</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see mof.AtributosMetodos
-	 * @generated
-	 */
-	public Adapter createAtributosMetodosAdapter() {
 		return null;
 	}
 

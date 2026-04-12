@@ -28,17 +28,11 @@ import org.eclipse.ui.IMemento;
 import org.eclipse.ui.navigator.ICommonContentExtensionSite;
 import org.eclipse.ui.navigator.ICommonContentProvider;
 
-import mof.diagram.edit.parts.AtributosMetodos2EditPart;
-import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
-import mof.diagram.edit.parts.NodoUno2EditPart;
 import mof.diagram.edit.parts.NodoUnoEditPart;
-import mof.diagram.edit.parts.Package2EditPart;
-import mof.diagram.edit.parts.PackageEditPart;
-import mof.diagram.edit.parts.PackagePackageNodosCompartment2EditPart;
-import mof.diagram.edit.parts.PackagePackageNodosCompartmentEditPart;
+import mof.diagram.edit.parts.NodoUnoNodoUnoNodosDosCompartmentEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.Messages;
 import mof.diagram.part.MofVisualIDRegistry;
@@ -242,16 +236,10 @@ public class MofNavigatorContentProvider implements ICommonContentProvider {
 					"icons/linksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackageEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoUnoEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getChildrenByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoDosEditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(AtributosMetodosEditPart.VISUAL_ID));
 			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getDiagramLinksByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
@@ -262,58 +250,20 @@ public class MofNavigatorContentProvider implements ICommonContentProvider {
 			return result.toArray();
 		}
 
-		case PackageEditPart.VISUAL_ID: {
-			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_Package_2001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_Package_2001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(Package2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(NodoUno2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(NodoDos2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartmentEditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					MofVisualIDRegistry.getType(AtributosMetodos2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
 		case NodoUnoEditPart.VISUAL_ID: {
 			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoUno_2002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_NodoUno_2001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoUno_2002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_NodoUno_2001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
+			connectedViews = getChildrenByType(Collections.singleton(sv),
+					MofVisualIDRegistry.getType(NodoUnoNodoUnoNodosDosCompartmentEditPart.VISUAL_ID));
+			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(NodoDos2EditPart.VISUAL_ID));
+			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
 			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
@@ -333,102 +283,10 @@ public class MofNavigatorContentProvider implements ICommonContentProvider {
 			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoDos_2003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_NodoDos_2002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoDos_2003_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case AtributosMetodosEditPart.VISUAL_ID: {
-			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_AtributosMetodos_2004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_AtributosMetodos_2004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case Package2EditPart.VISUAL_ID: {
-			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_Package_3001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_Package_3001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(Package2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(NodoUno2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews, MofVisualIDRegistry.getType(NodoDos2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getChildrenByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackagePackageNodosCompartment2EditPart.VISUAL_ID));
-			connectedViews = getChildrenByType(connectedViews,
-					MofVisualIDRegistry.getType(AtributosMetodos2EditPart.VISUAL_ID));
-			result.addAll(createNavigatorItems(connectedViews, parentElement, false));
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case NodoUno2EditPart.VISUAL_ID: {
-			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoUno_3002_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
-					parentElement);
-			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoUno_3002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_NodoDos_2002_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
@@ -450,36 +308,11 @@ public class MofNavigatorContentProvider implements ICommonContentProvider {
 			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
 			Node sv = (Node) view;
 			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoDos_3003_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_NodoDos_3001_incominglinks, "icons/incomingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
 			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_NodoDos_3003_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
+					Messages.NavigatorGroupName_NodoDos_3001_outgoinglinks, "icons/outgoingLinksNavigatorGroup.gif", //$NON-NLS-1$
 					parentElement);
-			Collection<View> connectedViews;
-			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			incominglinks.addChildren(createNavigatorItems(connectedViews, incominglinks, true));
-			connectedViews = getOutgoingLinksByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
-			outgoinglinks.addChildren(createNavigatorItems(connectedViews, outgoinglinks, true));
-			if (!incominglinks.isEmpty()) {
-				result.add(incominglinks);
-			}
-			if (!outgoinglinks.isEmpty()) {
-				result.add(outgoinglinks);
-			}
-			return result.toArray();
-		}
-
-		case AtributosMetodos2EditPart.VISUAL_ID: {
-			LinkedList<MofAbstractNavigatorItem> result = new LinkedList<MofAbstractNavigatorItem>();
-			Node sv = (Node) view;
-			MofNavigatorGroup incominglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_AtributosMetodos_3004_incominglinks,
-					"icons/incomingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
-			MofNavigatorGroup outgoinglinks = new MofNavigatorGroup(
-					Messages.NavigatorGroupName_AtributosMetodos_3004_outgoinglinks,
-					"icons/outgoingLinksNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getIncomingLinksByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(EnlaceEditPart.VISUAL_ID));
@@ -505,32 +338,14 @@ public class MofNavigatorContentProvider implements ICommonContentProvider {
 					"icons/linkSourceNavigatorGroup.gif", parentElement); //$NON-NLS-1$
 			Collection<View> connectedViews;
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackageEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoUnoEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoDosEditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
 			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(AtributosMetodosEditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(Package2EditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(NodoUno2EditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoDos2EditPart.VISUAL_ID));
 			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksTargetByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(AtributosMetodos2EditPart.VISUAL_ID));
-			target.addChildren(createNavigatorItems(connectedViews, target, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(PackageEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoUnoEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
@@ -538,19 +353,7 @@ public class MofNavigatorContentProvider implements ICommonContentProvider {
 					MofVisualIDRegistry.getType(NodoDosEditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(AtributosMetodosEditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(Package2EditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(NodoUno2EditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
 					MofVisualIDRegistry.getType(NodoDos2EditPart.VISUAL_ID));
-			source.addChildren(createNavigatorItems(connectedViews, source, true));
-			connectedViews = getLinksSourceByType(Collections.singleton(sv),
-					MofVisualIDRegistry.getType(AtributosMetodos2EditPart.VISUAL_ID));
 			source.addChildren(createNavigatorItems(connectedViews, source, true));
 			if (!target.isEmpty()) {
 				result.add(target);

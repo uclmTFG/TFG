@@ -10,10 +10,8 @@ import org.eclipse.gmf.runtime.emf.commands.core.commands.DuplicateEObjectsComma
 import org.eclipse.gmf.runtime.emf.type.core.requests.CreateElementRequest;
 import org.eclipse.gmf.runtime.emf.type.core.requests.DuplicateElementsRequest;
 
-import mof.diagram.edit.commands.AtributosMetodosCreateCommand;
 import mof.diagram.edit.commands.NodoDosCreateCommand;
 import mof.diagram.edit.commands.NodoUnoCreateCommand;
-import mof.diagram.edit.commands.PackageCreateCommand;
 import mof.diagram.providers.MofElementTypes;
 
 /**
@@ -32,17 +30,11 @@ public class UMLDiagramItemSemanticEditPolicy extends MofBaseItemSemanticEditPol
 	* @generated
 	*/
 	protected Command getCreateCommand(CreateElementRequest req) {
-		if (MofElementTypes.Package_2001 == req.getElementType()) {
-			return getGEFWrapper(new PackageCreateCommand(req));
-		}
-		if (MofElementTypes.NodoUno_2002 == req.getElementType()) {
+		if (MofElementTypes.NodoUno_2001 == req.getElementType()) {
 			return getGEFWrapper(new NodoUnoCreateCommand(req));
 		}
-		if (MofElementTypes.NodoDos_2003 == req.getElementType()) {
+		if (MofElementTypes.NodoDos_2002 == req.getElementType()) {
 			return getGEFWrapper(new NodoDosCreateCommand(req));
-		}
-		if (MofElementTypes.AtributosMetodos_2004 == req.getElementType()) {
-			return getGEFWrapper(new AtributosMetodosCreateCommand(req));
 		}
 		return super.getCreateCommand(req);
 	}

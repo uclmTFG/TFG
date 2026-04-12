@@ -4,11 +4,12 @@
 package mof.diagram.edit.parts;
 
 import org.eclipse.draw2d.IFigure;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.gef.EditPart;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gmf.runtime.diagram.core.edithelpers.CreateElementRequestAdapter;
-import org.eclipse.gmf.runtime.diagram.ui.editparts.ShapeCompartmentEditPart;
+import org.eclipse.gmf.runtime.diagram.ui.editparts.ListCompartmentEditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.DragDropEditPolicy;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.EditPolicyRoles;
 import org.eclipse.gmf.runtime.diagram.ui.editpolicies.ResizableCompartmentEditPolicy;
@@ -21,8 +22,8 @@ import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.edit.policies.reparent.CreationEditPolicyWithCustomReparent;
 
-import mof.diagram.edit.policies.PackagePackageNodosCompartmentCanonicalEditPolicy;
-import mof.diagram.edit.policies.PackagePackageNodosCompartmentItemSemanticEditPolicy;
+import mof.diagram.edit.policies.NodoUnoNodoUnoNodosDosCompartmentCanonicalEditPolicy;
+import mof.diagram.edit.policies.NodoUnoNodoUnoNodosDosCompartmentItemSemanticEditPolicy;
 import mof.diagram.part.Messages;
 import mof.diagram.part.MofVisualIDRegistry;
 import mof.diagram.providers.MofElementTypes;
@@ -30,7 +31,7 @@ import mof.diagram.providers.MofElementTypes;
 /**
  * @generated
  */
-public class PackagePackageNodosCompartmentEditPart extends ShapeCompartmentEditPart {
+public class NodoUnoNodoUnoNodosDosCompartmentEditPart extends ListCompartmentEditPart {
 
 	/**
 	* @generated
@@ -40,15 +41,22 @@ public class PackagePackageNodosCompartmentEditPart extends ShapeCompartmentEdit
 	/**
 	* @generated
 	*/
-	public PackagePackageNodosCompartmentEditPart(View view) {
+	public NodoUnoNodoUnoNodosDosCompartmentEditPart(View view) {
 		super(view);
 	}
 
 	/**
 	* @generated
 	*/
+	protected boolean hasModelChildrenChanged(Notification evt) {
+		return false;
+	}
+
+	/**
+	* @generated
+	*/
 	public String getCompartmentName() {
-		return Messages.PackagePackageNodosCompartmentEditPart_title;
+		return Messages.NodoUnoNodoUnoNodosDosCompartmentEditPart_title;
 	}
 
 	/**
@@ -66,11 +74,11 @@ public class PackagePackageNodosCompartmentEditPart extends ShapeCompartmentEdit
 	protected void createDefaultEditPolicies() {
 		super.createDefaultEditPolicies();
 		installEditPolicy(EditPolicy.PRIMARY_DRAG_ROLE, new ResizableCompartmentEditPolicy());
-		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new PackagePackageNodosCompartmentItemSemanticEditPolicy());
+		installEditPolicy(EditPolicyRoles.SEMANTIC_ROLE, new NodoUnoNodoUnoNodosDosCompartmentItemSemanticEditPolicy());
 		installEditPolicy(EditPolicyRoles.CREATION_ROLE,
 				new CreationEditPolicyWithCustomReparent(MofVisualIDRegistry.TYPED_INSTANCE));
 		installEditPolicy(EditPolicyRoles.DRAG_DROP_ROLE, new DragDropEditPolicy());
-		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new PackagePackageNodosCompartmentCanonicalEditPolicy());
+		installEditPolicy(EditPolicyRoles.CANONICAL_ROLE, new NodoUnoNodoUnoNodosDosCompartmentCanonicalEditPolicy());
 	}
 
 	/**
@@ -90,16 +98,7 @@ public class PackagePackageNodosCompartmentEditPart extends ShapeCompartmentEdit
 			CreateElementRequestAdapter adapter = ((CreateViewAndElementRequest) request).getViewAndElementDescriptor()
 					.getCreateElementRequestAdapter();
 			IElementType type = (IElementType) adapter.getAdapter(IElementType.class);
-			if (type == MofElementTypes.Package_3001) {
-				return this;
-			}
-			if (type == MofElementTypes.NodoUno_3002) {
-				return this;
-			}
-			if (type == MofElementTypes.NodoDos_3003) {
-				return this;
-			}
-			if (type == MofElementTypes.AtributosMetodos_3004) {
+			if (type == MofElementTypes.NodoDos_3001) {
 				return this;
 			}
 			return getParent().getTargetEditPart(request);

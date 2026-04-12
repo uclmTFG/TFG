@@ -6,16 +6,15 @@ package mof.provider;
 import java.util.Collection;
 import java.util.List;
 
-import mof.MofFactory;
 import mof.MofPackage;
 import mof.NodoDos;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
@@ -46,38 +45,54 @@ public class NodoDosItemProvider extends NodoItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addFormaPropertyDescriptor(object);
+			addLineaPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Forma feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(MofPackage.Literals.NODO_DOS__ATRIBUTOMETODO);
-		}
-		return childrenFeatures;
+	protected void addFormaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NodoDos_forma_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NodoDos_forma_feature", "_UI_NodoDos_type"),
+				 MofPackage.Literals.NODO_DOS__FORMA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the Linea feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addLineaPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_NodoDos_linea_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_NodoDos_linea_feature", "_UI_NodoDos_type"),
+				 MofPackage.Literals.NODO_DOS__LINEA,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
@@ -118,8 +133,9 @@ public class NodoDosItemProvider extends NodoItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(NodoDos.class)) {
-			case MofPackage.NODO_DOS__ATRIBUTOMETODO:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+			case MofPackage.NODO_DOS__FORMA:
+			case MofPackage.NODO_DOS__LINEA:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -135,11 +151,6 @@ public class NodoDosItemProvider extends NodoItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(MofPackage.Literals.NODO_DOS__ATRIBUTOMETODO,
-				 MofFactory.eINSTANCE.createAtributosMetodos()));
 	}
 
 }

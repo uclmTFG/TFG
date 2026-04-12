@@ -11,14 +11,9 @@ import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.IGraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 
-import mof.diagram.edit.parts.AtributosMetodos2EditPart;
-import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
-import mof.diagram.edit.parts.NodoUno2EditPart;
 import mof.diagram.edit.parts.NodoUnoEditPart;
-import mof.diagram.edit.parts.Package2EditPart;
-import mof.diagram.edit.parts.PackageEditPart;
 import mof.diagram.providers.MofElementTypes;
 import mof.diagram.providers.MofModelingAssistantProvider;
 
@@ -63,28 +58,13 @@ public class MofModelingAssistantProviderOfNodoDos2EditPart extends MofModelingA
 	public List<IElementType> doGetRelTypesOnSourceAndTarget(NodoDos2EditPart source,
 			IGraphicalEditPart targetEditPart) {
 		List<IElementType> types = new LinkedList<IElementType>();
-		if (targetEditPart instanceof PackageEditPart) {
-			types.add(MofElementTypes.Enlace_4001);
-		}
 		if (targetEditPart instanceof NodoUnoEditPart) {
 			types.add(MofElementTypes.Enlace_4001);
 		}
 		if (targetEditPart instanceof NodoDosEditPart) {
 			types.add(MofElementTypes.Enlace_4001);
 		}
-		if (targetEditPart instanceof AtributosMetodosEditPart) {
-			types.add(MofElementTypes.Enlace_4001);
-		}
-		if (targetEditPart instanceof Package2EditPart) {
-			types.add(MofElementTypes.Enlace_4001);
-		}
-		if (targetEditPart instanceof NodoUno2EditPart) {
-			types.add(MofElementTypes.Enlace_4001);
-		}
 		if (targetEditPart instanceof NodoDos2EditPart) {
-			types.add(MofElementTypes.Enlace_4001);
-		}
-		if (targetEditPart instanceof AtributosMetodos2EditPart) {
 			types.add(MofElementTypes.Enlace_4001);
 		}
 		return types;
@@ -106,14 +86,9 @@ public class MofModelingAssistantProviderOfNodoDos2EditPart extends MofModelingA
 	public List<IElementType> doGetTypesForTarget(NodoDos2EditPart source, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == MofElementTypes.Enlace_4001) {
-			types.add(MofElementTypes.Package_2001);
-			types.add(MofElementTypes.NodoUno_2002);
-			types.add(MofElementTypes.NodoDos_2003);
-			types.add(MofElementTypes.AtributosMetodos_2004);
-			types.add(MofElementTypes.Package_3001);
-			types.add(MofElementTypes.NodoUno_3002);
-			types.add(MofElementTypes.NodoDos_3003);
-			types.add(MofElementTypes.AtributosMetodos_3004);
+			types.add(MofElementTypes.NodoUno_2001);
+			types.add(MofElementTypes.NodoDos_2002);
+			types.add(MofElementTypes.NodoDos_3001);
 		}
 		return types;
 	}
@@ -153,14 +128,9 @@ public class MofModelingAssistantProviderOfNodoDos2EditPart extends MofModelingA
 	public List<IElementType> doGetTypesForSource(NodoDos2EditPart target, IElementType relationshipType) {
 		List<IElementType> types = new ArrayList<IElementType>();
 		if (relationshipType == MofElementTypes.Enlace_4001) {
-			types.add(MofElementTypes.Package_2001);
-			types.add(MofElementTypes.NodoUno_2002);
-			types.add(MofElementTypes.NodoDos_2003);
-			types.add(MofElementTypes.AtributosMetodos_2004);
-			types.add(MofElementTypes.Package_3001);
-			types.add(MofElementTypes.NodoUno_3002);
-			types.add(MofElementTypes.NodoDos_3003);
-			types.add(MofElementTypes.AtributosMetodos_3004);
+			types.add(MofElementTypes.NodoUno_2001);
+			types.add(MofElementTypes.NodoDos_2002);
+			types.add(MofElementTypes.NodoDos_3001);
 		}
 		return types;
 	}

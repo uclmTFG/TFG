@@ -60,7 +60,7 @@ public class NodoDosNombre2EditPart extends CompartmentEditPart implements IText
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5002;
+	public static final int VISUAL_ID = 5001;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class NodoDosNombre2EditPart extends CompartmentEditPart implements IText
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = MofParserProvider.getParser(MofElementTypes.NodoDos_3003, getParserElement(),
+			parser = MofParserProvider.getParser(MofElementTypes.NodoDos_3001, getParserElement(),
 					MofVisualIDRegistry.getType(mof.diagram.edit.parts.NodoDosNombre2EditPart.VISUAL_ID));
 		}
 		return parser;

@@ -95,29 +95,6 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link mof.Package} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PackageItemProvider packageItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mof.Package}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPackageAdapter() {
-		if (packageItemProvider == null) {
-			packageItemProvider = new PackageItemProvider(this);
-		}
-
-		return packageItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link mof.NodoUno} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -161,29 +138,6 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 		}
 
 		return nodoDosItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link mof.AtributosMetodos} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected AtributosMetodosItemProvider atributosMetodosItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link mof.AtributosMetodos}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createAtributosMetodosAdapter() {
-		if (atributosMetodosItemProvider == null) {
-			atributosMetodosItemProvider = new AtributosMetodosItemProvider(this);
-		}
-
-		return atributosMetodosItemProvider;
 	}
 
 	/**
@@ -315,10 +269,8 @@ public class MofItemProviderAdapterFactory extends MofAdapterFactory implements 
 	@Override
 	public void dispose() {
 		if (umlDiagramItemProvider != null) umlDiagramItemProvider.dispose();
-		if (packageItemProvider != null) packageItemProvider.dispose();
 		if (nodoUnoItemProvider != null) nodoUnoItemProvider.dispose();
 		if (nodoDosItemProvider != null) nodoDosItemProvider.dispose();
-		if (atributosMetodosItemProvider != null) atributosMetodosItemProvider.dispose();
 		if (enlaceItemProvider != null) enlaceItemProvider.dispose();
 	}
 

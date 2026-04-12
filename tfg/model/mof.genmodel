@@ -29,10 +29,6 @@
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Linea/Continua"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Linea/Discontinua"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Tipo">
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Tipo/Atributo"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Tipo/Método"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Visibilidad">
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Privado"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Publico"/>
@@ -57,20 +53,14 @@
     <genClasses image="false" ecoreClass="mof.ecore#//Nodo">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/nombre"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/color"/>
-    </genClasses>
-    <genClasses ecoreClass="mof.ecore#//Package">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//Package/nodos"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/colorBorde"/>
     </genClasses>
     <genClasses ecoreClass="mof.ecore#//NodoUno">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//NodoUno/forma"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//NodoUno/colorBorde"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//NodoUno/nodosDos"/>
     </genClasses>
     <genClasses ecoreClass="mof.ecore#//NodoDos">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//NodoDos/atributometodo"/>
-    </genClasses>
-    <genClasses ecoreClass="mof.ecore#//AtributosMetodos">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//AtributosMetodos/tipo"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//AtributosMetodos/visibilidad"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//NodoDos/forma"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//NodoDos/linea"/>
     </genClasses>
     <genClasses ecoreClass="mof.ecore#//Enlace">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/texto"/>

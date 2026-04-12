@@ -25,10 +25,7 @@ import org.eclipse.gmf.runtime.notation.Node;
 import org.eclipse.gmf.runtime.notation.View;
 
 import mof.MofPackage;
-import mof.diagram.edit.parts.AtributosMetodos2EditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
-import mof.diagram.edit.parts.NodoUno2EditPart;
-import mof.diagram.edit.parts.Package2EditPart;
 import mof.diagram.part.MofDiagramUpdater;
 import mof.diagram.part.MofNodeDescriptor;
 import mof.diagram.part.MofVisualIDRegistry;
@@ -36,7 +33,7 @@ import mof.diagram.part.MofVisualIDRegistry;
 /**
  * @generated
  */
-public class PackagePackageNodosCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
+public class NodoUnoNodoUnoNodosDosCompartmentCanonicalEditPolicy extends CanonicalEditPolicy {
 
 	/**
 	* @generated
@@ -54,7 +51,7 @@ public class PackagePackageNodosCompartmentCanonicalEditPolicy extends Canonical
 	* @generated
 	*/
 	protected EStructuralFeature getFeatureToSynchronize() {
-		return MofPackage.eINSTANCE.getPackage_Nodos();
+		return MofPackage.eINSTANCE.getNodoUno_NodosDos();
 	}
 
 	/**
@@ -66,7 +63,7 @@ public class PackagePackageNodosCompartmentCanonicalEditPolicy extends Canonical
 		View viewObject = (View) getHost().getModel();
 		LinkedList<EObject> result = new LinkedList<EObject>();
 		List<MofNodeDescriptor> childDescriptors = MofDiagramUpdater
-				.getPackagePackageNodosCompartment_7001SemanticChildren(viewObject);
+				.getNodoUnoNodoUnoNodosDosCompartment_7001SemanticChildren(viewObject);
 		for (MofNodeDescriptor d : childDescriptors) {
 			result.add(d.getModelElement());
 		}
@@ -84,15 +81,7 @@ public class PackagePackageNodosCompartmentCanonicalEditPolicy extends Canonical
 	* @generated
 	*/
 	private boolean isMyDiagramElement(View view) {
-		int visualID = MofVisualIDRegistry.getVisualID(view);
-		switch (visualID) {
-		case Package2EditPart.VISUAL_ID:
-		case NodoUno2EditPart.VISUAL_ID:
-		case NodoDos2EditPart.VISUAL_ID:
-		case AtributosMetodos2EditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
+		return NodoDos2EditPart.VISUAL_ID == MofVisualIDRegistry.getVisualID(view);
 	}
 
 	/**
@@ -104,7 +93,7 @@ public class PackagePackageNodosCompartmentCanonicalEditPolicy extends Canonical
 		}
 		LinkedList<IAdaptable> createdViews = new LinkedList<IAdaptable>();
 		List<MofNodeDescriptor> childDescriptors = MofDiagramUpdater
-				.getPackagePackageNodosCompartment_7001SemanticChildren((View) getHost().getModel());
+				.getNodoUnoNodoUnoNodosDosCompartment_7001SemanticChildren((View) getHost().getModel());
 		LinkedList<View> orphaned = new LinkedList<View>();
 		// we care to check only views we recognize as ours
 		LinkedList<View> knownViewChildren = new LinkedList<View>();

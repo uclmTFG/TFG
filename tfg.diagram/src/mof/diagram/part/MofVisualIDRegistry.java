@@ -12,26 +12,15 @@ import org.eclipse.gmf.tooling.runtime.structure.DiagramStructure;
 
 import mof.MofPackage;
 import mof.UMLDiagram;
-import mof.diagram.edit.parts.AtributosMetodos2EditPart;
-import mof.diagram.edit.parts.AtributosMetodosEditPart;
-import mof.diagram.edit.parts.AtributosMetodosNombre2EditPart;
-import mof.diagram.edit.parts.AtributosMetodosNombreEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
 import mof.diagram.edit.parts.EnlaceTextoEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
 import mof.diagram.edit.parts.NodoDosNombre2EditPart;
 import mof.diagram.edit.parts.NodoDosNombreEditPart;
-import mof.diagram.edit.parts.NodoUno2EditPart;
 import mof.diagram.edit.parts.NodoUnoEditPart;
-import mof.diagram.edit.parts.NodoUnoNombre2EditPart;
+import mof.diagram.edit.parts.NodoUnoNodoUnoNodosDosCompartmentEditPart;
 import mof.diagram.edit.parts.NodoUnoNombreEditPart;
-import mof.diagram.edit.parts.Package2EditPart;
-import mof.diagram.edit.parts.PackageEditPart;
-import mof.diagram.edit.parts.PackageNombre2EditPart;
-import mof.diagram.edit.parts.PackageNombreEditPart;
-import mof.diagram.edit.parts.PackagePackageNodosCompartment2EditPart;
-import mof.diagram.edit.parts.PackagePackageNodosCompartmentEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 
 /**
@@ -136,45 +125,16 @@ public class MofVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
-			if (MofPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return PackageEditPart.VISUAL_ID;
-			}
 			if (MofPackage.eINSTANCE.getNodoUno().isSuperTypeOf(domainElement.eClass())) {
 				return NodoUnoEditPart.VISUAL_ID;
 			}
 			if (MofPackage.eINSTANCE.getNodoDos().isSuperTypeOf(domainElement.eClass())) {
 				return NodoDosEditPart.VISUAL_ID;
 			}
-			if (MofPackage.eINSTANCE.getAtributosMetodos().isSuperTypeOf(domainElement.eClass())) {
-				return AtributosMetodosEditPart.VISUAL_ID;
-			}
 			break;
-		case PackagePackageNodosCompartmentEditPart.VISUAL_ID:
-			if (MofPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return Package2EditPart.VISUAL_ID;
-			}
-			if (MofPackage.eINSTANCE.getNodoUno().isSuperTypeOf(domainElement.eClass())) {
-				return NodoUno2EditPart.VISUAL_ID;
-			}
+		case NodoUnoNodoUnoNodosDosCompartmentEditPart.VISUAL_ID:
 			if (MofPackage.eINSTANCE.getNodoDos().isSuperTypeOf(domainElement.eClass())) {
 				return NodoDos2EditPart.VISUAL_ID;
-			}
-			if (MofPackage.eINSTANCE.getAtributosMetodos().isSuperTypeOf(domainElement.eClass())) {
-				return AtributosMetodos2EditPart.VISUAL_ID;
-			}
-			break;
-		case PackagePackageNodosCompartment2EditPart.VISUAL_ID:
-			if (MofPackage.eINSTANCE.getPackage().isSuperTypeOf(domainElement.eClass())) {
-				return Package2EditPart.VISUAL_ID;
-			}
-			if (MofPackage.eINSTANCE.getNodoUno().isSuperTypeOf(domainElement.eClass())) {
-				return NodoUno2EditPart.VISUAL_ID;
-			}
-			if (MofPackage.eINSTANCE.getNodoDos().isSuperTypeOf(domainElement.eClass())) {
-				return NodoDos2EditPart.VISUAL_ID;
-			}
-			if (MofPackage.eINSTANCE.getAtributosMetodos().isSuperTypeOf(domainElement.eClass())) {
-				return AtributosMetodos2EditPart.VISUAL_ID;
 			}
 			break;
 		}
@@ -201,29 +161,18 @@ public class MofVisualIDRegistry {
 		}
 		switch (containerVisualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
-			if (PackageEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			if (NodoUnoEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			if (NodoDosEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
-			if (AtributosMetodosEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case PackageEditPart.VISUAL_ID:
-			if (PackageNombreEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PackagePackageNodosCompartmentEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
 			break;
 		case NodoUnoEditPart.VISUAL_ID:
 			if (NodoUnoNombreEditPart.VISUAL_ID == nodeVisualID) {
+				return true;
+			}
+			if (NodoUnoNodoUnoNodosDosCompartmentEditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -232,59 +181,13 @@ public class MofVisualIDRegistry {
 				return true;
 			}
 			break;
-		case AtributosMetodosEditPart.VISUAL_ID:
-			if (AtributosMetodosNombreEditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case Package2EditPart.VISUAL_ID:
-			if (PackageNombre2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (PackagePackageNodosCompartment2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case NodoUno2EditPart.VISUAL_ID:
-			if (NodoUnoNombre2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
 		case NodoDos2EditPart.VISUAL_ID:
 			if (NodoDosNombre2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
-		case AtributosMetodos2EditPart.VISUAL_ID:
-			if (AtributosMetodosNombre2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case PackagePackageNodosCompartmentEditPart.VISUAL_ID:
-			if (Package2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (NodoUno2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
+		case NodoUnoNodoUnoNodosDosCompartmentEditPart.VISUAL_ID:
 			if (NodoDos2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AtributosMetodos2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			break;
-		case PackagePackageNodosCompartment2EditPart.VISUAL_ID:
-			if (Package2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (NodoUno2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (NodoDos2EditPart.VISUAL_ID == nodeVisualID) {
-				return true;
-			}
-			if (AtributosMetodos2EditPart.VISUAL_ID == nodeVisualID) {
 				return true;
 			}
 			break;
@@ -337,8 +240,7 @@ public class MofVisualIDRegistry {
 	*/
 	public static boolean isCompartmentVisualID(int visualID) {
 		switch (visualID) {
-		case PackagePackageNodosCompartmentEditPart.VISUAL_ID:
-		case PackagePackageNodosCompartment2EditPart.VISUAL_ID:
+		case NodoUnoNodoUnoNodosDosCompartmentEditPart.VISUAL_ID:
 			return true;
 		default:
 			break;
@@ -353,12 +255,8 @@ public class MofVisualIDRegistry {
 		switch (visualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return false;
-		case NodoUnoEditPart.VISUAL_ID:
 		case NodoDosEditPart.VISUAL_ID:
-		case AtributosMetodosEditPart.VISUAL_ID:
-		case NodoUno2EditPart.VISUAL_ID:
 		case NodoDos2EditPart.VISUAL_ID:
-		case AtributosMetodos2EditPart.VISUAL_ID:
 			return true;
 		default:
 			break;

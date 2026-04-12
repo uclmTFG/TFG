@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link mof.Nodo#getNombre <em>Nombre</em>}</li>
  *   <li>{@link mof.Nodo#getColor <em>Color</em>}</li>
+ *   <li>{@link mof.Nodo#getColorBorde <em>Color Borde</em>}</li>
  * </ul>
  *
  * @see mof.MofPackage#getNodo()
@@ -69,5 +70,31 @@ public interface Nodo extends EObject {
 	 * @generated
 	 */
 	void setColor(Color value);
+
+	/**
+	 * Returns the value of the '<em><b>Color Borde</b></em>' attribute.
+	 * The default value is <code>"Blanco"</code>.
+	 * The literals are from the enumeration {@link mof.Color}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Color Borde</em>' attribute.
+	 * @see mof.Color
+	 * @see #setColorBorde(Color)
+	 * @see mof.MofPackage#getNodo_ColorBorde()
+	 * @model default="Blanco"
+	 * @generated
+	 */
+	Color getColorBorde();
+
+	/**
+	 * Sets the value of the '{@link mof.Nodo#getColorBorde <em>Color Borde</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Color Borde</em>' attribute.
+	 * @see mof.Color
+	 * @see #getColorBorde()
+	 * @generated
+	 */
+	void setColorBorde(Color value);
 
 } // Nodo

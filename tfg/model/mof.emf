@@ -36,11 +36,6 @@ enum Linea {
 	Discontinua;
 }
 
-enum Tipo {
-	Atributo;
-	Método;
-}
-
 enum Visibilidad {
 	Privado;
 	Publico;
@@ -64,30 +59,19 @@ enum FormaExtremoDestino{
 abstract class Nodo {
 	attr String nombre;
 	attr Color color = "Blanco";
+	attr Color colorBorde = "Blanco";
 }
 
 @gmf.node(label="nombre", figure="rectangle")
-class Package extends Nodo {
-	@gmf.compartment
-	val Nodo[*] nodos;
-}
-
-@gmf.node(label="nombre")
 class NodoUno extends Nodo {
-    attr Forma forma ="Rectangulo";
-    attr Color colorBorde = "Blanco";
+    @gmf.compartment(layout="list", collapsible="true")
+    val NodoDos[*] nodosDos;
 }
 
 @gmf.node(label="nombre")
 class NodoDos extends Nodo {
-    @gmf.compartiment(layout="list", collapsible="true")
-    val AtributosMetodos[*] atributometodo;
-}
-
-@gmf.node(label="nombre")
-class AtributosMetodos extends Nodo {
-    attr Tipo tipo ="Atributo";
-    attr Visibilidad visibilidad ="Publico";
+    attr Forma forma ="Rectangulo";
+    attr Linea linea = "Continua";
 }
 
 

@@ -18,15 +18,10 @@ import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.swt.graphics.Image;
 
 import mof.MofPackage;
-import mof.diagram.edit.parts.AtributosMetodos2EditPart;
-import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
-import mof.diagram.edit.parts.NodoUno2EditPart;
 import mof.diagram.edit.parts.NodoUnoEditPart;
-import mof.diagram.edit.parts.Package2EditPart;
-import mof.diagram.edit.parts.PackageEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofDiagramEditorPlugin;
 
@@ -64,35 +59,15 @@ public class MofElementTypes {
 	/**
 	* @generated
 	*/
-	public static final IElementType Package_2001 = getElementType("tfg.diagram.Package_2001"); //$NON-NLS-1$
+	public static final IElementType NodoUno_2001 = getElementType("tfg.diagram.NodoUno_2001"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType NodoUno_2002 = getElementType("tfg.diagram.NodoUno_2002"); //$NON-NLS-1$
+	public static final IElementType NodoDos_2002 = getElementType("tfg.diagram.NodoDos_2002"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
-	public static final IElementType NodoDos_2003 = getElementType("tfg.diagram.NodoDos_2003"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType AtributosMetodos_2004 = getElementType("tfg.diagram.AtributosMetodos_2004"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType Package_3001 = getElementType("tfg.diagram.Package_3001"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType NodoUno_3002 = getElementType("tfg.diagram.NodoUno_3002"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType NodoDos_3003 = getElementType("tfg.diagram.NodoDos_3003"); //$NON-NLS-1$
-	/**
-	* @generated
-	*/
-	public static final IElementType AtributosMetodos_3004 = getElementType("tfg.diagram.AtributosMetodos_3004"); //$NON-NLS-1$
+	public static final IElementType NodoDos_3001 = getElementType("tfg.diagram.NodoDos_3001"); //$NON-NLS-1$
 	/**
 	* @generated
 	*/
@@ -138,21 +113,11 @@ public class MofElementTypes {
 
 			elements.put(UMLDiagram_1000, MofPackage.eINSTANCE.getUMLDiagram());
 
-			elements.put(Package_2001, MofPackage.eINSTANCE.getPackage());
+			elements.put(NodoUno_2001, MofPackage.eINSTANCE.getNodoUno());
 
-			elements.put(NodoUno_2002, MofPackage.eINSTANCE.getNodoUno());
+			elements.put(NodoDos_2002, MofPackage.eINSTANCE.getNodoDos());
 
-			elements.put(NodoDos_2003, MofPackage.eINSTANCE.getNodoDos());
-
-			elements.put(AtributosMetodos_2004, MofPackage.eINSTANCE.getAtributosMetodos());
-
-			elements.put(Package_3001, MofPackage.eINSTANCE.getPackage());
-
-			elements.put(NodoUno_3002, MofPackage.eINSTANCE.getNodoUno());
-
-			elements.put(NodoDos_3003, MofPackage.eINSTANCE.getNodoDos());
-
-			elements.put(AtributosMetodos_3004, MofPackage.eINSTANCE.getAtributosMetodos());
+			elements.put(NodoDos_3001, MofPackage.eINSTANCE.getNodoDos());
 
 			elements.put(Enlace_4001, MofPackage.eINSTANCE.getEnlace());
 		}
@@ -173,14 +138,9 @@ public class MofElementTypes {
 		if (KNOWN_ELEMENT_TYPES == null) {
 			KNOWN_ELEMENT_TYPES = new HashSet<IElementType>();
 			KNOWN_ELEMENT_TYPES.add(UMLDiagram_1000);
-			KNOWN_ELEMENT_TYPES.add(Package_2001);
-			KNOWN_ELEMENT_TYPES.add(NodoUno_2002);
-			KNOWN_ELEMENT_TYPES.add(NodoDos_2003);
-			KNOWN_ELEMENT_TYPES.add(AtributosMetodos_2004);
-			KNOWN_ELEMENT_TYPES.add(Package_3001);
-			KNOWN_ELEMENT_TYPES.add(NodoUno_3002);
-			KNOWN_ELEMENT_TYPES.add(NodoDos_3003);
-			KNOWN_ELEMENT_TYPES.add(AtributosMetodos_3004);
+			KNOWN_ELEMENT_TYPES.add(NodoUno_2001);
+			KNOWN_ELEMENT_TYPES.add(NodoDos_2002);
+			KNOWN_ELEMENT_TYPES.add(NodoDos_3001);
 			KNOWN_ELEMENT_TYPES.add(Enlace_4001);
 		}
 		return KNOWN_ELEMENT_TYPES.contains(elementType);
@@ -193,22 +153,12 @@ public class MofElementTypes {
 		switch (visualID) {
 		case UMLDiagramEditPart.VISUAL_ID:
 			return UMLDiagram_1000;
-		case PackageEditPart.VISUAL_ID:
-			return Package_2001;
 		case NodoUnoEditPart.VISUAL_ID:
-			return NodoUno_2002;
+			return NodoUno_2001;
 		case NodoDosEditPart.VISUAL_ID:
-			return NodoDos_2003;
-		case AtributosMetodosEditPart.VISUAL_ID:
-			return AtributosMetodos_2004;
-		case Package2EditPart.VISUAL_ID:
-			return Package_3001;
-		case NodoUno2EditPart.VISUAL_ID:
-			return NodoUno_3002;
+			return NodoDos_2002;
 		case NodoDos2EditPart.VISUAL_ID:
-			return NodoDos_3003;
-		case AtributosMetodos2EditPart.VISUAL_ID:
-			return AtributosMetodos_3004;
+			return NodoDos_3001;
 		case EnlaceEditPart.VISUAL_ID:
 			return Enlace_4001;
 		}

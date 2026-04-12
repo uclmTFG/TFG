@@ -2,7 +2,6 @@
  */
 package mof.impl;
 
-import mof.AtributosMetodos;
 import mof.Color;
 import mof.Enlace;
 import mof.Forma;
@@ -14,7 +13,6 @@ import mof.MofPackage;
 import mof.Nodo;
 import mof.NodoDos;
 import mof.NodoUno;
-import mof.Tipo;
 import mof.UMLDiagram;
 import mof.Visibilidad;
 
@@ -52,13 +50,6 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass packageEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass nodoUnoEClass = null;
 
 	/**
@@ -67,13 +58,6 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	private EClass nodoDosEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass atributosMetodosEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,13 +86,6 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	private EEnum lineaEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum tipoEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,18 +235,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getPackage() {
-		return packageEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EReference getPackage_Nodos() {
-		return (EReference)packageEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNodo_ColorBorde() {
+		return (EAttribute)nodoEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -288,18 +255,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EAttribute getNodoUno_Forma() {
-		return (EAttribute)nodoUnoEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getNodoUno_ColorBorde() {
-		return (EAttribute)nodoUnoEClass.getEStructuralFeatures().get(1);
+	public EReference getNodoUno_NodosDos() {
+		return (EReference)nodoUnoEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -318,8 +275,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EReference getNodoDos_Atributometodo() {
-		return (EReference)nodoDosEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNodoDos_Forma() {
+		return (EAttribute)nodoDosEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -328,28 +285,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EClass getAtributosMetodos() {
-		return atributosMetodosEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAtributosMetodos_Tipo() {
-		return (EAttribute)atributosMetodosEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EAttribute getAtributosMetodos_Visibilidad() {
-		return (EAttribute)atributosMetodosEClass.getEStructuralFeatures().get(1);
+	public EAttribute getNodoDos_Linea() {
+		return (EAttribute)nodoDosEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -488,16 +425,6 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getTipo() {
-		return tipoEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getVisibilidad() {
 		return visibilidadEEnum;
 	}
@@ -558,20 +485,14 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		nodoEClass = createEClass(NODO);
 		createEAttribute(nodoEClass, NODO__NOMBRE);
 		createEAttribute(nodoEClass, NODO__COLOR);
-
-		packageEClass = createEClass(PACKAGE);
-		createEReference(packageEClass, PACKAGE__NODOS);
+		createEAttribute(nodoEClass, NODO__COLOR_BORDE);
 
 		nodoUnoEClass = createEClass(NODO_UNO);
-		createEAttribute(nodoUnoEClass, NODO_UNO__FORMA);
-		createEAttribute(nodoUnoEClass, NODO_UNO__COLOR_BORDE);
+		createEReference(nodoUnoEClass, NODO_UNO__NODOS_DOS);
 
 		nodoDosEClass = createEClass(NODO_DOS);
-		createEReference(nodoDosEClass, NODO_DOS__ATRIBUTOMETODO);
-
-		atributosMetodosEClass = createEClass(ATRIBUTOS_METODOS);
-		createEAttribute(atributosMetodosEClass, ATRIBUTOS_METODOS__TIPO);
-		createEAttribute(atributosMetodosEClass, ATRIBUTOS_METODOS__VISIBILIDAD);
+		createEAttribute(nodoDosEClass, NODO_DOS__FORMA);
+		createEAttribute(nodoDosEClass, NODO_DOS__LINEA);
 
 		enlaceEClass = createEClass(ENLACE);
 		createEAttribute(enlaceEClass, ENLACE__TEXTO);
@@ -588,7 +509,6 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		colorEEnum = createEEnum(COLOR);
 		formaEEnum = createEEnum(FORMA);
 		lineaEEnum = createEEnum(LINEA);
-		tipoEEnum = createEEnum(TIPO);
 		visibilidadEEnum = createEEnum(VISIBILIDAD);
 		formaExtremoOrigenEEnum = createEEnum(FORMA_EXTREMO_ORIGEN);
 		formaExtremoDestinoEEnum = createEEnum(FORMA_EXTREMO_DESTINO);
@@ -622,10 +542,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		packageEClass.getESuperTypes().add(this.getNodo());
 		nodoUnoEClass.getESuperTypes().add(this.getNodo());
 		nodoDosEClass.getESuperTypes().add(this.getNodo());
-		atributosMetodosEClass.getESuperTypes().add(this.getNodo());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(umlDiagramEClass, UMLDiagram.class, "UMLDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -635,20 +553,14 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		initEClass(nodoEClass, Nodo.class, "Nodo", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNodo_Nombre(), ecorePackage.getEString(), "nombre", null, 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNodo_Color(), this.getColor(), "color", "Blanco", 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(packageEClass, mof.Package.class, "Package", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPackage_Nodos(), this.getNodo(), null, "nodos", null, 0, -1, mof.Package.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodo_ColorBorde(), this.getColor(), "colorBorde", "Blanco", 0, 1, Nodo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodoUnoEClass, NodoUno.class, "NodoUno", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNodoUno_Forma(), this.getForma(), "forma", "Rectangulo", 0, 1, NodoUno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNodoUno_ColorBorde(), this.getColor(), "colorBorde", "Blanco", 0, 1, NodoUno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNodoUno_NodosDos(), this.getNodoDos(), null, "nodosDos", null, 0, -1, NodoUno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodoDosEClass, NodoDos.class, "NodoDos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNodoDos_Atributometodo(), this.getAtributosMetodos(), null, "atributometodo", null, 0, -1, NodoDos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(atributosMetodosEClass, AtributosMetodos.class, "AtributosMetodos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAtributosMetodos_Tipo(), this.getTipo(), "tipo", "Atributo", 0, 1, AtributosMetodos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getAtributosMetodos_Visibilidad(), this.getVisibilidad(), "visibilidad", "Publico", 0, 1, AtributosMetodos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodoDos_Forma(), this.getForma(), "forma", "Rectangulo", 0, 1, NodoDos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodoDos_Linea(), this.getLinea(), "linea", "Continua", 0, 1, NodoDos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enlaceEClass, Enlace.class, "Enlace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnlace_Texto(), ecorePackage.getEString(), "texto", null, 0, 1, Enlace.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -686,10 +598,6 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		addEEnumLiteral(lineaEEnum, Linea.CONTINUA);
 		addEEnumLiteral(lineaEEnum, Linea.DISCONTINUA);
 
-		initEEnum(tipoEEnum, Tipo.class, "Tipo");
-		addEEnumLiteral(tipoEEnum, Tipo.ATRIBUTO);
-		addEEnumLiteral(tipoEEnum, Tipo.MÉTODO);
-
 		initEEnum(visibilidadEEnum, Visibilidad.class, "Visibilidad");
 		addEEnumLiteral(visibilidadEEnum, Visibilidad.PRIVADO);
 		addEEnumLiteral(visibilidadEEnum, Visibilidad.PUBLICO);
@@ -717,10 +625,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		createGmf_1Annotations();
 		// gmf.compartment
 		createGmf_2Annotations();
-		// gmf.compartiment
-		createGmf_3Annotations();
 		// gmf.link
-		createGmf_4Annotations();
+		createGmf_3Annotations();
 	}
 
 	/**
@@ -747,26 +653,14 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	protected void createGmf_1Annotations() {
 		String source = "gmf.node";
 		addAnnotation
-		  (packageEClass,
+		  (nodoUnoEClass,
 		   source,
 		   new String[] {
 			   "label", "nombre",
 			   "figure", "rectangle"
 		   });
 		addAnnotation
-		  (nodoUnoEClass,
-		   source,
-		   new String[] {
-			   "label", "nombre"
-		   });
-		addAnnotation
 		  (nodoDosEClass,
-		   source,
-		   new String[] {
-			   "label", "nombre"
-		   });
-		addAnnotation
-		  (atributosMetodosEClass,
 		   source,
 		   new String[] {
 			   "label", "nombre"
@@ -782,22 +676,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	protected void createGmf_2Annotations() {
 		String source = "gmf.compartment";
 		addAnnotation
-		  (getPackage_Nodos(),
-		   source,
-		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>gmf.compartiment</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createGmf_3Annotations() {
-		String source = "gmf.compartiment";
-		addAnnotation
-		  (getNodoDos_Atributometodo(),
+		  (getNodoUno_NodosDos(),
 		   source,
 		   new String[] {
 			   "layout", "list",
@@ -811,7 +690,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void createGmf_4Annotations() {
+	protected void createGmf_3Annotations() {
 		String source = "gmf.link";
 		addAnnotation
 		  (enlaceEClass,

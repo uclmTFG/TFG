@@ -60,7 +60,7 @@ public class NodoDosNombreEditPart extends CompartmentEditPart implements ITextA
 	/**
 	* @generated
 	*/
-	public static final int VISUAL_ID = 5007;
+	public static final int VISUAL_ID = 5003;
 
 	/**
 	* @generated
@@ -295,7 +295,7 @@ public class NodoDosNombreEditPart extends CompartmentEditPart implements ITextA
 	*/
 	public IParser getParser() {
 		if (parser == null) {
-			parser = MofParserProvider.getParser(MofElementTypes.NodoDos_2003, getParserElement(),
+			parser = MofParserProvider.getParser(MofElementTypes.NodoDos_2002, getParserElement(),
 					MofVisualIDRegistry.getType(mof.diagram.edit.parts.NodoDosNombreEditPart.VISUAL_ID));
 		}
 		return parser;

@@ -2,20 +2,7 @@
  */
 package mof.impl;
 
-import mof.AtributosMetodos;
-import mof.Color;
-import mof.Enlace;
-import mof.Forma;
-import mof.FormaExtremoDestino;
-import mof.FormaExtremoOrigen;
-import mof.Linea;
-import mof.MofFactory;
-import mof.MofPackage;
-import mof.NodoDos;
-import mof.NodoUno;
-import mof.Tipo;
-import mof.UMLDiagram;
-import mof.Visibilidad;
+import mof.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -71,10 +58,8 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case MofPackage.UML_DIAGRAM: return createUMLDiagram();
-			case MofPackage.PACKAGE: return createPackage();
 			case MofPackage.NODO_UNO: return createNodoUno();
 			case MofPackage.NODO_DOS: return createNodoDos();
-			case MofPackage.ATRIBUTOS_METODOS: return createAtributosMetodos();
 			case MofPackage.ENLACE: return createEnlace();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -95,8 +80,6 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 				return createFormaFromString(eDataType, initialValue);
 			case MofPackage.LINEA:
 				return createLineaFromString(eDataType, initialValue);
-			case MofPackage.TIPO:
-				return createTipoFromString(eDataType, initialValue);
 			case MofPackage.VISIBILIDAD:
 				return createVisibilidadFromString(eDataType, initialValue);
 			case MofPackage.FORMA_EXTREMO_ORIGEN:
@@ -122,8 +105,6 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 				return convertFormaToString(eDataType, instanceValue);
 			case MofPackage.LINEA:
 				return convertLineaToString(eDataType, instanceValue);
-			case MofPackage.TIPO:
-				return convertTipoToString(eDataType, instanceValue);
 			case MofPackage.VISIBILIDAD:
 				return convertVisibilidadToString(eDataType, instanceValue);
 			case MofPackage.FORMA_EXTREMO_ORIGEN:
@@ -152,17 +133,6 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	@Override
-	public mof.Package createPackage() {
-		PackageImpl package_ = new PackageImpl();
-		return package_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public NodoUno createNodoUno() {
 		NodoUnoImpl nodoUno = new NodoUnoImpl();
 		return nodoUno;
@@ -177,17 +147,6 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	public NodoDos createNodoDos() {
 		NodoDosImpl nodoDos = new NodoDosImpl();
 		return nodoDos;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public AtributosMetodos createAtributosMetodos() {
-		AtributosMetodosImpl atributosMetodos = new AtributosMetodosImpl();
-		return atributosMetodos;
 	}
 
 	/**
@@ -258,26 +217,6 @@ public class MofFactoryImpl extends EFactoryImpl implements MofFactory {
 	 * @generated
 	 */
 	public String convertLineaToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Tipo createTipoFromString(EDataType eDataType, String initialValue) {
-		Tipo result = Tipo.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String convertTipoToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

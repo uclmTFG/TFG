@@ -31,7 +31,7 @@ public class NodoDos2ItemSemanticEditPolicy extends MofBaseItemSemanticEditPolic
 	* @generated
 	*/
 	public NodoDos2ItemSemanticEditPolicy() {
-		super(MofElementTypes.NodoDos_3003);
+		super(MofElementTypes.NodoDos_3001);
 	}
 
 	/**

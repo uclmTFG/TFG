@@ -2,13 +2,7 @@
  */
 package mof.util;
 
-import mof.AtributosMetodos;
-import mof.Enlace;
-import mof.MofPackage;
-import mof.Nodo;
-import mof.NodoDos;
-import mof.NodoUno;
-import mof.UMLDiagram;
+import mof.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -84,13 +78,6 @@ public class MofSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MofPackage.PACKAGE: {
-				mof.Package package_ = (mof.Package)theEObject;
-				T result = casePackage(package_);
-				if (result == null) result = caseNodo(package_);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case MofPackage.NODO_UNO: {
 				NodoUno nodoUno = (NodoUno)theEObject;
 				T result = caseNodoUno(nodoUno);
@@ -102,13 +89,6 @@ public class MofSwitch<T> extends Switch<T> {
 				NodoDos nodoDos = (NodoDos)theEObject;
 				T result = caseNodoDos(nodoDos);
 				if (result == null) result = caseNodo(nodoDos);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case MofPackage.ATRIBUTOS_METODOS: {
-				AtributosMetodos atributosMetodos = (AtributosMetodos)theEObject;
-				T result = caseAtributosMetodos(atributosMetodos);
-				if (result == null) result = caseNodo(atributosMetodos);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -153,21 +133,6 @@ public class MofSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Package</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Package</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T casePackage(mof.Package object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Nodo Uno</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -194,21 +159,6 @@ public class MofSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseNodoDos(NodoDos object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Atributos Metodos</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Atributos Metodos</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAtributosMetodos(AtributosMetodos object) {
 		return null;
 	}
 

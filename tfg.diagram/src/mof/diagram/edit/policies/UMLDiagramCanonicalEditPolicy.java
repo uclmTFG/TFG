@@ -33,15 +33,10 @@ import org.eclipse.gmf.runtime.notation.View;
 import org.eclipse.gmf.tooling.runtime.update.UpdaterLinkDescriptor;
 
 import mof.MofPackage;
-import mof.diagram.edit.parts.AtributosMetodos2EditPart;
-import mof.diagram.edit.parts.AtributosMetodosEditPart;
 import mof.diagram.edit.parts.EnlaceEditPart;
 import mof.diagram.edit.parts.NodoDos2EditPart;
 import mof.diagram.edit.parts.NodoDosEditPart;
-import mof.diagram.edit.parts.NodoUno2EditPart;
 import mof.diagram.edit.parts.NodoUnoEditPart;
-import mof.diagram.edit.parts.Package2EditPart;
-import mof.diagram.edit.parts.PackageEditPart;
 import mof.diagram.edit.parts.UMLDiagramEditPart;
 import mof.diagram.part.MofDiagramUpdater;
 import mof.diagram.part.MofLinkDescriptor;
@@ -102,14 +97,7 @@ public class UMLDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 	*/
 	private boolean isMyDiagramElement(View view) {
 		int visualID = MofVisualIDRegistry.getVisualID(view);
-		switch (visualID) {
-		case PackageEditPart.VISUAL_ID:
-		case NodoUnoEditPart.VISUAL_ID:
-		case NodoDosEditPart.VISUAL_ID:
-		case AtributosMetodosEditPart.VISUAL_ID:
-			return true;
-		}
-		return false;
+		return visualID == NodoUnoEditPart.VISUAL_ID || visualID == NodoDosEditPart.VISUAL_ID;
 	}
 
 	/**
@@ -266,58 +254,23 @@ public class UMLDiagramCanonicalEditPolicy extends CanonicalEditPolicy {
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
-		case PackageEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getPackage_2001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
 		case NodoUnoEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getNodoUno_2002ContainedLinks(view));
+				result.addAll(MofDiagramUpdater.getNodoUno_2001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NodoDosEditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getNodoDos_2003ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AtributosMetodosEditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getAtributosMetodos_2004ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case Package2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getPackage_3001ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case NodoUno2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getNodoUno_3002ContainedLinks(view));
+				result.addAll(MofDiagramUpdater.getNodoDos_2002ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;
 		}
 		case NodoDos2EditPart.VISUAL_ID: {
 			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getNodoDos_3003ContainedLinks(view));
-			}
-			domain2NotationMap.putView(view.getElement(), view);
-			break;
-		}
-		case AtributosMetodos2EditPart.VISUAL_ID: {
-			if (!domain2NotationMap.containsKey(view.getElement())) {
-				result.addAll(MofDiagramUpdater.getAtributosMetodos_3004ContainedLinks(view));
+				result.addAll(MofDiagramUpdater.getNodoDos_3001ContainedLinks(view));
 			}
 			domain2NotationMap.putView(view.getElement(), view);
 			break;

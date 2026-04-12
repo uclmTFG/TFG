@@ -32,10 +32,6 @@
     <eLiterals name="Continua"/>
     <eLiterals name="Discontinua" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Tipo">
-    <eLiterals name="Atributo"/>
-    <eLiterals name="Método" value="1"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Visibilidad">
     <eLiterals name="Privado"/>
     <eLiterals name="Publico" value="1"/>
@@ -57,45 +53,30 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
         defaultValueLiteral="Blanco"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Nodo">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="nombre"/>
-      <details key="figure" value="rectangle"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="nodos" upperBound="-1"
-        eType="#//Nodo" containment="true">
-      <eAnnotations source="gmf.compartment"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorBorde" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NodoUno" eSuperTypes="#//Nodo">
     <eAnnotations source="gmf.node">
       <details key="label" value="nombre"/>
+      <details key="figure" value="rectangle"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
-        defaultValueLiteral="Rectangulo"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorBorde" eType="#//Color"
-        defaultValueLiteral="Blanco"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NodoDos" eSuperTypes="#//Nodo">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="nombre"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="atributometodo" upperBound="-1"
-        eType="#//AtributosMetodos" containment="true">
-      <eAnnotations source="gmf.compartiment">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodosDos" upperBound="-1"
+        eType="#//NodoDos" containment="true">
+      <eAnnotations source="gmf.compartment">
         <details key="layout" value="list"/>
         <details key="collapsible" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AtributosMetodos" eSuperTypes="#//Nodo">
+  <eClassifiers xsi:type="ecore:EClass" name="NodoDos" eSuperTypes="#//Nodo">
     <eAnnotations source="gmf.node">
       <details key="label" value="nombre"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="tipo" eType="#//Tipo" defaultValueLiteral="Atributo"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibilidad" eType="#//Visibilidad"
-        defaultValueLiteral="Publico"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
+        defaultValueLiteral="Rectangulo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
+        defaultValueLiteral="Continua"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Enlace">
     <eAnnotations source="gmf.link">
