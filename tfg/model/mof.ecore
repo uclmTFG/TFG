@@ -1,241 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="components" nsURI="components" nsPrefix="components">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mof" nsURI="mof" nsPrefix="mof">
   <eClassifiers xsi:type="ecore:EClass" name="UMLDiagram">
     <eAnnotations source="gmf.diagram"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Classifier" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="links" upperBound="-1"
-        eType="#//Relationship" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="notes" upperBound="-1"
-        eType="#//Note" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="noteLinks" upperBound="-1"
-        eType="#//NoteLink" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodos" upperBound="-1"
+        eType="#//Nodo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enlaces" upperBound="-1"
+        eType="#//Enlace" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Visibility">
-    <eLiterals name="public"/>
-    <eLiterals name="private" value="1"/>
-    <eLiterals name="protected" value="2"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Color">
+    <eLiterals name="Blanco"/>
+    <eLiterals name="Negro" value="1"/>
+    <eLiterals name="Rojo" value="2"/>
+    <eLiterals name="Verde" value="3"/>
+    <eLiterals name="Amarillo" value="4"/>
+    <eLiterals name="Azul" value="5"/>
+    <eLiterals name="Rosa" value="6"/>
+    <eLiterals name="Lila" value="7"/>
+    <eLiterals name="Naranja" value="8"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Classifier" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="Forma">
+    <eLiterals name="Rectangulo"/>
+    <eLiterals name="RectanguloRedondeado" value="1"/>
+    <eLiterals name="Circulo" value="2"/>
+    <eLiterals name="CirculoDoble" value="3"/>
+    <eLiterals name="Barra" value="4"/>
+    <eLiterals name="Rombo" value="5"/>
+    <eLiterals name="Actor" value="6"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Package" eSuperTypes="#//Classifier">
+  <eClassifiers xsi:type="ecore:EEnum" name="Linea">
+    <eLiterals name="Continua"/>
+    <eLiterals name="Discontinua" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibilidad">
+    <eLiterals name="Privado"/>
+    <eLiterals name="Publico" value="1"/>
+    <eLiterals name="Protegido" value="2"/>
+    <eLiterals name="Paquete" value="3"/>
+    <eLiterals name="Estático" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoOrigen">
+    <eLiterals name="Ninguna"/>
+    <eLiterals name="FlechaAbierta" value="1"/>
+    <eLiterals name="FlechaCerrada" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoDestino">
+    <eLiterals name="Ninguna"/>
+    <eLiterals name="RomboSinRelleno" value="1"/>
+    <eLiterals name="RomboRelleno" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Nodo" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorBorde" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodoUno" eSuperTypes="#//Nodo">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
+      <details key="label" value="nombre"/>
       <details key="figure" value="rectangle"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="elements" upperBound="-1"
-        eType="#//Classifier" containment="true">
-      <eAnnotations source="gmf.compartment"/>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Clas" eSuperTypes="#//Classifier">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="figure" value="rectangle"/>
-      <details key="border.color" value="0,0,0"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="&lt;&lt;class>>"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1"
-        eType="#//Property" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodosDos" upperBound="-1"
+        eType="#//NodoDos" containment="true">
       <eAnnotations source="gmf.compartment">
         <details key="layout" value="list"/>
         <details key="collapsible" value="true"/>
       </eAnnotations>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-        eType="#//Method" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="layout" value="list"/>
-        <details key="collapsible" value="true"/>
-      </eAnnotations>
-    </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Interface" eSuperTypes="#//Classifier">
+  <eClassifiers xsi:type="ecore:EClass" name="NodoDos" eSuperTypes="#//Nodo">
     <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="figure" value="rectangle"/>
-      <details key="border.color" value="0,0,0"/>
-      <details key="color" value="240,240,240"/>
+      <details key="label" value="nombre"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="&lt;&lt;interface>>"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
-        eType="#//Method" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="layout" value="list"/>
-        <details key="collapsible" value="true"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
+        defaultValueLiteral="Rectangulo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
+        defaultValueLiteral="Continua"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Enumeration" eSuperTypes="#//Classifier">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-      <details key="figure" value="rectangle"/>
-      <details key="color" value="200,255,200"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="&lt;&lt;enumeration>>"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="literals" upperBound="-1"
-        eType="#//EnumLiteral" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="layout" value="list"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="EnumLiteral">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Property">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="visibility,name,type"/>
-      <details key="label.view" value="{0}{1} : {2}"/>
-      <details key="label.edit" value="{1}:{2}"/>
-      <details key="figure" value="rectangle"/>
-      <details key="tool.name" value="Attribute"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//Visibility"
-        defaultValueLiteral="public"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="attribute"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isStatic" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Method">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="visibility,name, returnType"/>
-      <details key="label.view" value="{0}{1}{2}()"/>
-      <details key="figure" value="rectangle"/>
-      <details key="tool.name" value="Operation"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="visibility" eType="#//Visibility"
-        defaultValueLiteral="public"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="operation"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="void"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parameter" upperBound="-1"
-        eType="#//Parameter" containment="true">
-      <eAnnotations source="gmf.compartment">
-        <details key="layout" value="list"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="name,type"/>
-      <details key="label.view" value="{0} : {1}"/>
-      <details key="tool.name" value="Parameter"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Relationship" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1"
-        eType="#//Classifier"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1"
-        eType="#//Classifier"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Generalization" eSuperTypes="#//Relationship">
+  <eClassifiers xsi:type="ecore:EClass" name="Enlace">
     <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
-      <details key="target.decoration" value="closedarrow"/>
+      <details key="source" value="origen"/>
+      <details key="target" value="destino"/>
       <details key="style" value="solid"/>
-      <details key="tool.name" value="Generatization"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Implementation" eSuperTypes="#//Relationship">
-    <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
-      <details key="target.decoration" value="closedarrow"/>
-      <details key="style" value="dash"/>
-      <details key="tool.name" value="Interface Realization"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Association" eSuperTypes="#//Relationship">
-    <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
-      <details key="label" value="role"/>
-      <details key="style" value="solid"/>
-      <details key="source.label" value="sourceMultiplicity"/>
-      <details key="target.label" value="targetMultiplicity"/>
-      <details key="tool.name" value="Association"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="role" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="uses"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="sourceMultiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="1">
-      <eAnnotations source="gmf.label">
-        <details key="placement" value="external"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetMultiplicity" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="*">
-      <eAnnotations source="gmf.label">
-        <details key="placement" value="external"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Aggregation" eSuperTypes="#//Relationship">
-    <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
-      <details key="source.decoration" value="rhomb"/>
-      <details key="style" value="solid"/>
-      <details key="tool.name" value="Aggregation"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Composition" eSuperTypes="#//Relationship">
-    <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
-      <details key="source.decoration" value="filledrhomb"/>
-      <details key="style" value="solid"/>
-      <details key="tool.name" value="Composition"/>
-    </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Dependency" eSuperTypes="#//Relationship">
-    <eAnnotations source="gmf.link">
-      <details key="source" value="source"/>
-      <details key="target" value="target"/>
       <details key="target.decoration" value="arrow"/>
-      <details key="style" value="dash"/>
-      <details key="tool.name" value="Dependency"/>
+      <details key="label" value="texto"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stereotype" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="&lt;&lt;use>>"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Note">
-    <eAnnotations source="gmf.node">
-      <details key="label" value="text"/>
-      <details key="figure" value="polygon"/>
-      <details key="polygon.x" value="0 80 100 100 0"/>
-      <details key="polygon.y" value="0 0 20 100 100"/>
-      <details key="color" value="255,255,200"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="text" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="Contenido de tu nota..."/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NoteLink">
-    <eAnnotations source="gmf.link">
-      <details key="source" value="note"/>
-      <details key="target" value="element"/>
-      <details key="style" value="dash"/>
-      <details key="color" value="150,150,150"/>
-      <details key="tool.name" value="Note Link"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="note" lowerBound="1" eType="#//Note"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="element" lowerBound="1"
-        eType="#//Classifier"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Nodo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Nodo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
+        defaultValueLiteral="Continua"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textoExtremoOrigen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textoExtremoDestino" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formaExtremoOrigen" eType="#//FormaExtremoOrigen"
+        defaultValueLiteral="Ninguna"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formaExtremoDestino" eType="#//FormaExtremoDestino"
+        defaultValueLiteral="Ninguna"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
   </eClassifiers>
 </ecore:EPackage>

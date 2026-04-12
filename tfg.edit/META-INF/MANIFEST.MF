@@ -5,11 +5,11 @@ Bundle-SymbolicName: tfg.edit;singleton:=true
 Automatic-Module-Name: tfg.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Activator: components.provider.ComponentsEditPlugin$Implementation
+Bundle-Activator: mof.provider.MofEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: components.provider
+Export-Package: mof.provider
 Require-Bundle: org.eclipse.core.runtime,
  tfg;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport

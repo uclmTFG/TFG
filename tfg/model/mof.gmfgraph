@@ -1,206 +1,41 @@
 <?xml version="1.0" encoding="ASCII"?>
-<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="components">
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="mof">
   <figures name="Default">
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="ClosedArrow">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template/>
-      <template x="-2" y="2"/>
-      <template x="-2" y="-2"/>
-      <template/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="Rhomb">
-      <backgroundColor xsi:type="gmfgraph:ConstantColor"/>
-      <template x="-1" y="1"/>
-      <template/>
-      <template x="-1" y="-1"/>
-      <template x="-2"/>
-      <template x="-1" y="1"/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolygonDecoration" name="FilledRhomb">
-      <template x="-1" y="1"/>
-      <template/>
-      <template x="-1" y="-1"/>
-      <template x="-2"/>
-      <template x="-1" y="1"/>
-    </figures>
-    <figures xsi:type="gmfgraph:PolylineDecoration" name="DependencyFigureTargetDecoration"/>
-    <descriptors name="PackageFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="PackageFigure">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="EnlaceFigureTargetDecoration"/>
+    <descriptors name="NodoUnoFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="NodoUnoFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="PackageLabelFigure" text="Package">
+        <children xsi:type="gmfgraph:Label" name="NodoUnoLabelFigure" text="NodoUno">
           <maximumSize dx="10000" dy="50"/>
         </children>
-        <children xsi:type="gmfgraph:Rectangle" name="PackageElementsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Rectangle" name="NodoUnoNodosDosCompartmentFigure" outline="false"/>
       </actualFigure>
-      <accessors accessor="getFigurePackageLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
-      <accessors accessor="getPackageElementsCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+      <accessors accessor="getFigureNodoUnoLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getNodoUnoNodosDosCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
     </descriptors>
-    <descriptors name="ClasFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="ClasFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
+    <descriptors name="NodoDosFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="NodoDosFigure">
         <border xsi:type="gmfgraph:MarginBorder">
           <insets top="5" left="5" bottom="5" right="5"/>
         </border>
-        <children xsi:type="gmfgraph:Label" name="ClasLabelFigure" text="Clas">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="ClasAttributesCompartmentFigure" outline="false"/>
-        <children xsi:type="gmfgraph:Rectangle" name="ClasOperationsCompartmentFigure" outline="false"/>
+        <children xsi:type="gmfgraph:Label" name="NodoDosLabelFigure" text="NodoDos"/>
       </actualFigure>
-      <accessors accessor="getFigureClasLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
-      <accessors accessor="getClasAttributesCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.1"/>
-      <accessors accessor="getClasOperationsCompartmentFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.2"/>
+      <accessors accessor="getFigureNodoDosLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
     </descriptors>
-    <descriptors name="InterfaceFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="InterfaceFigure">
-        <foregroundColor xsi:type="gmfgraph:RGBColor"/>
-        <backgroundColor xsi:type="gmfgraph:RGBColor" red="240" green="240" blue="240"/>
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="InterfaceLabelFigure" text="Interface">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="InterfaceOperationsCompartmentFigure" outline="false"/>
-      </actualFigure>
-      <accessors accessor="getFigureInterfaceLabelFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.0"/>
-      <accessors accessor="getInterfaceOperationsCompartmentFigure" figure="//@figures.0/@descriptors.2/@actualFigure/@children.1"/>
+    <descriptors name="EnlaceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EnlaceFigure" targetDecoration="//@figures.0/@figures.0"/>
     </descriptors>
-    <descriptors name="EnumerationFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="EnumerationFigure">
-        <backgroundColor xsi:type="gmfgraph:RGBColor" red="200" green="255" blue="200"/>
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="EnumerationLabelFigure" text="Enumeration">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="EnumerationLiteralsCompartmentFigure" outline="false"/>
-      </actualFigure>
-      <accessors accessor="getFigureEnumerationLabelFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.0"/>
-      <accessors accessor="getEnumerationLiteralsCompartmentFigure" figure="//@figures.0/@descriptors.3/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors name="EnumLiteralFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="EnumLiteralFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="EnumLiteralLabelFigure" text="EnumLiteral"/>
-      </actualFigure>
-      <accessors accessor="getFigureEnumLiteralLabelFigure" figure="//@figures.0/@descriptors.4/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors name="PropertyFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="PropertyFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="PropertyLabelFigure" text="Property"/>
-      </actualFigure>
-      <accessors accessor="getFigurePropertyLabelFigure" figure="//@figures.0/@descriptors.5/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors name="MethodFigure">
-      <actualFigure xsi:type="gmfgraph:Rectangle" name="MethodFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="MethodLabelFigure" text="Method">
-          <maximumSize dx="10000" dy="50"/>
-        </children>
-        <children xsi:type="gmfgraph:Rectangle" name="MethodParameterCompartmentFigure" outline="false"/>
-      </actualFigure>
-      <accessors accessor="getFigureMethodLabelFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.0"/>
-      <accessors accessor="getMethodParameterCompartmentFigure" figure="//@figures.0/@descriptors.6/@actualFigure/@children.1"/>
-    </descriptors>
-    <descriptors name="ParameterFigure">
-      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="ParameterFigure">
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="ParameterLabelFigure" text="Parameter"/>
-      </actualFigure>
-      <accessors accessor="getFigureParameterLabelFigure" figure="//@figures.0/@descriptors.7/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors name="NoteFigure">
-      <actualFigure xsi:type="gmfgraph:ScalablePolygon" name="NoteFigure">
-        <backgroundColor xsi:type="gmfgraph:RGBColor" red="255" green="255" blue="200"/>
-        <border xsi:type="gmfgraph:MarginBorder">
-          <insets top="5" left="5" bottom="5" right="5"/>
-        </border>
-        <children xsi:type="gmfgraph:Label" name="NoteLabelFigure" text="Note"/>
-        <template/>
-        <template x="80"/>
-        <template x="100" y="20"/>
-        <template x="100" y="100"/>
-        <template y="100"/>
-      </actualFigure>
-      <accessors accessor="getFigureNoteLabelFigure" figure="//@figures.0/@descriptors.8/@actualFigure/@children.0"/>
-    </descriptors>
-    <descriptors name="GeneralizationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="GeneralizationFigure" targetDecoration="//@figures.0/@figures.0"/>
-    </descriptors>
-    <descriptors name="ImplementationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="ImplementationFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.1"/>
-    </descriptors>
-    <descriptors name="AssociationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AssociationFigure"/>
-    </descriptors>
-    <descriptors name="AssociationLabelFigure">
-      <actualFigure xsi:type="gmfgraph:Label" name="AssociationLabelLabel" text="Association"/>
-    </descriptors>
-    <descriptors name="AggregationFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="AggregationFigure" sourceDecoration="//@figures.0/@figures.2"/>
-    </descriptors>
-    <descriptors name="CompositionFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="CompositionFigure" sourceDecoration="//@figures.0/@figures.3"/>
-    </descriptors>
-    <descriptors name="DependencyFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="DependencyFigure" lineKind="LINE_DASH" targetDecoration="//@figures.0/@figures.4"/>
-    </descriptors>
-    <descriptors name="NoteLinkFigure">
-      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="NoteLinkFigure" lineKind="LINE_DASH">
-        <foregroundColor xsi:type="gmfgraph:RGBColor" red="150" green="150" blue="150"/>
-      </actualFigure>
+    <descriptors name="EnlaceLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="EnlaceLabelLabel" text="Enlace"/>
     </descriptors>
   </figures>
-  <nodes name="Package" figure="PackageFigure"/>
-  <nodes name="Clas" figure="ClasFigure"/>
-  <nodes name="Interface" figure="InterfaceFigure"/>
-  <nodes name="Enumeration" figure="EnumerationFigure"/>
-  <nodes name="EnumLiteral" figure="EnumLiteralFigure"/>
-  <nodes name="Property" figure="PropertyFigure"/>
-  <nodes name="Method" figure="MethodFigure"/>
-  <nodes name="Parameter" figure="ParameterFigure"/>
-  <nodes name="Note" figure="NoteFigure"/>
-  <connections name="Generalization" figure="GeneralizationFigure"/>
-  <connections name="Implementation" figure="ImplementationFigure"/>
-  <connections name="Association" figure="AssociationFigure"/>
-  <connections name="Aggregation" figure="AggregationFigure"/>
-  <connections name="Composition" figure="CompositionFigure"/>
-  <connections name="Dependency" figure="DependencyFigure"/>
-  <connections name="NoteLink" figure="NoteLinkFigure"/>
-  <compartments name="PackageElementsCompartment" figure="PackageFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
-  <compartments name="ClasAttributesCompartment" figure="ClasFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.1"/>
-  <compartments name="ClasOperationsCompartment" figure="ClasFigure" collapsible="true" accessor="//@figures.0/@descriptors.1/@accessors.2"/>
-  <compartments name="InterfaceOperationsCompartment" figure="InterfaceFigure" collapsible="true" accessor="//@figures.0/@descriptors.2/@accessors.1"/>
-  <compartments name="EnumerationLiteralsCompartment" figure="EnumerationFigure" collapsible="true" accessor="//@figures.0/@descriptors.3/@accessors.1"/>
-  <compartments name="MethodParameterCompartment" figure="MethodFigure" collapsible="true" accessor="//@figures.0/@descriptors.6/@accessors.1"/>
-  <labels name="PackageLabel" figure="PackageFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
-  <labels name="ClasLabel" figure="ClasFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
-  <labels name="InterfaceLabel" figure="InterfaceFigure" accessor="//@figures.0/@descriptors.2/@accessors.0"/>
-  <labels name="EnumerationLabel" figure="EnumerationFigure" accessor="//@figures.0/@descriptors.3/@accessors.0"/>
-  <labels name="EnumLiteralLabel" figure="EnumLiteralFigure" accessor="//@figures.0/@descriptors.4/@accessors.0"/>
-  <labels name="PropertyLabel" figure="PropertyFigure" accessor="//@figures.0/@descriptors.5/@accessors.0"/>
-  <labels name="MethodLabel" figure="MethodFigure" accessor="//@figures.0/@descriptors.6/@accessors.0"/>
-  <labels name="ParameterLabel" figure="ParameterFigure" accessor="//@figures.0/@descriptors.7/@accessors.0"/>
-  <labels name="NoteLabel" figure="NoteFigure" accessor="//@figures.0/@descriptors.8/@accessors.0"/>
-  <labels name="AssociationLabel" figure="AssociationLabelFigure" elementIcon="false"/>
+  <nodes name="NodoUno" figure="NodoUnoFigure"/>
+  <nodes name="NodoDos" figure="NodoDosFigure"/>
+  <connections name="Enlace" figure="EnlaceFigure"/>
+  <compartments name="NodoUnoNodosDosCompartment" figure="NodoUnoFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="NodoUnoLabel" figure="NodoUnoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="NodoDosLabel" figure="NodoDosFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="EnlaceLabel" figure="EnlaceLabelFigure" elementIcon="false"/>
 </gmfgraph:Canvas>
