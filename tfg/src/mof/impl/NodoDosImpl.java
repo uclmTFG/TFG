@@ -2,7 +2,6 @@
  */
 package mof.impl;
 
-import mof.Forma;
 import mof.Linea;
 import mof.MofPackage;
 import mof.NodoDos;
@@ -36,7 +35,7 @@ public class NodoDosImpl extends NodoImpl implements NodoDos {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final Forma FORMA_EDEFAULT = Forma.RECTANGULO;
+	protected static final String FORMA_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getForma() <em>Forma</em>}' attribute.
@@ -46,7 +45,7 @@ public class NodoDosImpl extends NodoImpl implements NodoDos {
 	 * @generated
 	 * @ordered
 	 */
-	protected Forma forma = FORMA_EDEFAULT;
+	protected String forma = FORMA_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getLinea() <em>Linea</em>}' attribute.
@@ -93,7 +92,7 @@ public class NodoDosImpl extends NodoImpl implements NodoDos {
 	 * @generated
 	 */
 	@Override
-	public Forma getForma() {
+	public String getForma() {
 		return forma;
 	}
 
@@ -103,9 +102,9 @@ public class NodoDosImpl extends NodoImpl implements NodoDos {
 	 * @generated
 	 */
 	@Override
-	public void setForma(Forma newForma) {
-		Forma oldForma = forma;
-		forma = newForma == null ? FORMA_EDEFAULT : newForma;
+	public void setForma(String newForma) {
+		String oldForma = forma;
+		forma = newForma;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MofPackage.NODO_DOS__FORMA, oldForma, forma));
 	}
@@ -158,7 +157,7 @@ public class NodoDosImpl extends NodoImpl implements NodoDos {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MofPackage.NODO_DOS__FORMA:
-				setForma((Forma)newValue);
+				setForma((String)newValue);
 				return;
 			case MofPackage.NODO_DOS__LINEA:
 				setLinea((Linea)newValue);
@@ -194,7 +193,7 @@ public class NodoDosImpl extends NodoImpl implements NodoDos {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case MofPackage.NODO_DOS__FORMA:
-				return forma != FORMA_EDEFAULT;
+				return FORMA_EDEFAULT == null ? forma != null : !FORMA_EDEFAULT.equals(forma);
 			case MofPackage.NODO_DOS__LINEA:
 				return linea != LINEA_EDEFAULT;
 		}

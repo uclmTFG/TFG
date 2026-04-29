@@ -23,29 +23,25 @@ package mof;
 public interface NodoDos extends Nodo {
 	/**
 	 * Returns the value of the '<em><b>Forma</b></em>' attribute.
-	 * The default value is <code>"Rectangulo"</code>.
-	 * The literals are from the enumeration {@link mof.Forma}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Forma</em>' attribute.
-	 * @see mof.Forma
-	 * @see #setForma(Forma)
+	 * @see #setForma(String)
 	 * @see mof.MofPackage#getNodoDos_Forma()
-	 * @model default="Rectangulo"
+	 * @model
 	 * @generated
 	 */
-	Forma getForma();
+	String getForma();
 
 	/**
 	 * Sets the value of the '{@link mof.NodoDos#getForma <em>Forma</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Forma</em>' attribute.
-	 * @see mof.Forma
 	 * @see #getForma()
 	 * @generated
 	 */
-	void setForma(Forma value);
+	void setForma(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Linea</b></em>' attribute.

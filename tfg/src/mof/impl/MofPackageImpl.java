@@ -4,7 +4,6 @@ package mof.impl;
 
 import mof.Color;
 import mof.Enlace;
-import mof.Forma;
 import mof.FormaExtremoDestino;
 import mof.FormaExtremoOrigen;
 import mof.Linea;
@@ -14,7 +13,6 @@ import mof.Nodo;
 import mof.NodoDos;
 import mof.NodoUno;
 import mof.UMLDiagram;
-import mof.Visibilidad;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -78,21 +76,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum formaEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EEnum lineaEEnum = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EEnum visibilidadEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -405,28 +389,8 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 	 * @generated
 	 */
 	@Override
-	public EEnum getForma() {
-		return formaEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
 	public EEnum getLinea() {
 		return lineaEEnum;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public EEnum getVisibilidad() {
-		return visibilidadEEnum;
 	}
 
 	/**
@@ -507,9 +471,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 
 		// Create enums
 		colorEEnum = createEEnum(COLOR);
-		formaEEnum = createEEnum(FORMA);
 		lineaEEnum = createEEnum(LINEA);
-		visibilidadEEnum = createEEnum(VISIBILIDAD);
 		formaExtremoOrigenEEnum = createEEnum(FORMA_EXTREMO_ORIGEN);
 		formaExtremoDestinoEEnum = createEEnum(FORMA_EXTREMO_DESTINO);
 	}
@@ -559,7 +521,7 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		initEReference(getNodoUno_NodosDos(), this.getNodoDos(), null, "nodosDos", null, 0, -1, NodoUno.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(nodoDosEClass, NodoDos.class, "NodoDos", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNodoDos_Forma(), this.getForma(), "forma", "Rectangulo", 0, 1, NodoDos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getNodoDos_Forma(), ecorePackage.getEString(), "forma", null, 0, 1, NodoDos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNodoDos_Linea(), this.getLinea(), "linea", "Continua", 0, 1, NodoDos.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(enlaceEClass, Enlace.class, "Enlace", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -585,25 +547,9 @@ public class MofPackageImpl extends EPackageImpl implements MofPackage {
 		addEEnumLiteral(colorEEnum, Color.LILA);
 		addEEnumLiteral(colorEEnum, Color.NARANJA);
 
-		initEEnum(formaEEnum, Forma.class, "Forma");
-		addEEnumLiteral(formaEEnum, Forma.RECTANGULO);
-		addEEnumLiteral(formaEEnum, Forma.RECTANGULO_REDONDEADO);
-		addEEnumLiteral(formaEEnum, Forma.CIRCULO);
-		addEEnumLiteral(formaEEnum, Forma.CIRCULO_DOBLE);
-		addEEnumLiteral(formaEEnum, Forma.BARRA);
-		addEEnumLiteral(formaEEnum, Forma.ROMBO);
-		addEEnumLiteral(formaEEnum, Forma.ACTOR);
-
 		initEEnum(lineaEEnum, Linea.class, "Linea");
 		addEEnumLiteral(lineaEEnum, Linea.CONTINUA);
 		addEEnumLiteral(lineaEEnum, Linea.DISCONTINUA);
-
-		initEEnum(visibilidadEEnum, Visibilidad.class, "Visibilidad");
-		addEEnumLiteral(visibilidadEEnum, Visibilidad.PRIVADO);
-		addEEnumLiteral(visibilidadEEnum, Visibilidad.PUBLICO);
-		addEEnumLiteral(visibilidadEEnum, Visibilidad.PROTEGIDO);
-		addEEnumLiteral(visibilidadEEnum, Visibilidad.PAQUETE);
-		addEEnumLiteral(visibilidadEEnum, Visibilidad.ESTÁTICO);
 
 		initEEnum(formaExtremoOrigenEEnum, FormaExtremoOrigen.class, "FormaExtremoOrigen");
 		addEEnumLiteral(formaExtremoOrigenEEnum, FormaExtremoOrigen.NINGUNA);

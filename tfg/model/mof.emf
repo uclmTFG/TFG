@@ -21,27 +21,9 @@ enum Color {
 	Naranja;
 }
 
-enum Forma {
-	Rectangulo;
-	RectanguloRedondeado;
-	Circulo;
-	CirculoDoble;
-	Barra;
-	Rombo;
-	Actor;
-}
-
 enum Linea {
 	Continua;
 	Discontinua;
-}
-
-enum Visibilidad {
-	Privado;
-	Publico;
-	Protegido;
-	Paquete;
-	Estático;
 }
 
 enum FormaExtremoOrigen {
@@ -70,7 +52,7 @@ class NodoUno extends Nodo {
 
 @gmf.node(label="nombre")
 class NodoDos extends Nodo {
-    attr Forma forma ="Rectangulo";
+    attr String forma;
     attr Linea linea = "Continua";
 }
 
@@ -87,5 +69,4 @@ class Enlace {
     attr FormaExtremoOrigen formaExtremoOrigen = "Ninguna";
     attr FormaExtremoDestino formaExtremoDestino = "Ninguna";
     attr Color color= "Blanco";
-    
 }

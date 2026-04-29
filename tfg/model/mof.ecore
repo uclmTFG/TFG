@@ -19,25 +19,9 @@
     <eLiterals name="Lila" value="7"/>
     <eLiterals name="Naranja" value="8"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Forma">
-    <eLiterals name="Rectangulo"/>
-    <eLiterals name="RectanguloRedondeado" value="1"/>
-    <eLiterals name="Circulo" value="2"/>
-    <eLiterals name="CirculoDoble" value="3"/>
-    <eLiterals name="Barra" value="4"/>
-    <eLiterals name="Rombo" value="5"/>
-    <eLiterals name="Actor" value="6"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Linea">
     <eLiterals name="Continua"/>
     <eLiterals name="Discontinua" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="Visibilidad">
-    <eLiterals name="Privado"/>
-    <eLiterals name="Publico" value="1"/>
-    <eLiterals name="Protegido" value="2"/>
-    <eLiterals name="Paquete" value="3"/>
-    <eLiterals name="Estático" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoOrigen">
     <eLiterals name="Ninguna"/>
@@ -73,8 +57,7 @@
     <eAnnotations source="gmf.node">
       <details key="label" value="nombre"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
-        defaultValueLiteral="Rectangulo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
         defaultValueLiteral="Continua"/>
   </eClassifiers>

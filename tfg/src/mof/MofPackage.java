@@ -369,16 +369,6 @@ public interface MofPackage extends EPackage {
 	int COLOR = 5;
 
 	/**
-	 * The meta object id for the '{@link mof.Forma <em>Forma</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mof.Forma
-	 * @see mof.impl.MofPackageImpl#getForma()
-	 * @generated
-	 */
-	int FORMA = 6;
-
-	/**
 	 * The meta object id for the '{@link mof.Linea <em>Linea</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -386,17 +376,7 @@ public interface MofPackage extends EPackage {
 	 * @see mof.impl.MofPackageImpl#getLinea()
 	 * @generated
 	 */
-	int LINEA = 7;
-
-	/**
-	 * The meta object id for the '{@link mof.Visibilidad <em>Visibilidad</em>}' enum.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see mof.Visibilidad
-	 * @see mof.impl.MofPackageImpl#getVisibilidad()
-	 * @generated
-	 */
-	int VISIBILIDAD = 8;
+	int LINEA = 6;
 
 	/**
 	 * The meta object id for the '{@link mof.FormaExtremoOrigen <em>Forma Extremo Origen</em>}' enum.
@@ -406,7 +386,7 @@ public interface MofPackage extends EPackage {
 	 * @see mof.impl.MofPackageImpl#getFormaExtremoOrigen()
 	 * @generated
 	 */
-	int FORMA_EXTREMO_ORIGEN = 9;
+	int FORMA_EXTREMO_ORIGEN = 7;
 
 	/**
 	 * The meta object id for the '{@link mof.FormaExtremoDestino <em>Forma Extremo Destino</em>}' enum.
@@ -416,7 +396,7 @@ public interface MofPackage extends EPackage {
 	 * @see mof.impl.MofPackageImpl#getFormaExtremoDestino()
 	 * @generated
 	 */
-	int FORMA_EXTREMO_DESTINO = 10;
+	int FORMA_EXTREMO_DESTINO = 8;
 
 
 	/**
@@ -667,16 +647,6 @@ public interface MofPackage extends EPackage {
 	EEnum getColor();
 
 	/**
-	 * Returns the meta object for enum '{@link mof.Forma <em>Forma</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Forma</em>'.
-	 * @see mof.Forma
-	 * @generated
-	 */
-	EEnum getForma();
-
-	/**
 	 * Returns the meta object for enum '{@link mof.Linea <em>Linea</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -685,16 +655,6 @@ public interface MofPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getLinea();
-
-	/**
-	 * Returns the meta object for enum '{@link mof.Visibilidad <em>Visibilidad</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Visibilidad</em>'.
-	 * @see mof.Visibilidad
-	 * @generated
-	 */
-	EEnum getVisibilidad();
 
 	/**
 	 * Returns the meta object for enum '{@link mof.FormaExtremoOrigen <em>Forma Extremo Origen</em>}'.
@@ -935,16 +895,6 @@ public interface MofPackage extends EPackage {
 		EEnum COLOR = eINSTANCE.getColor();
 
 		/**
-		 * The meta object literal for the '{@link mof.Forma <em>Forma</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mof.Forma
-		 * @see mof.impl.MofPackageImpl#getForma()
-		 * @generated
-		 */
-		EEnum FORMA = eINSTANCE.getForma();
-
-		/**
 		 * The meta object literal for the '{@link mof.Linea <em>Linea</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -953,16 +903,6 @@ public interface MofPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum LINEA = eINSTANCE.getLinea();
-
-		/**
-		 * The meta object literal for the '{@link mof.Visibilidad <em>Visibilidad</em>}' enum.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see mof.Visibilidad
-		 * @see mof.impl.MofPackageImpl#getVisibilidad()
-		 * @generated
-		 */
-		EEnum VISIBILIDAD = eINSTANCE.getVisibilidad();
 
 		/**
 		 * The meta object literal for the '{@link mof.FormaExtremoOrigen <em>Forma Extremo Origen</em>}' enum.

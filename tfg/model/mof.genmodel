@@ -16,25 +16,9 @@
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Lila"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Naranja"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Forma">
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Rectangulo"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/RectanguloRedondeado"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Circulo"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/CirculoDoble"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Barra"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Rombo"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Actor"/>
-    </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Linea">
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Linea/Continua"/>
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Linea/Discontinua"/>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Visibilidad">
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Privado"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Publico"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Protegido"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Paquete"/>
-      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Estático"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//FormaExtremoOrigen">
       <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoOrigen/Ninguna"/>
