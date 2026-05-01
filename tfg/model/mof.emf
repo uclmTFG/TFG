@@ -1,59 +1,57 @@
-@namespace(
-	uri="mof", 
-	prefix="mof")
+@namespace(uri="mof", prefix="mof")
 package mof;
 
-@gmf.diagram()
+@gmf.diagram
 class UMLDiagram {
 	val Nodo[*] nodos;
 	val Enlace[*] enlaces;
 }
 
 enum Color {
-	Blanco;
-	Negro;
-	Rojo;
-	Verde;
-	Amarillo;
-	Azul;
-	Rosa;
-	Lila;
-	Naranja;
+	Blanco = 0;
+	Negro = 1;
+	Rojo = 2;
+	Verde = 3;
+	Amarillo = 4;
+	Azul = 5;
+	Rosa = 6;
+	Lila = 7;
+	Naranja = 8;
 }
 
 enum Forma {
-	Rectangulo;
-	RectanguloRedondeado;
-	Circulo;
-	CirculoDoble;
-	Barra;
-	Rombo;
-	Actor;
+	Rectangulo = 0;
+	RectanguloRedondeado = 1;
+	Circulo = 2;
+	CirculoDoble = 3;
+	Barra = 4;
+	Rombo = 5;
+	Actor = 6;
 }
 
 enum Linea {
-	Continua;
-	Discontinua;
+	Continua = 0;
+	Discontinua = 1;
 }
 
 enum Visibilidad {
-	Privado;
-	Publico;
-	Protegido;
-	Paquete;
-	Estático;
+	Privado = 0;
+	Publico = 1;
+	Protegido = 2;
+	Paquete = 3;
+	Estático = 4;
 }
 
 enum FormaExtremoOrigen {
-	Ninguna;
-	FlechaAbierta;
-	FlechaCerrada;
+	Ninguna = 0;
+	FlechaAbierta = 1;
+	FlechaCerrada = 2;
 }
 
-enum FormaExtremoDestino{
-	Ninguna;
-	RomboSinRelleno;
-	RomboRelleno;
+enum FormaExtremoDestino {
+	Ninguna = 0;
+	RomboSinRelleno = 1;
+	RomboRelleno = 2;
 }
 
 abstract class Nodo {
@@ -64,28 +62,27 @@ abstract class Nodo {
 
 @gmf.node(label="nombre", figure="rectangle")
 class NodoUno extends Nodo {
-    @gmf.compartment(layout="list", collapsible="true")
-    val NodoDos[*] nodosDos;
+
+	@gmf.compartment(layout="list", collapsible="true")
+	val NodoDos[*] nodosDos;
 }
 
 @gmf.node(label="nombre")
 class NodoDos extends Nodo {
-    attr Forma forma ="Rectangulo";
-    attr Linea linea = "Continua";
+	attr Forma forma = "Rectangulo";
+	attr Linea linea = "Continua";
 }
 
-
-@gmf.link(source="origen", target="destino", style="solid", 
-target.decoration="arrow", label="texto")
+@gmf.link(source="origen", target="destino", style="solid", target.decoration="arrow", label="texto")
 class Enlace {
 	attr String texto;
-    ref Nodo[1] origen;
-    ref Nodo[1] destino;
-    attr Linea linea = "Continua";
-    attr String textoExtremoOrigen;
-    attr String textoExtremoDestino;
-    attr FormaExtremoOrigen formaExtremoOrigen = "Ninguna";
-    attr FormaExtremoDestino formaExtremoDestino = "Ninguna";
-    attr Color color= "Blanco";
-    
+	ref Nodo[1] origen;
+	ref Nodo[1] destino;
+	attr Linea linea = "Continua";
+	attr String textoExtremoOrigen;
+	attr String textoExtremoDestino;
+	attr FormaExtremoOrigen formaExtremoOrigen = "Ninguna";
+	attr FormaExtremoDestino formaExtremoDestino = "Ninguna";
+	attr Color color = "Blanco";
 }
+
