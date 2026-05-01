@@ -11,6 +11,6 @@ Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: mof.provider
 Require-Bundle: org.eclipse.core.runtime,
- gettw;visibility:=reexport,
+ tfg;visibility:=reexport,
  org.eclipse.emf.edit;visibility:=reexport
 Bundle-ActivationPolicy: lazy
