@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="mof" nsURI="mof" nsPrefix="mof">
+  <eClassifiers xsi:type="ecore:EClass" name="UMLDiagram">
+    <eAnnotations source="gmf.diagram"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodos" upperBound="-1"
+        eType="#//Nodo" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enlaces" upperBound="-1"
+        eType="#//Enlace" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Color">
+    <eLiterals name="Blanco"/>
+    <eLiterals name="Negro" value="1"/>
+    <eLiterals name="Rojo" value="2"/>
+    <eLiterals name="Verde" value="3"/>
+    <eLiterals name="Amarillo" value="4"/>
+    <eLiterals name="Azul" value="5"/>
+    <eLiterals name="Rosa" value="6"/>
+    <eLiterals name="Lila" value="7"/>
+    <eLiterals name="Naranja" value="8"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Forma">
+    <eLiterals name="Rectangulo"/>
+    <eLiterals name="RectanguloRedondeado" value="1"/>
+    <eLiterals name="Circulo" value="2"/>
+    <eLiterals name="CirculoDoble" value="3"/>
+    <eLiterals name="Barra" value="4"/>
+    <eLiterals name="Rombo" value="5"/>
+    <eLiterals name="Actor" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Linea">
+    <eLiterals name="Continua"/>
+    <eLiterals name="Discontinua" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Visibilidad">
+    <eLiterals name="Privado"/>
+    <eLiterals name="Publico" value="1"/>
+    <eLiterals name="Protegido" value="2"/>
+    <eLiterals name="Paquete" value="3"/>
+    <eLiterals name="Estático" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoOrigen">
+    <eLiterals name="Ninguna"/>
+    <eLiterals name="FlechaAbierta" value="1"/>
+    <eLiterals name="FlechaCerrada" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormaExtremoDestino">
+    <eLiterals name="Ninguna"/>
+    <eLiterals name="RomboSinRelleno" value="1"/>
+    <eLiterals name="RomboRelleno" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Nodo" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nombre" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="colorBorde" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodoUno" eSuperTypes="#//Nodo">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nombre"/>
+      <details key="figure" value="rectangle"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="nodosDos" upperBound="-1"
+        eType="#//NodoDos" containment="true">
+      <eAnnotations source="gmf.compartment">
+        <details key="layout" value="list"/>
+        <details key="collapsible" value="true"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="NodoDos" eSuperTypes="#//Nodo">
+    <eAnnotations source="gmf.node">
+      <details key="label" value="nombre"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="forma" eType="#//Forma"
+        defaultValueLiteral="Rectangulo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
+        defaultValueLiteral="Continua"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Enlace">
+    <eAnnotations source="gmf.link">
+      <details key="source" value="origen"/>
+      <details key="target" value="destino"/>
+      <details key="style" value="solid"/>
+      <details key="target.decoration" value="arrow"/>
+      <details key="label" value="texto"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="texto" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="origen" lowerBound="1"
+        eType="#//Nodo"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="destino" lowerBound="1"
+        eType="#//Nodo"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="linea" eType="#//Linea"
+        defaultValueLiteral="Continua"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textoExtremoOrigen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="textoExtremoDestino" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formaExtremoOrigen" eType="#//FormaExtremoOrigen"
+        defaultValueLiteral="Ninguna"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="formaExtremoDestino" eType="#//FormaExtremoDestino"
+        defaultValueLiteral="Ninguna"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="#//Color"
+        defaultValueLiteral="Blanco"/>
+  </eClassifiers>
+</ecore:EPackage>

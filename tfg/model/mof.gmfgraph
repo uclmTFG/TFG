@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ASCII"?>
+<gmfgraph:Canvas xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gmfgraph="http://www.eclipse.org/gmf/2006/GraphicalDefinition" name="mof">
+  <figures name="Default">
+    <figures xsi:type="gmfgraph:PolylineDecoration" name="EnlaceFigureTargetDecoration"/>
+    <descriptors name="NodoUnoFigure">
+      <actualFigure xsi:type="gmfgraph:Rectangle" name="NodoUnoFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="NodoUnoLabelFigure" text="NodoUno">
+          <maximumSize dx="10000" dy="50"/>
+        </children>
+        <children xsi:type="gmfgraph:Rectangle" name="NodoUnoNodosDosCompartmentFigure" outline="false"/>
+      </actualFigure>
+      <accessors accessor="getFigureNodoUnoLabelFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.0"/>
+      <accessors accessor="getNodoUnoNodosDosCompartmentFigure" figure="//@figures.0/@descriptors.0/@actualFigure/@children.1"/>
+    </descriptors>
+    <descriptors name="NodoDosFigure">
+      <actualFigure xsi:type="gmfgraph:RoundedRectangle" name="NodoDosFigure">
+        <border xsi:type="gmfgraph:MarginBorder">
+          <insets top="5" left="5" bottom="5" right="5"/>
+        </border>
+        <children xsi:type="gmfgraph:Label" name="NodoDosLabelFigure" text="NodoDos"/>
+      </actualFigure>
+      <accessors accessor="getFigureNodoDosLabelFigure" figure="//@figures.0/@descriptors.1/@actualFigure/@children.0"/>
+    </descriptors>
+    <descriptors name="EnlaceFigure">
+      <actualFigure xsi:type="gmfgraph:PolylineConnection" name="EnlaceFigure" targetDecoration="//@figures.0/@figures.0"/>
+    </descriptors>
+    <descriptors name="EnlaceLabelFigure">
+      <actualFigure xsi:type="gmfgraph:Label" name="EnlaceLabelLabel" text="Enlace"/>
+    </descriptors>
+  </figures>
+  <nodes name="NodoUno" figure="NodoUnoFigure"/>
+  <nodes name="NodoDos" figure="NodoDosFigure"/>
+  <connections name="Enlace" figure="EnlaceFigure"/>
+  <compartments name="NodoUnoNodosDosCompartment" figure="NodoUnoFigure" collapsible="true" accessor="//@figures.0/@descriptors.0/@accessors.1"/>
+  <labels name="NodoUnoLabel" figure="NodoUnoFigure" accessor="//@figures.0/@descriptors.0/@accessors.0"/>
+  <labels name="NodoDosLabel" figure="NodoDosFigure" accessor="//@figures.0/@descriptors.1/@accessors.0"/>
+  <labels name="EnlaceLabel" figure="EnlaceLabelFigure" elementIcon="false"/>
+</gmfgraph:Canvas>

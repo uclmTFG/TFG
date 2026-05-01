@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="" modelDirectory="/tfg/src" modelPluginID="tfg"
+    modelName="Mof" importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0"
+    copyrightFields="false">
+  <foreignModel>mof.emf</foreignModel>
+  <genPackages prefix="Mof" disposableProviderFactory="true" ecorePackage="mof.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Color">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Blanco"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Negro"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Rojo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Verde"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Amarillo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Azul"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Rosa"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Lila"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Color/Naranja"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Forma">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Rectangulo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/RectanguloRedondeado"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Circulo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/CirculoDoble"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Barra"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Rombo"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Forma/Actor"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Linea">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Linea/Continua"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Linea/Discontinua"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//Visibilidad">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Privado"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Publico"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Protegido"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Paquete"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//Visibilidad/Estático"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//FormaExtremoOrigen">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoOrigen/Ninguna"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoOrigen/FlechaAbierta"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoOrigen/FlechaCerrada"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="mof.ecore#//FormaExtremoDestino">
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoDestino/Ninguna"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoDestino/RomboSinRelleno"/>
+      <genEnumLiterals ecoreEnumLiteral="mof.ecore#//FormaExtremoDestino/RomboRelleno"/>
+    </genEnums>
+    <genClasses ecoreClass="mof.ecore#//UMLDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/nodos"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//UMLDiagram/enlaces"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="mof.ecore#//Nodo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/nombre"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Nodo/colorBorde"/>
+    </genClasses>
+    <genClasses ecoreClass="mof.ecore#//NodoUno">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference mof.ecore#//NodoUno/nodosDos"/>
+    </genClasses>
+    <genClasses ecoreClass="mof.ecore#//NodoDos">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//NodoDos/forma"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//NodoDos/linea"/>
+    </genClasses>
+    <genClasses ecoreClass="mof.ecore#//Enlace">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/texto"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/origen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference mof.ecore#//Enlace/destino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/linea"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/textoExtremoOrigen"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/textoExtremoDestino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/formaExtremoOrigen"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/formaExtremoDestino"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute mof.ecore#//Enlace/color"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
