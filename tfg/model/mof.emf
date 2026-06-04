@@ -85,3 +85,4 @@ class Enlace {
 	attr FormaExtremoDestino formaExtremoDestino = "Ninguna";
 	attr Color color = "Blanco";
 }
+
