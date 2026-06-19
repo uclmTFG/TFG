@@ -1,7 +1,0 @@
-rule getFinalJS {
-	pre {
-  		var jsDir : String = "../js/";
-	}
-	template: "./gettw_template.egl"
-	target: jsDir+"gettw.js" 
-}
