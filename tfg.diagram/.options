@@ -1,7 +1,0 @@
-# Tracing options for the tfg.diagram plug-in
-
-# Common issues
-tfg.diagram/debug=false
-
-# Visual IDs
-tfg.diagram/debug/visualID=false
