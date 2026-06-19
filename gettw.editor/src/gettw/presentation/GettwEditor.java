@@ -630,7 +630,7 @@ public class GettwEditor
 			BasicDiagnostic diagnostic =
 				new BasicDiagnostic
 					(Diagnostic.OK,
-					 "gettw.editor",
+					 "org.chico.uclm.gettw.editor",
 					 0,
 					 null,
 					 new Object [] { editingDomain.getResourceSet() });
@@ -997,7 +997,7 @@ public class GettwEditor
 			BasicDiagnostic basicDiagnostic =
 				new BasicDiagnostic
 					(hasErrors ? Diagnostic.ERROR : Diagnostic.WARNING,
-					 "gettw.editor",
+					 "org.chico.uclm.gettw.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object [] { exception == null ? (Object)resource : exception });
@@ -1008,7 +1008,7 @@ public class GettwEditor
 			return
 				new BasicDiagnostic
 					(Diagnostic.ERROR,
-					 "gettw.editor",
+					 "org.chico.uclm.gettw.editor",
 					 0,
 					 getString("_UI_CreateModelError_message", resource.getURI()),
 					 new Object[] { exception });

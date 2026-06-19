@@ -95,6 +95,29 @@ public class GettwItemProviderAdapterFactory extends GettwAdapterFactory impleme
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link gettw.Picture} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PictureItemProvider pictureItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link gettw.Picture}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPictureAdapter() {
+		if (pictureItemProvider == null) {
+			pictureItemProvider = new PictureItemProvider(this);
+		}
+
+		return pictureItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link gettw.Text} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -460,29 +483,6 @@ public class GettwItemProviderAdapterFactory extends GettwAdapterFactory impleme
 		}
 
 		return linkItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all {@link gettw.Picture} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected PictureItemProvider pictureItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link gettw.Picture}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createPictureAdapter() {
-		if (pictureItemProvider == null) {
-			pictureItemProvider = new PictureItemProvider(this);
-		}
-
-		return pictureItemProvider;
 	}
 
 	/**
