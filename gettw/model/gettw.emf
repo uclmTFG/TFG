@@ -11,8 +11,8 @@ abstract class GraphElement {
 	attr String id_;
 }
 
-
 // TEXT RELATED *************************************************************************************************************************************************************
+
 @gmf.node(figure="gettw.figures.TextFigure", tool.name="Text",
 	tool.small.bundle="gettw.figures", tool.large.path="images/text64.png", tool.small.path="images/text16.png",
 	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
