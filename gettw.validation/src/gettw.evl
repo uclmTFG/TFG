@@ -1,0 +1,69 @@
+// Ruta obligatoria para las imagenes
+context Picture {
+	constraint ObligatoryImagePath {
+		check : self.sourcce_url.isDefined() and self.source_url.trim() <> ""
+		message : "The image " + self.text + " needs a filename at source_url"
+	}
+}
+
+// Color de relleno y grosor son transparentes
+context Shape {
+    critique InvisibleFigure {
+        check : not (self.color.name == "white" and self.stroke.name == "white")
+        message : "The shape " + self.text + " has a transparnt background and border. It will be invisble on the web."
+    }
+}
+
+// Booleano indices activado pero sin introducir el texto de superscript O subscript
+context CustomShape {
+    critique EmptyIndices {
+        guard : self.sup_sub_indixes == true
+        check : (self.text_superscript.isDefined() and self.text_superscript <> "") or 
+                (self.text_subscript.isDefined() and self.text_subscript <> "")   
+        message : "You have enabled subscripts or superscripts in " + self.texto + ", but left them blank."
+    }
+}
+
+// El grosor no puede contener un numero negativo
+context Shape {
+    constraint PositiveStrokeShape {
+        check : self.strokeWidth >= 0
+        message : "The stroke in " + self.text + " cannot be a negative number."
+    }
+}
+
+// El grosor no puede contener un numero negativo
+context CustomShape {
+    constraint PositiveStrokeCustomShape {
+        check : self.strokeWidth >= 0
+        message : "The stroke in " + self.text + " cannot be a negative number."
+    }
+}
+
+// El grosor no puede contener un numero negativo
+context CustomLink {
+    constraint PositiveStrokeCustomLink {
+        check : self.toArrowStrokeWidth >= 0 or self.fromArrowStrokeWidth >= 0
+        message : "The stroke in " + self.text + " cannot be a negative number."
+    }
+}
+
+// Las dimensiones de una imagen no pueden ser un numero negativo
+context Picture {
+    constraint PositiveWidthAndHeight {
+        check : self.width > 0 and self.height > 0
+        message : "The width or height in " + self.text + " cannot be a negative number."
+    }
+}
+
+// Busca el nombre de todas las figuras para que no se dupliquen los nombres
+// Cuenta los textos con los mismos nombres, si hay mas de 1, ya se ha duplicado
+context Shape {
+    constraint UniqueName {
+        check : Shape.all.select(f | f.text == self.text).size() == 1
+        message : "There is allready another shape called " + self.texto + ", names must be unique."
+    }
+}
+
+
+
