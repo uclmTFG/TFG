@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="gettw" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_SqPw8DhNEe-2dZiONYzc7A" type="Gettw" name="UseCases.gettw_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_Vy-rkDiREe-AH9E9Tzb_AQ" type="2004" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Vy_SoDiREe-AH9E9Tzb_AQ" type="5004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Vy_SoTiREe-AH9E9Tzb_AQ" x="10" y="72"/>
+    </children>
+    <element xmi:type="Rectangle" href="UseCases.gettw#//@elements.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vy-rkTiREe-AH9E9Tzb_AQ" x="350" y="105"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_SqPw8ThNEe-2dZiONYzc7A"/>
+  <element xmi:type="GETTWDiagram" href="UseCases.gettw#/"/>
+</notation:Diagram>
