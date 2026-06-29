@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GETTWDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="gettw">
+  <elements xsi:type="Rectangle"/>
+  <elements xsi:type="RoundedRectangle"/>
+  <elements xsi:type="Ellipse"/>
+  <elements xsi:type="Triangle"/>
+  <elements xsi:type="TriangleDown"/>
+  <elements xsi:type="TriangleLeft"/>
+  <elements xsi:type="TriangleRight"/>
+  <elements xsi:type="Diamond"/>
+  <elements xsi:type="TriangleLeft"/>
+  <elements xsi:type="RoundedRectangle"/>
+  <elements xsi:type="Triangle"/>
+  <elements xsi:type="TriangleLeft"/>
+  <elements xsi:type="TriangleRight"/>
+  <elements xsi:type="TriangleDown"/>
+  <elements xsi:type="Ellipse"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+  <elements xsi:type="CustomLink"/>
+</GETTWDiagram>

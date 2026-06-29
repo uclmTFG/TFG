@@ -6,7 +6,7 @@
       <constraintsBinding
             compose="true"
             constraints="src/gettw.evl"
-            namespaceURI="teaw">
+            namespaceURI="gettw">
       </constraintsBinding>
    </extension>
    <extension

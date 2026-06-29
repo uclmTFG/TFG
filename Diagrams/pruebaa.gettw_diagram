@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="gettw" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_ES-8oHM4EfGlvpBpShEsXQ" type="Gettw" name="pruebaa.gettw_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_FBfocHM4EfGlvpBpShEsXQ" type="2011" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FBgPgHM4EfGlvpBpShEsXQ" type="5011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_FBgPgXM4EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleRight" href="pruebaa.gettw#//@elements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FBfocXM4EfGlvpBpShEsXQ" x="440" y="448"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_FWMGEHM4EfGlvpBpShEsXQ" type="2010" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_FWMGEnM4EfGlvpBpShEsXQ" type="5010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_FWMGE3M4EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleLeft" href="pruebaa.gettw#//@elements.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_FWMGEXM4EfGlvpBpShEsXQ" x="655" y="463"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_F2934HM4EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_F2934nM4EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_F29343M4EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebaa.gettw#//@elements.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_F2934XM4EfGlvpBpShEsXQ" x="536" y="753"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_ES-8oXM4EfGlvpBpShEsXQ"/>
+  <element xmi:type="GETTWDiagram" href="pruebaa.gettw#/"/>
+</notation:Diagram>

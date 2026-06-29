@@ -10,7 +10,8 @@
       <!-- @generated gettw -->
       <package
             uri="gettw"
-            class="gettw.GettwPackage"/>
+            class="gettw.GettwPackage"
+            genModel="model/gettw.genmodel"/>
    </extension>
 
 </plugin>

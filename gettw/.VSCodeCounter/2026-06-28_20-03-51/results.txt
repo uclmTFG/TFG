@@ -1,0 +1,86 @@
+Date : 2026-06-28 20:03:51
+Directory : c:\Users\pieda\git\repo\gettw
+Total : 54 files,  5356 codes, 11732 comments, 1763 blanks, all 18851 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| Java       |         51 |      5,337 |     11,727 |      1,754 |     18,818 |
+| Properties |          2 |         10 |          2 |          4 |         16 |
+| XML        |          1 |          9 |          3 |          5 |         17 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                   | files      | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                      |         54 |      5,356 |     11,732 |      1,763 |     18,851 |
+| . (Files)                                                              |          3 |         19 |          5 |          9 |         33 |
+| src                                                                    |         51 |      5,337 |     11,727 |      1,754 |     18,818 |
+| src\gettw                                                              |         51 |      5,337 |     11,727 |      1,754 |     18,818 |
+| src\gettw (Files)                                                      |         26 |      1,666 |      8,256 |      1,047 |     10,969 |
+| src\gettw\impl                                                         |         23 |      3,197 |      2,925 |        642 |      6,764 |
+| src\gettw\util                                                         |          2 |        474 |        546 |         65 |      1,085 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                               | language   | code       | comment    | blank      | total      |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\pieda\git\repo\gettw\build.properties                         | Properties |          8 |          1 |          2 |         11 |
+| c:\Users\pieda\git\repo\gettw\plugin.properties                        | Properties |          2 |          1 |          2 |          5 |
+| c:\Users\pieda\git\repo\gettw\plugin.xml                               | XML        |          9 |          3 |          5 |         17 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Actor.java                     | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\ArrowHeads.java                | Java       |        382 |      1,466 |        179 |      2,027 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Colors.java                    | Java       |        150 |        480 |         63 |        693 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\CustomLink.java                | Java       |         27 |        270 |         27 |        324 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\CustomShape.java               | Java       |         23 |        220 |         23 |        266 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Diamond.java                   | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Ellipse.java                   | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\GETTWDiagram.java              | Java       |          6 |         28 |          5 |         39 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\GettwFactory.java              | Java       |         26 |        163 |         25 |        214 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\GettwPackage.java              | Java       |        337 |      2,436 |        332 |      3,105 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\GraphElement.java              | Java       |          6 |         36 |          5 |         47 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Link.java                      | Java       |          3 |         12 |          3 |         18 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Package.java                   | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Picture.java                   | Java       |         11 |         93 |         11 |        115 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Rectangle.java                 | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\RoundedRectangle.java          | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Shape.java                     | Java       |         15 |        140 |         15 |        170 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Shapes.java                    | Java       |        618 |      2,469 |        297 |      3,384 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Subscript.java                 | Java       |          5 |         36 |          5 |         46 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Superscript.java               | Java       |          5 |         36 |          5 |         46 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Text.java                      | Java       |          5 |         36 |          5 |         46 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\TextIndex.java                 | Java       |          7 |         55 |          7 |         69 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\Triangle.java                  | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\TriangleDown.java              | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\TriangleLeft.java              | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\TriangleRight.java             | Java       |          4 |         28 |          4 |         36 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\ActorImpl.java            | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\CustomLinkImpl.java       | Java       |        348 |        373 |         62 |        783 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\CustomShapeImpl.java      | Java       |        298 |        319 |         54 |        671 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\DiamondImpl.java          | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\EllipseImpl.java          | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\GETTWDiagramImpl.java     | Java       |         73 |         63 |         18 |        154 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\GettwFactoryImpl.java     | Java       |        233 |        176 |         39 |        448 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\GettwPackageImpl.java     | Java       |      1,069 |        590 |        171 |      1,830 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\GraphElementImpl.java     | Java       |         72 |         76 |         18 |        166 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\LinkImpl.java             | Java       |         13 |         19 |          6 |         38 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\PackageImpl.java          | Java       |         43 |         61 |         13 |        117 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\PictureImpl.java          | Java       |        146 |        157 |         30 |        333 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\RectangleImpl.java        | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\RoundedRectangleImpl.java | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\ShapeImpl.java            | Java       |        197 |        211 |         38 |        446 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\SubscriptImpl.java        | Java       |         71 |         76 |         18 |        165 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\SuperscriptImpl.java      | Java       |         71 |         76 |         18 |        165 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\TextImpl.java             | Java       |         71 |         76 |         18 |        165 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\TextIndexImpl.java        | Java       |         96 |        103 |         22 |        221 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\TriangleDownImpl.java     | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\TriangleImpl.java         | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\TriangleLeftImpl.java     | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\impl\TriangleRightImpl.java    | Java       |         44 |         61 |         13 |        118 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\util\GettwAdapterFactory.java  | Java       |        205 |        262 |         34 |        501 |
+| c:\Users\pieda\git\repo\gettw\src\gettw\util\GettwSwitch.java          | Java       |        269 |        284 |         31 |        584 |
+| Total                                                                  |            |      5,356 |     11,732 |      1,763 |     18,851 |
++------------------------------------------------------------------------+------------+------------+------------+------------+------------+

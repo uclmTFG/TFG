@@ -17,7 +17,7 @@ context Shape {
 // Booleano indices activado pero sin introducir el texto de superscript O subscript
 context CustomShape {
     critique EmptyIndices {
-        guard : self.sup_sub_indixes == true
+        guard : self.sup_sub_indexes == true
         check : (self.text_superscript.isDefined() and self.text_superscript <> "") or 
                 (self.text_subscript.isDefined() and self.text_subscript <> "")   
         message : "You have enabled subscripts or superscripts in " + self.texto + ", but left them blank."

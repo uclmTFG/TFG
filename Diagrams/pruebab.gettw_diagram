@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="gettw" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_AOcTsHM5EfGlvpBpShEsXQ" type="Gettw" name="pruebab.gettw_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_BF0AkHM5EfGlvpBpShEsXQ" type="2004" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BF0noHM5EfGlvpBpShEsXQ" type="5004">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BF0noXM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="Rectangle" href="pruebab.gettw#//@elements.0"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BF0AkXM5EfGlvpBpShEsXQ" x="356" y="249"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_BQ2y8HM5EfGlvpBpShEsXQ" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BQ2y8nM5EfGlvpBpShEsXQ" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BQ2y83M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="RoundedRectangle" href="pruebab.gettw#//@elements.1"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BQ2y8XM5EfGlvpBpShEsXQ" x="623" y="229"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_BmFcEHM5EfGlvpBpShEsXQ" type="2006" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_BmGDIHM5EfGlvpBpShEsXQ" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_BmGDIXM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="Ellipse" href="pruebab.gettw#//@elements.2"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BmFcEXM5EfGlvpBpShEsXQ" x="165" y="136"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Byti0HM5EfGlvpBpShEsXQ" type="2007" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_ByuJ4HM5EfGlvpBpShEsXQ" type="5007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_ByuJ4XM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="Triangle" href="pruebab.gettw#//@elements.3"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Byti0XM5EfGlvpBpShEsXQ" x="109" y="484"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CGvSEHM5EfGlvpBpShEsXQ" type="2009" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CGvSEnM5EfGlvpBpShEsXQ" type="5009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CGvSE3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleDown" href="pruebab.gettw#//@elements.4"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CGvSEXM5EfGlvpBpShEsXQ" x="362" y="507"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CQu7kHM5EfGlvpBpShEsXQ" type="2010" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CQvioHM5EfGlvpBpShEsXQ" type="5010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CQvioXM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleLeft" href="pruebab.gettw#//@elements.5"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CQu7kXM5EfGlvpBpShEsXQ" x="581" y="490" width="15" height="5"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Ci0KEHM5EfGlvpBpShEsXQ" type="2011" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Ci1YMHM5EfGlvpBpShEsXQ" type="5011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Ci1YMXM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleRight" href="pruebab.gettw#//@elements.6"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Ci0KEXM5EfGlvpBpShEsXQ" x="773" y="513"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_CxKvIHM5EfGlvpBpShEsXQ" type="2008" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_CxKvInM5EfGlvpBpShEsXQ" type="5008">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_CxKvI3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="Diamond" href="pruebab.gettw#//@elements.7"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CxKvIXM5EfGlvpBpShEsXQ" x="749" y="409"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_DMZSkHM5EfGlvpBpShEsXQ" type="2010" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DMZ5oHM5EfGlvpBpShEsXQ" type="5010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DMZ5oXM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleLeft" href="pruebab.gettw#//@elements.8"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DMZSkXM5EfGlvpBpShEsXQ" x="450" y="157"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_DYPWMHM5EfGlvpBpShEsXQ" type="2005" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_DYPWMnM5EfGlvpBpShEsXQ" type="5005">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_DYPWM3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="RoundedRectangle" href="pruebab.gettw#//@elements.9"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DYPWMXM5EfGlvpBpShEsXQ" x="738" y="90"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_EE6O8HM5EfGlvpBpShEsXQ" type="2007" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EE6O8nM5EfGlvpBpShEsXQ" type="5007">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EE6O83M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="Triangle" href="pruebab.gettw#//@elements.10"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EE6O8XM5EfGlvpBpShEsXQ" x="591" y="361"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_EMzmsHM5EfGlvpBpShEsXQ" type="2010" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EMzmsnM5EfGlvpBpShEsXQ" type="5010">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EMzms3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleLeft" href="pruebab.gettw#//@elements.11"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EMzmsXM5EfGlvpBpShEsXQ" x="351" y="672"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_EV0_0HM5EfGlvpBpShEsXQ" type="2011" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EV1m4HM5EfGlvpBpShEsXQ" type="5011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EV1m4XM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleRight" href="pruebab.gettw#//@elements.12"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EV0_0XM5EfGlvpBpShEsXQ" x="688" y="766"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_EfyNEHM5EfGlvpBpShEsXQ" type="2009" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_EfyNEnM5EfGlvpBpShEsXQ" type="5009">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_EfyNE3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="TriangleDown" href="pruebab.gettw#//@elements.13"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EfyNEXM5EfGlvpBpShEsXQ" x="522" y="710"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_Erpe0HM5EfGlvpBpShEsXQ" type="2006" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_Erpe0nM5EfGlvpBpShEsXQ" type="5006">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Erpe03M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="Ellipse" href="pruebab.gettw#//@elements.14"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Erpe0XM5EfGlvpBpShEsXQ" x="129" y="729"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_GxHWgHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_GxHWgnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_GxHWg3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.15"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_GxHWgXM5EfGlvpBpShEsXQ" x="173" y="942"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_G_1vAHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_G_1vAnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_G_1vA3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.16"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_G_1vAXM5EfGlvpBpShEsXQ" x="364" y="999"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_HL51EHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_HL6cIHM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HL6cIXM5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.17"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HL51EXM5EfGlvpBpShEsXQ" x="568" y="1041"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_HXsOUHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_HXsOUnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HXsOU3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.18"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HXsOUXM5EfGlvpBpShEsXQ" x="763" y="897"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_HlhO8HM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_HlhO8nM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_HlhO83M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.19"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HlhO8XM5EfGlvpBpShEsXQ" x="378" y="903"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_H0rFQHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_H0rFQnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_H0rFQ3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.20"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_H0rFQXM5EfGlvpBpShEsXQ" x="770" y="1117"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_IDVzYHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IDVzYnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IDVzY3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.21"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IDVzYXM5EfGlvpBpShEsXQ" x="116" y="1118"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_IQHEEHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IQHEEnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IQHEE3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.22"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IQHEEXM5EfGlvpBpShEsXQ" x="964" y="860"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_IeAWIHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_IeAWInM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_IeAWI3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.23"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_IeAWIXM5EfGlvpBpShEsXQ" x="132" y="358"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_I2oRgHM5EfGlvpBpShEsXQ" type="2014" fontName="Segoe UI">
+    <children xmi:type="notation:DecorationNode" xmi:id="_I2oRgnM5EfGlvpBpShEsXQ" type="5014">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_I2oRg3M5EfGlvpBpShEsXQ" y="5"/>
+    </children>
+    <element xmi:type="CustomLink" href="pruebab.gettw#//@elements.24"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_I2oRgXM5EfGlvpBpShEsXQ" x="879" y="652"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_AOcTsXM5EfGlvpBpShEsXQ"/>
+  <element xmi:type="GETTWDiagram" href="pruebab.gettw#/"/>
+</notation:Diagram>
