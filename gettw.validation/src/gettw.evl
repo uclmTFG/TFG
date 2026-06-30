@@ -24,7 +24,7 @@ context CustomShape {
     }
 }
 
-// El grosor no puede contener un numero negativo
+// El grosor de la figura no puede contener un numero negativo
 context Shape {
     constraint PositiveStrokeShape {
         check : self.strokeWidth >= 0
@@ -32,7 +32,7 @@ context Shape {
     }
 }
 
-// El grosor no puede contener un numero negativo
+// El grosor de la figura customizada no puede contener un numero negativo
 context CustomShape {
     constraint PositiveStrokeCustomShape {
         check : self.strokeWidth >= 0
@@ -40,7 +40,7 @@ context CustomShape {
     }
 }
 
-// El grosor no puede contener un numero negativo
+// El grosor del enlace no puede contener un numero negativo
 context CustomLink {
     constraint PositiveStrokeCustomLink {
         check : self.toArrowStrokeWidth >= 0 or self.fromArrowStrokeWidth >= 0
