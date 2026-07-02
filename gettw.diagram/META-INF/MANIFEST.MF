@@ -7,7 +7,7 @@ Bundle-ClassPath: .
 Bundle-Activator: gettw.diagram.part.GettwDiagramEditorPlugin
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Export-Package: gettw.diagram.edit.parts,
+Export-Package: gettw.diagram.edit.parts, 
  gettw.diagram.part,
  gettw.diagram.providers
 Require-Bundle: org.eclipse.core.runtime,

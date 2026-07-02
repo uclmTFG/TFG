@@ -2,21 +2,21 @@
 <notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns="gettw" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_SqPw8DhNEe-2dZiONYzc7A" type="Gettw" name="UseCases.gettw_diagram" measurementUnit="Pixel">
   <children xmi:type="notation:Shape" xmi:id="_Vy-rkDiREe-AH9E9Tzb_AQ" type="2004" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_Vy_SoDiREe-AH9E9Tzb_AQ" type="5004">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_Vy_SoTiREe-AH9E9Tzb_AQ" x="10" y="72"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_Vy_SoTiREe-AH9E9Tzb_AQ" x="7" y="84"/>
     </children>
     <element xmi:type="Rectangle" href="UseCases.gettw#//@elements.3"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Vy-rkTiREe-AH9E9Tzb_AQ" x="364" y="7"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yHiM8HNEEfGlvpBpShEsXQ" type="2012" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_yHiM8nNEEfGlvpBpShEsXQ" type="5012">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_yHiM83NEEfGlvpBpShEsXQ" y="5"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yHiM83NEEfGlvpBpShEsXQ" x="10" y="84"/>
     </children>
     <element xmi:type="Actor" href="UseCases.gettw#//@elements.0"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yHiM8XNEEfGlvpBpShEsXQ" x="25" y="4"/>
   </children>
   <children xmi:type="notation:Shape" xmi:id="_yHiM9HNEEfGlvpBpShEsXQ" type="2013" fontName="Segoe UI">
     <children xmi:type="notation:DecorationNode" xmi:id="_yHiM9nNEEfGlvpBpShEsXQ" type="5013">
-      <layoutConstraint xmi:type="notation:Location" xmi:id="_yHiM93NEEfGlvpBpShEsXQ" y="5"/>
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_yHiM93NEEfGlvpBpShEsXQ" x="19" y="84"/>
     </children>
     <element xmi:type="Package" href="UseCases.gettw#//@elements.1"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_yHiM9XNEEfGlvpBpShEsXQ" x="124"/>
