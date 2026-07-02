@@ -1,7 +1,7 @@
 // Ruta obligatoria para las imagenes
 context Picture {
 	constraint ObligatoryImagePath {
-		check : self.sourcce_url.isDefined() and self.source_url.trim() <> ""
+		check : self.source_url.isDefined() and self.source_url.trim() <> ""
 		message : "The image " + self.text + " needs a filename at source_url"
 	}
 }
