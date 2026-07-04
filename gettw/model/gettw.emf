@@ -2,7 +2,7 @@
 @namespace(uri="gettw", prefix="")
 package gettw;
 
-@gmf.diagram()
+@gmf.diagram
 class GETTWDiagram {
 	val GraphElement[*] elements;
 }
@@ -11,420 +11,377 @@ abstract class GraphElement {
 	attr String id_;
 }
 
-// TEXT RELATED *************************************************************************************************************************************************************
-
-@gmf.node(figure="gettw.figures.TextFigure", tool.name="Text",
-	tool.small.bundle="gettw.figures", tool.large.path="images/text64.png", tool.small.path="images/text16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TextFigure", tool.name="Text", tool.small.bundle="gettw.figures", tool.large.path="images/text64.png", tool.small.path="images/text16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Text extends GraphElement {
 	attr String text;
 }
 
-@gmf.node(figure="gettw.figures.SuperscriptFigure", tool.name="Text w Superscript",
-	tool.small.bundle="gettw.figures", tool.large.path="images/superscript64.png", tool.small.path="images/superscript16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.SuperscriptFigure", tool.name="Text w Superscript", tool.small.bundle="gettw.figures", tool.large.path="images/superscript64.png", tool.small.path="images/superscript16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Superscript extends Text {
 	attr String superscript;
 }
 
-@gmf.node(figure="gettw.figures.SubscriptFigure", tool.name="Text w Subscript",
-	tool.small.bundle="gettw.figures", tool.large.path="images/subscript64.png", tool.small.path="images/subscript16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.SubscriptFigure", tool.name="Text w Subscript", tool.small.bundle="gettw.figures", tool.large.path="images/subscript64.png", tool.small.path="images/subscript16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Subscript extends Text {
 	attr String subscript;
 }
 
-@gmf.node(figure="gettw.figures.TextIndexFigure", tool.name="Text w Indexes",
-	tool.small.bundle="gettw.figures", tool.large.path="images/textindex64.png", tool.small.path="images/textindex16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TextIndexFigure", tool.name="Text w Indexes", tool.small.bundle="gettw.figures", tool.large.path="images/textindex64.png", tool.small.path="images/textindex16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class TextIndex extends Text {
 	attr String subscript;
 	attr String superscript;
 }
 
-// SHAPES *******************************************************************************************************************************************************************
-// LIST OF GOJS SHAPES: https://gojs.net/latest/samples/shapes.html
 class Shape extends GraphElement {
 	attr String text;
 	attr Colors[1] color;
 	attr Colors[1] stroke;
-	attr Integer strokeWidth = 2;
-	attr Boolean editable = false;
-	attr Boolean textIsHeader = false;
+	attr Integer strokeWidth = "2";
+	attr Boolean editable = "false";
+	attr Boolean textIsHeader = "false";
 }
 
-@gmf.node(figure="gettw.figures.RectangleFigure", tool.name="Rectangle",
-	tool.small.bundle="gettw.figures", tool.large.path="images/rectangle64.png", tool.small.path="images/rectangle16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.RectangleFigure", tool.name="Rectangle", tool.small.bundle="gettw.figures", tool.large.path="images/rectangle64.png", tool.small.path="images/rectangle16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Rectangle extends Shape {
 	readonly attr String shape = "Rectangle";
 }
 
-@gmf.node(figure="gettw.figures.RoundedRectangleFigure", tool.name="Rounded Rectangle",
-	tool.small.bundle="gettw.figures", tool.large.path="images/rounded_rectangle64.png", tool.small.path="images/rounded_rectangle16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.RoundedRectangleFigure", tool.name="Rounded Rectangle", tool.small.bundle="gettw.figures", tool.large.path="images/rounded_rectangle64.png", tool.small.path="images/rounded_rectangle16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class RoundedRectangle extends Shape {
 	readonly attr String shape = "RoundedRectangle";
 }
 
-@gmf.node(figure="gettw.figures.EllipseFigure", tool.name="Ellipse",
-	tool.small.bundle="gettw.figures", tool.large.path="images/ellipse64.png", tool.small.path="images/ellipse16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.EllipseFigure", tool.name="Ellipse", tool.small.bundle="gettw.figures", tool.large.path="images/ellipse64.png", tool.small.path="images/ellipse16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Ellipse extends Shape {
 	readonly attr String shape = "Ellipse";
 }
 
-@gmf.node(figure="gettw.figures.TriangleFigure", tool.name="Triangle",
-	tool.small.bundle="gettw.figures", tool.large.path="images/triangle64.png", tool.small.path="images/triangle16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleFigure", tool.name="Triangle", tool.small.bundle="gettw.figures", tool.large.path="images/triangle64.png", tool.small.path="images/triangle16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Triangle extends Shape {
 	readonly attr String shape = "Triangle";
 }
 
-@gmf.node(figure="gettw.figures.DiamondFigure", tool.name="Diamond",
-	tool.small.bundle="gettw.figures", tool.large.path="images/diamond64.png", tool.small.path="images/diamond16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.DiamondFigure", tool.name="Diamond", tool.small.bundle="gettw.figures", tool.large.path="images/diamond64.png", tool.small.path="images/diamond16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Diamond extends Shape {
 	readonly attr String shape = "Diamond";
 }
 
-@gmf.node(figure="gettw.figures.TriangleDownFigure", tool.name="Triangle Down",
-	tool.small.bundle="gettw.figures", tool.large.path="images/triangle_down64.png", tool.small.path="images/triangle_down16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleDownFigure", tool.name="Triangle Down", tool.small.bundle="gettw.figures", tool.large.path="images/triangle_down64.png", tool.small.path="images/triangle_down16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class TriangleDown extends Shape {
 	readonly attr String shape = "TriangleDown";
 }
 
-@gmf.node(figure="gettw.figures.TriangleLeftFigure", tool.name="Triangle Left",
-	tool.small.bundle="gettw.figures", tool.large.path="images/triangle_left64.png", tool.small.path="images/triangle_left16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleLeftFigure", tool.name="Triangle Left", tool.small.bundle="gettw.figures", tool.large.path="images/triangle_left64.png", tool.small.path="images/triangle_left16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class TriangleLeft extends Shape {
 	readonly attr String shape = "TriangleLeft";
 }
 
-@gmf.node(figure="gettw.figures.TriangleRightFigure", tool.name="Triangle Right",
-	tool.small.bundle="gettw.figures", tool.large.path="images/triangle_right64.png", tool.small.path="images/triangle_right16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleRightFigure", tool.name="Triangle Right", tool.small.bundle="gettw.figures", tool.large.path="images/triangle_right64.png", tool.small.path="images/triangle_right16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class TriangleRight extends Shape {
 	readonly attr String shape = "TriangleRight";
 }
 
-@gmf.node(figure="gettw.figures.ActorFigure", tool.name="Actor",
-	tool.small.bundle="gettw.figures", tool.large.path="images/actor64.png", tool.small.path="images/actor16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.ActorFigure", tool.name="Actor", tool.small.bundle="gettw.figures", tool.large.path="images/actor64.png", tool.small.path="images/actor16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Actor extends Shape {
 	readonly attr String shape = "Actor";
 }
 
-@gmf.node(figure="gettw.figures.PackageFigure", tool.name="Package",
-	tool.small.bundle="gettw.figures", tool.large.path="images/package64.png", tool.small.path="images/package16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.PackageFigure", tool.name="Package", tool.small.bundle="gettw.figures", tool.large.path="images/package64.png", tool.small.path="images/package16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Package extends Shape {
 	readonly attr String shape = "Package";
 }
 
-// LINKS ***********************************************************************************************************************************************************************
-class Link extends GraphElement {}
+class Link extends GraphElement {
+}
 
-
-
-// CUSTOM GRAPHICAL ELEMENTS ***************************************************************************************************************************************************
-@gmf.node(figure="gettw.figures.PictureFigure", tool.name="Picture",
-	tool.small.bundle="gettw.figures", tool.large.path="images/picture64.png", tool.small.path="images/picture16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.PictureFigure", tool.name="Picture", tool.small.bundle="gettw.figures", tool.large.path="images/picture64.png", tool.small.path="images/picture16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class Picture extends GraphElement {
-	attr String source_url; // it is just needed the name and file extension, e.g.: "circle1.jpg"
+	attr String source_url;
 	attr Integer width;
 	attr Integer height;
 	attr String text;
 }
 
-@gmf.node(figure="gettw.figures.ShapeFigure", tool.name="Shape",
-	tool.small.bundle="gettw.figures", tool.large.path="images/shape64.png", tool.small.path="images/shape16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.ShapeFigure", tool.name="Shape", tool.small.bundle="gettw.figures", tool.large.path="images/shape64.png", tool.small.path="images/shape16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class CustomShape extends GraphElement {
 	attr Shapes[1] shape;
 	attr String text;
 	attr Colors[1] color;
 	attr Colors[1] stroke;
-	attr Integer strokeWidth = 2;
-	attr Boolean sup_sub_indexes = false;
+	attr Integer strokeWidth = "2";
+	attr Boolean sup_sub_indexes = "false";
 	attr String text_subscript;
 	attr String text_superscript;
-	attr Boolean editable = false;
-	attr Boolean textIsHeader = false;
+	attr Boolean editable = "false";
+	attr Boolean textIsHeader = "false";
 }
 
-// LIST OF GOJS ARROWHEADS: https://gojs.net/latest/samples/arrowheads.html
-@gmf.node(figure="gettw.figures.LinkFigure", tool.name="Link",
-	tool.small.bundle="gettw.figures", tool.large.path="images/line64.png", tool.small.path="images/line16.png",
-	label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.LinkFigure", tool.name="Link", tool.small.bundle="gettw.figures", tool.large.path="images/line64.png", tool.small.path="images/line16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
 class CustomLink extends Link {
 	attr Colors[1] linkStrokeColor;
-	attr Integer linkStrokeWidth = 2;
+	attr Integer linkStrokeWidth = "2";
 	attr ArrowHeads[1] fromArrowShape;
 	attr Colors[1] fromArrowColor;
 	attr Colors[1] fromArrowStrokeColor;
-	attr Integer fromArrowStrokeWidth = 2;
+	attr Integer fromArrowStrokeWidth = "2";
 	attr ArrowHeads[1] toArrowShape;
 	attr Colors[1] toArrowColor;
 	attr Colors[1] toArrowStrokeColor;
-	attr Integer toArrowStrokeWidth = 2;
-	attr Boolean isDashed = false;
+	attr Integer toArrowStrokeWidth = "2";
+	attr Boolean isDashed = "false";
 	attr String text;
 }
 
-
-// ENUMERATIONS ****************************************************************************************************************************************************************
 enum Shapes {
-	None;
-	Ellipse;
-	Rectangle;
-	Square;
-	Triangle;
-	Actor;
-	ACvoltageSource;
-	AndGate;
-	Arrow;
-	AsteriskLine;
-	BarH;
-	BarV;
-	Border;
-	Buffer;
-	Capacitor;
-	Card;
-	Chevron;
-	Circle;
-	CircleLine;
-	Clock;
-	Cloud;
-	Club;
-	Cone1;
-	Cone2;
-	CreateRequest;
-	Cube1;
-	Cube2;
-	Curve1;
-	Curve2;
-	Curve3;
-	Curve4;
-	Cylinder1;
-	Cylinder2;
-	Cylinder3;
-	Cylinder4;
-	Database;
-	DataStorage;
-	DCvoltageSource;
-	Decagon;	
-	Diamond;
-	Diode;
-	DiskStorage;
-	Display;
-	DividedEvent;
-	DividedProcess;
-	Document;
-	Dodecagon;
-	DoubleArrow;
-	DoubleEndArrow;
-	ExternalOrganization;
-	ExternalProcess;
-	EightPointedStar;
-	EightPointedBurst;
-	File;
-	FivePointedBurst;
-	FivePointedStar;
-	Fragile;
-	FramedRectangle;
-	GenderMale;
-	GenderFemale;
-	Ground;
-	Heart;
-	Hexagon;
-	Heptagon;
-	HourGlass;
-	IBeamArrow;
-	Inductor;
-	InternalStorage;
-	Interrupt;
-	Inverter;
-	Junction;
-	Lightning;
-	Line1;
-	Line2;
-	LinedDocument;
-	LineH;
-	LineV;
-	LogicAnd;
-	LogicFalsity;
-	LogicForAll;
-	LogicIff;
-	LogicImplies;
-	LogicIntersect;
-	LogicIsDefinedAs;
-	LogicNot;
-	LogicOr;
-	LogicThereExists;
-	LogicTruth;
-	LogicUnion;
-	LogicXor;
-	MinusLine;
-	MultiDocument;
-	MultiProcess;
-	NandGate;
-	NinePointedBurst;
-	NinePointedStar;
-	Nonagon;
-	NorGate;
-	NotAllowed;
-	Octagon;
-	OrGate;	
-	Parallelogram;
-	Peace;
-	Pentagon;
-	Pie;
-	PiePiece;
-	PlusLine;
-	Pointer;
-	Prism1;
-	Prism2;
-	Procedure;
-	Process;
-	Pyramid1;
-	Pyramid2;
-	Resistor;
-	Ring;
-	RoundedPointer;
-	RoundedRectangle;
-	SevenPointedBurst;
-	SevenPointedStar;
-	SixPointedBurst;
-	SixPointedStar;
-	Spade;
-	SplitEndArrow;
-	StopSign;
-	SquareArrow;
-	TenPointedBurst;
-	TenPointedStar;
-	ThickCross;
-	ThickX;
-	ThinCross;
-	ThinX;
-	TriangleRight;
-	TriangleDown;
-	TriangleLeft;
-	Trapezoid;
-	YinYang;
-	XLine;
-	XnorGate;
-	XorGate;
+	None = 0;
+	Ellipse = 1;
+	Rectangle = 2;
+	Square = 3;
+	Triangle = 4;
+	Actor = 5;
+	ACvoltageSource = 6;
+	AndGate = 7;
+	Arrow = 8;
+	AsteriskLine = 9;
+	BarH = 10;
+	BarV = 11;
+	Border = 12;
+	Buffer = 13;
+	Capacitor = 14;
+	Card = 15;
+	Chevron = 16;
+	Circle = 17;
+	CircleLine = 18;
+	Clock = 19;
+	Cloud = 20;
+	Club = 21;
+	Cone1 = 22;
+	Cone2 = 23;
+	CreateRequest = 24;
+	Cube1 = 25;
+	Cube2 = 26;
+	Curve1 = 27;
+	Curve2 = 28;
+	Curve3 = 29;
+	Curve4 = 30;
+	Cylinder1 = 31;
+	Cylinder2 = 32;
+	Cylinder3 = 33;
+	Cylinder4 = 34;
+	Database = 35;
+	DataStorage = 36;
+	DCvoltageSource = 37;
+	Decagon = 38;
+	Diamond = 39;
+	Diode = 40;
+	DiskStorage = 41;
+	Display = 42;
+	DividedEvent = 43;
+	DividedProcess = 44;
+	Document = 45;
+	Dodecagon = 46;
+	DoubleArrow = 47;
+	DoubleEndArrow = 48;
+	ExternalOrganization = 49;
+	ExternalProcess = 50;
+	EightPointedStar = 51;
+	EightPointedBurst = 52;
+	File = 53;
+	FivePointedBurst = 54;
+	FivePointedStar = 55;
+	Fragile = 56;
+	FramedRectangle = 57;
+	GenderMale = 58;
+	GenderFemale = 59;
+	Ground = 60;
+	Heart = 61;
+	Hexagon = 62;
+	Heptagon = 63;
+	HourGlass = 64;
+	IBeamArrow = 65;
+	Inductor = 66;
+	InternalStorage = 67;
+	Interrupt = 68;
+	Inverter = 69;
+	Junction = 70;
+	Lightning = 71;
+	Line1 = 72;
+	Line2 = 73;
+	LinedDocument = 74;
+	LineH = 75;
+	LineV = 76;
+	LogicAnd = 77;
+	LogicFalsity = 78;
+	LogicForAll = 79;
+	LogicIff = 80;
+	LogicImplies = 81;
+	LogicIntersect = 82;
+	LogicIsDefinedAs = 83;
+	LogicNot = 84;
+	LogicOr = 85;
+	LogicThereExists = 86;
+	LogicTruth = 87;
+	LogicUnion = 88;
+	LogicXor = 89;
+	MinusLine = 90;
+	MultiDocument = 91;
+	MultiProcess = 92;
+	NandGate = 93;
+	NinePointedBurst = 94;
+	NinePointedStar = 95;
+	Nonagon = 96;
+	NorGate = 97;
+	NotAllowed = 98;
+	Octagon = 99;
+	OrGate = 100;
+	Parallelogram = 101;
+	Peace = 102;
+	Pentagon = 103;
+	Pie = 104;
+	PiePiece = 105;
+	PlusLine = 106;
+	Pointer = 107;
+	Prism1 = 108;
+	Prism2 = 109;
+	Procedure = 110;
+	Process = 111;
+	Pyramid1 = 112;
+	Pyramid2 = 113;
+	Resistor = 114;
+	Ring = 115;
+	RoundedPointer = 116;
+	RoundedRectangle = 117;
+	SevenPointedBurst = 118;
+	SevenPointedStar = 119;
+	SixPointedBurst = 120;
+	SixPointedStar = 121;
+	Spade = 122;
+	SplitEndArrow = 123;
+	StopSign = 124;
+	SquareArrow = 125;
+	TenPointedBurst = 126;
+	TenPointedStar = 127;
+	ThickCross = 128;
+	ThickX = 129;
+	ThinCross = 130;
+	ThinX = 131;
+	TriangleRight = 132;
+	TriangleDown = 133;
+	TriangleLeft = 134;
+	Trapezoid = 135;
+	YinYang = 136;
+	XLine = 137;
+	XnorGate = 138;
+	XorGate = 139;
 }
 
 enum ArrowHeads {
-	None;
-	Standard;
-	AccelerationArrow;
-	BackSlash;
-	Backward;
-	BackwardBoomerang;
-	BackwardCircleFork;
-	BackwardCircleLineFork;
-	BackwardDoubleFeathers;
-	BackwardFeather;
-	BackwardFork;
-	BackwardHalfTriangleBottom;
-	BackwardHalfTriangleTop;
-	BackwardLineFork;
-	BackwardOpenTriangle;
-	BackwardOppenTriangleBottom;
-	BackwardOpenTriangleLine;
-	BackwardOpenTriangleTop;
-	BackwardSemiCircle;
-	BackwardTriangle;
-	BackwardTripleFeathers;
-	BackwardV;
-	BigEndArrow;
-	Block;
-	Boomerang;
-	BoxArrow;
-	Chevron;
-	Circle;
-	CircleEndedArrow;
-	CircleFork;
-	CircleLine;
-	CircleLineFork;
-	ConcaveTailArrow;
-	Diamond;
-	DiamondCircle;
-	DoubleBackSlash;
-	DoubleFeathers;
-	DoubleForwardSlash;
-	DoubleLine;
-	DoubleLineCircle;
-	DoubleTriangle;
-	DynamicWidthArrow;
-	EquilibriumArrow;
-	FastForward;
-	Feather;
-	Fork;	
-	ForwardSemiCircle;
-	ForwardSlack;
-	HalfArrowTop;
-	HalfArrowBottom;
-	HalfTriangleBottom;
-	HalfTriangleTop;
-	Kite;
-	Line;
-	LineCircle;
-	LineFork;
-	NormalArrow;
-	OpenRightTriangleTop;
-	OpenRightTriangleBottom;
-	OpenTriangle;
-	OpenTriangleLine;
-	OpenTriangleTop;
-	OpenTriangleBottom;
-	OpposingDirectionDoubleArrow;
-	PartialDoubleTriangle;
-	PentagonArrow;
-	PlusCircle;
-	RoundedTriangle;
-	SidewaysV;
-	SimpleArrow;
-	StretchedDiamond;
-	StretchedChevron;
-	TailedNormalArrow;
-	Triangle;
-	TriangleLine;
-	TripleBackSlash;
-	TripleFeathers;
-	TripleForwardSlash;
-	TripleLine;
-	TripleLineCircle;
-	X;
+	None = 0;
+	Standard = 1;
+	AccelerationArrow = 2;
+	BackSlash = 3;
+	Backward = 4;
+	BackwardBoomerang = 5;
+	BackwardCircleFork = 6;
+	BackwardCircleLineFork = 7;
+	BackwardDoubleFeathers = 8;
+	BackwardFeather = 9;
+	BackwardFork = 10;
+	BackwardHalfTriangleBottom = 11;
+	BackwardHalfTriangleTop = 12;
+	BackwardLineFork = 13;
+	BackwardOpenTriangle = 14;
+	BackwardOppenTriangleBottom = 15;
+	BackwardOpenTriangleLine = 16;
+	BackwardOpenTriangleTop = 17;
+	BackwardSemiCircle = 18;
+	BackwardTriangle = 19;
+	BackwardTripleFeathers = 20;
+	BackwardV = 21;
+	BigEndArrow = 22;
+	Block = 23;
+	Boomerang = 24;
+	BoxArrow = 25;
+	Chevron = 26;
+	Circle = 27;
+	CircleEndedArrow = 28;
+	CircleFork = 29;
+	CircleLine = 30;
+	CircleLineFork = 31;
+	ConcaveTailArrow = 32;
+	Diamond = 33;
+	DiamondCircle = 34;
+	DoubleBackSlash = 35;
+	DoubleFeathers = 36;
+	DoubleForwardSlash = 37;
+	DoubleLine = 38;
+	DoubleLineCircle = 39;
+	DoubleTriangle = 40;
+	DynamicWidthArrow = 41;
+	EquilibriumArrow = 42;
+	FastForward = 43;
+	Feather = 44;
+	Fork = 45;
+	ForwardSemiCircle = 46;
+	ForwardSlack = 47;
+	HalfArrowTop = 48;
+	HalfArrowBottom = 49;
+	HalfTriangleBottom = 50;
+	HalfTriangleTop = 51;
+	Kite = 52;
+	Line = 53;
+	LineCircle = 54;
+	LineFork = 55;
+	NormalArrow = 56;
+	OpenRightTriangleTop = 57;
+	OpenRightTriangleBottom = 58;
+	OpenTriangle = 59;
+	OpenTriangleLine = 60;
+	OpenTriangleTop = 61;
+	OpenTriangleBottom = 62;
+	OpposingDirectionDoubleArrow = 63;
+	PartialDoubleTriangle = 64;
+	PentagonArrow = 65;
+	PlusCircle = 66;
+	RoundedTriangle = 67;
+	SidewaysV = 68;
+	SimpleArrow = 69;
+	StretchedDiamond = 70;
+	StretchedChevron = 71;
+	TailedNormalArrow = 72;
+	Triangle = 73;
+	TriangleLine = 74;
+	TripleBackSlash = 75;
+	TripleFeathers = 76;
+	TripleForwardSlash = 77;
+	TripleLine = 78;
+	TripleLineCircle = 79;
+	X = 80;
 }
 
 enum Colors {
-	black;
-	blue;
-	lightblue;
-	darkblue;
-	gray;
-	lightgray;
-	darkgray;
-	green;
-	lightgreen;
-	darkgreen;
-	orange;
-	lightorange;
-	darkorange;
-	pink;
-	purple;
-	red;
-	lightred;
-	darkred;
-	transparent;
-	yellow;
-	lightyellow;
-	darkyellow;
-	white;
+	black = 0;
+	blue = 1;
+	lightblue = 2;
+	darkblue = 3;
+	gray = 4;
+	lightgray = 5;
+	darkgray = 6;
+	green = 7;
+	lightgreen = 8;
+	darkgreen = 9;
+	orange = 10;
+	lightorange = 11;
+	darkorange = 12;
+	pink = 13;
+	purple = 14;
+	red = 15;
+	lightred = 16;
+	darkred = 17;
+	transparent = 18;
+	yellow = 19;
+	lightyellow = 20;
+	darkyellow = 21;
+	white = 22;
 }
+

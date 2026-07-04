@@ -1,7 +1,17 @@
+pre {
+    var startTime = Native("java.lang.System").currentTimeMillis();
+}
+
 rule getFinalJS {
 	pre {
   		var jsDir : String = "../js/";
 	}
 	template: "./gettw_template.egl"
 	target: jsDir+"gettw.js" 
+}
+
+post {
+    var endTime = Native("java.lang.System").currentTimeMillis();
+    var duration = endTime - startTime;
+    ("Duracion: " + duration + " ms").println();
 }
