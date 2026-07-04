@@ -20,35 +20,35 @@ context CustomShape {
         guard : self.sup_sub_indexes == true
         check : (self.text_superscript.isDefined() and self.text_superscript <> "") or 
                 (self.text_subscript.isDefined() and self.text_subscript <> "")   
-        message : "You have enabled subscripts or superscripts in " + self.texto + ", but left them blank."
+        message : "You have enabled subscripts or superscripts in " + self.text + ", but left them blank."
     }
 }
 
-// El grosor de la figura no puede contener un numero negativo
+// El grosor de la figura no puede contener un numero negativo o cero
 context Shape {
     constraint PositiveStrokeShape {
-        check : self.strokeWidth >= 0
+        check : self.strokeWidth > 0
         message : "The stroke in " + self.text + " cannot be a negative number."
     }
 }
 
-// El grosor de la figura customizada no puede contener un numero negativo
+// El grosor de la figura customizada no puede contener un numero negativo o cero
 context CustomShape {
     constraint PositiveStrokeCustomShape {
-        check : self.strokeWidth >= 0
+        check : self.strokeWidth > 0
         message : "The stroke in " + self.text + " cannot be a negative number."
     }
 }
 
-// El grosor del enlace no puede contener un numero negativo
+// El grosor del enlace no puede contener un numero negativo o cero
 context CustomLink {
     constraint PositiveStrokeCustomLink {
-        check : self.toArrowStrokeWidth >= 0 or self.fromArrowStrokeWidth >= 0
+        check : (self.toArrowStrokeWidth > 0) and (self.fromArrowStrokeWidth > 0) and (self.linkStrokeWidth > 0)
         message : "The stroke in " + self.text + " cannot be a negative number."
     }
 }
 
-// Las dimensiones de una imagen no pueden ser un numero negativo
+// Las dimensiones de una imagen no pueden ser un numero negativo o cero
 context Picture {
     constraint PositiveWidthAndHeight {
         check : self.width > 0 and self.height > 0
@@ -61,7 +61,7 @@ context Picture {
 context Shape {
     constraint UniqueName {
         check : Shape.all.select(f | f.text == self.text).size() == 1
-        message : "There is allready another shape called " + self.texto + ", names must be unique."
+        message : "There is allready another shape called " + self.text + ", names must be unique."
     }
 }
 
