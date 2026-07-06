@@ -4,6 +4,7 @@ GETTW es una herramienta de desarrollo basada en modelos diseñada para generar 
 <h2 align=> Estructura del código fuente </h2>
 A continuación, se representa la estructura del código fuente de la herramienta GETTW:
 
+```text
 GETTW/
 ├── gettw/model/                         # En este directorio se encuentra los archivos que van a generar el editor GMF
 │   ├── gettw.emf                        # Se diseña y desarrolla los nodos y enlaces de la paleta
