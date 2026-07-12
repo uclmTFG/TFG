@@ -61,7 +61,7 @@ context Picture {
 context Shape {
     constraint UniqueName {
         check : Shape.all.select(f | f.text == self.text).size() == 1
-        message : "There is allready another shape called " + self.text + ", names must be unique."
+        message : "There are several figures with the same name " + self.text + ", names must be unique."
     }
 }
 

@@ -19,14 +19,11 @@ var toolGroupConnections = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Connecti
 
 var ShapesObjects : Sequence = Sequence{"Rectangle","Rounded Rectangle","Ellipse","Triangle","Triangle Down", "Triangle Left",
 	"Triangle Right", "Diamond", "Sep","Actor","Package"};
-//var SociogramConnections : Sequence = Sequence{"Acting","Inheritance","Association"};
 var TextObjects : Sequence = Sequence{"Text","Text w Indexes", "Text w Superscript", "Text w Subscript"};
-//var LearningConnections : Sequence = Sequence{"Traceability","Sep","Enabling w/o Information","Enabling w Information","Choice","Concurrency"};
 var CustomElementsObjects : Sequence = Sequence {"Picture","Shape","Link"};
 
 
 objectsConnectionsToPalette(ShapesObjects, toolGroupShapes, true);
-//objectsConnectionsToPalette(SociogramConnections, toolGroupSociogram, false);
 objectsConnectionsToPalette(TextObjects, toolGroupText, true);
 objectsConnectionsToPalette(CustomElementsObjects, toolGroupCustomElements, true);
 
