@@ -1,7 +1,0 @@
-diff --git gettw.diagram/src/gettw/diagram/edit/parts/RoundedRectangleEditPart.java gettw.diagram/src/gettw/diagram/edit/parts/RoundedRectangleEditPart.java
-index 1e66957..b241750 100644
---- gettw.diagram/src/gettw/diagram/edit/parts/RoundedRectangleEditPart.java
-+++ gettw.diagram/src/gettw/diagram/edit/parts/RoundedRectangleEditPart.java
-@@ -132,1 +132,1 @@
--			locator.setBorderItemOffset(new Dimension(-20, -20));
-+			locator.setBorderItemOffset(new Dimension(-8, -8));

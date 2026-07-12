@@ -588,36 +588,28 @@ function createPalettes(nodeSize) {
 			linkTemplateMap: diagram.linkTemplateMap,	// se asocian las plantillas de los enlaces
 			model: new go.GraphLinksModel([  // contenidos de la paleta
 		// nodos, para cada nodo imprime el nodo y con las propiedades que correspondan
-		[%for (p in Picture.all){%]
-			{ text: "[%=p.text%]", source: "images/[%=p.source_url%]", desiredSize: new go.Size([%=p.width%], [%=p.height%]), category: "picture_text" }, 
-		[%}%]
-		[%for (s in Shape.all){%]
-			{ text: "[%=s.text%]", figure: "[%=s.shape%]", fill: "[%=s.color%]", stroke: "[%=s.stroke%]", strokeWidth: "[%=s.strokeWidth%]", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
-			editable: [%=s.editable%], width: nodeSize/2, height: nodeSize/2, [% if (s.textIsHeader) {%][%="alignment: go.Spot.TopLeft,"%][%} else {%][%=""%][%}%] category: "shape" }, 
-		[%}%]
-		[%for (cs in CustomShape.all){%]
-			{ text: "[%=cs.text%]", superindex: "[%=cs.text_superscript%]", subindex: "[%=cs.text_subscript%]", figure: "[%=cs.shape%]", fill: "[%=cs.color%]", 
-			stroke: "[%=cs.stroke%]", strokeWidth: "[%=cs.strokeWidth%]", font: "16pt Roboto, sans-serif, Arial, Helvetica", editable: [%=cs.editable%], width: [% if (cs.shape = Shapes#Ellipse) {%][%="nodeSize/2"%][%} else {%][%="nodeSize/3"%][%}%], height: nodeSize/3,
-			[% if (cs.textIsHeader) {%][%="alignment: go.Spot.TopLeft,"%][%} else {%][%=""%][%}%] category: "[% if (cs.sup_sub_indexes) {%][%="shape_subsuperindexes"%][%} else {%][%="shape"%][%}%]" }, 
-		[%}%]
-		[%for (t in Text.all){%]
-			{ text: "[%=t.text%]", category: "textblock" }, 
-		[%}%]
-		[%for (sup in Superscript.all){%]
-			{ text: "[%=sup.text%]", superindex: "[%=sup.superscript%]", category: "textblock_superindex" }, 
-		[%}%]
-		[%for (sub in Subscript.all){%]
-			{ text: "[%=sub.text%]", subindex: "[%=sub.subscript%]", category: "textblock_subindex" }, 
-		[%}%]
-		[%for (supsub in TextIndex.all){%]
-			{ text: "[%=supsub.text%]", superindex: "[%=supsub.superscript%]", subindex: "[%=supsub.subscript%]", category: "textblock_subsuperindexes" }, 
-		[%}%]
+			{ text: "Actor", figure: "Actor", fill: "white", stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
+			editable: true, width: nodeSize/2, height: nodeSize/2,  category: "shape" }, 
+			{ text: "Package", figure: "Package", fill: "lightblue", stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
+			editable: false, width: nodeSize/2, height: nodeSize/2, alignment: go.Spot.TopLeft, category: "shape" }, 
+			{ text: "System", figure: "Rectangle", fill: "lightgray", stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
+			editable: false, width: nodeSize/2, height: nodeSize/2, alignment: go.Spot.TopLeft, category: "shape" }, 
+			{ text: "Use case", superindex: "", subindex: "", figure: "Ellipse", fill: "lightblue", 
+			stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", editable: true, width: nodeSize/2, height: nodeSize/3,
+ category: "shape" }, 
 	  ], [ // enlaces
-	    [%for (l in CustomLink.all){%]
-	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "[%=l.linkStrokeColor%]", linkStrokeWidth: "[%=l.linkStrokeWidth%]"[%if (l.isDashed) {%][%=", dash: \"Dash Line\", strokeDashArray: [3, 3],"%][%} else {%][%=","%][%}%] 
-	    	fromArrowShape: "[% if (l.fromArrowShape = ArrowHeads#None) {%][%=""%][%} else {%][%=l.fromArrowShape%][%}%]", fromArrowColor: "[%=l.fromArrowColor%]", fromArrowStrokeColor: "[%=l.fromArrowStrokeColor%]", fromArrowStrokeWidth: "[%=l.fromArrowStrokeWidth%]", 
-	    	toArrowShape: "[% if (l.toArrowShape = ArrowHeads#None) {%][%=""%][%} else {%][%=l.toArrowShape%][%}%]", toArrowColor: "[%=l.toArrowColor%]", toArrowStrokeColor: "[%=l.toArrowStrokeColor%]", toArrowStrokeWidth: "[%=l.toArrowStrokeWidth%]", text: "[%=l.text%]", category: "link" }, 
-		[%}%]
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "", toArrowColor: "black", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "", category: "link" }, 
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "Triangle", toArrowColor: "white", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "", category: "link" }, 
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", dash: "Dash Line", strokeDashArray: [3, 3], 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "OpenTriangle", toArrowColor: "black", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "extends", category: "link" }, 
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", dash: "Dash Line", strokeDashArray: [3, 3], 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "OpenTriangle", toArrowColor: "black", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "includes", category: "link" }, 
 		  ])
 		}
 	);

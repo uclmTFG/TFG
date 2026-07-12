@@ -2,6 +2,7 @@ pre {
     var startTime = Native("java.lang.System").currentTimeMillis();
 }
 
+// Declara una regla para crear el archivo generado en la ruta correspondiente
 rule getFinalJS {
 	pre {
   		var jsDir : String = "../js/";

@@ -1,5 +1,5 @@
-<!-- Copyright 2024 by CHICO-GEAM Research Group. -->
 <!-- <!DOCTYPE html> -->
+
 <html lang="en">
 	<head>
 		<meta charset="utf-8"/>
@@ -16,7 +16,7 @@
 		
 		<header>
 			<h1>Auto-generated Graphical Editor<h1>
-			<input type="file" id="fileInput" accept=".json" style="display: none;" />
+			<input type="file" id="fileInput" accept=".json" style="display: none;" data-togetherjs-ignore />
 			<button class="myButton" onclick="selectFile()">Load</button>	
 			<button class="myButton" onclick="saveModelToFile()">Save</button>
 			<button class="myButton" onclick="printImage()">Print</button>
@@ -55,10 +55,10 @@
 		</footer>
 		
 		<script>
-			// var TogetherJSConfig_autoStart = true; 
-			var TogetherJSConfig_suppressJoinConfirmation = false;
-			var TogetherJSConfig_dontShowClicks = ":not(canvas"
-			TogetherJSConfig_hubBase = "https://pickled-nervous-bar.glitch.me/";
+			var TogetherJSConfig_dontShowClicks = ":not(canvas)";
+		    var TogetherJSConfig_hubBase = "http://" + window.location.hostname + ":8080/";
+		    var TogetherJSConfig_findRoom = "tfg_sala_principal";
+		    var TogetherJSConfig_suppressJoinConfirmation = true;
 		</script>
 		<script src="https://togetherjs.com/togetherjs-min.js"></script>
 		<script src="gojs/go-debug.js"></script>
