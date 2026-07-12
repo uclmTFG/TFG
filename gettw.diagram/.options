@@ -1,0 +1,7 @@
+# Tracing options for the gettw.diagram plug-in
+
+# Common issues
+gettw.diagram/debug=false
+
+# Visual IDs
+gettw.diagram/debug/visualID=false
