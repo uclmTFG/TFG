@@ -2,36 +2,48 @@
 @namespace(uri="gettw", prefix="")
 package gettw;
 
+// Define el diagrama y los elementos
 @gmf.diagram
 class GETTWDiagram {
 	val GraphElement[*] elements;
 }
 
+// Todos los elementos tienen el atributo id
 abstract class GraphElement {
 	attr String id_;
 }
 
-@gmf.node(figure="gettw.figures.TextFigure", tool.name="Text", tool.small.bundle="gettw.figures", tool.large.path="images/text64.png", tool.small.path="images/text16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+// Nodos de texto
+@gmf.node(figure="gettw.figures.TextFigure", tool.name="Text", tool.small.bundle="gettw.figures", 
+tool.large.path="images/text64.png", tool.small.path="images/text16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Text extends GraphElement {
 	attr String text;
 }
 
-@gmf.node(figure="gettw.figures.SuperscriptFigure", tool.name="Text w Superscript", tool.small.bundle="gettw.figures", tool.large.path="images/superscript64.png", tool.small.path="images/superscript16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.SuperscriptFigure", tool.name="Text w Superscript", tool.small.bundle="gettw.figures", 
+tool.large.path="images/superscript64.png", tool.small.path="images/superscript16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Superscript extends Text {
 	attr String superscript;
 }
 
-@gmf.node(figure="gettw.figures.SubscriptFigure", tool.name="Text w Subscript", tool.small.bundle="gettw.figures", tool.large.path="images/subscript64.png", tool.small.path="images/subscript16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.SubscriptFigure", tool.name="Text w Subscript", tool.small.bundle="gettw.figures", 
+tool.large.path="images/subscript64.png", tool.small.path="images/subscript16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Subscript extends Text {
 	attr String subscript;
 }
 
-@gmf.node(figure="gettw.figures.TextIndexFigure", tool.name="Text w Indexes", tool.small.bundle="gettw.figures", tool.large.path="images/textindex64.png", tool.small.path="images/textindex16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TextIndexFigure", tool.name="Text w Indexes", tool.small.bundle="gettw.figures", 
+tool.large.path="images/textindex64.png", tool.small.path="images/textindex16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class TextIndex extends Text {
 	attr String subscript;
 	attr String superscript;
 }
 
+// Clase de las formas que contienen las mismas propiedades
 class Shape extends GraphElement {
 	attr String text;
 	attr Colors[1] color;
@@ -41,52 +53,73 @@ class Shape extends GraphElement {
 	attr Boolean textIsHeader = "false";
 }
 
-@gmf.node(figure="gettw.figures.RectangleFigure", tool.name="Rectangle", tool.small.bundle="gettw.figures", tool.large.path="images/rectangle64.png", tool.small.path="images/rectangle16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+// Nodos de figuras
+@gmf.node(figure="gettw.figures.RectangleFigure", tool.name="Rectangle", tool.small.bundle="gettw.figures", 
+tool.large.path="images/rectangle64.png", tool.small.path="images/rectangle16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Rectangle extends Shape {
 	readonly attr String shape = "Rectangle";
 }
 
-@gmf.node(figure="gettw.figures.RoundedRectangleFigure", tool.name="Rounded Rectangle", tool.small.bundle="gettw.figures", tool.large.path="images/rounded_rectangle64.png", tool.small.path="images/rounded_rectangle16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.RoundedRectangleFigure", tool.name="Rounded Rectangle", tool.small.bundle="gettw.figures", 
+tool.large.path="images/rounded_rectangle64.png", tool.small.path="images/rounded_rectangle16.png", label="id_", 
+label.icon="false", label.placement="external", resizable="false", size="64,64")
 class RoundedRectangle extends Shape {
 	readonly attr String shape = "RoundedRectangle";
 }
 
-@gmf.node(figure="gettw.figures.EllipseFigure", tool.name="Ellipse", tool.small.bundle="gettw.figures", tool.large.path="images/ellipse64.png", tool.small.path="images/ellipse16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.EllipseFigure", tool.name="Ellipse", tool.small.bundle="gettw.figures", 
+tool.large.path="images/ellipse64.png", tool.small.path="images/ellipse16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Ellipse extends Shape {
 	readonly attr String shape = "Ellipse";
 }
 
-@gmf.node(figure="gettw.figures.TriangleFigure", tool.name="Triangle", tool.small.bundle="gettw.figures", tool.large.path="images/triangle64.png", tool.small.path="images/triangle16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleFigure", tool.name="Triangle", tool.small.bundle="gettw.figures", 
+tool.large.path="images/triangle64.png", tool.small.path="images/triangle16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Triangle extends Shape {
 	readonly attr String shape = "Triangle";
 }
 
-@gmf.node(figure="gettw.figures.DiamondFigure", tool.name="Diamond", tool.small.bundle="gettw.figures", tool.large.path="images/diamond64.png", tool.small.path="images/diamond16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.DiamondFigure", tool.name="Diamond", tool.small.bundle="gettw.figures", 
+tool.large.path="images/diamond64.png", tool.small.path="images/diamond16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Diamond extends Shape {
 	readonly attr String shape = "Diamond";
 }
 
-@gmf.node(figure="gettw.figures.TriangleDownFigure", tool.name="Triangle Down", tool.small.bundle="gettw.figures", tool.large.path="images/triangle_down64.png", tool.small.path="images/triangle_down16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleDownFigure", tool.name="Triangle Down", tool.small.bundle="gettw.figures", 
+tool.large.path="images/triangle_down64.png", tool.small.path="images/triangle_down16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class TriangleDown extends Shape {
 	readonly attr String shape = "TriangleDown";
 }
 
-@gmf.node(figure="gettw.figures.TriangleLeftFigure", tool.name="Triangle Left", tool.small.bundle="gettw.figures", tool.large.path="images/triangle_left64.png", tool.small.path="images/triangle_left16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleLeftFigure", tool.name="Triangle Left", tool.small.bundle="gettw.figures", 
+tool.large.path="images/triangle_left64.png", tool.small.path="images/triangle_left16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class TriangleLeft extends Shape {
 	readonly attr String shape = "TriangleLeft";
 }
 
-@gmf.node(figure="gettw.figures.TriangleRightFigure", tool.name="Triangle Right", tool.small.bundle="gettw.figures", tool.large.path="images/triangle_right64.png", tool.small.path="images/triangle_right16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.TriangleRightFigure", tool.name="Triangle Right", tool.small.bundle="gettw.figures", 
+tool.large.path="images/triangle_right64.png", tool.small.path="images/triangle_right16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class TriangleRight extends Shape {
 	readonly attr String shape = "TriangleRight";
 }
 
-@gmf.node(figure="gettw.figures.ActorFigure", tool.name="Actor", tool.small.bundle="gettw.figures", tool.large.path="images/actor64.png", tool.small.path="images/actor16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.ActorFigure", tool.name="Actor", tool.small.bundle="gettw.figures", 
+tool.large.path="images/actor64.png", tool.small.path="images/actor16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Actor extends Shape {
 	readonly attr String shape = "Actor";
 }
 
-@gmf.node(figure="gettw.figures.PackageFigure", tool.name="Package", tool.small.bundle="gettw.figures", tool.large.path="images/package64.png", tool.small.path="images/package16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+@gmf.node(figure="gettw.figures.PackageFigure", tool.name="Package", tool.small.bundle="gettw.figures", 
+tool.large.path="images/package64.png", tool.small.path="images/package16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Package extends Shape {
 	readonly attr String shape = "Package";
 }
@@ -94,7 +127,10 @@ class Package extends Shape {
 class Link extends GraphElement {
 }
 
-@gmf.node(figure="gettw.figures.PictureFigure", tool.name="Picture", tool.small.bundle="gettw.figures", tool.large.path="images/picture64.png", tool.small.path="images/picture16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+// Nodo de imagen
+@gmf.node(figure="gettw.figures.PictureFigure", tool.name="Picture", tool.small.bundle="gettw.figures", 
+tool.large.path="images/picture64.png", tool.small.path="images/picture16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class Picture extends GraphElement {
 	attr String source_url;
 	attr Integer width;
@@ -102,7 +138,10 @@ class Picture extends GraphElement {
 	attr String text;
 }
 
-@gmf.node(figure="gettw.figures.ShapeFigure", tool.name="Shape", tool.small.bundle="gettw.figures", tool.large.path="images/shape64.png", tool.small.path="images/shape16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+// Nodo de figura personalizada
+@gmf.node(figure="gettw.figures.ShapeFigure", tool.name="Shape", tool.small.bundle="gettw.figures", 
+tool.large.path="images/shape64.png", tool.small.path="images/shape16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class CustomShape extends GraphElement {
 	attr Shapes[1] shape;
 	attr String text;
@@ -116,7 +155,10 @@ class CustomShape extends GraphElement {
 	attr Boolean textIsHeader = "false";
 }
 
-@gmf.node(figure="gettw.figures.LinkFigure", tool.name="Link", tool.small.bundle="gettw.figures", tool.large.path="images/line64.png", tool.small.path="images/line16.png", label="id_", label.icon="false", label.placement="external", resizable="false", size="64,64")
+// Nodo de enlace personalizado
+@gmf.node(figure="gettw.figures.LinkFigure", tool.name="Link", tool.small.bundle="gettw.figures", 
+tool.large.path="images/line64.png", tool.small.path="images/line16.png", label="id_", label.icon="false", 
+label.placement="external", resizable="false", size="64,64")
 class CustomLink extends Link {
 	attr Colors[1] linkStrokeColor;
 	attr Integer linkStrokeWidth = "2";
@@ -132,6 +174,7 @@ class CustomLink extends Link {
 	attr String text;
 }
 
+// Enumeraciones
 enum Shapes {
 	None = 0;
 	Ellipse = 1;
