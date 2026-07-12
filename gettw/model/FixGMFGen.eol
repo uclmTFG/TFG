@@ -1,3 +1,5 @@
+// Busca el primer elemento de .gmfgen 
 var genPlugin = GmfGen!GenPlugin.all.first();
 
+// Accede a la lista de plugins que depende para indicar el proyecto gettw.figures 
 genPlugin.requiredPlugins.add("gettw.figures");

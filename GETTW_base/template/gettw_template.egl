@@ -557,8 +557,8 @@ $(go.Link,
 		new go.Binding("text").makeTwoWay())
 );
 
+// Guarda las plantillas de texto
 var linksTemplates = new go.Map();
-// plantillasEnlaces.add("unaFlecha", plantillaEnlaceUnaFlecha);
 linksTemplates.add("link", linksTemplate);
 diagram.linkTemplateMap = linksTemplates;
 
@@ -663,6 +663,7 @@ function selectFile() {
 	fileInput.click();
 }
 
+// Lee el modelo que se ha introducido como entrada
 document.getElementById("fileInput").addEventListener("change", function(event) {
     const selectedFile = event.target.files[0];
 
@@ -683,26 +684,29 @@ document.getElementById("fileInput").addEventListener("change", function(event) 
 	COMUNICACIÓN CLIENTE-SERVIDOR
 		--- TOGETHERJS ---
 ***/
+
+var isSyncing = false;
+
+// Envía los cambios que se realicen
 diagram.model.addChangedListener(function(e) {
-	if (e.isTransactionFinished) {
-		var json = e.model.toIncrementalJson(e);
-		
-		if (TogetherJS.running) {
-			TogetherJS.send({
-				type: "content-send",
-				output: json
-			});
-			console.log(json)
-		}
-	}
+	
+    // Cuando un usuario ha soltado el nodo
+    if (e.isTransactionFinished && !isSyncing) {
+    
+    	// Encapsulo lo que se ha modificado, no todo el diagrama
+        var json = e.model.toIncrementalJson(e);
+        
+        // Envía el contiendo json con solo el nodo modificado
+        TogetherJS.send({
+            type: "content-send",
+            output: json
+        });
+    }
 });
 
+// Recibe los cambios que se realicen
 TogetherJS.hub.on("content-send", function(msg) {
-	if (!msg.sameUrl) {
-		return;
-	}
-	diagram.model.applyIncrementalJson(msg.output);
-	//diagram.layoutDiagram(true);
-	//diagram.isModified = false;
-	console.log(msg.output);
+    isSyncing = true; // Señal de que está sincronizando
+    diagram.model.applyIncrementalJson(msg.output); // Dibuja los cambios del otro usuario en el diagrama
+    isSyncing = false; // Ha finalizado la sincronización
 });

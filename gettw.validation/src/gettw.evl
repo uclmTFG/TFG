@@ -14,7 +14,7 @@ context Shape {
     }
 }
 
-// Booleano indices activado pero sin introducir el texto de superscript O subscript
+// Booleano indices activado pero sin introducir el texto de superscript o subscript
 context CustomShape {
     critique EmptyIndices {
         guard : self.sup_sub_indexes == true
@@ -24,7 +24,7 @@ context CustomShape {
     }
 }
 
-// El grosor de la figura no puede contener un numero negativo o cero
+// El grosor o borde de la figura no puede contener un numero negativo o cero
 context Shape {
     constraint PositiveStrokeShape {
         check : self.strokeWidth > 0
@@ -32,7 +32,7 @@ context Shape {
     }
 }
 
-// El grosor de la figura customizada no puede contener un numero negativo o cero
+// El grosor o borde de la figura customizada no puede contener un numero negativo o cero
 context CustomShape {
     constraint PositiveStrokeCustomShape {
         check : self.strokeWidth > 0
@@ -40,7 +40,7 @@ context CustomShape {
     }
 }
 
-// El grosor del enlace no puede contener un numero negativo o cero
+// El grosor o borde del enlace no puede contener un numero negativo o cero
 context CustomLink {
     constraint PositiveStrokeCustomLink {
         check : (self.toArrowStrokeWidth > 0) and (self.fromArrowStrokeWidth > 0) and (self.linkStrokeWidth > 0)
@@ -56,14 +56,29 @@ context Picture {
     }
 }
 
-// Busca el nombre de todas las figuras para que no se dupliquen los nombres
+// Busca el texto de todas las figuras para que no se dupliquen los nombres
 // Cuenta los textos con los mismos nombres, si hay mas de 1, ya se ha duplicado
 context Shape {
-    constraint UniqueName {
+    constraint UniqueNameShape {
         check : Shape.all.select(f | f.text == self.text).size() == 1
-        message : "There is allready another shape called " + self.text + ", names must be unique."
+        message : "There are several figures with the same name " + self.text + ", names must be unique."
     }
 }
 
+// Busca el texto de todos los nodos tipo texto para que no se dupliquen los nombres
+// Cuenta las propiedades de los textos con los mismos nombres, si hay mas de 1, ya se ha duplicado
+context Text {
+    constraint UniqueNameText {
+        check : Text.all.select(f | f.text == self.text).size() == 1
+        message : "There are several texts with the same name " + self.text + ", names must be unique."
+    }
+}
 
-
+// Busca el texto de todos los enlaces texto para que no se dupliquen los nombres
+// Cuenta los textos con los mismos nombres, si hay mas de 1, ya se ha duplicado
+context Link {
+    constraint UniqueNameLink {
+        check : Link.all.select(f | f.text == self.text).size() == 1
+        message : "There are several links with the same name " + self.text + ", names must be unique."
+    }
+}

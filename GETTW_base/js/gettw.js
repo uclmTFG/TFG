@@ -1,64 +1,87 @@
+// Permite construir objetos gráficos
 var $ = go.GraphObject.make;
 
-// Diagrama que recibirá los nodos y enlaces
+// Diagrama que recibirá los nodos y enlaces, enlaza el codigo con HTML
+// Se definen las reglas
 var diagram = $(go.Diagram, "divDiagram",
-	{
+	{	// Oculta la cuadrilla de fondo
 		"grid.visible": false,
+		// Permite seleccionar y arrastrar enlaces en el diagrama y deconectarlos
 		"draggingTool.dragsLink": true,
+		// Estructura el diagrama para alinear los elementos
 		"draggingTool.isGridSnapEnabled": true,
+		// Permite crear un enlace desde la figura sin enlazarlo con un destino
 		"linkingTool.isUnconnectedLinkValid": true,
+		// A partir de 10 pixeles que se sobrepasa de un puerto, el enlace se conecta
 		"linkingTool.portGravity": 10,
+		// Permite modificar un enlace existente que este conectado a la figura y que no tenga destino
 		"relinkingTool.isUnconnectedLinkValid": true,
+		// A partir de 10 pixeles que se sobrepasa de un puerto, el enlace existente se conecta
 		"relinkingTool.portGravity": 10,
+		// Punta inicial del enlace que aparece cuando lo selecciones, aparece un puntero forma de rombo rojo
 		"relinkingTool.fromHandleArchetype":
 			$(go.Shape, "Diamond", { segmentIndex: 0, cursor: "pointer", desiredSize: new go.Size(10, 10), fill: "tomato", stroke: "darkred" }),
+		// Punta final del enlace que aparece cuando lo seleccionas
 		"relinkingTool.toHandleArchetype":
 			$(go.Shape, "Diamond", { segmentIndex: -1, cursor: "pointer", desiredSize: new go.Size(10, 10), fill: "darkred", stroke: "tomato" }),
+		// Si hay un enlace que hace esquina, ese extremo aparece en rojo para modificar el enlace
 		"linkReshapingTool.handleArchetype":
 			$(go.Shape, "Diamond", { desiredSize: new go.Size(10, 10), fill: "lightblue", stroke: "deepskyblue" }),
+		// Permite girar la figura a 270 grados, es decir, colocarlo en la parte superior
 		"rotatingTool.handleAngle": 270,
+		// Este boton estara a 30 pixeles de distancia
 		"rotatingTool.handleDistance": 30,
+		// Permite girar las figuras cada 15 grados
 		"rotatingTool.snapAngleMultiple": 15,
 		"rotatingTool.snapAngleEpsilon": 15,
+		// Rueda del raton para hacer zoom
 		"toolManager.mouseWheelBehavior": go.ToolManager.WheelScroll,
+		// Permite arrastrar y soltar desde la paleta
 		"allowDrop": true,
+		// Activa el historial para utilizar Ctrl Z y Ctrl Y
 		"undoManager.isEnabled": true,
+		// Fondo en blanco entero
 		"grid.background": "white"
 	});
 
+
 // Función para crear un "puerto", indicando que el nodo puede ser enlazado con otros nodos
 function createPort(nombre, spot, salida, entrada) {
+	// Devuelve un objeto en forma de circulo
 	return $(go.Shape, "Circle",
 		{
 			fill: null,  // no visto por defecto
 			stroke: null, // sin borde
-			desiredSize: new go.Size(10, 10),
-			alignment: spot,  // alinea respecto a la forma
-			alignmentFocus: spot,  // dentro de la forma
+			desiredSize: new go.Size(10, 10), // tamano del conector invisible pero para que el raton pueda detectarlo
+			alignment: spot,  // alinea respecto a la forma de la figura
+			alignmentFocus: spot,  // dentro de la forma de la figura clava el circulo
 			portId: nombre, // id - nombre del "puerto"
-			fromSpot: spot, toSpot: spot,  // declara donde se pueden declarar enlaces
+			fromSpot: spot, toSpot: spot,  // declara donde se pueden declarar enlaces, es decir, si el puerto esta arriba, el enlace debe salir recto hacia arriba
 			fromLinkable: salida, toLinkable: entrada,  // declara si el usuario puede dibujar enlaces hacia/desde él
 			cursor: "pointer"  // muestra el cursor para indicar que es un posible punto de enlace
 		});
 }
 	
-// Función para mostrar/ocultar los "puertos"
+// Función para mostrar/ocultar los "puertos", recibe un nodo y un booleano mostrar
 function showPorts(nodo, mostrar) {
+	// Todos los puertos del nodo
 	nodo.ports.each(function(port) {
-		if (port.portId !== "") {  // no cambiar el puerto por defecto
+		// Si el puerto no es vacio
+		if (port.portId !== "") {  // no cambiar el puerto por defecto porque sino detectaria como puerto toda la figura
+			// El color del puerto si esta mostrar en si, aparezca de color gris 30 por ciento de transparencia, si mostrar esta en no, ponerlo nulo o invisible
 			port.fill = mostrar ? "rgba(0,0,0,.3)" : null;
 		}
 	});
 }
 
-// Plantilla para selección de nodo
+// Plantilla para selección de nodo para que la figura que se introduzca, se adapten al nodo
 var nodeSelectionTemplate =
 $(go.Adornment, "Auto",
 	$(go.Shape, { fill: null, stroke: "deepskyblue", strokeWidth: 1.5, strokeDashArray: [4, 2] }),
 	$(go.Placeholder)
 );
 	
-// Plantilla para redimensión de nodo
+// Plantilla para redimensión de nodo para estirar o encoger el nodo
 var nodeRedimensionTemplate =
 $(go.Adornment, "Spot",
 	{ locationSpot: go.Spot.Right },
@@ -128,6 +151,7 @@ $(go.Node, "Spot",
 			new go.Binding("text").makeTwoWay()
 		)
 	),
+	
 	// cuatro pequeños "puertos", uno para cada lado del nodo
 	createPort("T", go.Spot.Top, false, true),
 	createPort("L", go.Spot.Left, true, true),
@@ -533,8 +557,8 @@ $(go.Link,
 		new go.Binding("text").makeTwoWay())
 );
 
+// Guarda las plantillas de texto
 var linksTemplates = new go.Map();
-// plantillasEnlaces.add("unaFlecha", plantillaEnlaceUnaFlecha);
 linksTemplates.add("link", linksTemplate);
 diagram.linkTemplateMap = linksTemplates;
 
@@ -559,18 +583,39 @@ function createPalettes(nodeSize) {
 	var palette =
 	$(go.Palette, "divPalette",
 		{
-			maxSelectionCount: 1,
+			maxSelectionCount: 1,  // solo se puede seleccionar un nodo de la paleta
 			nodeTemplateMap: diagram.nodeTemplateMap,  // se asocian las plantillas de los nodos
 			linkTemplateMap: diagram.linkTemplateMap,	// se asocian las plantillas de los enlaces
 			model: new go.GraphLinksModel([  // contenidos de la paleta
-		// nodos
+		// nodos, para cada nodo imprime el nodo y con las propiedades que correspondan
+			{ text: "Actor", figure: "Actor", fill: "white", stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
+			editable: true, width: nodeSize/2, height: nodeSize/2,  category: "shape" }, 
+			{ text: "Package", figure: "Package", fill: "lightblue", stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
+			editable: false, width: nodeSize/2, height: nodeSize/2, alignment: go.Spot.TopLeft, category: "shape" }, 
+			{ text: "System", figure: "Rectangle", fill: "lightgray", stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", 
+			editable: false, width: nodeSize/2, height: nodeSize/2, alignment: go.Spot.TopLeft, category: "shape" }, 
+			{ text: "Use case", superindex: "", subindex: "", figure: "Ellipse", fill: "lightblue", 
+			stroke: "black", strokeWidth: "2", font: "16pt Roboto, sans-serif, Arial, Helvetica", editable: true, width: nodeSize/2, height: nodeSize/3,
+ category: "shape" }, 
 	  ], [ // enlaces
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "", toArrowColor: "black", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "", category: "link" }, 
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "Triangle", toArrowColor: "white", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "", category: "link" }, 
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", dash: "Dash Line", strokeDashArray: [3, 3], 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "OpenTriangle", toArrowColor: "black", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "extends", category: "link" }, 
+	    	{ points: new go.List().addAll([new go.Point(0, 0), new go.Point(50, 0)]), linkStrokeColor: "black", linkStrokeWidth: "2", dash: "Dash Line", strokeDashArray: [3, 3], 
+	    	fromArrowShape: "", fromArrowColor: "black", fromArrowStrokeColor: "black", fromArrowStrokeWidth: "2", 
+	    	toArrowShape: "OpenTriangle", toArrowColor: "black", toArrowStrokeColor: "black", toArrowStrokeWidth: "2", text: "includes", category: "link" }, 
 		  ])
 		}
 	);
 }
 
-// Vista Radar
+// Vista Radar, Minimapa
 myOverview =
 $(go.Overview, "divRadar",
   {
@@ -610,6 +655,7 @@ function selectFile() {
 	fileInput.click();
 }
 
+// Lee el modelo que se ha introducido como entrada
 document.getElementById("fileInput").addEventListener("change", function(event) {
     const selectedFile = event.target.files[0];
 
@@ -630,26 +676,29 @@ document.getElementById("fileInput").addEventListener("change", function(event) 
 	COMUNICACIÓN CLIENTE-SERVIDOR
 		--- TOGETHERJS ---
 ***/
+
+var isSyncing = false;
+
+// Envía los cambios que se realicen
 diagram.model.addChangedListener(function(e) {
-	if (e.isTransactionFinished) {
-		var json = e.model.toIncrementalJson(e);
-		
-		if (TogetherJS.running) {
-			TogetherJS.send({
-				type: "content-send",
-				output: json
-			});
-			console.log(json)
-		}
-	}
+	
+    // Cuando un usuario ha soltado el nodo
+    if (e.isTransactionFinished && !isSyncing) {
+    
+    	// Encapsulo lo que se ha modificado, no todo el diagrama
+        var json = e.model.toIncrementalJson(e);
+        
+        // Envía el contiendo json con solo el nodo modificado
+        TogetherJS.send({
+            type: "content-send",
+            output: json
+        });
+    }
 });
 
+// Recibe los cambios que se realicen
 TogetherJS.hub.on("content-send", function(msg) {
-	if (!msg.sameUrl) {
-		return;
-	}
-	diagram.model.applyIncrementalJson(msg.output);
-	//diagram.layoutDiagram(true);
-	//diagram.isModified = false;
-	console.log(msg.output);
+    isSyncing = true; // Señal de que está sincronizando
+    diagram.model.applyIncrementalJson(msg.output); // Dibuja los cambios del otro usuario en el diagrama
+    isSyncing = false; // Ha finalizado la sincronización
 });

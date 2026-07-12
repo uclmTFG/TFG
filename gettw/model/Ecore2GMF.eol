@@ -1,38 +1,46 @@
+// Busca la paleta
 var palette = GmfTool!Palette.all.first();
 var currentTools = palette.tools;
 
+// Crea nuevos grupos de Shapes, Text y Custom Elements
 var toolGroupShapes = new GmfTool!ToolGroup;
 toolGroupShapes.title = "Shapes";
 toolGroupShapes.collapsible = true;
+
 var toolGroupText = new GmfTool!ToolGroup;
 toolGroupText.title = "Text";
 toolGroupText.collapsible = true;
+
 var toolGroupCustomElements = new GmfTool!ToolGroup;
 toolGroupCustomElements.title = "Custom Elements";
 toolGroupCustomElements.collapsible = true;
+
+// Añade los grupos a la paleta
 palette.tools.add(toolGroupShapes);
 palette.tools.add(toolGroupText);
 palette.tools.add(toolGroupCustomElements);
 
+// En la paleta por defecto, estos son los grupos definidos
 var toolGroupObjects = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Objects');
 var toolGroupConnections = GmfTool!ToolGroup.all.selectOne(r|r.title = 'Connections');
 
+// Organiza los grupos, indicando los elementos de cada uno
 var ShapesObjects : Sequence = Sequence{"Rectangle","Rounded Rectangle","Ellipse","Triangle","Triangle Down", "Triangle Left",
 	"Triangle Right", "Diamond", "Sep","Actor","Package"};
-//var SociogramConnections : Sequence = Sequence{"Acting","Inheritance","Association"};
 var TextObjects : Sequence = Sequence{"Text","Text w Indexes", "Text w Superscript", "Text w Subscript"};
-//var LearningConnections : Sequence = Sequence{"Traceability","Sep","Enabling w/o Information","Enabling w Information","Choice","Concurrency"};
 var CustomElementsObjects : Sequence = Sequence {"Picture","Shape","Link"};
 
-
+// Guarda esta nueva organizacion de la paleta
 objectsConnectionsToPalette(ShapesObjects, toolGroupShapes, true);
-//objectsConnectionsToPalette(SociogramConnections, toolGroupSociogram, false);
 objectsConnectionsToPalette(TextObjects, toolGroupText, true);
 objectsConnectionsToPalette(CustomElementsObjects, toolGroupCustomElements, true);
 
+// Elimina la anterior clasificación
 delete toolGroupObjects;
 delete toolGroupConnections;
 
+// Operación que se centra en introducir cada elemento a la paleta, indicando si es obtjeto o conexión.
+// Si hay un Sep en la lista, crea una línea divisoria para diferenciar la formas geométricas de las específicas.
 operation objectsConnectionsToPalette(myseq: Sequence, mytg: GmfTool!ToolGroup, isObject: Boolean) {
 	var toolEntry;
 	for (o in myseq) {
